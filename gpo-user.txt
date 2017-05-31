@@ -1,0 +1,232 @@
+; ----------------------------------------------------------------------
+; PARSING User POLICY
+; Source file:  GPO\User\Registry.pol
+
+User
+Control Panel\International\User Profile
+HttpAcceptLanguageOptOut
+DWORD:1
+
+User
+Software\Microsoft\Internet Explorer\VersionManager
+DownloadVersionList
+DWORD:0
+
+User
+Software\Microsoft\Messaging
+CloudServiceSyncEnabled
+DWORD:0
+
+User
+Software\Microsoft\Windows\CurrentVersion\AppHost
+EnableWebContentEvaluation
+DWORD:0
+
+User
+Software\Microsoft\Windows\CurrentVersion\CDP
+RomeSdkChannelUserAuthzPolicy
+DWORD:0
+
+User
+Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+HideFileExt
+DWORD:0
+
+User
+Software\Microsoft\Windows\CurrentVersion\Internet Settings
+AutoDetect
+DWORD:0
+
+User
+Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+NoDrives
+DWORD:3
+
+User
+Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+DisableThumbnailsOnNetworkFolders
+DWORD:1
+
+User
+Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+NoThumbnailCache
+DWORD:1
+
+User
+Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+NoResolveSearch
+DWORD:1
+
+User
+Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+ForceClassicControlPanel
+DWORD:1
+
+User
+Software\Microsoft\Windows NT\CurrentVersion\Windows
+LegacyDefaultPrinterMode
+DWORD:1
+
+User
+Software\Policies\Microsoft\Assistance\Client\1.0
+NoExplicitFeedback
+DWORD:1
+
+User
+Software\Policies\Microsoft\Assistance\Client\1.0
+NoImplicitFeedback
+DWORD:1
+
+User
+Software\Policies\Microsoft\Assistance\Client\1.0
+NoOnlineAssist
+DWORD:1
+
+User
+Software\Policies\Microsoft\Internet Explorer\Control Panel
+HomePage
+DWORD:1
+
+User
+Software\Policies\Microsoft\Internet Explorer\Control Panel
+FormSuggest Passwords
+DWORD:1
+
+User
+Software\Policies\Microsoft\Internet Explorer\Main
+Start Page
+SZ:about:blank
+
+User
+Software\Policies\Microsoft\Internet Explorer\Main
+FormSuggest Passwords
+SZ:no
+
+User
+Software\Policies\Microsoft\Internet Explorer\Main
+FormSuggest PW Ask
+SZ:no
+
+User
+Software\Policies\Microsoft\Internet Explorer\Main
+Check_Associations
+SZ:no
+
+User
+Software\Policies\Microsoft\SystemCertificates\Trust\Certificates
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\SystemCertificates\Trust\CRLs
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\SystemCertificates\Trust\CTLs
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\SystemCertificates\TrustedPeople\Certificates
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\SystemCertificates\TrustedPeople\CRLs
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\SystemCertificates\TrustedPeople\CTLs
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\Windows\CloudContent
+DisableTailoredExperiencesWithDiagnosticData
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\CloudContent
+DisableWindowsSpotlightFeatures
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\Control Panel\Desktop
+ScreenSaveActive
+SZ:0
+
+User
+Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
+NoCloudApplicationNotification
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
+NoToastApplicationNotificationOnLockScreen
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
+DisallowNotificationMirroring
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\Explorer
+NoSearchInternetTryHarderButton
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\Explorer
+NoBalloonFeatureAdvertisements
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\Explorer
+DisableThumbsDBOnNetworkFolders
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\Safer
+*
+CREATEKEY
+
+User
+Software\Policies\Microsoft\Windows\System
+GroupPolicyRefreshTime
+DWORD:45
+
+User
+Software\Policies\Microsoft\Windows\System
+GroupPolicyRefreshTimeOffset
+DWORD:30
+
+User
+Software\Policies\Microsoft\Windows\System
+GroupPolicyMinTransferRate
+DWORD:0
+
+User
+Software\Policies\Microsoft\Windows NT\Printers\Wizard
+Downlevel Browse
+DWORD:0
+
+User
+Software\Policies\Microsoft\WindowsMediaPlayer
+PreventCodecDownload
+DWORD:1
+
+User
+Software\Policies\Microsoft\WindowsMediaPlayer
+PreventCDDVDMetadataRetrieval
+DWORD:1
+
+User
+Software\Policies\Microsoft\WindowsMediaPlayer
+PreventMusicFileMetadataRetrieval
+DWORD:1
+
+; PARSING COMPLETED.
+; ----------------------------------------------------------------------
+

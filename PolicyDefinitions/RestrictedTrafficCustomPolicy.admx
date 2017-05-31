@@ -1,0 +1,142 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="WindowsHermitModeCustomPolicy" namespace="Microsoft.Policies.WindowsHermitModeCustomPolicy" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_Windows10" displayName="$(string.SUPPORTED_Windows10)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Cat_WHMCP" displayName="$(string.WHMCP)" />
+  </categories>
+  <policies>
+       <policy
+        name="Pol_WHMCP_LetWebsitesProvideLocallyRelevantContentByAccessingMyLanguageList"
+        displayName="$(string.LWPLRCBAMLL)"
+        explainText="$(string.LWPLRCBAMLL_Help)"
+        class="User"
+        key="Control Panel\International\User Profile"
+        valueName="HttpAcceptLanguageOptOut">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="0"/>
+          </enabledValue>
+          <disabledValue>
+            <decimal value="1" />
+          </disabledValue>
+    <!--
+        1 for no traffic
+        other choice is 0 or delete value
+    -->
+    </policy>
+    
+    <policy
+        name="Pol_WHMCP_MessagingCloudSync"
+        displayName="$(string.MessagingCloudSync)"
+        explainText="$(string.MessagingCloudSync_Help)"
+        class="User"
+        key="SOFTWARE\Microsoft\Messaging"
+        valueName="CloudServiceSyncEnabled">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+    <!--
+        0 for no traffic
+        Choices: 0 or 1 (delete)
+    -->
+    </policy>
+    
+    <policy
+        name="Pol_WHMCP_TurnOffMaliciousSoftwareReporting"
+        displayName="$(string.TurnOffMaliciousSoftwareReporting)"
+        explainText="$(string.TurnOffMaliciousSoftwareReporting_Help)"
+        class="Machine"
+        key="Software\Policies\Microsoft\MRT"
+        valueName="DontReportInfectionInformation">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+    <!--
+        1 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+    <policy 
+		name="PreventNetworkTrafficPreUserSignIn" 
+		class="Machine" 
+		displayName="$(string.BlockOneDriveNetworkActivityUntilUserSignIn)" 
+		explainText="$(string.BlockOneDriveNetworkActivityUntilUserSignIn_help)" 
+		key="SOFTWARE\Microsoft\OneDrive" valueName="PreventNetworkTrafficPreUserSignIn">
+      <parentCategory ref="Cat_WHMCP" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+	<!--
+        1 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+	
+	
+    <policy 
+		name="Pol_WHMCP_EanbleTrackProgramsInStart" 
+		class="User" 
+		displayName="$(string.Pol_WHMCP_EanbleTrackProgramsInStart)" 
+		explainText="$(string.Pol_WHMCP_EanbleTrackProgramsInStart_Help)" 
+		key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" 
+		valueName="Start_TrackProgs">
+      <parentCategory ref="Cat_WHMCP" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+	<!--
+        0 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+	
+    <policy 
+		name="Pol_WHMCP_EnableWebContentEvaluation" 
+		class="User" 
+		displayName="$(string.Pol_WHMCP_EnableWebContentEvaluation)" 
+		explainText="$(string.Pol_WHMCP_EnableWebContentEvaluation_Help)" 
+		key="SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost" 
+		valueName="EnableWebContentEvaluation">
+      <parentCategory ref="Cat_WHMCP" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+	<!--
+        0 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+	
+  </policies>
+</policyDefinitions>
