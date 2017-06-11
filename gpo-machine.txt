@@ -1,6 +1,6 @@
 ; ----------------------------------------------------------------------
 ; PARSING Computer POLICY
-; Source file:  GPO\Machine\Registry.pol
+; Source file:  GPO\{07BDCD6A-3F72-473C-82B9-67BB69DBE54D}\DomainSysvol\GPO\Machine\Registry.pol
 
 Computer
 SOFTWARE\Microsoft\OneDrive

@@ -50,14 +50,10 @@ leave them alone.
 
 ### Active Directory
 
-1. Create a blank GPO using Group Policy Management Console.
-2. Copy the contents of GPO directory to
-   `\\<domain>\SYSVOL\<domain>\Policies\<GUID>\`.
-3. Make a single edit to security, audit, computer, and user policies. Simply
-   toggle one of the configured settings off/on. This is needed to get AD to
-   reload the actual settings and update version numbers (please tell me if
-   there is a better way to do this - backup/restore doesn't work).
-4. Copy PolicyDefinitions to `\\<domain>\SYSVOL\<domain>\Policies\`.
+1. Copy PolicyDefinitions directory to `\\<domain>\SYSVOL\<domain>\Policies\`.
+2. Create a blank GPO using Group Policy Management Console.
+3. Right-click on the new GPO and go through the "Import Settings..." wizard
+   using the GPO directory as the backup source.
 
 Required ADMX templates
 -----------------------
@@ -73,6 +69,9 @@ These are contained in the PolicyDefinitions directory:
 Notes
 -----
 
+* [Domain Level Account Policies](https://technet.microsoft.com/en-us/library/jj852214(v=ws.11).aspx)
+  (Password Policy, Account Lockout Policy, and Kerberos Policy) only apply if
+  the GPO is linked at the domain level.
 * Local Administrator is disabled and renamed to LocalAdmin. The password must
   be set before it can be enabled. Otherwise, you'll get error 7016 in
   `gpresult /h` report along with "Security has requested to process its policy
@@ -99,6 +98,12 @@ Notes
   must be stripped manually (e.g. `fsutil 8dot3name strip /s C:`).
 * NTP client is configured to use pool.ntp.org. Local NTP traffic should be
   intercepted/redirected by the firewall.
+
+Bugs
+----
+
+* Denying `Let Windows apps run in the background` right (Windows Components ->
+  App Privacy) [breaks Start menu search in v1703](https://superuser.com/a/1208858).
 
 Suggestions to implement in a separate GPO
 ------------------------------------------
@@ -145,6 +150,21 @@ Software\Microsoft\Windows\CurrentVersion\Internet Settings
 AutoDetect
 DWORD:0
 ```
+
+Updating policy
+---------------
+
+Domain policies store machine and user extension GUIDs in LDAP. These must be
+updated in Backup.xml in order for the policy to import and work correctly.
+Create a backup using the Group Policy Management Console and copy
+`MachineExtensionGuids` and `UserExtensionGuids` elements from the backup.
+
+The files under `GPO\{07BDCD6A-3F72-473C-82B9-67BB69DBE54D}\DomainSysvol\GPO`
+may be copied either from the backup or directly from the policy directory
+(`\\<domain>\SYSVOL\<domain>\Policies\{<GUID>}`).
+
+Note: The XML parser used by the import wizard is horrible. Adding a new line in
+the wrong place causes mmc.exe to crash, so the XML files are a mess.
 
 References
 ----------
