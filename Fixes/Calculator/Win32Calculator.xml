@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Win32 Calculator" changed="2017-06-02 19:04:16" uid="{E9A1765E-B572-4295-9670-22BC4DBBA6FC}" bypassErrors="1">
+	<Filters><FilterOs bool="AND" not="0" class="NT" version="WINTHRESHOLD" type="NE" edition="NE" sp="NE"/></Filters>
+	<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Icon" status="(Default)" image="5" bypassErrors="1" changed="2017-06-02 19:03:01" uid="{DC2D8676-1378-4B0E-B0A7-B995B115F36B}"><Properties action="C" displayDecimal="0" default="1" hive="HKEY_CLASSES_ROOT" key="calculator\DefaultIcon" name="" type="REG_SZ" value="C:\Windows\System32\win32calc.exe,0"/></Registry>
+	<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Command" status="(Default)" image="5" bypassErrors="1" changed="2017-06-02 19:03:35" uid="{F69EBF2D-4533-431A-A956-4DF671CB5BC9}"><Properties action="C" displayDecimal="0" default="1" hive="HKEY_CLASSES_ROOT" key="calculator\shell\open\command" name="" type="REG_SZ" value="C:\Windows\System32\win32calc.exe"/></Registry>
+	<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Keyboard Key" status="ShellExecute" image="5" bypassErrors="1" changed="2017-06-02 19:20:30" uid="{847C1FAC-3D4C-477E-B6B0-8D491DF25029}"><Properties action="C" displayDecimal="1" default="0" hive="HKEY_LOCAL_MACHINE" key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\18" name="ShellExecute" type="REG_SZ" value="C:\Windows\System32\win32calc.exe"/></Registry>
+</Collection>
