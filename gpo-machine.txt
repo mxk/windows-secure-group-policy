@@ -1248,6 +1248,11 @@ SlowLinkDetectEnabled
 DWORD:0
 
 Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+HiberbootEnabled
+DWORD:0
+
+Computer
 SOFTWARE\Policies\Microsoft\Windows\TabletPC
 PreventHandwritingDataSharing
 DWORD:1
