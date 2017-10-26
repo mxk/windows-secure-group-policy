@@ -2,67 +2,115 @@
 <!--  (c) 2006 Microsoft Corporation  -->
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <displayName>Windows Defender Application Guard</displayName>
-  <description>Configuration for Windows Defender Application Guard</description>
+  <description>Turn on Windows Defender Application Guard in Enterprise Mode</description>
   <resources>
     <stringTable>
         <string id="AppHVSICat_DisplayName">Windows Defender Application Guard</string>
-        <string id="AppHVSI_AllowAppHVSI_DisplayName">Turn On/Off Windows Defender Application Guard (WDAG)</string>
-        <string id="AppHVSI_AllowAppHVSI_Explain">This policy enables application isolation using Windows Defender Application Guard.
+        <string id="AppHVSI_AllowAppHVSI_DisplayName">Turn on Windows Defender Application Guard in Enterprise Mode</string>
+        <string id="AppHVSI_AllowAppHVSI_Explain">This policy setting enables application isolation through Windows Defender Application Guard (Application Guard).
 
-Windows Defender Application Guard uses the Windows Hypervisor to launch applications in a virtualized environment. When applications are configured to use virtualization based security isolation, untrusted user behavior while using these applications and vulnerabilities in those applications cannot compromise the kernel and other applications running outside the virtualized environment.
-Before enabling this policy, you need to define enterprise trusted sites lists. These lists can be set up by using the Networking isolation policy (insert link to specific networking policy). They ensure that only non-enterprise sites open within the virtualized environment.
-Note: To lock down a system, ensure that both Device Guard security features and application isolation for applications are both enabled. Please see the documentation for a complete set of requirements to securely lock down a system.
+Application Guard uses Windows Hypervisor to create a virtualized environment for apps that are configured to use virtualization-based security isolation. While in isolation, improper user interactions and app vulnerabilities can’t compromise the kernel or any other apps running outside of the virtualized environment.
+
+If you enable this setting, Application Guard is turned on for your organization.
         </string>
         <string id="AppHVSI_ClipboardSettings_DisplayName">Configure Windows Defender Application Guard clipboard settings</string>
-        <string id="AppHVSI_ClipboardSettings_Explain">Specifies clipboard behavior when using application isolation with Windows Defender Application Guard.
+        <string id="AppHVSI_ClipboardSettings_Explain">This policy setting allows you to decide how the clipboard behaves while in Windows Defender Application Guard (Application Guard).
 
-Administrators can:
-Disable clipboard functionality completely when Virtualization Security is enabled.
-Enable copying of certain content from an isolated session to the host computer.
-Enable copying of certain content from the host computer to isolated session.
+If you enable this setting, you must choose from the following behaviors:
 
-Note: We recommend that administrators do not enable copying content from the host computer to the isolated session. This would mean that a compromised isolated session could access the host computer’s clipboard and the content on it.
+     - Disable clipboard functionality completely between the host and Application Guard
+
+     - Enable the clipboard to copy content from Application Guard to the host
+
+     - Enable the clipboard to copy content from the host to Application Guard.
+
+NOTE
+We recommend that you don't enable copying from the host to Application Guard. If you enable this functionality, a potentially compromised Application Guard session will have access to the host device’s clipboard and its content.
+
+If you choose to enable copying, you must also choose the type of content that can be copied, by using the content options:
+
+     - 1. Allows text copying.
+
+     - 2. Allows image copying.
+
+     - 3. Allows both text and image copying.
+
+If you disable or don't configure this setting, all clipboard functionality is turned off in Application Guard.
         </string>
         <string id="AppHVSI_ClipboardSettings_DropdownList_Option_OperationDisabled">Block clipboard operations(default)</string>
         <string id="AppHVSI_ClipboardSettings_DropdownList_Option_ContainerToHostEnabled">Enable clipboard operation from an isolated session to the host</string>
         <string id="AppHVSI_ClipboardSettings_DropdownList_Option_HostToContainerEnabled">Enable clipboard operation from an host to the isolated session</string>
         <string id="AppHVSI_ClipboardSettings_DropdownList_Option_BothDirectionsEnabled">Enable clipboard operation both directions</string>
-        <string id="AppHVSI_PrintingSettings_DisplayName">Configure Windows Defender Application Guard Print Settings</string>
-        <string id="AppHVSI_PrintingSettings_Explain">If Enable printing to XPS is selected, users can print documents from within the container to XPS format.
-If Enable printing to PDF is selected, users can print documents from within the container to PDF format.
-If Enable printing to local printers is selected, users can print documents from within the container to a locally attached printer.
-If Enable printing to existing network printers is selected, users can use the existing network printers to print documents from within the isolated container. Users cannot browse for new network printers.
-        </string>
-        <string id="AppHVSI_BlockNonEnterpriseContent_DisplayName">Block Entperise websites to load non-Enterprise content in IE and Edge</string>
-        <string id="AppHVSI_BlockNonEnterpriseContent_Explain">If enabled, blocks any Internet Explorer and Microsoft Edge network traffic to non-enterprise sites that can’t launch in a Windows Defender Application Guard container.
+        <string id="AppHVSI_PrintingSettings_DisplayName">Configure Windows Defender Application Guard print settings</string>
+        <string id="AppHVSI_PrintingSettings_Explain">This policy setting allows you to decide how the print functionality behaves while in Windows Defender Application Guard (Application Guard).
 
-If disabled, renders on the host computer any network traffic to non-enterprise sites that can’t launch in a Windows Defender Application Guard container.
+If you enable this setting, you must choose one or many of the following behaviors:
+
+     - Disable all print functionality in Application Guard.
+
+     - Enable printing to existing network printers.
+
+     - Enable printing to local printers.
+
+     - Enable printing to PDF, allows people to print as PDF and save the resulting file on the host.
+
+     - Enable printing to XPS, allows people to print as XPS and save the resulting file on the host.
+
+If you disable or don't configure this setting, all print functionality is turned off in Application Guard.
         </string>
+        <string id="AppHVSI_BlockNonEnterpriseContent_DisplayName">Prevent enterprise websites from loading non-enterprise content in Microsoft Edge and Internet Explorer</string>
+        <string id="AppHVSI_BlockNonEnterpriseContent_Explain">This policy setting allows you to decide whether websites can load non-enterprise content in Microsoft Edge and Internet Explorer.
+
+If you enable this setting, non-enterprise content embedded on enterprise sites are stopped from opening in Internet Explorer or Microsoft Edge outside of Windows Defender Application Guard.
+
+If you disable or don't configure this setting, non-enterprise sites can open outside of the Windows Defender Application Guard container, directly in Internet Explorer and Microsoft Edge..
+        </string>
+        <string id="AppHVSI_AllowPersistence_DisplayName">Allow data persistence for Windows Defender Application Guard</string>
+        <string id="AppHVSI_AllowPersistence_Explain">This policy setting allows you to decide whether data should persist across different sessions in Windows Defender Application Guard (Application Guard).
+
+        If you enable this setting, Application Guard saves user-downloaded files and other items (such as, cookies, Favorites, and so on) for use in future Application Guard sessions.
+
+             NOTE
+             If you enable this setting, you can still delete an user's data from a specific device using the Reset-ApplicationGuard PowerShell command. Running this command deletes all employee data, regardless of configuration, and can result in data loss for the employee.
+
+        If you disable or don't configure this setting,  Application Guard deletes all user data within the Application Guard container.
+        </string>
+        <string id="AppHVSI_AuditApplicationGuard_DisplayName">Allow auditing events in Windows Defender Application Guard</string>
+        <string id="AppHVSI_AuditApplicationGuard_Explain">This policy setting allows you to decide whether auditing events can be collected from Windows Defender Application Guard (Application Guard).
+
+        If you enable this setting, Application Guard inherits its auditing policies from Microsoft Edge and starts to audit system events specifically for Application Guard.
+
+             NOTE
+             Collected logs are available for review on Microsoft Edge, outside of Application Guard.
+
+        If you disable or don't configure this setting,  audit event logs aren't collected for Application Guard.</string>
     </stringTable>
     <presentationTable>
       <presentation id="AppHVSIClipboardSettings_Presentation">
-        <dropdownList refId="AppHVSIClipboardSettings_CopyPasteDirection_DropdownList" noSort="true" defaultItem="0">Select an Option:</dropdownList>
-        <decimalTextBox refId="AppHVSIClipboardFileType_AllowedFileType_TextBox" defaultValue="1">Specifies what is permitted for clipboard behavior when clipboard operations is enabled (decimal):
+        <dropdownList refId="AppHVSIClipboardSettings_CopyPasteDirection_DropdownList" noSort="true" defaultItem="0">Clipboard behavior setting.</dropdownList>
+        <decimalTextBox refId="AppHVSIClipboardFileType_AllowedFileType_TextBox" defaultValue="1">Clipboard content options.
         </decimalTextBox>
-        <text>This value is a bitmask that controls which file types can be used for clipboard operations:
-
-b0001 - TEXT file
-b0010 - Bitmap file
-b0011 - both TEXT and Bitmap files are supported
-        </text>
       </presentation>
       <presentation id="AppHVSIPrintingSettings_Presentation">
-        <decimalTextBox refId="AppHVSIPrintingSettings_TextBox" defaultValue="0">Specifies which printers are enabled (in decimal)
+        <decimalTextBox refId="AppHVSIPrintingSettings_TextBox" defaultValue="0">Allowed print types in Application Guard.
         </decimalTextBox>
-        <text>This value is a bitmask that controls which printers are enabled in an isolated session    
-b0000 - Printing is disabled
-b0001 - Enable Printing to XPS (Default)
-b0010 - Enable Printing to PDF
-b0100 - Enable Printing to Local printers
-b1000 - Enable Printing to existing Network printers
-
-For example:
-If XPS and Local printers are enabled, the value will become b0001 | b0100, which is b0101 (decimal 5)
+        <text>To determine which types of printing to allow, you must choose:
+     - 0. Disables all print functionality.
+     - 1. Enables only XPS printing.
+     - 2. Enables only PDF printing.
+     - 3. Enables both PDF and XPS printing.
+     - 4. Enables only local printing.
+     - 5. Enables both local and XPS printing.
+     - 6. Enables both local and PDF printing.
+     - 7. Enables local, PDF, and XPS printing.
+     - 8. Enables only network printing.
+     - 9. Enables both network and XPS printing.
+     - 10. Enables both network and PDF printing.
+     - 11. Enables network, PDF, and XPS printing.
+     - 12. Enables both network and local printing.
+     - 13. Enables network, local, and XPS printing.
+     - 14. Enables network, local, and PDF printing.
+     - 15. Enables all printing.
         </text>
       </presentation>
     </presentationTable>

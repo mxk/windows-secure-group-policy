@@ -366,7 +366,7 @@
     </policy>
     <policy name="WerQueue_1" class="User" displayName="$(string.WerQueue)" explainText="$(string.WerUserQueueExp)" presentation="$(presentation.WerQueue_1)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting" valueName="DisableQueue">
       <parentCategory ref="CAT_WindowsErrorReportingAdvanced" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2ToVista" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>
@@ -393,7 +393,7 @@
     </policy>
     <policy name="WerQueue_2" class="Machine" displayName="$(string.WerQueue)" explainText="$(string.WerMachineQueueExp)" presentation="$(presentation.WerQueue_2)" key="SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting" valueName="DisableQueue">
       <parentCategory ref="CAT_WindowsErrorReportingAdvanced" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2ToVista" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>

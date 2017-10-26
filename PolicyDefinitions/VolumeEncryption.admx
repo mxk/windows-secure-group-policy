@@ -243,7 +243,7 @@
 
     <policy name="DisableExternalDMAUnderLock_Name" class="Machine" displayName="$(string.DisableExternalDMAUnderLock_Name)" explainText="$(string.DisableExternalDMAUnderLock_Help)" key="Software\Policies\Microsoft\FVE" valueName="DisableExternalDMAUnderLock">
       <parentCategory ref="FVECategory" />
-       <supportedOn ref="SUPPORTED_Windows_10_0_RS2" />
+       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
 
       <enabledValue>
         <decimal value="1" />
@@ -1338,7 +1338,7 @@
 
     <policy name="EnablePreBootPinExceptionOnDECapableDevice_Name" class="Machine" displayName="$(string.EnablePreBootPinExceptionOnDECapableDevice_Name)" explainText="$(string.EnablePreBootPinExceptionOnDECapableDevice_Help)" key="Software\Policies\Microsoft\FVE" valueName="OSEnablePreBootPinExceptionOnDECapableDevice">
         <parentCategory ref="FVEOSCategory" />
-        <supportedOn ref="SUPPORTED_Windows_10_0_RS2" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
         <enabledValue>
             <decimal value="1" />
         </enabledValue>

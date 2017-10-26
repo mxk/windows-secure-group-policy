@@ -53,12 +53,6 @@ If you enable this setting, employees can't ignore Windows Defender SmartScreen 
 
 If you disable or don't configure this setting, employees can ignore Windows Defender SmartScreen warnings and continue to the site.
     </string>
-    <string id="EdgePreventOverrideForFiles">Prevent bypassing Windows Defender SmartScreen prompts for files</string>
-    <string id="EdgePreventOverrideForFiles_Help">This policy setting lets you decide whether employees can override the Windows Defender SmartScreen warnings about downloading unverified files.
-
-If you enable this setting, employees can't ignore Windows Defender SmartScreen warnings and they are blocked from downloading the unverified files.
-
-If you disable or don't configure this setting, employees can ignore Windows Defender SmartScreen warnings and continue the download process.</string>
     </stringTable>
     <presentationTable>
       <presentation id="ShellConfigureSmartScreen">

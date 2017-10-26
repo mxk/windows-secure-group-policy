@@ -6,14 +6,13 @@
   <resources>
     <stringTable>
       <string id="AllowBuildPreview">Toggle user control over Insider builds</string>
-      <string id="AllowBuildPreview_Explain">This policy setting determines whether users can access the Insider build controls in the Advanced Options for Windows Update. These controls are located under "Get Insider builds," and enable users to make their devices available for downloading and installing Windows preview software.
+      <string id="AllowBuildPreview_Explain">This policy setting determines whether users can get preview builds of Windows, by configuring controls in Settings &gt; Update and security &gt; Windows Insider Program.
 
-If you enable or do not configure this policy setting, users can download and install Windows preview software on their devices.
+If you enable or do not configure this policy setting, users can download and install preview builds of Windows by configuring Windows Insider Program settings.
 
-If you disable this policy setting, the item "Get Insider builds" will be unavailable.
+If you disable this policy setting, Windows Insider Program settings will be unavailable to users through the Settings app.
 
-Note: This policy setting applies only to devices running the Pro, Enterprise, Education or Server editions of Windows 10.
-</string>
+This policy is only supported up to Windows 10, Version 1703. Please use 'Manage preview builds' under 'Windows Update for Business' for newer Windows 10 versions.</string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

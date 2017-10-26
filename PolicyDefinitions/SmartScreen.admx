@@ -4,6 +4,7 @@
   <policyNamespaces>
     <target prefix="smartscreen" namespace="Microsoft.Policies.SmartScreen" />
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    <using prefix="edge" namespace="Microsoft.Policies.MicrosoftEdge" />
   </policyNamespaces>
   <resources minRequiredRevision="1.0" />
   <categories>
@@ -56,7 +57,7 @@
     <!-- Edge -->
     <policy name="EdgeConfigureSmartScreen" class="Both" displayName="$(string.EdgeConfigureSmartScreen)" explainText="$(string.EdgeConfigureSmartScreen_Help)" key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter" valueName="EnabledV9">
       <parentCategory ref="Edge" />
-      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10" />
+      <supportedOn ref="edge:SUPPORTED_INTERNET_BROWSER_WIN10" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -71,22 +72,7 @@
             key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter"
             valueName="PreventOverride">
       <parentCategory ref="Edge" />
-      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1511" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-    <policy name="EdgePreventOverrideForFiles"
-            class="Both"
-            displayName="$(string.EdgePreventOverrideForFiles)"
-            explainText="$(string.EdgePreventOverrideForFiles_Help)"
-            key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter"
-            valueName="PreventOverrideAppRepUnknown">
-      <parentCategory ref="Edge" />
-      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1511" />
+      <supportedOn ref="edge:SUPPORTED_INTERNET_BROWSER_WIN10V1511" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

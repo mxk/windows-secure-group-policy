@@ -184,13 +184,19 @@
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <elements>
-         <!--This value will be stored as a REG_EXPAND_SZ. Drop the expandable attrib for a REG_SZ-->       
+         <!--This value will be stored as a REG_EXPAND_SZ. Drop the expandable attrib for a REG_SZ-->
         <text id="LockedStartLayout_Name" valueName="StartLayoutFile" expandable="true"/>
       </elements>
     </policy>
+    <!-- Per user policy to hide power options from start and hide power button on logon UI-->
     <policy name="NoClose" class="User" displayName="$(string.NoClose)" explainText="$(string.NoClose_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoClose">
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Win2k" />
+    </policy>
+    <!-- Per machine policy to hide power options from start and hide power button on logon UI-->
+    <policy name="HidePowerOptions" class="Machine" displayName="$(string.HidePowerOptions)" explainText="$(string.HidePowerOptions_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="HidePowerOptions">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
     </policy>
     <policy name="NoCommonGroups" class="User" displayName="$(string.NoCommonGroups)" explainText="$(string.NoCommonGroups_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoCommonGroups">
       <parentCategory ref="windows:StartMenu" />
@@ -514,6 +520,10 @@
           </item>
         </enum>
       </elements>
+    </policy>
+    <policy name="HidePeopleBar" class="User" displayName="$(string.HidePeopleBar_DisplayName)" explainText="$(string.HidePeopleBar_ExplainText)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="HidePeopleBar">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
     </policy>
   </policies>
 </policyDefinitions>

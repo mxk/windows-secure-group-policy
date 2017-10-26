@@ -61,5 +61,19 @@
         </boolean>
       </elements>
     </policy>    
+    <policy name="NCSI_GlobalDns" class="Machine" displayName="$(string.NCSI_GlobalDns)" explainText="$(string.NCSI_GlobalDns_Help)" presentation="$(presentation.NCSI_GlobalDns)" key="Software\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator">
+      <parentCategory ref="NCSI_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+      <elements>
+        <boolean id="NCSI_UseGlobalDns_Checkbox" valueName="UseGlobalDns" required="false">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

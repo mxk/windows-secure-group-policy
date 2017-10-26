@@ -31,7 +31,7 @@ If you disable or do not configure this policy, Microsoft may display notificati
       <string id="DisableTailoredExperiencesWithDiagnosticData">Do not use diagnostic data for tailored experiences</string>
       <string id="DisableTailoredExperiencesWithDiagnosticData_Help">This policy setting lets you prevent Windows from using diagnostic data to provide tailored experiences to the user.
 
-If you enable this policy setting, Windows will not use diagnostic data from this device (this data may include browser, app and feature usage, depending on the "Diagnostic and usage data" setting value) to customize content shown on lock screen, Windows tips, Microsoft consumer features and other related features. If these features are enabled, users will still see recommendations, tips and offers, but they may be less relevant.
+If you enable this policy setting, Windows will not use diagnostic data from this device (this data may include browser, app and feature usage, depending on the "diagnostic data" setting value) to customize content shown on lock screen, Windows tips, Microsoft consumer features and other related features. If these features are enabled, users will still see recommendations, tips and offers, but they may be less relevant.
 
 If you disable or do not configure this policy setting, Microsoft will use diagnostic data to provide personalized recommendations, tips and offers to tailor Windows for the user's needs, and make it work better for them.
 
@@ -49,7 +49,7 @@ Note: This setting only applies to Enterprise and Education SKUs.</string>
 
 If you enable this policy setting, users will no longer see Windows tips.
 
-If you disable or do not configure this policy setting, users may see contextual popups explaining how to use Windows. Microsoft uses diagnostic and usage data to determine which tips to show.
+If you disable or do not configure this policy setting, users may see contextual popups explaining how to use Windows. Microsoft uses diagnostic data to determine which tips to show.
 
 Note: If you disable or do not configure this policy setting, but enable the "Computer Configuration\Administrative Templates\Windows Components\Data Collection and Preview Builds\Allow Telemetry" policy setting with a level of "Basic" or below, users may see a limited set of tips.
 Also, this setting only applies to Enterprise and Education SKUs.</string>

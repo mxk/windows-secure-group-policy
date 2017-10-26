@@ -76,7 +76,7 @@ If the policy setting is disabled, then no new events can be logged. Events can 
 
 If you enable this policy setting, the Event Log uses the path specified in this policy setting.
 
-If you disable or do not configure this policy setting, the Event Log uses the system32 or system64 subdirectory.</string>
+If you disable or do not configure this policy setting, the Event Log uses the folder %SYSTEMROOT%\System32\winevt\Logs.</string>
       <string id="Channel_LogMaxSize">Specify the maximum log file size (KB)</string>
       <string id="Channel_LogMaxSize_Help">This policy setting specifies the maximum size of the log file in kilobytes.
 

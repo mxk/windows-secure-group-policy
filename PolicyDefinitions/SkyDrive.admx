@@ -21,6 +21,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="PreventNetworkTrafficPreUserSignIn" class="Machine" displayName="$(string.PreventNetworkTrafficPreUserSignIn)" explainText="$(string.PreventNetworkTrafficPreUserSignIn_help)" key="SOFTWARE\Microsoft\OneDrive" valueName="PreventNetworkTrafficPreUserSignIn">
+      <parentCategory ref="OneDrive" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="PreventOnedriveFileSyncForBlue" class="Machine" displayName="$(string.PreventOneDriveFileSyncForBlue)" explainText="$(string.PreventOneDriveFileSyncForBlue_help)" key="Software\Policies\Microsoft\Windows\OneDrive" valueName="DisableFileSync">
       <parentCategory ref="OneDrive" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />

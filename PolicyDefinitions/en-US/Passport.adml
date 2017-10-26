@@ -94,6 +94,15 @@ If you disable this policy setting, Windows Hello for Business prevents the use 
 
 NOTE: Disabling this policy prevents the user of biometric gestures on the device for all account types.
         </string>
+        <string id="MSPassport_EnablePinRecovery">Use PIN Recovery</string>
+        <string id="MSPassport_EnablePinRecoveryExplain">PIN recovery enables a user to change a forgotten PIN using the Windows Hello for Business PIN recovery service, without losing any associated credentials or certificates, including any keys associated with the user's personal accounts on the device. To achieve this, the Azure-based PIN recovery service encrypts a recovery secret, which is stored on the device, and requires both the PIN recovery service and the device to decrypt. PIN recovery requires the user to perform multi-factor authentication to Azure Active Directory.
+
+If you enable this policy setting, Windows Hello for Business uses the PIN recovery service. 
+
+If you disable or do not configure this policy setting, Windows does not create or store the PIN recovery secret. If the user forgets their PIN, they must delete their existing PIN and create a new one, and they will have to to re-register with any services to which the old PIN provided access.
+
+NOTE: This policy is only applicable to devices which are registered with Azure Active Directory.
+        </string>
         <string id="MSPassport_UseRemote">Use phone sign-in</string>
         <string id="MSPassport_UseRemoteExplain">Use this policy setting to configure use of phone sign-in. Phone sign-in provides the ability for a phone to be usable as a companion device for desktop authentication. Phone sign-in requires that both the PC and the phone are registered with the same Azure AD tenant. Additionally, the phone must be enrolled in Windows Hello for Business.
 
@@ -105,10 +114,53 @@ If you disable or do not configure this policy setting, phone sign-in will be di
         <string id="WHFB_UseCertificateForOnPremAuthExplain">Use this policy setting to configure Windows Hello for Business to enroll a sign-in certificate used for on-premises authentication.
 
 If you enable this policy setting, Windows Hello for Business enrolls a sign-in certificate that is used for on-premises authentication.
-		
+
 If you disable or do not configure this policy setting, Windows Hello for Business enrolls a key that is used for on-premises authentication.
 
 NOTE: Disabling or not configuring this policy setting and enabling the "Use Windows Hello for Business" policy setting requires the environment to have one or more Windows Server 2016 domain controllers to prevent Windows Hello for Business authentication from failing.
+        </string>
+        <!-- Explain text for device unlock policy -->
+        <string id="MSPassport_UseDeviceUnlock">Configure device unlock factors</string>
+        <string id="MSPassport_UseDeviceUnlock_Explain">Configure a comma separated list of credential provider GUIDs, such as face and fingerprint provider GUIDs, to be used as the first and second unlock factors. If the trusted signal provider is specified as one of the unlock factors, you should also configure a comma separated list of signal rules in the form of xml for each signal type to be verified.
+
+If you enable this policy setting, the user will have to use one factor from each list to successfully unlock.
+
+If you disable or do not configure this policy setting, users can continue to unlock with existing unlock options.
+
+For more information see: https://go.microsoft.com/fwlink/?linkid=849684
+        </string>
+        <!-- Explain text for dynamic lock policy -->
+        <string id="MSPassport_UseDynamicLock">Configure dynamic lock factors</string>
+        <string id="MSPassport_UseDynamicLock_Explain">Configure a comma separated list of signal rules in the form of xml for each signal type.
+
+If you enable this policy setting, these signal rules will be evaluated to detect user absence and automatically lock the device.
+
+If you disable or do not configure this policy setting, users can continue to lock with existing locking options.
+
+For more information see: https://go.microsoft.com/fwlink/?linkid=849684
+        </string>
+        <!-- Explain text for smart card emulation policy -->
+        <string id="MSPassport_DisableSmartCardNode">Turn off smart card emulation</string>
+        <string id="MSPassport_DisableSmartCardNodeExplain">Windows Hello for Business automatically provides smart card emulation for compatibility with smart card enabled applications.
+
+If you enable this policy setting, Windows Hello for Business provisions Windows Hello for Business credentials that are not compatible with smart card applications.
+
+If you disable or do not configure this policy setting, Windows Hello for Business provisions Windows Hello for Business credentials compatible with smart card applications.
+
+NOTE: This policy affects Windows Hello for Business credentials at the time of creation. Credentials created before the application of this policy continue to provide smart card emulation. To change an existing credential, enable this policy setting and select "I forgot my PIN" from Settings.
+        </string>
+        <string id="MSPassport_AllowAllUserAccessToSmartCardNode">Allow enumeration of emulated smart card for all users</string>
+        <string id="MSPassport_AllowAllUserAccessToSmartCardNodeExplain">Windows prevents users on the same computer from enumerating provisioned Windows Hello for Business credentials for other users.
+
+If you enable this policy setting, Windows allows all users of the computer to enumerate all Windows Hello for Business credentials, but still require each user to provide their own factors for authentication.
+
+If you disable or do not configure this policy setting, Windows does not allow the enumeration of provisioned Windows Hello for Business credentials for other users on the same device.
+
+This policy setting is designed for a single user who has enrolled privileged and non-privileged on a single device. The user owns both credentials, which enables them to sign-in using non-privileged credentials, but can performed elevated tasks without signing-out.
+
+This policy setting is incompatible with Windows Hello for Business credentials provisioned when the "Turn off smart card emulation" is enabled.
+
+Windows requires a reboot after you apply this setting to a computer.
         </string>
     </stringTable>
     <presentationTable>
@@ -136,11 +188,30 @@ NOTE: Disabling or not configuring this policy setting and enabling the "Use Win
       <presentation id="MSPassport_PINExpirationControl">
         <decimalTextBox refId="MSPassport_PINExpirationDataType" spin="true" spinStep="1" defaultvalue="0">PIN Expiration</decimalTextBox>
       </presentation>
-	  <presentation id="MSPassport_ExcludeSecurityDevicesControl">
-		<text>Do not use the following security devices:</text>
-		<checkBox refId="MSPassport_ExcludeTPM12DataType" defaultChecked="false">TPM 1.2</checkBox>
-	  </presentation>
-
+      <presentation id="MSPassport_ExcludeSecurityDevicesControl">
+        <text>Do not use the following security devices:</text>
+        <checkBox refId="MSPassport_ExcludeTPM12DataType" defaultChecked="false">TPM 1.2</checkBox>
+      </presentation>
+      <presentation id="MSPassport_UseDeviceUnlock_Control">
+        <textBox refId="MSPassport_UseDeviceUnlock_GroupA">
+            <label>First unlock factor credential providers</label>
+            <defaultValue>{D6886603-9D2F-4EB2-B667-1971041FA96B},{8AF662BF-65A0-4D0A-A540-A338A999D36F},{BEC09223-B018-416D-A0AC-523971B639F5}</defaultValue>
+        </textBox>
+        <textBox refId="MSPassport_UseDeviceUnlock_GroupB">
+            <label>Second unlock factor credential providers</label>
+            <defaultValue>{27FBDB57-B613-4AF2-9D7E-4FA7A66C21AD},{D6886603-9D2F-4EB2-B667-1971041FA96B}</defaultValue>
+        </textBox>
+        <textBox refId="MSPassport_UseDeviceUnlock_Plugins">
+            <label>Signal rules for device unlock</label>
+            <defaultValue><![CDATA[<rule schemaVersion="1.0"> <signal type="bluetooth" scenario="Authentication" classOfDevice="512" rssiMin="-10" rssiMaxDelta="-10"/> </rule>]]> </defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="MSPassport_UseDynamicLock_Control">
+        <textBox refId="MSPassport_UseDynamicLock_Plugins">
+            <label>Signal rules for dynamic lock</label>
+            <defaultValue><![CDATA[<rule schemaVersion="1.0"> <signal type="bluetooth" scenario="Dynamic Lock" classOfDevice="512" rssiMin="-10" rssiMaxDelta="-10"/> </rule>]]> </defaultValue>
+        </textBox>
+      </presentation>
     </presentationTable>
   </resources>
 </policyDefinitionResources>

@@ -15,6 +15,16 @@ If you enable this policy setting, MDM Enrollment will be disabled for all users
 
 If you disable this policy setting, MDM Enrollment will be enabled for all users.
 </string>
+        <string id="MDM_JoinMDM_DisplayName">Auto MDM Enrollment with AAD Token</string>
+        <string id="MDM_JoinMDM_Help">
+            This policy setting specifies whether to attempt Mobile Device Management (MDM) Enrollment. If Successful, the computer will remotely managed by the MDM Server configured in AAD.
+
+            If you do not configure this policy setting, MDM will be left alone
+
+            If you enable this policy setting, MDM Device will attempt to get an AAD token, and if so, will enroll with it using the URL configured in AAD
+
+            If you disable this policy setting, MDM will be unenrolled
+        </string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

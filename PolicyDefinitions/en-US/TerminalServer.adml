@@ -5,7 +5,7 @@
   <description>enter description here</description>
   <resources>
     <stringTable>
-      <string id="TS_SUPPORTED_Windows10">At least Windows 10 or Windows Server 2016</string>
+      <string id="TS_SUPPORTED_Windows10">At least Windows 10 or Windows Server</string>
       <string id="TS_SUPPORTED_Windows8_or_ARM">At least Windows 8 or Windows RT</string>
       <string id="TS_SUPPORTED_Windows8_Server">At least Windows Server 2012</string>
       <string id="TS_SUPPORTED_Windows8_Enterprise_AND_Server"> At least Windows 8 Enterprise or Windows Server 2012</string>

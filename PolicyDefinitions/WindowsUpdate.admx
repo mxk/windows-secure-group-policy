@@ -343,6 +343,11 @@
           </item>
         </enum>
         <boolean id="AllowMUUpdateServiceId" valueName="AllowMUUpdateService" />
+        <boolean id="AutoUpdateSchEveryWeek" valueName="ScheduledInstallEveryWeek" />
+        <boolean id="AutoUpdateSchFirstWeek" valueName="ScheduledInstallFirstWeek" />
+        <boolean id="AutoUpdateSchSecondWeek" valueName="ScheduledInstallSecondWeek" />
+        <boolean id="AutoUpdateSchThirdWeek" valueName="ScheduledInstallThirdWeek" />
+        <boolean id="AutoUpdateSchFourthWeek" valueName="ScheduledInstallFourthWeek" />
       </elements>
     </policy>
     <policy name="CorpWuURL" class="Machine" displayName="$(string.CorpWuURL)" explainText="$(string.CorpWuURL_Help)" presentation="$(presentation.CorpWuURL)" key="Software\Policies\Microsoft\Windows\WindowsUpdate">
@@ -538,6 +543,41 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="ManagePreviewBuilds"
+            class="Machine"
+            displayName="$(string.ManagePreviewBuilds_Title)"
+            explainText="$(string.ManagePreviewBuilds_Help)"
+            key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+            presentation="$(presentation.ManagePreviewBuilds)"
+            valueName="ManagePreviewBuilds">
+      <parentCategory ref="DeferUpdateCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="ManagePreviewBuildsId" valueName="ManagePreviewBuildsPolicyValue" required="true">
+          <item displayName="$(string.DisablePreviewBuilds)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.DisablePreviewBuildsAndOptOut)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.EnablePreviewBuilds)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="DeferFeatureUpdates"
         class="Machine"
         displayName="$(string.DeferFeatureUpdates_Title)"
@@ -555,12 +595,27 @@
         </disabledValue>
         <elements>
           <enum id="BranchReadinessLevelId" valueName="BranchReadinessLevel" required="true">
-            <item displayName="$(string.CurrentBranchFeatureUpdates)">
+            <item displayName="$(string.PreviewBuildFastFeatureUpdates)">
+              <value>
+                <decimal value="2" />
+              </value>
+            </item>
+            <item displayName="$(string.PreviewBuildSlowFeatureUpdates)">
+              <value>
+                <decimal value="4" />
+              </value>
+            </item>
+            <item displayName="$(string.ReleasePreviewBranchFeatureUpdates)">
+              <value>
+                <decimal value="8" />
+              </value>
+            </item>
+            <item displayName="$(string.SemiAnnualChannelTargetedFeatureUpdates)">
               <value>
                 <decimal value="16" />
               </value>
             </item>
-            <item displayName="$(string.BusinessReadyFeatureUpdates)">
+            <item displayName="$(string.SemiAnnualChannelFeatureUpdates)">
               <value>
                 <decimal value="32" />
               </value>
@@ -1616,6 +1671,36 @@
             valueName="SetEDURestart">
       <parentCategory ref="WindowsUpdateCat" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowAutoWindowsUpdateDownloadOverMeteredNetwork"
+            class="Machine"
+            displayName="$(string.AllowAutoWindowsUpdateDownloadOverMeteredNetwork_Title)"
+            explainText="$(string.AllowAutoWindowsUpdateDownloadOverMeteredNetwork_Help)"
+            key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+            valueName="AllowAutoWindowsUpdateDownloadOverMeteredNetwork">
+      <parentCategory ref="WindowsUpdateCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableDualScan"
+        class="Machine"
+        displayName="$(string.DisableDualScan_Title)"
+        explainText="$(string.DisableDualScan_Help)"
+        key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+        valueName="DisableDualScan">
+      <parentCategory ref="WindowsUpdateCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

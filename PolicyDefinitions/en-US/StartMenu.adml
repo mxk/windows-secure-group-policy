@@ -169,6 +169,12 @@ If you enable this policy setting, the Power button and the Shut Down, Restart, 
 If you disable or do not configure this policy setting, the Power button and the Shut Down, Restart, Sleep, and Hibernate commands are available on the Start menu. The Power button on the Windows Security screen is also available.
 
 Note: Third-party programs certified as compatible with Microsoft Windows Vista, Windows XP SP2, Windows XP SP1, Windows XP, or Windows 2000 Professional are required to support this policy setting.</string>
+      <string id="HidePowerOptions">Remove and prevent access to the Shut Down, Restart, Sleep, and Hibernate commands</string>
+      <string id="HidePowerOptions_Help">This policy setting prevents users from performing the following commands from the Windows security screen, the logon screen, and the Start menu: Shut Down, Restart, Sleep, and Hibernate. This policy setting does not prevent users from running Windows-based programs that perform these functions.
+
+If you enable this policy setting, the shutdown, restart, sleep, and hibernate commands are removed from the Start menu. The Power button is also removed from the Windows Security screen, which appears when you press CTRL+ALT+DELETE, and from the logon screen.
+
+If you disable or do not configure this policy setting, the Power button and the Shut Down, Restart, Sleep, and Hibernate commands are available on the Start menu. The Power button on the Windows Security and logon screens is also available.</string>
       <string id="NoCommonGroups">Remove common program groups from Start Menu</string>
       <string id="NoCommonGroups_Help">Removes items in the All Users profile from the Programs menu on the Start menu.
 
@@ -596,6 +602,10 @@ If you disable or don't configure this policy setting, the Start screen will alw
 If you disable or don’t configure this policy setting, Windows will automatically select the size based on hardware form factor and users will be able to change the size of Start in Settings.</string>
       <string id="ForceLauncherSize_Collapsed">Start menu</string>
       <string id="ForceLauncherSize_Expanded">Full screen Start</string>
+      <string id="HidePeopleBar_DisplayName">Remove the People Bar from the taskbar</string>
+      <string id="HidePeopleBar_ExplainText">This policy allows you to remove the People Bar from the taskbar and disables the My People experience.
+
+If you enable this policy the people icon will be removed from the taskbar, the corresponding settings toggle is removed from the taskbar settings page, and users will not be able to pin people to the taskbar.</string>
     </stringTable>
     <presentationTable>
       <presentation id="NoMoreProgramsList">

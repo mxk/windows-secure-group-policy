@@ -15,7 +15,7 @@
     <!-- Disable User Auth Policy -->
     <policy name="MicrosoftAccount_DisableUserAuth" class="Machine" displayName="$(string.MicrosoftAccount_DisableUserAuth)" explainText="$(string.MicrosoftAccount_DisableUserAuthExplain)" key="Software\Policies\Microsoft\MicrosoftAccount" valueName="DisableUserAuth">
         <parentCategory ref="MicrosoftAccountCategory" />
-        <supportedOn ref="windows:SUPPORTED_WINDOWS_10_0" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
         <enabledValue>
           <decimal value="1" />
         </enabledValue>

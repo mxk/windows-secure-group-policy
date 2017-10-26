@@ -139,9 +139,65 @@
               <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
           </or>
       </definition>
+      
+      <!--Windows 10 RS2 to Windows Vista-->
+      <definition name="SUPPORTED_Windows_10_0_RS2ToVista" displayName="$(string.SUPPORTED_Windows_10_0_RS2ToVista)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--Windows 10 up to Windows 10 RS2 -->
+      <definition name="SUPPORTED_Windows_10_0_UP_TO_RS2" displayName="$(string.SUPPORTED_Windows_10_0_UP_TO_RS2)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+        </or>
+      </definition>
+
+      <!--At least Windows 10 RS1-->
+      <definition name="SUPPORTED_Windows_10_0_RS1" displayName="$(string.SUPPORTED_Windows_10_0_RS1)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
 
       <!--At least Windows 10 RS2-->
       <definition name="SUPPORTED_Windows_10_0_RS2" displayName="$(string.SUPPORTED_Windows_10_0_RS2)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--At least Windows 10 RS3-->
+      <definition name="SUPPORTED_Windows_10_0_RS3" displayName="$(string.SUPPORTED_Windows_10_0_RS3)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--At least Windows 10 RS4-->
+      <definition name="SUPPORTED_Windows_10_0_RS4" displayName="$(string.SUPPORTED_Windows_10_0_RS4)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--At least Windows 10 RS5-->
+      <definition name="SUPPORTED_Windows_10_0_RS5" displayName="$(string.SUPPORTED_Windows_10_0_RS5)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--At least Windows 10 RS6-->
+      <definition name="SUPPORTED_Windows_10_0_RS6" displayName="$(string.SUPPORTED_Windows_10_0_RS6)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--At least Windows 10 RS7-->
+      <definition name="SUPPORTED_Windows_10_0_RS7" displayName="$(string.SUPPORTED_Windows_10_0_RS7)">
           <or>
               <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
           </or>
@@ -166,6 +222,13 @@
         <or>
           <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="14"/>
         </or>
+      </definition>
+
+      <!--At least Windows Threshold SERVER -->
+      <definition name="SUPPORTED_Windows_10_0_SERVER" displayName="$(string.SUPPORTED_Windows_10_0_SERVER)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="13" maxVersionIndex="13"/>
+          </or>
       </definition>
 
       <!--Windows 2000 to Windows Blue-->

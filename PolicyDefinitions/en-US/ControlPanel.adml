@@ -70,6 +70,10 @@ showonly:about;bluetooth
 Example: to specify that only the Bluetooth page (which has URI ms-settings:bluetooth) should be hidden:
 
 hide:bluetooth</string>
+      <string id="AllowOnlineTips">Allow Online Tips</string>
+      <string id="AllowOnlineTips_Help">Enables or disables the retrieval of online tips and help for the Settings app.
+
+If disabled, Settings will not contact Microsoft content services to retrieve tips and help content.</string>
     </stringTable>
     <presentationTable>
       <presentation id="DisallowCpls">
@@ -82,6 +86,11 @@ hide:bluetooth</string>
         <textBox refId="SettingsPageVisibilityBox">
           <label>Settings Page Visibility:</label>
         </textBox>
+      </presentation>
+      <presentation id="AllowOnlineTips">
+        <checkBox refId="CheckBox_AllowOnlineTips">
+          Allow Settings to retrieve online tips.
+        </checkBox>
       </presentation>
     </presentationTable>
   </resources>

@@ -91,5 +91,29 @@
         </enum>
       </elements>
     </policy>
+    <policy name="LimitEnhancedDiagnosticDataWindowsAnalytics" class="Machine" displayName="$(string.LimitEnhancedDiagnosticDataWindowsAnalytics)" explainText="$(string.LimitEnhancedDiagnosticDataWindowsAnalytics_Explain)" presentation="$(presentation.LimitEnhancedDiagnosticDataWindowsAnalytics)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="LimitEnhancedDiagnosticDataWindowsAnalytics">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="LimitEnhancedDiagnosticDataWindowsAnalytics" valueName="LimitEnhancedDiagnosticDataWindowsAnalytics" required="true">
+          <item displayName="$(string.LimitEnhancedDiagnosticDataWindowsAnalytics_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.LimitEnhancedDiagnosticDataWindowsAnalytics_2)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

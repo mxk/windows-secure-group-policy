@@ -28,6 +28,9 @@
     <category name="EnergySaverSettingsCat" displayName="$(string.EnergySaverSettingsCat)">
       <parentCategory ref="PowerManagementCat" />
     </category>
+    <category name="PowerThrottlingSettingsCat" displayName="$(string.PowerThrottlingSettingsCat)">
+      <parentCategory ref="PowerManagementCat" />
+    </category>
   </categories>
   <policies>
     <policy name="DCBatteryDischargeAction0_2" class="Machine" displayName="$(string.DCBatteryDischargeAction0)" explainText="$(string.BatteryDischargeAction0Explain)" presentation="$(presentation.DCBatteryDischargeAction0_2)" key="Software\Policies\Microsoft\Power\PowerSettings\637EA02F-BBCB-4015-8E2C-A1C7B9C0B546">
@@ -653,6 +656,16 @@
     </policy>
     <policy name="DCConnectivityInStandby_2" class="Machine" displayName="$(string.DCConnectivityInStandby)" explainText="$(string.ConnectivityInStandbyExplain)" key="Software\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9" valueName="DCSettingIndex">
       <parentCategory ref="PowerSleepSettingsCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PowerThrottlingTurnOff" class="Machine" displayName="$(string.PowerThrottlingTurnOff)" explainText="$(string.PowerThrottlingTurnOffExplain)" key="System\CurrentControlSet\Control\Power\PowerThrottling" valueName="PowerThrottlingOff">
+      <parentCategory ref="PowerThrottlingSettingsCat" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
       <enabledValue>
         <decimal value="1" />

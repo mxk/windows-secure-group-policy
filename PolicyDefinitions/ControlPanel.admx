@@ -42,5 +42,19 @@
         <text id="SettingsPageVisibilityBox" valueName="SettingsPageVisibility" required="true" />
       </elements>
     </policy>
+    <policy name="AllowOnlineTips" class="Machine" displayName="$(string.AllowOnlineTips)" explainText="$(string.AllowOnlineTips_Help)" presentation="$(presentation.AllowOnlineTips)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
+      <parentCategory ref="windows:ControlPanel" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10" />
+      <elements>
+        <boolean id="CheckBox_AllowOnlineTips" valueName="AllowOnlineTips">
+           <trueValue>
+              <decimal value="1" />
+           </trueValue>
+           <falseValue>
+              <decimal value="0" />
+           </falseValue>
+        </boolean>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

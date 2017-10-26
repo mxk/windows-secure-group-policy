@@ -289,6 +289,13 @@ If you disable this policy setting, network connectivity in standby is not guara
 
 If you do not configure this policy setting, users control this setting.</string>
 
+      <string id="PowerThrottlingSettingsCat">Power Throttling Settings</string>
+      <string id="PowerThrottlingTurnOff">Turn off Power Throttling</string>
+      <string id="PowerThrottlingTurnOffExplain">This policy setting allows you to turn off Power Throttling.
+
+If you enable this policy setting, Power Throttling will be turned off.
+
+If you disable or do not configure this policy setting, users control this setting.</string>
     </stringTable>
     <presentationTable>
       <presentation id="ACHibernateTimeOut_1">

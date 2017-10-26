@@ -204,18 +204,18 @@ If you disable or do not configure this policy setting, employees in your organi
 
 If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
       </string>
-      <string id="LetAppsSyncWithDevices_Name">Let Windows apps sync with devices</string>
-      <string id="LetAppsSyncWithDevices_Explain">This policy setting specifies whether Windows apps can sync with devices.
+      <string id="LetAppsSyncWithDevices_Name">Let Windows apps communicate with unpaired devices</string>
+      <string id="LetAppsSyncWithDevices_Explain">This policy setting specifies whether Windows apps can communicate with unpaired wireless devices.
 
 You can specify either a default setting for all apps or a per-app setting by specifying a Package Family Name. You can get the Package Family Name for an app by using the Get-AppPackage Windows PowerShell cmdlet. A per-app setting overrides the default setting.
 
-If you choose the "User is in control" option, employees in your organization can decide whether Windows apps can sync with devices by using Settings &gt; Privacy on the device.
+If you choose the "User is in control" option, employees in your organization can decide whether Windows apps can communicate with unpaired wireless devices by using Settings &gt; Privacy on the device.
 
-If you choose the "Force Allow" option, Windows apps are allowed to sync with devices and employees in your organization cannot change it.
+If you choose the "Force Allow" option, Windows apps are allowed to communicate with unpaired wireless devices and employees in your organization cannot change it.
 
-If you choose the "Force Deny" option, Windows apps are not allowed to sync with devices and employees in your organization cannot change it.
+If you choose the "Force Deny" option, Windows apps are not allowed to communicate with unpaired wireless devices and employees in your organization cannot change it.
 
-If you disable or do not configure this policy setting, employees in your organization can decide whether Windows apps can sync with devices by using Settings &gt; Privacy on the device.
+If you disable or do not configure this policy setting, employees in your organization can decide whether Windows apps can communicate with unpaired wireless devices by using Settings &gt; Privacy on the device.
 
 If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
       </string>

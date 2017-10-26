@@ -27,7 +27,7 @@ Note: Trusted Platform Module (TPM) initialization might occur during BitLocker 
 
 Note:  This policy is only applicable to computers running Windows Server 2008 or Windows Vista.
 
-On a computer with a compatible Trusted Platform Module (TPM), two authentication methods can be used at startup to provide added protection for encrypted data. When the computer starts, it can require users to insert a USB flash drive containing a startup key. It can also require users to enter a 6-digit to 20-digit startup personal identification number (PIN).
+On a computer with a compatible Trusted Platform Module (TPM), two authentication methods can be used at startup to provide added protection for encrypted data. When the computer starts, it can require users to insert a USB flash drive containing a startup key. It can also require users to enter a 4-digit to 20-digit startup personal identification number (PIN).
 
 A USB flash drive containing a startup key is needed on computers without a compatible TPM. Without a TPM, BitLocker-encrypted data is protected solely by the key material on this USB flash drive.
 
@@ -351,11 +351,14 @@ The setting that controls boot debugging (0x16000010) will always be validated a
 
 
       <string id="MinimumPINLength_Name">Configure minimum PIN length for startup</string>
-      <string id="MinimumPINLength_Help">This policy setting allows you to configure a minimum length for a Trusted Platform Module (TPM) startup PIN. This policy setting is applied when you turn on BitLocker. The startup PIN must have a minimum length of 6 digits and can have a maximum length of 20 digits.
+      <string id="MinimumPINLength_Help">
+          This policy setting allows you to configure a minimum length for a Trusted Platform Module (TPM) startup PIN. This policy setting is applied when you turn on BitLocker. The startup PIN must have a minimum length of 4 digits and can have a maximum length of 20 digits.
 
-If you enable this policy setting, you can require a minimum number of digits to be used when setting the startup PIN.
+          If you enable this policy setting, you can require a minimum number of digits to be used when setting the startup PIN.
 
-If you disable or do not configure this policy setting, users can configure a startup PIN of any length between 6 and 20 digits.
+          If you disable or do not configure this policy setting, users can configure a startup PIN of any length between 6 and 20 digits.
+
+          NOTE: If minimum PIN length is set below 6 digits, Windows will attempt to update the TPM 2.0 lockout period to be greater than the default when a PIN is changed. If successful, Windows will only reset the TPM lockout period back to default if the TPM is reset.
 
       </string>
 

@@ -145,17 +145,17 @@ If the status is set to Not Configured, use of Automatic Updates is not specifie
         Note: The option to "Download files with no Url..." is only used if the "Alternate Download Server" is set.
 
         Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.</string>
-      <string id="DetectionFrequency_Help">Specifies the hours that Windows will use to determine how long to wait before checking for available updates. The exact wait time is determined by using the hours specified here minus zero to twenty percent of the hours specified. For example, if this policy is used to specify a 20 hour detection frequency, then all clients to which this policy is applied will check for updates anywhere between 16 and 20 hours.
+      <string id="DetectionFrequency_Help">Specifies the hours that Windows will use to determine how long to wait before checking for available updates. The exact wait time is a sum of the specific value and a random variant of 0-4 hours.
 
-If the status is set to Enabled, Windows will check for available updates at the specified interval.
+        If the status is set to Enabled, Windows will check for available updates at the specified interval.
 
-If the status is set to Disabled or Not Configured, Windows will check for available updates at the default interval of 22 hours.
+        If the status is set to Disabled or Not Configured, Windows will check for available updates at the default interval of 22 hours.
 
-Note: The "Specify intranet Microsoft update service location" setting must be enabled for this policy to have effect.
+        Note: The "Specify intranet Microsoft update service location" setting must be enabled for this policy to have effect.
 
-Note: If the "Configure Automatic Updates" policy is disabled, this policy has no effect.
+        Note: If the "Configure Automatic Updates" policy is disabled, this policy has no effect.
 
-Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.</string>
+        Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.</string>
       <string id="DetectionFrequency_Title">Automatic Updates detection frequency</string>
       <string id="ElevateNonAdmins_Help">This policy setting allows you to control whether non-administrative users will receive update notifications based on the "Configure Automatic Updates" policy setting.
 
@@ -301,23 +301,45 @@ Note: This policy is not supported on Windows RT. Setting this policy will not h
 Enabling this policy will disable that functionality, and may cause connection to public services such as the Windows Store to stop working.
 
 Note: This policy applies only when this PC is configured to connect to an intranet update service using the "Specify intranet Microsoft update service location" policy.</string>
-      <string id="DeferUpdateCat">Defer Windows Updates</string>
-      <string id="CurrentBranchFeatureUpdates">Current Branch</string>
-      <string id="BusinessReadyFeatureUpdates">Current Branch for Business</string>
-      <string id="DeferFeatureUpdates_Title">Select when Feature Updates are received</string>
-      <string id="DeferFeatureUpdates_Help">Enable this policy to specify what type of feature updates to receive, and when.
+      <string id="DeferUpdateCat">Windows Update for Business</string>
+      <string id="ManagePreviewBuilds_Title">Manage preview builds</string>
+      <string id="ManagePreviewBuilds_Help">Selecting "Disable preview builds" will prevent preview builds from installing on the device. This will prevent users from opting into the Windows Insider Program, through Settings -&gt; Update and Security.
 
-The branch readiness level for each new Windows 10 feature update is initially considered a "Current Branch" (CB) release, to be used by organizations for initial deployments. Once Microsoft has verified the feature update should be considered for enterprise deployment, it will be declared a branch readiness level of "Current Branch for Business" (CBB).
+Selecting "Disable preview builds once next release is public" will prevent preview builds from installing once the next Windows release is public. This option is useful when your device is set up to install preview and you want to gracefully opt out the device for flighting. This option will provide preview builds until devices reaches the next public release. 
 
-You can defer receiving feature updates for up to 365 days.
+Selecting "Enable preview builds" will enable preview builds installation on the device. Users can download and install Windows preview builds on their devices by opting-in through Settings -&gt; Update and Security -&gt; Windows Insider Program. Admins can also use other policies to manage flight settings on behalf of users when this value is set.</string>
+      <string id="DisablePreviewBuilds">Disable preview builds</string>
+      <string id="DisablePreviewBuildsAndOptOut">Disable preview builds once next release is public</string>
+      <string id="EnablePreviewBuilds">Enable preview builds</string>
+      <string id="PreviewBuildFastFeatureUpdates">Preview Build - Fast</string>
+      <string id="PreviewBuildSlowFeatureUpdates">Preview Build - Slow</string>
+      <string id="ReleasePreviewBranchFeatureUpdates">Release Preview</string>
+      <string id="SemiAnnualChannelTargetedFeatureUpdates">Semi-Annual Channel (Targeted)</string>
+      <string id="SemiAnnualChannelFeatureUpdates">Semi-Annual Channel</string>
+      <string id="DeferFeatureUpdates_Title">Select when Preview Builds and Feature Updates are received</string>
+      <string id="DeferFeatureUpdates_Help">Enable this policy to specify the level of Preview Build or Feature Updates to receive, and when.
 
-To prevent feature updates from being received on their scheduled time, you can temporarily pause feature updates. The pause will remain in effect for 60 days or until you clear the start date field.
+* Preview Build - Fast: Devices set to this level will be the first to receive new builds of Windows with features not yet available to the general public. Select Fast to participate in identifying and reporting issues to Microsoft, and provide suggestions on new functionality.
+* Preview Build - Slow: Devices set to this level receive new builds of Windows before they are available to the general public, but at a slower cadence than those set to Fast, and with changes and fixes identified in earlier builds.
+* Release Preview: Receive builds of Windows just before Microsoft releases them to the general public.
+* Semi-Annual Channel (Targeted): Receive feature updates when they are released to the general public.
+* Semi-Annual Channel: Feature updates will arrive when they are declared Semi-Annual Channel. This usually occurs about 4 months after Semi-Annual Channel (Targeted), indicating that Microsoft, Independent Software Vendors (ISVs), partners and customer believe that the release is ready for broad deployment.
 
-To resume receiving Feature Updates which are paused, clear the start date field.
+When selecting a Preview Build:
+    - You can defer receiving Preview Builds for up to 14 days.
+    - To prevent Preview Builds from being received on their scheduled time, you can temporarily pause them. The pause will remain in effect for 35 days from the start time provided.
+    - To resume receiving Feature Updates which are paused, clear the start date field.
 
-If you disable or do not configure this policy, Windows Update will not alter its behavior.
+Preview Build enrollment requires a telemetry level setting of 2 or higher and your domain registered on insider.windows.com. For additional information on Preview Builds, see: https://aka.ms/wipforbiz
 
-Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effect.</string>
+When Selecting Current Branch or Current Branch for Business:
+    - You can defer receiving Feature Updates for up to 365 days.
+    - To prevent Feature Updates from being received on their scheduled time, you can temporarily pause them. The pause will remain in effect for 35 days from the start time provided.
+    - To resume receiving Feature Updates which are paused, clear the start date field.
+
+To configure Feature Updates you must have a telemetry level setting of 1 or higher.
+
+If you disable or do not configure this policy, Windows Update will not alter its behavior.</string>
       <string id="DeferQualityUpdates_Title">Select when Quality Updates are received</string>
       <string id="DeferQualityUpdates_Help">Enable this policy to specify when to receive quality updates.
 
@@ -539,6 +561,14 @@ If any of the following policies are configured, this policy has no effect:
       <string id="SetEDURestart_Title">Update Power Policy for Cart Restarts</string>
       <string id="SetEDURestart_Help">Enabling this policy for EDU devices that remain on Carts overnight will skip power checks to ensure update reboots will happen at the scheduled install time.</string>
 
+      <string id="AllowAutoWindowsUpdateDownloadOverMeteredNetwork_Title">Allow updates to be downloaded automatically over metered connections</string>
+      <string id="AllowAutoWindowsUpdateDownloadOverMeteredNetwork_Help">Enabling this policy will automatically download updates, even over metered data connections (charges may apply)</string>
+
+      <string id="DisableDualScan_Title">Do not allow update deferral policies to cause scans against Windows Update</string>
+      <string id="DisableDualScan_Help">Enable this policy to not allow update deferral policies to cause scans against Windows Update.
+
+If this policy is disabled or not configured, then the Windows Update client may initiate automatic scans against Windows Update while update deferral policies are enabled.</string>
+
     </stringTable>
 
     <presentationTable>
@@ -551,6 +581,13 @@ If any of the following policies are configured, this policy has no effect:
         <checkBox refId="AutoUpdateAutomaticMaintenanceEnabled" defaultChecked="false">Install during automatic maintenance</checkBox>
         <dropdownList refId="AutoUpdateSchDay" defaultItem="0">Scheduled install day: </dropdownList>
         <dropdownList refId="AutoUpdateSchTime" defaultItem="3">Scheduled install time:</dropdownList>
+        <text>If you have selected “4 – Auto download and schedule the install” for your scheduled install day and specified a schedule, you also have the option to limit updating to a weekly, bi-weekly or monthly occurrence, using the options below:</text>
+        <checkBox refId="AutoUpdateSchEveryWeek" defaultChecked="true">Every week</checkBox>
+        <checkBox refId="AutoUpdateSchFirstWeek" defaultChecked="false">First week of the month</checkBox>
+        <checkBox refId="AutoUpdateSchSecondWeek" defaultChecked="false">Second week of the month</checkBox>
+        <checkBox refId="AutoUpdateSchThirdWeek" defaultChecked="false">Third week of the month</checkBox>
+        <checkBox refId="AutoUpdateSchFourthWeek" defaultChecked="false">Fourth week of the month</checkBox>
+        <text> </text>
         <checkBox refId="AllowMUUpdateServiceId" defaultChecked="false">Install updates for other Microsoft products</checkBox>
       </presentation>
       <presentation id="CorpWuURL">
@@ -599,20 +636,23 @@ If any of the following policies are configured, this policy has no effect:
         <text>this much time to save their</text>
         <decimalTextBox refId="AlwaysAutoRebootAtScheduledTime_Minutes" defaultValue="15">work (minutes): </decimalTextBox>
       </presentation>
+      <presentation id="ManagePreviewBuilds">
+        <dropdownList refId="ManagePreviewBuildsId" noSort="true" defaultItem="2">Set the behavior for receiving preview builds:</dropdownList>
+      </presentation>
       <presentation id="DeferFeatureUpdates">
-        <dropdownList refId="BranchReadinessLevelId" noSort="true" defaultItem="0">Select the branch readiness level for the feature updates you want to receive:</dropdownList>
-        <decimalTextBox refId="DeferFeatureUpdatesPeriodId" defaultValue="0">After a feature update is released, defer receiving it for this many days:</decimalTextBox>
+        <dropdownList refId="BranchReadinessLevelId" noSort="true" defaultItem="0">Select the Windows readiness level for the updates you want to receive:</dropdownList>
+        <decimalTextBox refId="DeferFeatureUpdatesPeriodId" defaultValue="0">After a Preview Build or Feature Update is released, defer receiving it for this many days:</decimalTextBox>
         <textBox refId="PauseFeatureUpdatesStartId">
-          <label>Pause Feature Updates starting</label>
+          <label>Pause Preview Builds or Feature Updates starting:</label>
         </textBox>
-        <text>(format yyyy-mm-dd example: 2016-09-16)</text>
+        <text>(format yyyy-mm-dd example: 2016-10-30)</text>
       </presentation>
       <presentation id="DeferQualityUpdates">
         <decimalTextBox refId="DeferQualityUpdatesPeriodId" defaultValue="0">After a quality update is released, defer receiving it for this many days:</decimalTextBox>
         <textBox refId="PauseQualityUpdatesStartId">
           <label>Pause Quality Updates starting</label>
         </textBox>
-        <text>(format yyyy-mm-dd example: 2016-09-16)</text>
+        <text>(format yyyy-mm-dd example: 2016-10-30)</text>
       </presentation>
       <presentation id="ActiveHours_Title">
         <text>Active Hours</text>

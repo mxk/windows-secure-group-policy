@@ -101,5 +101,39 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <!-- AllowPersistence -->
+    <policy name="AppHVSI_AllowPersistence"
+            class="Machine"
+            displayName="$(string.AppHVSI_AllowPersistence_DisplayName)"
+            explainText="$(string.AppHVSI_AllowPersistence_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="AllowPersistence"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <!-- Auditing Settings -->
+    <policy name="AppHVSI_AuditApplicationGuardConfig"
+            class="Machine"
+            displayName="$(string.AppHVSI_AuditApplicationGuard_DisplayName)"
+            explainText="$(string.AppHVSI_AuditApplicationGuard_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="AuditApplicationGuard"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

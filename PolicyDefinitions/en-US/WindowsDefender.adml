@@ -6,6 +6,10 @@
     <string id="AntiSpywareDefender">Windows Defender Antivirus</string>
     <string id="AntiSpyware">Endpoint Protection</string>
     <string id="Exclusions">Exclusions</string>
+    <string id="ExploitGuard">Windows Defender Exploit Guard</string>
+    <string id="ExploitGuard_ASR">Attack Surface Reduction</string>
+    <string id="ExploitGuard_ControlledFolderAccess">Controlled Folder Access</string>
+    <string id="ExploitGuard_NetworkProtection">Network Protection</string>
     <string id="NetworkRealtimeInspection">Network Inspection System</string>
     <string id="NetworkRealtimeInspection_Exclusions">Exclusions</string>
     <string id="Quarantine">Quarantine</string>
@@ -26,7 +30,18 @@
     If you disable this setting, the antimalware service will load as a low priority task.</string>
 
     <string id="DisableAutoExclusions">Turn off Auto Exclusions</string>
-    <string id="DisableAutoExclusions_Explain">Allows an administrator to specify if Automatic Exclusions feature for Server SKUs should be turned off.</string>
+    <string id="DisableAutoExclusions_Explain">
+        Allows an administrator to specify if Automatic Exclusions feature for Server SKUs should be turned off.
+
+        Disabled (Default):
+        Windows defender will exclude pre-defined list of paths from the scan to improve performance.
+
+        Enabled:
+        Windows defender will not exclude pre-defined list of paths from scans. This can impact machine performance in some scenarios.
+
+        Not configured:
+        Same as Disabled.
+    </string>
     <string id="DisableAntiSpyware">Turn off Endpoint Protection</string>
     <string id="DisableAntiSpyware_Explain">This policy setting turns off Endpoint Protection.
 
@@ -732,9 +747,15 @@
       Note: This feature requires the "Join Microsoft MAPS" setting enabled in order to function.
 
       Possible options are:
-      (0x0) Default Windows Defender Antivirus blocking level
-      (0x2) High blocking level      
+      (0x0) Default windows defender blocking level
+      (0x2) High blocking level - aggressively block unknowns while optimizing client performance (greater chance of false positives)
+      (0x4) High+ blocking level – aggressively block unknowns and apply additional protection measures (may impact  client performance)
+      (0x6) Zero tolerance blocking level – block all unknown executables
     </string>
+    <string id="MpCloudBlockLevel_Default_Level">Default Windows Defender Antivirus blocking level</string>
+    <string id="MpCloudBlockLevel_High_Level">High blocking level</string>
+    <string id="MpCloudBlockLevel_High_Plus_Level">High+ blocking level</string>
+    <string id="MpCloudBlockLevel_Zero_Tolerance_Level">Zero tolerance blocking level</string>
     <string id="MpBafsExtendedTimeout">Configure extended cloud check</string>
     <string id="MpBafsExtendedTimeout_Explain">
       This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe.
@@ -745,8 +766,138 @@
 
       Note: This feature depends on three other MAPS settings - "Configure the 'Block at First Sight' feature; "Join Microsoft MAPS"; "Send file samples when further analysis is required" all need to be enabled.
     </string>
-    <string id="MpCloudBlockLevel_Default_Level">Default Windows Defender Antivirus blocking level</string>
-    <string id="MpCloudBlockLevel_High_Level">High blocking level</string>    
+    <string id="ExploitGuard_EnableNetworkProtection">Prevent users and apps from accessing dangerous websites</string>
+    <string id="ExploitGuard_EnableNetworkProtection_Explain">
+    Enable or disable Windows Defender Exploit Guard network protection to prevent employees from using any application to access dangerous domains that may host phishing scams, exploit-hosting sites, and other malicious content on the Internet.
+
+    Enabled:
+    Specify the mode in the Options section:
+    -Block: Users and applications will not be able to access dangerous domains
+    -Audit Mode: Users and applications can connect to dangerous domains, however if this feature would have blocked access if it were set to Block, then a record of the event will be in the event logs.
+
+    Disabled:
+    Users and applications will not be blocked from connecting to dangerous domains.
+
+    Not configured:
+    Same as Disabled.
+    </string>
+    <string id="ExploitGuard_ASR_ASROnlyExclusions">Exclude files and paths from Attack Surface Reduction Rules</string>
+    <string id="ExploitGuard_ASR_ASROnlyExclusions_Explain">
+    Exclude files and paths from Attack Surface Reduction (ASR) rules.
+
+    Enabled:
+    Specify the folders or files and resources that should be excluded from ASR rules in the Options section.
+    Enter each rule on a new line as a name-value pair:
+    - Name column: Enter a folder path or a fully qualified resource name. For example, ""C:\Windows"" will exclude all files in that directory. ""C:\Windows\App.exe"" will exclude only that specific file in that specific folder
+    - Value column: Enter ""0"" for each item
+
+    Disabled:
+    No exclusions will be applied to the ASR rules.
+
+    Not configured:
+    Same as Disabled.
+
+    You can configure ASR rules in the Configure Attack Surface Reduction rules GP setting.
+    </string>
+    <string id="ExploitGuard_ASR_Rules">Configure Attack Surface Reduction rules</string>
+    <string id="ExploitGuard_ASR_Rules_Explain">
+    Set the state for each Attack Surface Reduction (ASR) rule.
+
+    After enabling this setting, you can set each rule to the following in the Options section:
+    - Block: the rule will be applied
+    - Audit Mode: if the rule would normally cause an event, then it will be recorded (although the rule will not actually be applied)
+    - Off: the rule will not be applied
+
+    Enabled:
+    Specify the state for each ASR rule under the Options section for this setting.
+    Enter each rule on a new line as a name-value pair:
+    - Name column: Enter a valid ASR rule ID
+    - Value column: Enter the status ID that relates to state you want to specify for the associated rule
+
+    The following status IDs are permitted under the value column:
+    - 1 (Block)
+    - 0 (Off)
+    - 2 (Audit)
+    
+    Example:
+    xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx            0
+    xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx            1
+    xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx            2
+
+    Disabled:
+    No ASR rules will be configured.
+
+    Not configured:
+    Same as Disabled.
+
+    You can exclude folders or files in the ""Exclude files and paths from Attack Surface Reduction Rules"" GP setting.
+    </string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess">Configure Controlled folder access</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Explain">
+    Enable or disable controlled folder access for untrusted applications. 
+
+    Block:
+    Untrusted applications cannot modify or delete files in protected folders, such as the Documents folder.
+
+    Disabled:
+    All applications can modify or delete files in protected folders, such as the Documents folder.
+
+    Audit Mode:
+    Applications that would normally be considered ""untrusted"" if the setting was Enabled will still be able to modify or delete files in protected folders. However, each event will be recorded in the Windows event log.
+
+    Not configured:
+    Same as Disabled.
+
+    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the configure allowed applications GP setting.
+
+    Default system folders are automatically guarded, but you can add folders in the configure protected folders GP setting.
+    </string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable">Disable (Default)</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block">Block</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit">Audit Mode</string>
+    <string id="ExploitGuard_ControlledFolderAccess_AllowedApplications">Configure allowed applications</string>
+    <string id="ExploitGuard_ControlledFolderAccess_AllowedApplications_Explain">
+    Add additional applications that should be considered "trusted" by controlled folder access.
+
+    These applications are allowed to modify or delete files in controlled folder access folders.
+
+    Windows Defender Antivirus automatically determines which applications should be trusted. You can configure this setting to add additional applications.
+
+    Enabled: 
+    Specify additional allowed applications in the Options section..
+
+    Disabled:
+    No additional applications will be added to the trusted list.
+
+    Not configured:
+    Same as Disabled.
+
+    You can enable controlled folder access in the Configure controlled folder access GP setting.
+
+    Default system folders are automatically guarded, but you can add folders in the configure protected folders GP setting.
+    </string>
+    <string id="ExploitGuard_ControlledFolderAccess_ProtectedFolders">Configure protected folders</string>
+    <string id="ExploitGuard_ControlledFolderAccess_ProtectedFolders_Explain">
+    Specify additional folders that should be guarded by the Controlled folder access feature.
+
+    Files in these folders cannot be modified or deleted by untrusted applications.
+
+    Default system folders are automatically protected. You can configure this setting to add additional folders. 
+    The list of default system folders that are protected is shown in the Windows Defender Security Center.
+
+    Enabled:
+    Specify additional folders that should be protected in the Options section.
+
+    Disabled:
+    No additional folders will be protected.
+
+    Not configured:
+    Same as Disabled.
+
+    You can enable controlled folder access in the Configure controlled folder access GP setting.
+
+    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
+    </string>
     </stringTable>
     <presentationTable>
     <presentation id="ProxyBypass">
@@ -893,6 +1044,24 @@
     <presentation id="MpBafsExtendedTimeout">
      <decimalTextBox refId="MpBafsExtendedTimeout" defaultValue="0">Specify the extended cloud check time in seconds</decimalTextBox>
     </presentation>
-    </presentationTable>
+    <presentation id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess">
+        <dropdownList refId="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess" noSort="true" defaultItem="0">Configure the guard my folders feature</dropdownList>
+    </presentation>
+    <presentation id="ExploitGuard_ASR_ASROnlyExclusions">
+        <listBox refId="ExploitGuard_ASR_ASROnlyExclusions">Exclusions from ASR rules:</listBox>
+    </presentation>
+    <presentation id="ExploitGuard_ASR_Rules">
+        <listBox refId="ExploitGuard_ASR_Rules">Set the state for each ASR rule:</listBox>
+    </presentation>
+    <presentation id="ExploitGuard_ControlledFolderAccess_AllowedApplications">
+        <listBox refId="ExploitGuard_ControlledFolderAccess_AllowedApplications">Enter the applications that should be trusted:</listBox>
+    </presentation>
+    <presentation id="ExploitGuard_ControlledFolderAccess_ProtectedFolders">
+        <listBox refId="ExploitGuard_ControlledFolderAccess_ProtectedFolders">Enter the folders that should be guarded:</listBox>
+    </presentation>
+    <presentation id="ExploitGuard_EnableNetworkProtection">
+        <dropdownList refId="ExploitGuard_EnableNetworkProtection" noSort="true" defaultItem="0"></dropdownList>
+    </presentation>
+   </presentationTable>
 </resources>
 </policyDefinitionResources>

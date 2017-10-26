@@ -13,6 +13,18 @@
         <category name="Exclusions" displayName="$(string.Exclusions)">
             <parentCategory ref="AntiSpywareDefender" />
         </category>
+        <category name="ExploitGuard" displayName="$(string.ExploitGuard)">
+            <parentCategory ref="AntiSpywareDefender" />
+        </category>
+        <category name="ExploitGuard_ASR" displayName="$(string.ExploitGuard_ASR)">
+            <parentCategory ref="ExploitGuard" />
+        </category>
+        <category name="ExploitGuard_ControlledFolderAccess" displayName="$(string.ExploitGuard_ControlledFolderAccess)">
+            <parentCategory ref="ExploitGuard" />
+        </category>
+        <category name="ExploitGuard_NetworkProtection" displayName="$(string.ExploitGuard_NetworkProtection)">
+            <parentCategory ref="ExploitGuard" />
+        </category>
         <category name="NetworkRealtimeInspection" displayName="$(string.NetworkRealtimeInspection)">
             <parentCategory ref="AntiSpywareDefender" />
         </category>
@@ -53,7 +65,7 @@
     <policies>
         <policy name="DisableAutoExclusions" class="Machine" displayName="$(string.DisableAutoExclusions)" explainText="$(string.DisableAutoExclusions_Explain)" key="Software\Policies\Microsoft\Windows Defender\Exclusions" valueName="DisableAutoExclusions">
             <parentCategory ref="Exclusions" />
-            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_SERVER" />
             <enabledValue>
                 <decimal value="1" />
             </enabledValue>
@@ -109,11 +121,11 @@
             </elements>
         </policy>
         <policy name="ProxyPacUrl" class="Machine" displayName="$(string.ProxyPacUrl)" explainText="$(string.ProxyPacUrl_Explain)" key="Software\Policies\Microsoft\Windows Defender" presentation="$(presentation.ProxyPacUrl)">
-          <parentCategory ref="AntiSpywareDefender" />
-          <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
-          <elements>
+            <parentCategory ref="AntiSpywareDefender" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <elements>
             <text id="ProxyPacUrl" valueName="ProxyPacUrl" required="true" />
-          </elements>
+            </elements>
         </policy>
         <policy name="ProxyServer" class="Machine" displayName="$(string.ProxyServer)" explainText="$(string.ProxyServer_Explain)" key="Software\Policies\Microsoft\Windows Defender" presentation="$(presentation.ProxyServer)">
             <parentCategory ref="AntiSpywareDefender" />
@@ -360,6 +372,12 @@
         <policy name="Remediation_Scan_ScheduleDay" class="Machine" displayName="$(string.Remediation_Scan_ScheduleDay)" explainText="$(string.Remediation_Scan_ScheduleDay_Explain)" key="Software\Policies\Microsoft\Windows Defender\Remediation" valueName="Scan_ScheduleDay" presentation="$(presentation.Remediation_Scan_ScheduleDay)">
             <parentCategory ref="Remediation" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
+            <enabledValue>
+                <decimal value="0" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="8" />
+            </disabledValue>
             <elements>
                 <enum id="Remediation_Scan_ScheduleDay" valueName="Scan_ScheduleDay" required="true">
                     <item displayName="$(string.Remediation_Scan_ScheduleDay_0)">
@@ -435,12 +453,12 @@
         <parentCategory ref="Reporting" />
         <supportedOn ref="windows:SUPPORTED_Windows8" />
         <enabledValue>
-          <decimal value="0" />
+            <decimal value="0" />
         </enabledValue>
         <disabledValue>
-          <decimal value="1" />
+            <decimal value="1" />
         </disabledValue>
-      </policy>
+        </policy>
         <policy name="Reporting_NonCriticalTimeout" class="Machine" displayName="$(string.Reporting_NonCriticalTimeout)" explainText="$(string.Reporting_NonCriticalTimeout_Explain)" key="Software\Policies\Microsoft\Windows Defender\Reporting" valueName="NonCriticalTimeout" presentation="$(presentation.Reporting_NonCriticalTimeout)">
             <parentCategory ref="Reporting" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
@@ -470,14 +488,14 @@
             </elements>
         </policy>
         <policy name="Reporting_DisableEnhancedNotifications" class="Machine" displayName="$(string.Reporting_DisableEnhancedNotifications)" explainText="$(string.Reporting_DisableEnhancedNotifications_Explain)" key="Software\Policies\Microsoft\Windows Defender\Reporting" valueName="DisableEnhancedNotifications">
-          <parentCategory ref="Reporting" />
-          <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
-          <enabledValue>
+            <parentCategory ref="Reporting" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <enabledValue>
             <decimal value="1" />
-          </enabledValue>
-          <disabledValue>
+            </enabledValue>
+            <disabledValue>
             <decimal value="0" />
-          </disabledValue>
+            </disabledValue>
         </policy>
         <policy name="Scan_AllowPause" class="Machine" displayName="$(string.Scan_AllowPause)" explainText="$(string.Scan_AllowPause_Explain)" key="Software\Policies\Microsoft\Windows Defender\Scan" valueName="AllowPause">
             <parentCategory ref="Scan" />
@@ -725,6 +743,12 @@
         <policy name="Scan_ScheduleDay" class="Machine" displayName="$(string.Scan_ScheduleDay)" explainText="$(string.Scan_ScheduleDay_Explain)" key="Software\Policies\Microsoft\Windows Defender\Scan" valueName="ScheduleDay" presentation="$(presentation.Scan_ScheduleDay)">
             <parentCategory ref="Scan" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
+            <enabledValue>
+                <decimal value="0" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="8" />
+            </disabledValue>
             <elements>
                 <enum id="Scan_ScheduleDay" valueName="ScheduleDay" required="true">
                     <item displayName="$(string.Scan_ScheduleDay_0)">
@@ -877,6 +901,12 @@
         <policy name="SignatureUpdate_ScheduleDay" class="Machine" displayName="$(string.SignatureUpdate_ScheduleDay)" explainText="$(string.SignatureUpdate_ScheduleDay_Explain)" key="Software\Policies\Microsoft\Windows Defender\Signature Updates" valueName="ScheduleDay" presentation="$(presentation.SignatureUpdate_ScheduleDay)">
             <parentCategory ref="SignatureUpdate" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
+            <enabledValue>
+                <decimal value="0" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="8" />
+            </disabledValue>
             <elements>
                 <enum id="SignatureUpdate_ScheduleDay" valueName="ScheduleDay" required="true">
                     <item displayName="$(string.SignatureUpdate_ScheduleDay_0)">
@@ -972,10 +1002,10 @@
             <parentCategory ref="Spynet" />
             <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
             <enabledValue>
-              <decimal value="0" />
+                <decimal value="0" />
             </enabledValue>
             <disabledValue>
-              <decimal value="1" />
+                <decimal value="1" />
             </disabledValue>
         </policy>
         <policy name="Spynet_LocalSettingOverrideSpynetReporting" class="Machine" displayName="$(string.Spynet_LocalSettingOverrideSpynetReporting)" explainText="$(string.Spynet_LocalSettingOverrideSpynetReporting_Explain)" key="Software\Policies\Microsoft\Windows Defender\Spynet" valueName="LocalSettingOverrideSpynetReporting">
@@ -1090,30 +1120,114 @@
                 <text id="UX_Configuration_CustomDefaultActionToastString" valueName="CustomDefaultActionToastString" required="true" />
             </elements>
         </policy>
-      <policy name="MpEngine_MpCloudBlockLevel" class="Machine" displayName="$(string.MpCloudBlockLevel)" explainText="$(string.MpCloudBlockLevel_Explain)" key="Software\Policies\Microsoft\Windows Defender\MpEngine" valueName="MpCloudBlockLevel" presentation="$(presentation.MpCloudBlockLevel)">
+        <policy name="MpEngine_MpCloudBlockLevel" class="Machine" displayName="$(string.MpCloudBlockLevel)" explainText="$(string.MpCloudBlockLevel_Explain)" key="Software\Policies\Microsoft\Windows Defender\MpEngine" valueName="MpCloudBlockLevel" presentation="$(presentation.MpCloudBlockLevel)">
         <parentCategory ref="MpEngine" />
         <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
         <elements>
-          <enum id="MpCloudBlockLevel" valueName="MpCloudBlockLevel" required="true">
+            <enum id="MpCloudBlockLevel" valueName="MpCloudBlockLevel" required="true">
             <item displayName="$(string.MpCloudBlockLevel_Default_Level)">
-              <value>
+                <value>
                 <decimal value="0" />
-              </value>
+                </value>
             </item>
             <item displayName="$(string.MpCloudBlockLevel_High_Level)">
-              <value>
-                <decimal value="2" />
-              </value>
-            </item> 
-          </enum>
+                <value>
+                    <decimal value="2" />
+                </value>
+            </item>              
+            <item displayName="$(string.MpCloudBlockLevel_High_Plus_Level)">
+                <value>
+                    <decimal value="4" />
+                </value>
+            </item>
+            <item displayName="$(string.MpCloudBlockLevel_Zero_Tolerance_Level)">
+                <value>
+                    <decimal value="6" />
+                </value>
+            </item>
+            </enum>
         </elements>
-      </policy>
-      <policy name="MpEngine_MpBafsExtendedTimeout" class="Machine" displayName="$(string.MpBafsExtendedTimeout)" explainText="$(string.MpBafsExtendedTimeout_Explain)" key="Software\Policies\Microsoft\Windows Defender\MpEngine" valueName="MpBafsExtendedTimeout" presentation="$(presentation.MpBafsExtendedTimeout)">
-        <parentCategory ref="MpEngine" />
-        <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
-        <elements>
-          <decimal id="MpBafsExtendedTimeout" valueName="MpBafsExtendedTimeout" minValue="0" maxValue="50" />
-        </elements>
-      </policy>
+        </policy>
+        <policy name="MpEngine_MpBafsExtendedTimeout" class="Machine" displayName="$(string.MpBafsExtendedTimeout)" explainText="$(string.MpBafsExtendedTimeout_Explain)" key="Software\Policies\Microsoft\Windows Defender\MpEngine" valueName="MpBafsExtendedTimeout" presentation="$(presentation.MpBafsExtendedTimeout)">
+            <parentCategory ref="MpEngine" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <elements>
+                <decimal id="MpBafsExtendedTimeout" valueName="MpBafsExtendedTimeout" minValue="0" maxValue="50" />
+            </elements>
+        </policy>
+        <policy name="ExploitGuard_EnableNetworkProtection" class="Machine" displayName="$(string.ExploitGuard_EnableNetworkProtection)" explainText="$(string.ExploitGuard_EnableNetworkProtection_Explain)" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Network Protection" valueName="EnableNetworkProtection" presentation="$(presentation.ExploitGuard_EnableNetworkProtection)">
+            "<parentCategory ref="ExploitGuard_NetworkProtection" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <elements>
+            <enum id="ExploitGuard_EnableNetworkProtection" valueName="EnableNetworkProtection" required="true">
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable)">
+                <value>
+                    <decimal value="0" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block)">
+                <value>
+                    <decimal value="1" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit)">
+                <value>
+                    <decimal value="2" />
+                </value>
+            </item>
+            </enum>
+            </elements>
+        </policy>
+        <policy name="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess" class="Machine" displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess)" explainText="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Explain)" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access" valueName="EnableControlledFolderAccess" presentation="$(presentation.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess)">
+            <parentCategory ref="ExploitGuard_ControlledFolderAccess" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <elements>
+            <enum id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess" valueName="EnableControlledFolderAccess" required="true">
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable)">
+                <value>
+                    <decimal value="0" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block)">
+                <value>
+                    <decimal value="1" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit)">
+                <value>
+                    <decimal value="2" />
+                </value>
+            </item>
+           </enum>
+           </elements>
+           </policy>
+        <policy name="ExploitGuard_ASR_Rules" class="Machine" displayName="$(string.ExploitGuard_ASR_Rules)" explainText="$(string.ExploitGuard_ASR_Rules_Explain)" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR" valueName="ExploitGuard_ASR_Rules" presentation="$(presentation.ExploitGuard_ASR_Rules)">
+            <parentCategory ref="ExploitGuard_ASR" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <elements>
+                <list id="ExploitGuard_ASR_Rules" additive="true" explicitValue="true" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules" />
+            </elements>
+        </policy>
+        <policy name="ExploitGuard_ASR_ASROnlyExclusions" class="Machine" displayName="$(string.ExploitGuard_ASR_ASROnlyExclusions)" explainText="$(string.ExploitGuard_ASR_ASROnlyExclusions_Explain)" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR" valueName="ExploitGuard_ASR_ASROnlyExclusions" presentation="$(presentation.ExploitGuard_ASR_ASROnlyExclusions)">
+            <parentCategory ref="ExploitGuard_ASR" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <elements>
+                <list id="ExploitGuard_ASR_ASROnlyExclusions" additive="true" explicitValue="true" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\ASROnlyExclusions" />
+            </elements>
+        </policy>
+        <policy name="ExploitGuard_ControlledFolderAccess_AllowedApplications" class="Machine" displayName="$(string.ExploitGuard_ControlledFolderAccess_AllowedApplications)" explainText="$(string.ExploitGuard_ControlledFolderAccess_AllowedApplications_Explain)" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access" valueName="ExploitGuard_ControlledFolderAccess_AllowedApplications" presentation="$(presentation.ExploitGuard_ControlledFolderAccess_AllowedApplications)">
+            <parentCategory ref="ExploitGuard_ControlledFolderAccess" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <elements>
+                <list id="ExploitGuard_ControlledFolderAccess_AllowedApplications" additive="true" explicitValue="true" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access\AllowedApplications" />
+            </elements>
+        </policy>
+        <policy name="ExploitGuard_ControlledFolderAccess_ProtectedFolders" class="Machine" displayName="$(string.ExploitGuard_ControlledFolderAccess_ProtectedFolders)" explainText="$(string.ExploitGuard_ControlledFolderAccess_ProtectedFolders_Explain)" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access" valueName="ExploitGuard_ControlledFolderAccess_ProtectedFolders" presentation="$(presentation.ExploitGuard_ControlledFolderAccess_ProtectedFolders)">
+            <parentCategory ref="ExploitGuard_ControlledFolderAccess" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <elements>
+                <list id="ExploitGuard_ControlledFolderAccess_ProtectedFolders" additive="true" explicitValue="true" key="Software\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access\ProtectedFolders" />
+            </elements>
+        </policy>
     </policies>
 </policyDefinitions>

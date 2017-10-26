@@ -46,8 +46,8 @@ The "Not Configured" option leaves the policy setting undefined. Group Policy do
       <string id="EnabledWithoutLock">Enabled without lock</string>
       <string id="EnabledWithUefiLock">Enabled with UEFI lock</string>
       <string id="NotConfigured">Not Configured</string>
-      <string id="ConfigCIPolicy">Deploy Code Integrity Policy</string>
-      <string id="ConfigCIPolicyHelp">Deploy Code Integrity Policy
+      <string id="ConfigCIPolicy">Deploy Windows Defender Application Control</string>
+      <string id="ConfigCIPolicyHelp">Deploy Windows Defender Application Control
 
 This policy setting lets you deploy a Code Integrity Policy to a machine to control what is allowed to run on that machine.
 

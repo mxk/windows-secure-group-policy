@@ -37,6 +37,18 @@
           <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
         </or>
       </definition>
+      <!--Only on Windows 10, RS3 release or later. -->
+      <definition name="SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE" displayName="$(string.SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE_DisplayName)">
+        <or>
+          <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
+      <!--Only on Windows 10, RS3 version number or later -->
+      <definition name="SUPPORTED_INTERNET_BROWSER_RS3" displayName="$(string.SUPPORTED_INTERNET_BROWSER_RS3_DisplayName)">
+        <or>
+          <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
     </definitions>
   </supportedOn>
   <categories>
@@ -227,6 +239,21 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AlwaysEnableBooksLibrary"
+        class="Both"
+        displayName="$(string.AlwaysEnableBooksLibrary)"
+        explainText="$(string.AlwaysEnableBooksLibrary_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="AlwaysEnableBooksLibrary">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="Cookies"
             class="Both"
             displayName="$(string.Cookies)"
@@ -277,6 +304,19 @@
       <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1703" />
       <elements>
         <text id="ConfigureAdditionalSearchEngines_Prompt" valueName="ConfigureAdditionalSearchEngines" required="true" />
+      </elements>
+    </policy>
+    <policy name="ConfiguredFavorites"
+            class="Both"
+            displayName="$(string.ConfiguredFavorites)"
+            explainText="$(string.ConfiguredFavorites_Explain)"
+            presentation="$(presentation.ConfiguredFavorites_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Favorites">
+      <parentCategory ref="MicrosoftEdge" />
+      <!--TODO: Will change to a specific windows version, once available. -->
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE" />
+      <elements>
+        <text id="ConfiguredFavoritesPrompt" valueName="ConfiguredFavorites"/>
       </elements>
     </policy>
     <policy name="EnterpriseModeSiteList"
@@ -334,6 +374,22 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="LockdownFavorites"
+      class="Both"
+      displayName="$(string.LockdownFavorites)"
+      explainText="$(string.LockdownFavorites_Explain)"
+      key="Software\Policies\Microsoft\MicrosoftEdge\Favorites"
+      valueName="LockdownFavorites">
+        <parentCategory ref="MicrosoftEdge" />
+      <!--TODO: Will change to a specific windows version, once available. -->
+        <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
     </policy>
     <policy name="PreventSmartScreenPromptOverride"
             class="Both"

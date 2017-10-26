@@ -280,6 +280,11 @@ If you disable this setting, the system will need to be unlocked for the user to
       <string id="ExplainAllowSearchToUseLocation">This policy setting specifies whether search and Cortana can provide location aware search and Cortana results.
  
 If this is enabled, search and Cortana can access location information.</string>
+      <string id="AllowCloudSearch">Allow Cloud Search</string>
+      <string id="ExplainAllowCloudSearch">Allow search and Cortana to search cloud sources like OneDrive and SharePoint</string>
+      <string id="AllowCloudSearchDisabled">Disable Cloud Search</string>
+      <string id="AllowCloudSearchEnabled">Enable Cloud Search</string>
+      <string id="AllowCloudSearchControlledByUser">User Selected</string>
     </stringTable>
     <presentationTable>
       <presentation id="RichAttachmentPreviews">
@@ -362,6 +367,9 @@ If this is enabled, search and Cortana can access location information.</string>
       </presentation>
       <presentation id="SafeSearch">
         <dropdownList refId="SafeSearch_Dropdown" noSort="true" defaultItem="1">Default Safe Search Setting</dropdownList>
+      </presentation>
+      <presentation id="AllowCloudSearch">
+        <dropdownList refId="AllowCloudSearch_Dropdown" noSort="true" defaultItem="2">Cloud Search Setting</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

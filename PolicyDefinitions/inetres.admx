@@ -212,6 +212,22 @@
         </and>
       </definition>
 
+      <!--At least Internet Explorer 11.0 on Windows 10, version 1607 or later-->
+      <definition name="SUPPORTED_IE11WIN10_1607" displayName="$(string.SUPPORTED_IE11WIN10_1607)">
+        <and>
+          <range ref="products:InternetExplorer" minVersionIndex="11"/>
+          <reference ref="windows:SUPPORTED_Windows_10_0_RS1"/>
+        </and>
+      </definition>
+
+      <!--At least Internet Explorer 11.0 on Windows 10, version 1703 or later-->
+      <definition name="SUPPORTED_IE11WIN10_1703" displayName="$(string.SUPPORTED_IE11WIN10_1703)">
+        <and>
+          <range ref="products:InternetExplorer" minVersionIndex="11"/>
+          <reference ref="windows:SUPPORTED_Windows_10_0_RS2"/>
+        </and>
+      </definition>
+
       <!--Only Internet Explorer 7.0-->
       <definition name="SUPPORTED_IE7ONLY" displayName="$(string.SUPPORTED_IE7ONLY)">
         <or>
@@ -1247,9 +1263,9 @@
         <decimal value="1" />
       </disabledValue>
     </policy>
-    <policy name="HideNewEdgeButton" class="User" displayName="$(string.HideNewEdgeButton)" explainText="$(string.HideNewEdgeButton_Explain)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="HideNewEdgeButton">
+    <policy name="HideNewEdgeButton" class="Both" displayName="$(string.HideNewEdgeButton)" explainText="$(string.HideNewEdgeButton_Explain)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="HideNewEdgeButton">
       <parentCategory ref="Browsing" />
-      <supportedOn ref="SUPPORTED_IE11" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1703" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -3933,7 +3949,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_LocalMachine" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0">
       <parentCategory ref="IZ_LocalMachineZone" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -3951,7 +3967,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_Intranet" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1">
       <parentCategory ref="IZ_IntranetZone" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -3969,7 +3985,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_Trusted" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2">
       <parentCategory ref="IZ_TrustedSitesZone" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -3987,7 +4003,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_Internet" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
       <parentCategory ref="IZ_InternetZone" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -4005,7 +4021,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_Restricted" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4">
       <parentCategory ref="IZ_RestrictedSitesZone" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -4023,7 +4039,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_LocalMachineLockdown" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\0">
       <parentCategory ref="IZ_LocalMachineZoneLockdown" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -4041,7 +4057,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_IntranetLockdown" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\1">
       <parentCategory ref="IZ_IntranetZoneLockdown" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -4059,7 +4075,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_TrustedLockdown" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOn)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\2">
       <parentCategory ref="IZ_TrustedSitesZoneLockdown" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -4077,7 +4093,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_InternetLockdown" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3">
       <parentCategory ref="IZ_InternetZoneLockdown" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -4095,7 +4111,7 @@
     </policy>
     <policy name="IZ_PolicyAllowTDCControl_Both_RestrictedLockdown" class="Both" displayName="$(string.IZ_PolicyAllowTDCControl)" explainText="$(string.IZ_EXPLAIN_PolicyAllowTDCControl)" presentation="$(presentation.IZ_PolicyAllowTDCControl_DefaultOff)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\4">
       <parentCategory ref="IZ_RestrictedSitesZoneLockdown" />
-      <supportedOn ref="SUPPORTED_IE10" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <elements>
         <enum id="IZ_Partname120c" valueName="120c" required="true">
           <item displayName="$(string.IZ_ItemnameEnable)">
@@ -5051,7 +5067,7 @@
         </enum>
       </elements>
     </policy>
-    <policy name="IZ_PolicyAllowVBScript_1" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
+    <policy name="IZ_PolicyAllowVBScript_1" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultDisable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3">
       <parentCategory ref="IZ_InternetZone" />
       <supportedOn ref="SUPPORTED_IE11" />
       <elements>
@@ -6147,7 +6163,7 @@
         </enum>
       </elements>
     </policy>
-    <policy name="IZ_PolicyAllowVBScript_2" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3">
+    <policy name="IZ_PolicyAllowVBScript_2" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultDisable)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3">
       <parentCategory ref="IZ_InternetZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE11" />
       <elements>
@@ -11696,7 +11712,7 @@
         </enum>
       </elements>
     </policy>
-    <policy name="IZ_PolicyAllowVBScript_7" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultEnable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4">
+    <policy name="IZ_PolicyAllowVBScript_7" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultDisable)" presentation="$(presentation.IZ_PolicyAllowVBScript_1)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4">
       <parentCategory ref="IZ_RestrictedSitesZone" />
       <supportedOn ref="SUPPORTED_IE11" />
       <elements>
@@ -12792,7 +12808,7 @@
         </enum>
       </elements>
     </policy>
-    <policy name="IZ_PolicyAllowVBScript_8" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultPrompt)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\4">
+    <policy name="IZ_PolicyAllowVBScript_8" class="Both" displayName="$(string.IZ_PolicyAllowVBScript)" explainText="$(string.IZ_PolicyAllowVBScript_ExplainDefaultDisable)" presentation="$(presentation.IZ_PolicyAllowVBScript_3)" key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\4">
       <parentCategory ref="IZ_RestrictedSitesZoneLockdown" />
       <supportedOn ref="SUPPORTED_IE11" />
       <elements>
@@ -35308,7 +35324,7 @@
     </policy>
     <policy name="RestrictInternetExplorer" class="Both" displayName="$(string.RestrictInternetExplorer)" explainText="$(string.IE_ExplainRestrictInternetExplorer)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode" valueName="RestrictIE">
       <parentCategory ref="InternetExplorer" />
-      <supportedOn ref="SUPPORTED_IE11" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -35318,7 +35334,7 @@
     </policy>
     <policy name="ShowMessageWhenOpeningSitesInMicrosoftEdge" class="Both" displayName="$(string.ShowMessageWhenOpeningSitesInMicrosoftEdge)" explainText="$(string.IE_ExplainShowMessageWhenOpeningSitesInMicrosoftEdge)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode" valueName="ShowMessageWhenOpeningSitesInMicrosoftEdge">
       <parentCategory ref="InternetExplorer" />
-      <supportedOn ref="SUPPORTED_IE11" />
+      <supportedOn ref="SUPPORTED_IE11WIN10_1607" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

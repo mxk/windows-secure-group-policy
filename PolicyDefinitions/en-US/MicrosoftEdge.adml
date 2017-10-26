@@ -11,6 +11,8 @@
       <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1511_DisplayName">Microsoft Edge on Windows 10, Version 1511 or later</string>
       <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1607_DisplayName">Microsoft Edge on Windows 10, Version 1607 or later</string>
       <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1703_DisplayName">Microsoft Edge on Windows 10, Version 1703 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE_DisplayName">Microsoft Edge on Windows 10, Version 1709 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_RS3_DisplayName">Microsoft Edge on Windows 10, Version 1708 or later</string>
       <string id="InternetBrowser_DisplayName">Microsoft Edge</string>
       <string id="InternetBrowser_ExplainCat">Microsoft Edge Category</string>
 
@@ -41,6 +43,15 @@ If you disable or don't configure this setting, your default Start pages are the
 If you enable this setting, you can't lock down any Start pages that are configured using the "Configure Start pages" setting, which means that users can modify them.
 
 If you disable or don't configure this setting, users can't change any Start pages configured using the "Configure Start pages" setting. The Start pages will remain locked down.</string>
+      <string id="LockdownFavorites">Prevent changes to Favorites on Microsoft Edge</string>
+      <string id="LockdownFavorites_Explain">This policy setting lets you decide whether employees can add, import, sort, or edit the Favorites list on Microsoft Edge.
+
+If you enable this setting, employees won't be able to add, import, or change anything in the Favorites list. Also as part of this, Save a Favorite, Import settings, and the context menu items (such as, Create a new folder) are all turned off.
+
+Important
+Don't enable both this setting and the Keep favorites in sync between Internet Explorer and Microsoft Edge setting. Enabling both settings stops employees from syncing their favorites between Internet Explorer and Microsoft Edge.
+
+If you disable or don't configure this setting (default), employees can add, import and make changes to the Favorites list.</string>
 
       <string id="AllowAddressBarDropdown">Allow Address bar drop-down list suggestions</string>
       <string id="AllowAddressBarDropdown_Explain">This policy setting lets you decide whether the Address bar drop-down functionality is available in Microsoft Edge. We recommend disabling this setting if you want to minimize network connections from Microsoft Edge to Microsoft services.
@@ -127,6 +138,21 @@ If you enable this setting, Microsoft Edge opens a new tab with the New Tab page
 If you disable this setting, Microsoft Edge opens a new tab with a blank page. If you use this setting, employees can't change it.
 
 If you don't configure this setting, employees can choose how new tabs appears.</string>
+      <string id="ConfiguredFavorites">Provision Favorites</string>
+      <string id="ConfiguredFavorites_Explain">This policy setting allows you to configure a default set of favorites, which will appear for employees. Employees cannot modify, sort, move, export or delete these provisioned favorites.
+
+If you enable this setting, you can set favorite URL's and favorite folders to appear on top of users' favorites list (either in the Hub or Favorites Bar). The user favorites will appear after these provisioned favorites.
+
+Important
+Don't enable both this setting and the Keep favorites in sync between Internet Explorer and Microsoft Edge setting. Enabling both settings stops employees from syncing their favorites between Internet Explorer and Microsoft Edge.
+
+If you disable or don't configure this setting, employees will see the favorites they set in the Hub and Favorites Bar.</string>
+      <string id="AlwaysEnableBooksLibrary">Always show the Books Library in Microsoft Edge</string>
+      <string id="AlwaysEnableBooksLibrary_Explain">This policy setting helps you to decide whether to make the Books tab visible, regardless of a device's country or region setting, as configured in the Country or region area of Windows settings.
+ 
+If you enable this setting, Microsoft Edge shows the Books Library, regardless of the device's country or region.
+ 
+If you disable or don't configure this setting, Microsoft Edge shows the Books Library only in countries or regions where it's supported.</string>
       <string id="Cookies">Configure cookies</string>
       <string id="Cookies_Explain">This setting lets you configure how to work with cookies.
 
@@ -278,6 +304,17 @@ If you disable this setting, the Microsoft Compatibility List isn’t used durin
 
     <!-- Presentation -->
     <presentationTable>
+      <presentation id="ConfiguredFavorites_Presentation">
+        <textBox refId="ConfiguredFavoritesPrompt">
+          <label>Specify the URL which points to the file that has all the data for provisioning favorites (in html format). You can export a set of favorites from Edge and use that html file for provisioning user machines.
+
+URL can be specified as
+1. HTTP location: http://localhost:8080/URLs.html
+2. Local network: \\network\shares\URLs.html
+3. Local file: file:///c:\\Users\\&lt;user&gt;\\Documents\\URLs.html or C:\\Users\\&lt;user&gt;\\Documents\\URLs.html
+          </label>
+        </textBox>
+      </presentation>
       <presentation id="EnterpriseModeSiteList_Presentation">
         <textBox refId="EnterSiteListPrompt">
           <label>Type the location (URL) of your Enterprise Mode IE website list</label>

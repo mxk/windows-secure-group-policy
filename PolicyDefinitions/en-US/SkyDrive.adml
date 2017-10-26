@@ -6,7 +6,7 @@
     <stringTable>
       <!-- general -->
       <string id="OneDriveSettingCategory">OneDrive</string>
-      
+
       <!-- prevent file sync-->
       <string id="PreventOneDriveFileSync">Prevent the usage of OneDrive for file storage</string>
       <string id="PreventOneDriveFileSync_help">This policy setting lets you prevent apps and features from working with files on OneDrive.
@@ -19,6 +19,16 @@ If you enable this policy setting:
 * Users can’t automatically upload photos and videos from the camera roll folder.
 
 If you disable or do not configure this policy setting, apps and features can work with OneDrive file storage.</string>
+
+      <!-- prevent OneDrive sync client (OneDrive.exe) from generating network traffic (checking for updates, etc.) until the user signs in to OneDrive -->
+      <string id="PreventNetworkTrafficPreUserSignIn">Prevent OneDrive from generating network traffic until the user signs in to OneDrive</string>
+      <string id="PreventNetworkTrafficPreUserSignIn_help">Enable this setting to prevent the OneDrive sync client (OneDrive.exe) from generating network traffic (checking for updates, etc.) until the user signs in to OneDrive or starts syncing files to the local computer.
+
+If you enable this setting, users must sign in to the OneDrive sync client on the local computer, or select to sync OneDrive or SharePoint files on the computer, for the sync client to start automatically.
+
+If this setting is not enabled, the OneDrive sync client will start automatically when users sign in to Windows.
+
+If you enable or disable this setting, do not return the setting to Not Configured. Doing so will not change the configuration and the last configured setting will remain in effect.</string>
 
       <!-- prevent file sync for Blue-->
       <string id="PreventOneDriveFileSyncForBlue">Prevent the usage of OneDrive for file storage on Windows 8.1</string>

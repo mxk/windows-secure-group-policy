@@ -3122,7 +3122,7 @@ If you enable this policy setting, smooth scrolling is turned off. The user cann
 
 If you disable this policy setting, smooth scrolling is turned on. The user cannot turn off smooth scrolling.
 
-If you do not configure this policy setting, the user can turn smooth scrolling on or off.</string>
+If you do not configure this policy setting, the user can hide or show the button to open Microsoft Edge from Internet Explorer.</string>
       <string id="HideNewEdgeButton">Hide the button (next to the New Tab button) that opens Microsoft Edge</string>
       <string id="HideNewEdgeButton_Explain">This policy setting allows you to manage if users can see the button (next to the New Tab button) that opens Microsoft Edge.
 
@@ -3164,6 +3164,8 @@ If you do not configure this policy setting, the button to open Microsoft Edge f
       <string id="SUPPORTED_IE11WIN8">At least Internet Explorer 11.0 on Windows 8.1</string>
       <string id="SUPPORTED_IE11WIN8ONLY">Only Internet Explorer 11.0 on Windows 8.1</string>
       <string id="SUPPORTED_IE11WIN10">At least Internet Explorer 11.0 on Windows 10</string>
+      <string id="SUPPORTED_IE11WIN10_1607">At least Internet Explorer 11.0 on Windows 10, vertion 1607 or later</string>
+      <string id="SUPPORTED_IE11WIN10_1703">At least Internet Explorer 11.0 on Windows 10, version 1703 or later</string>
       <string id="SUPPORTED_IE11">At least Internet Explorer 11.0</string>
       <string id="SUPPORTED_IE7_NONVISTA">At least Internet Explorer 7.0. Not supported on Windows Vista</string>
       <string id="SUPPORTED_IE7VISTA">At least Internet Explorer 7.0 in Windows Vista</string>

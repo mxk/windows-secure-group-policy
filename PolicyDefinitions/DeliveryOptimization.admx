@@ -34,7 +34,7 @@
         presentation="$(presentation.DownloadMode)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <enum
             id="DownloadMode"
@@ -82,7 +82,7 @@
         presentation="$(presentation.GroupId)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <text
             id="GroupId"
@@ -99,7 +99,7 @@
         presentation="$(presentation.MaxUploadBandwidth)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MaxUploadBandwidth"
@@ -118,7 +118,7 @@
         presentation="$(presentation.MaxCacheSize)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MaxCacheSize"
@@ -137,7 +137,7 @@
         presentation="$(presentation.AbsoluteMaxCacheSize)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="AbsoluteMaxCacheSize"
@@ -156,7 +156,7 @@
         presentation="$(presentation.MaxCacheAge)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MaxCacheAge"
@@ -175,7 +175,7 @@
         presentation="$(presentation.MonthlyUploadDataCap)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MonthlyUploadDataCap"
@@ -194,7 +194,7 @@
         presentation="$(presentation.MinBackgroundQos)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MinBackgroundQos"
@@ -213,7 +213,7 @@
         presentation="$(presentation.ModifyCacheDrive)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <text
             id="ModifyCacheDrive"
@@ -230,7 +230,7 @@
         presentation="$(presentation.MaxDownloadBandwidth)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MaxDownloadBandwidth"
@@ -249,7 +249,7 @@
         presentation="$(presentation.PercentageMaxDownloadBandwidth)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="PercentageMaxDownloadBandwidth"
@@ -268,7 +268,7 @@
         presentation="$(presentation.MinFileSizeToCache)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MinFileSizeToCache"
@@ -287,7 +287,7 @@
         presentation="$(presentation.AllowVPNPeerCaching)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <boolean
             id="AllowVPNPeerCaching"
@@ -311,7 +311,7 @@
         presentation="$(presentation.MinRAMAllowedToPeer)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MinRAMAllowedToPeer"
@@ -330,7 +330,7 @@
         presentation="$(presentation.MinDiskSizeAllowedToPeer)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MinDiskSizeAllowedToPeer"
@@ -349,7 +349,7 @@
         presentation="$(presentation.MinBatteryPercentageAllowedToUpload)"
         >
       <parentCategory ref="DeliveryOptimizationCat"/>
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
       <elements>
         <decimal
             id="MinBatteryPercentageAllowedToUpload"

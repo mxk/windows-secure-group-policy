@@ -24,6 +24,7 @@ In Windows XP SP2, the essential security settings that are monitored by Securit
 Windows Vista
 ---------------------
 In Windows Vista, this policy setting monitors essential security settings to include firewall, antivirus, antispyware, Internet security settings, User Account Control, and Automatic Updates. Windows Vista computers do not require a reboot for this policy setting to take effect.</string>
+
     </stringTable>
   </resources>
 </policyDefinitionResources>
