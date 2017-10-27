@@ -38,6 +38,11 @@ UseDefaultTile
 DWORD:1
 
 Computer
+SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
+AllowOnlineTips
+DWORD:0
+
+Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Ext
 RestrictToList
 DWORD:1
@@ -100,6 +105,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\Biometrics
 Enabled
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\DeviceHealthAttestationService
+EnableDeviceHealthAttestationService
 DWORD:0
 
 Computer
@@ -360,6 +370,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\Peernet
 Disabled
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\PushToInstall
+DisablePushToInstall
 DWORD:1
 
 Computer
@@ -878,9 +893,14 @@ DisableEnterpriseAuthProxy
 DWORD:1
 
 Computer
+SOFTWARE\Policies\Microsoft\Windows\DataCollection
+LimitEnhancedDiagnosticDataWindowsAnalytics
+DWORD:0
+
+Computer
 SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization
 DODownloadMode
-DWORD:100
+DWORD:99
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Device Metadata
@@ -1055,6 +1075,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Maps
 AllowUntriggeredNetworkTrafficOnSettingsPage
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Messaging
+AllowMessageSync
 DWORD:0
 
 Computer
@@ -1253,6 +1278,16 @@ HiberbootEnabled
 DWORD:0
 
 Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+EnableActivityFeed
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+PublishUserActivities
+DWORD:0
+
+Computer
 SOFTWARE\Policies\Microsoft\Windows\TabletPC
 PreventHandwritingDataSharing
 DWORD:1
@@ -1373,6 +1408,26 @@ AutoIndexSharedFolders
 DWORD:1
 
 Computer
+SOFTWARE\Policies\Microsoft\Windows\Windows Search
+AllowCloudSearch
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+ExcludeWUDriversInQualityUpdate
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+ManagePreviewBuilds
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+ManagePreviewBuildsPolicyValue
+DWORD:0
+
+Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 DeferFeatureUpdates
 DWORD:1
@@ -1385,17 +1440,12 @@ DWORD:32
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 DeferFeatureUpdatesPeriodInDays
-DWORD:30
+DWORD:14
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 PauseFeatureUpdatesStartTime
 SZ:
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
-ExcludeWUDriversInQualityUpdate
-DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU

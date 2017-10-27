@@ -6,7 +6,14 @@ apply by default to all domain and standalone (via Local Computer Policy)
 Windows 10 and Server 2016 computers. These settings aim to provide maximum
 privacy, security, and performance (in that order), with minimum network
 communication. Security features that send data to Microsoft, such as
-SmartScreen, are disabled.
+SmartScreen, are disabled. The following network traffic is allowed, everything
+else should be blocked:
+
+* Network Connectivity Status Indicator (NCSI) tests (see Notes below).
+* Windows updates.
+* Root CA updates.
+* Defender definition updates.
+* Storage Health (Disk Failure Prediction Model) updates.
 
 **Use a separate GPO to override settings as needed! Do not use for
 site-specific configuration!** This policy should apply to any Windows system,
@@ -69,6 +76,8 @@ When an update is released, the entire PolicyDefinitions directory should be
 rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
 files without removing old ones first may cause problems.
 
+* [New policies for Windows 10](https://docs.microsoft.com/en-us/windows/client-management/new-policies-for-windows-10)
+
 Notes
 -----
 
@@ -90,8 +99,6 @@ Notes
   successful update, disabling NCSI doesn't seem to cause further problems, but
   DISM will still run into errors. Guess how many days it took to figure this
   out.
-* All traffic to Microsoft servers except for NCSI tests and Windows, Root CA,
-  and Defender definition updates is disabled.
 * Everything related to Microsoft accounts, Store, Windows Apps, cloud,
   feedback, and customer ~~spying~~ experience improvement is disabled. Some of
   these settings are only supported by Enterprise and Education editions.
@@ -101,6 +108,8 @@ Notes
   must be stripped manually (e.g. `fsutil 8dot3name strip /s C:`).
 * NTP client is configured to use pool.ntp.org. Local NTP traffic should be
   intercepted/redirected by the firewall.
+* "Turn off all Windows spotlight features" policy must be applied within 15
+  minutes after Windows 10 is installed.
 
 Bugs
 ----
@@ -129,10 +138,9 @@ Suggestions to implement in a separate GPO
 LGPO
 ----
 
-[LGPO.exe v2.0](https://blogs.technet.microsoft.com/secguide/2016/09/23/lgpo-exe-v2-0-pre-release-support-for-mlgpo-and-reg_qword/)
-was used to set the following unmanaged registry settings not covered by any
-ADMX template. This allows the settings to apply via Local Computer Policy,
-which does not support Preferences (without hacks).
+Tools\LGPO.exe was used to set the following unmanaged registry settings not
+covered by any ADMX template. This allows the settings to apply via Local
+Computer Policy, which does not support Preferences (without hacks).
 
 ```
 ; Disable shared experiences
@@ -172,6 +180,7 @@ the wrong place causes mmc.exe to crash, so the XML files are a mess.
 References
 ----------
 
+* https://docs.microsoft.com/en-us/windows/whats-new/
 * https://docs.microsoft.com/en-us/windows/device-security/windows-security-baselines
 * https://blogs.technet.microsoft.com/secguide/
 * https://blogs.technet.microsoft.com/secguide/2016/10/02/the-mss-settings/
@@ -182,3 +191,4 @@ References
 * https://www.stigviewer.com/stig/windows_10/
 * https://blogs.technet.microsoft.com/josebda/2012/11/13/windows-server-2012-file-server-tip-disable-8-3-naming-and-strip-those-short-names-too/
 * https://support.microsoft.com/en-us/help/2526083/disabling-user-account-control-uac-on-windows-server
+* https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy

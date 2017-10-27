@@ -1,39 +1,50 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <policyComments xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/CommentDefinitions">
   <policyNamespaces>
-    <using prefix="ns0" namespace="Microsoft.Policies.ApplicationCompatibility"></using>
-    <using prefix="ns1" namespace="Microsoft.Policies.CredentialsUI"></using>
-    <using prefix="ns2" namespace="Microsoft.Policies.FileSys"></using>
-    <using prefix="ns3" namespace="Microsoft.Policies.InternetCommunicationManagement"></using>
-    <using prefix="ns4" namespace="Microsoft.Policies.NCSI"></using>
-    <using prefix="ns5" namespace="Microsoft.Policies.NetworkConnections"></using>
-    <using prefix="ns6" namespace="Microsoft.Policies.WindowsInitialization"></using>
-    <using prefix="ns7" namespace="Microsoft.Policies.WindowsTimeService"></using>
+    <using prefix="ns0" namespace="FullArmor.Policies.3B9EA2B5_A1D1_4CD5_9EDE_75B22990BC21"></using>
+    <using prefix="ns1" namespace="Microsoft.Policies.ApplicationCompatibility"></using>
+    <using prefix="ns2" namespace="Microsoft.Policies.ControlPanel"></using>
+    <using prefix="ns3" namespace="Microsoft.Policies.CredentialsUI"></using>
+    <using prefix="ns4" namespace="Microsoft.Policies.DataCollection"></using>
+    <using prefix="ns5" namespace="Microsoft.Policies.DeliveryOptimization"></using>
+    <using prefix="ns6" namespace="Microsoft.Policies.FileSys"></using>
+    <using prefix="ns7" namespace="Microsoft.Policies.InternetCommunicationManagement"></using>
+    <using prefix="ns8" namespace="Microsoft.Policies.Messaging"></using>
+    <using prefix="ns9" namespace="Microsoft.Policies.NCSI"></using>
+    <using prefix="ns10" namespace="Microsoft.Policies.NetworkConnections"></using>
+    <using prefix="ns11" namespace="Microsoft.Policies.OSPolicy"></using>
+    <using prefix="ns12" namespace="Microsoft.Policies.PushToInstall"></using>
+    <using prefix="ns13" namespace="Microsoft.Policies.StorageHealth"></using>
+    <using prefix="ns14" namespace="Microsoft.Policies.TrustedPlatformModule"></using>
+    <using prefix="ns15" namespace="Microsoft.Policies.WindowsDefender"></using>
+    <using prefix="ns16" namespace="Microsoft.Policies.WindowsInitialization"></using>
+    <using prefix="ns17" namespace="Microsoft.Policies.WindowsTimeService"></using>
+    <using prefix="ns18" namespace="Microsoft.Policies.WindowsUpdate"></using>
   </policyNamespaces>
   <comments>
     <admTemplate>
-      <comment policyRef="ns0:AppCompatTurnOffEngine" commentText="$(resource.ns0_AppCompatTurnOffEngine)"></comment>
-      <comment policyRef="ns1:EnableSecureCredentialPrompting" commentText="$(resource.ns1_EnableSecureCredentialPrompting)"></comment>
-      <comment policyRef="ns2:LongPathsEnabled" commentText="$(resource.ns2_LongPathsEnabled)"></comment>
-      <comment policyRef="ns3:NoActiveProbe" commentText="$(resource.ns3_NoActiveProbe)"></comment>
-      <comment policyRef="ns4:NCSI_PassivePolling" commentText="$(resource.ns4_NCSI_PassivePolling)"></comment>
-      <comment policyRef="ns5:NC_DoNotShowLocalOnlyIcon" commentText="$(resource.ns5_NC_DoNotShowLocalOnlyIcon)"></comment>
-      <comment policyRef="ns6:Hiberboot" commentText="$(resource.ns6_Hiberboot)"></comment>
-      <comment policyRef="ns7:W32TIME_POLICY_CONFIG" commentText="$(resource.ns7_W32TIME_POLICY_CONFIG)"></comment>
+      <comment policyRef="ns1:AppCompatTurnOffEngine" commentText="$(resource.ns1_AppCompatTurnOffEngine)"></comment>
+      <comment policyRef="ns3:EnableSecureCredentialPrompting" commentText="$(resource.ns3_EnableSecureCredentialPrompting)"></comment>
+      <comment policyRef="ns6:LongPathsEnabled" commentText="$(resource.ns6_LongPathsEnabled)"></comment>
+      <comment policyRef="ns7:NoActiveProbe" commentText="$(resource.ns7_NoActiveProbe)"></comment>
+      <comment policyRef="ns9:NCSI_PassivePolling" commentText="$(resource.ns9_NCSI_PassivePolling)"></comment>
+      <comment policyRef="ns10:NC_DoNotShowLocalOnlyIcon" commentText="$(resource.ns10_NC_DoNotShowLocalOnlyIcon)"></comment>
+      <comment policyRef="ns16:Hiberboot" commentText="$(resource.ns16_Hiberboot)"></comment>
+      <comment policyRef="ns17:W32TIME_POLICY_CONFIG" commentText="$(resource.ns17_W32TIME_POLICY_CONFIG)"></comment>
     </admTemplate>
   </comments>
   <resources minRequiredRevision="1.0">
     <stringTable>
-      <string id="ns0_AppCompatTurnOffEngine">Intentionally left unconfigured (on), along with PCA and SwitchBack. Disabling may cause problems that are very difficult to debug. Might be worth disabling on servers.</string>
-      <string id="ns1_EnableSecureCredentialPrompting">Really annoying. Do not enable.</string>
-      <string id="ns2_LongPathsEnabled">Should be enabled eventually, but not until Explorer can handle such paths.</string>
-      <string id="ns3_NoActiveProbe">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
-      <string id="ns4_NCSI_PassivePolling">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
-      <string id="ns5_NC_DoNotShowLocalOnlyIcon">Do not enable. NCSI problems affect Windows Update and other components, so this information is useful.</string>
-      <string id="ns6_Hiberboot">May cause problems for Group Policy processing. Contrary to the documentation, disabling this setting does disable fast startup (see event 27 in the System log):
+      <string id="ns1_AppCompatTurnOffEngine">Intentionally left unconfigured (on), along with PCA and SwitchBack. Disabling may cause problems that are very difficult to debug. Might be worth disabling on servers.</string>
+      <string id="ns3_EnableSecureCredentialPrompting">Really annoying. Do not enable.</string>
+      <string id="ns6_LongPathsEnabled">Should be enabled eventually, but not until Explorer can handle such paths.</string>
+      <string id="ns7_NoActiveProbe">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
+      <string id="ns9_NCSI_PassivePolling">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
+      <string id="ns10_NC_DoNotShowLocalOnlyIcon">Do not enable. NCSI problems affect Windows Update and other components, so this information is useful.</string>
+      <string id="ns16_Hiberboot">May cause problems for Group Policy processing. Contrary to the documentation, disabling this setting does disable fast startup (see event 27 in the System log):
 
 https://technet.microsoft.com/en-us/library/jj573586.aspx</string>
-      <string id="ns7_W32TIME_POLICY_CONFIG">Intentionally left unconfigured. Server and client have different defaults and there is a lot of conflicting/outdated information out there on how to set these parameters correctly.</string>
+      <string id="ns17_W32TIME_POLICY_CONFIG">Intentionally left unconfigured. Server and client have different defaults and there is a lot of conflicting/outdated information out there on how to set these parameters correctly.</string>
     </stringTable>
   </resources>
 </policyComments>
