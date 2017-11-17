@@ -14,12 +14,12 @@ DWORD:0
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
-NoInternetOpenWith
-DWORD:1
+AllowOnlineTips
+DWORD:0
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
-NoWebServices
+NoInternetOpenWith
 DWORD:1
 
 Computer
@@ -34,13 +34,13 @@ DWORD:1
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
-UseDefaultTile
+NoWebServices
 DWORD:1
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
-AllowOnlineTips
-DWORD:0
+UseDefaultTile
+DWORD:1
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Ext
@@ -54,12 +54,7 @@ DWORD:1
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-MSAOptional
-DWORD:1
-
-Computer
-SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-VerboseStatus
+DisableShutdownNamedPipe
 DWORD:1
 
 Computer
@@ -69,7 +64,12 @@ DWORD:1
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-DisableShutdownNamedPipe
+EnableFirstLogonAnimation
+DWORD:0
+
+Computer
+SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+MSAOptional
 DWORD:1
 
 Computer
@@ -79,8 +79,8 @@ DWORD:3
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-EnableFirstLogonAnimation
-DWORD:0
+VerboseStatus
+DWORD:1
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Windows
@@ -124,8 +124,8 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\InputPersonalization
-RestrictImplicitTextCollection
-DWORD:1
+AllowInputPersonalization
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\InputPersonalization
@@ -134,8 +134,8 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\InputPersonalization
-AllowInputPersonalization
-DWORD:0
+RestrictImplicitTextCollection
+DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Internet Explorer
@@ -174,17 +174,17 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds
+DisableAddRemove
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds
 DisableEnclosureDownload
 DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds
 DisableFeedPane
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds
-DisableAddRemove
 DWORD:1
 
 Computer
@@ -195,6 +195,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\Internet Explorer\Geolocation
 PolicyDisableGeolocation
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Internet Explorer\Main
+DisableAddSiteMode
 DWORD:1
 
 Computer
@@ -215,11 +220,6 @@ SZ:PMEM
 Computer
 SOFTWARE\Policies\Microsoft\Internet Explorer\Main
 Isolation64Bit
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Internet Explorer\Main
-DisableAddSiteMode
 DWORD:1
 
 Computer
@@ -304,23 +304,23 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
-PreventFirstRunPage
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
 FormSuggest Passwords
 SZ:no
 
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
-Use FormSuggest
-SZ:no
+PreventFirstRunPage
+DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
 PreventLiveTileDataCollection
 DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
+Use FormSuggest
+SZ:no
 
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter
@@ -429,18 +429,18 @@ SZ:NTP
 
 Computer
 SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
-Enabled
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
 CrossSiteSyncFlags
 DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
-ResolvePeerBackoffMinutes
-DWORD:4
+Enabled
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
+EventLogFlags
+DWORD:3
 
 Computer
 SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
@@ -449,13 +449,13 @@ DWORD:6
 
 Computer
 SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
-SpecialPollInterval
-DWORD:3600
+ResolvePeerBackoffMinutes
+DWORD:4
 
 Computer
 SOFTWARE\Policies\Microsoft\W32time\TimeProviders\NtpClient
-EventLogFlags
-DWORD:3
+SpecialPollInterval
+DWORD:3600
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo
@@ -464,13 +464,13 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppCompat
-DisableInventory
-DWORD:1
+AITEnable
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppCompat
-AITEnable
-DWORD:0
+DisableInventory
+DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppCompat
@@ -484,11 +484,6 @@ DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessAccountInfo_UserInControlOfTheseApps
-MULTISZ:\0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsAccessAccountInfo_ForceAllowTheseApps
 MULTISZ:\0
 
@@ -499,13 +494,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessCalendar
-DWORD:2
+LetAppsAccessAccountInfo_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessCalendar_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessCalendar
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -519,13 +514,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessCallHistory
-DWORD:2
+LetAppsAccessCalendar_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessCallHistory_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessCallHistory
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -539,13 +534,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessCamera
-DWORD:2
+LetAppsAccessCallHistory_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessCamera_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessCamera
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -559,13 +554,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessContacts
-DWORD:2
+LetAppsAccessCamera_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessContacts_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessContacts
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -579,13 +574,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessEmail
-DWORD:2
+LetAppsAccessContacts_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessEmail_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessEmail
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -599,13 +594,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessLocation
-DWORD:2
+LetAppsAccessEmail_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessLocation_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessLocation
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -619,13 +614,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessMessaging
-DWORD:2
+LetAppsAccessLocation_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessMessaging_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessMessaging
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -639,13 +634,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessMicrophone
-DWORD:2
+LetAppsAccessMessaging_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessMicrophone_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessMicrophone
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -659,13 +654,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessMotion
-DWORD:2
+LetAppsAccessMicrophone_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessMotion_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessMotion
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -679,13 +674,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessNotifications
-DWORD:2
+LetAppsAccessMotion_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessNotifications_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessNotifications
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -699,13 +694,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessPhone
-DWORD:2
+LetAppsAccessNotifications_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessPhone_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessPhone
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -719,13 +714,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessRadios
-DWORD:2
+LetAppsAccessPhone_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessRadios_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessRadios
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -739,13 +734,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessTasks
-DWORD:2
+LetAppsAccessRadios_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessTasks_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessTasks
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -759,13 +754,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessTrustedDevices
-DWORD:2
+LetAppsAccessTasks_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsAccessTrustedDevices_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsAccessTrustedDevices
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -779,13 +774,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsGetDiagnosticInfo
-DWORD:2
+LetAppsAccessTrustedDevices_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsGetDiagnosticInfo_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsGetDiagnosticInfo
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -799,13 +794,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsRunInBackground
-DWORD:2
+LetAppsGetDiagnosticInfo_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsRunInBackground_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsRunInBackground
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -819,13 +814,13 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsSyncWithDevices
-DWORD:2
+LetAppsRunInBackground_UserInControlOfTheseApps
+MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
-LetAppsSyncWithDevices_UserInControlOfTheseApps
-MULTISZ:\0
+LetAppsSyncWithDevices
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -835,6 +830,11 @@ MULTISZ:\0
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsSyncWithDevices_ForceDenyTheseApps
+MULTISZ:\0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsSyncWithDevices_UserInControlOfTheseApps
 MULTISZ:\0
 
 Computer
@@ -879,17 +879,17 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\DataCollection
-DoNotShowFeedbackNotifications
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\DataCollection
 AllowTelemetry
 DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\DataCollection
 DisableEnterpriseAuthProxy
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\DataCollection
+DoNotShowFeedbackNotifications
 DWORD:1
 
 Computer
@@ -944,7 +944,7 @@ DWORD:32768
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Explorer
-NoUseStoreOpenWith
+CheckSameSourceAndTargetForFRAndDFS
 DWORD:1
 
 Computer
@@ -964,7 +964,7 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Explorer
-CheckSameSourceAndTargetForFRAndDFS
+NoUseStoreOpenWith
 DWORD:1
 
 Computer
@@ -1019,11 +1019,6 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\LLTD
-EnableLLTDIO
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\LLTD
 AllowLLTDIOOnDomain
 DWORD:0
 
@@ -1034,7 +1029,17 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\LLTD
-ProhibitLLTDIOOnPrivateNet
+AllowRspndrOnDomain
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\LLTD
+AllowRspndrOnPublicNet
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\LLTD
+EnableLLTDIO
 DWORD:1
 
 Computer
@@ -1044,13 +1049,8 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\LLTD
-AllowRspndrOnDomain
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\LLTD
-AllowRspndrOnPublicNet
-DWORD:0
+ProhibitLLTDIOOnPrivateNet
+DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\LLTD
@@ -1069,12 +1069,12 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Maps
-AutoDownloadAndUpdateMapData
+AllowUntriggeredNetworkTrafficOnSettingsPage
 DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Maps
-AllowUntriggeredNetworkTrafficOnSettingsPage
+AutoDownloadAndUpdateMapData
 DWORD:0
 
 Computer
@@ -1104,18 +1104,13 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths
-\\*\SYSVOL
-SZ:RequireMutualAuthentication=1,RequireIntegrity=1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths
 \\*\NETLOGON
 SZ:RequireMutualAuthentication=1,RequireIntegrity=1
 
 Computer
-SOFTWARE\Policies\Microsoft\Windows\OneDrive
-DisableFileSyncNGSC
-DWORD:1
+SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths
+\\*\SYSVOL
+SZ:RequireMutualAuthentication=1,RequireIntegrity=1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\OneDrive
@@ -1123,8 +1118,8 @@ DisableFileSync
 DWORD:1
 
 Computer
-SOFTWARE\Policies\Microsoft\Windows\Personalization
-NoLockScreen
+SOFTWARE\Policies\Microsoft\Windows\OneDrive
+DisableFileSyncNGSC
 DWORD:1
 
 Computer
@@ -1135,6 +1130,11 @@ SZ:C:\\Windows\\Web\\Screen\\img105.jpg
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Personalization
 LockScreenOverlaysDisabled
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Personalization
+NoLockScreen
 DWORD:1
 
 Computer
@@ -1189,47 +1189,27 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-EnableFontProviders
-DWORD:0
+AllowUserInfoAccess
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-EnableCdp
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-EnableAppUriHandlers
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-EnableSmartScreen
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-ShellSmartScreenLevel
+AsyncScriptDelay
 DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-DontDisplayNetworkSelectionUI
+BlockDomainPicturePassword
 DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-GroupPolicyMinTransferRate
-DWORD:0
+DisableLockScreenAppNotifications
+DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-SlowLinkDefaultFor3G
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-BlockDomainPicturePassword
+DontDisplayNetworkSelectionUI
 DWORD:1
 
 Computer
@@ -1239,13 +1219,38 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-DisableLockScreenAppNotifications
-DWORD:1
+EnableActivityFeed
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-AllowUserInfoAccess
-DWORD:2
+EnableAppUriHandlers
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+EnableCdp
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+EnableFontProviders
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+EnableLogonScriptDelay
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+EnableSmartScreen
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+GroupPolicyMinTransferRate
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
@@ -1259,27 +1264,7 @@ DWORD:30
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
-EnableLogonScriptDelay
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-AsyncScriptDelay
-DELETE
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-SlowLinkDetectEnabled
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
 HiberbootEnabled
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\System
-EnableActivityFeed
 DWORD:0
 
 Computer
@@ -1288,14 +1273,24 @@ PublishUserActivities
 DWORD:0
 
 Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+ShellSmartScreenLevel
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+SlowLinkDefaultFor3G
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+SlowLinkDetectEnabled
+DWORD:0
+
+Computer
 SOFTWARE\Policies\Microsoft\Windows\TabletPC
 PreventHandwritingDataSharing
 DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition
-Teredo_State
-SZ:Disabled
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition
@@ -1308,9 +1303,9 @@ ISATAP_State
 SZ:Disabled
 
 Computer
-SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition\IPHTTPS\IPHTTPSInterface
-IPHTTPS_ClientUrl
-SZ:https://
+SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition
+Teredo_State
+SZ:Disabled
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition\IPHTTPS\IPHTTPSInterface
@@ -1318,13 +1313,13 @@ IPHTTPS_ClientState
 DWORD:3
 
 Computer
-SOFTWARE\Policies\Microsoft\Windows\WCN\Registrars
-EnableRegistrars
-DWORD:0
+SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition\IPHTTPS\IPHTTPSInterface
+IPHTTPS_ClientUrl
+SZ:https://
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WCN\Registrars
-DisableUPnPRegistrar
+DisableFlashConfigRegistrar
 DWORD:0
 
 Computer
@@ -1334,7 +1329,7 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WCN\Registrars
-DisableFlashConfigRegistrar
+DisableUPnPRegistrar
 DWORD:0
 
 Computer
@@ -1344,12 +1339,17 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WCN\Registrars
-MaxWCNDeviceNumber
-DELETE
+EnableRegistrars
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WCN\Registrars
 HigherPrecedenceRegistrar
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WCN\Registrars
+MaxWCNDeviceNumber
 DELETE
 
 Computer
@@ -1369,32 +1369,12 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Windows Search
+AllowCloudSearch
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Windows Search
 AllowCortana
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Windows Search
-AllowSearchToUseLocation
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Windows Search
-DisableWebSearch
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Windows Search
-ConnectedSearchUseWeb
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Windows Search
-ConnectedSearchPrivacy
-DWORD:3
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Windows Search
-AllowIndexingEncryptedStoresOrItems
 DWORD:0
 
 Computer
@@ -1404,13 +1384,48 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Windows Search
+AllowIndexingEncryptedStoresOrItems
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Windows Search
+AllowSearchToUseLocation
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Windows Search
 AutoIndexSharedFolders
 DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Windows Search
-AllowCloudSearch
+ConnectedSearchPrivacy
+DWORD:3
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Windows Search
+ConnectedSearchUseWeb
 DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\Windows Search
+DisableWebSearch
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+BranchReadinessLevel
+DWORD:32
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+DeferFeatureUpdates
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+DeferFeatureUpdatesPeriodInDays
+DWORD:14
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
@@ -1429,33 +1444,13 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
-DeferFeatureUpdates
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
-BranchReadinessLevel
-DWORD:32
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
-DeferFeatureUpdatesPeriodInDays
-DWORD:14
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 PauseFeatureUpdatesStartTime
 SZ:
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
-NoAutoRebootWithLoggedOnUsers
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
-NoAutoUpdate
-DWORD:1
+AllowMUUpdateService
+DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
@@ -1469,17 +1464,22 @@ DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+NoAutoRebootWithLoggedOnUsers
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+NoAutoUpdate
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
 ScheduledInstallDay
 DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
 ScheduledInstallTime
-DELETE
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
-AllowMUUpdateService
 DELETE
 
 Computer
@@ -1509,11 +1509,6 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows Defender\Spynet
-SubmitSamplesConsent
-DWORD:2
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows Defender\Spynet
 DisableBlockAtFirstSeen
 DWORD:1
 
@@ -1521,6 +1516,11 @@ Computer
 SOFTWARE\Policies\Microsoft\Windows Defender\Spynet
 SpynetReporting
 DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows Defender\Spynet
+SubmitSamplesConsent
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows Mail
@@ -1534,17 +1534,7 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
-EnableMulticast
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
 AppendToMultiLabelName
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
-RegistrationEnabled
 DWORD:0
 
 Computer
@@ -1554,13 +1544,23 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
-UpdateSecurityLevel
-DWORD:256
+DisableSmartProtocolReordering
+DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
-DisableSmartProtocolReordering
-DWORD:1
+EnableMulticast
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
+RegistrationEnabled
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
+UpdateSecurityLevel
+DWORD:256
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Printers
@@ -1609,12 +1609,57 @@ DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+AVC444ModePreferred
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+AVCHardwareEncodePreferred
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+DisablePasswordSaving
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+fAllowFullControl
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
 fAllowToGetHelp
 DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fAllowFullControl
+fAllowUnsolicited
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+fAllowUnsolicitedFullControl
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+fDenyTSConnections
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+fEncryptRPCTraffic
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+fPromptForPassword
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+fUseMailto
 DELETE
 
 Computer
@@ -1629,63 +1674,18 @@ DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fUseMailto
-DELETE
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fAllowUnsolicited
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fAllowUnsolicitedFullControl
-DELETE
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-DisablePasswordSaving
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fPromptForPassword
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fEncryptRPCTraffic
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
 PerSessionTempDir
 DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-fDenyTSConnections
-DWORD:0
+SecurityLayer
+DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
 UserAuthentication
 DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-AVCHardwareEncodePreferred
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-AVC444ModePreferred
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-SecurityLayer
-DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\RAUnsolicit
@@ -1699,12 +1699,12 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\WindowsMediaPlayer
-PreventLibrarySharing
+DisableAutoUpdate
 DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\WindowsMediaPlayer
-DisableAutoUpdate
+PreventLibrarySharing
 DWORD:1
 
 Computer
@@ -1714,7 +1714,7 @@ DWORD:2
 
 Computer
 SOFTWARE\Policies\Microsoft\WindowsStore
-RemoveWindowsStore
+DisableOSUpgrade
 DWORD:1
 
 Computer
@@ -1724,7 +1724,7 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\WindowsStore
-DisableOSUpgrade
+RemoveWindowsStore
 DWORD:1
 
 Computer
@@ -1744,12 +1744,12 @@ DWORD:0
 
 Computer
 SYSTEM\CurrentControlSet\Policies
-NtfsEncryptPagingFile
+NtfsDisable8dot3NameCreation
 DWORD:1
 
 Computer
 SYSTEM\CurrentControlSet\Policies
-NtfsDisable8dot3NameCreation
+NtfsEncryptPagingFile
 DWORD:1
 
 Computer

@@ -39,18 +39,18 @@ DWORD:0
 
 User
 Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
-NoDrives
-DWORD:3
-
-User
-Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
 DisableThumbnailsOnNetworkFolders
 DWORD:1
 
 User
 Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
-NoThumbnailCache
+ForceClassicControlPanel
 DWORD:1
+
+User
+Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+NoDrives
+DWORD:3
 
 User
 Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
@@ -59,7 +59,7 @@ DWORD:1
 
 User
 Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
-ForceClassicControlPanel
+NoThumbnailCache
 DWORD:1
 
 User
@@ -84,18 +84,18 @@ DWORD:1
 
 User
 Software\Policies\Microsoft\Internet Explorer\Control Panel
-HomePage
-DWORD:1
-
-User
-Software\Policies\Microsoft\Internet Explorer\Control Panel
 FormSuggest Passwords
 DWORD:1
 
 User
+Software\Policies\Microsoft\Internet Explorer\Control Panel
+HomePage
+DWORD:1
+
+User
 Software\Policies\Microsoft\Internet Explorer\Main
-Start Page
-SZ:about:blank
+Check_Associations
+SZ:no
 
 User
 Software\Policies\Microsoft\Internet Explorer\Main
@@ -109,8 +109,8 @@ SZ:no
 
 User
 Software\Policies\Microsoft\Internet Explorer\Main
-Check_Associations
-SZ:no
+Start Page
+SZ:about:blank
 
 User
 Software\Policies\Microsoft\SystemCertificates\Trust\Certificates
@@ -159,6 +159,11 @@ SZ:0
 
 User
 Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
+DisallowNotificationMirroring
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
 NoCloudApplicationNotification
 DWORD:1
 
@@ -168,13 +173,8 @@ NoToastApplicationNotificationOnLockScreen
 DWORD:1
 
 User
-Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
-DisallowNotificationMirroring
-DWORD:1
-
-User
 Software\Policies\Microsoft\Windows\Explorer
-NoSearchInternetTryHarderButton
+DisableThumbsDBOnNetworkFolders
 DWORD:1
 
 User
@@ -184,13 +184,18 @@ DWORD:1
 
 User
 Software\Policies\Microsoft\Windows\Explorer
-DisableThumbsDBOnNetworkFolders
+NoSearchInternetTryHarderButton
 DWORD:1
 
 User
 Software\Policies\Microsoft\Windows\Safer
 *
 CREATEKEY
+
+User
+Software\Policies\Microsoft\Windows\System
+GroupPolicyMinTransferRate
+DWORD:0
 
 User
 Software\Policies\Microsoft\Windows\System
@@ -203,23 +208,18 @@ GroupPolicyRefreshTimeOffset
 DWORD:30
 
 User
-Software\Policies\Microsoft\Windows\System
-GroupPolicyMinTransferRate
-DWORD:0
-
-User
 Software\Policies\Microsoft\Windows NT\Printers\Wizard
 Downlevel Browse
 DWORD:0
 
 User
 Software\Policies\Microsoft\WindowsMediaPlayer
-PreventCodecDownload
+PreventCDDVDMetadataRetrieval
 DWORD:1
 
 User
 Software\Policies\Microsoft\WindowsMediaPlayer
-PreventCDDVDMetadataRetrieval
+PreventCodecDownload
 DWORD:1
 
 User
