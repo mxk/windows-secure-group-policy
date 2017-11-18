@@ -35,29 +35,36 @@ Installation
 Run `install.cmd`. See LGPO documentation (in Tools) for more info.
 
 Use `parse.cmd` and `build.cmd` to convert Registry.pol files to LGPO text
-format and back.
+format and back. Use `sort.cmd` to sort entries in LGPO text files for easier
+diffs. Registry.pol files are usually sorted by keys, but not by values. This
+makes it difficult to track changes. Sorting LGPO text files and rebuilding
+Registry.pol files ensures that all entries are always in the same order.
 
-ADMX templates for the local computer are in `C:\Windows\PolicyDefinitions`.
-Change the owner to `Administrators` and replace owner on all subcontainers and
-objects. After reopening advanced security settings, remove all non-inherited
-permissions, enable inheritance, and replace all child permissions. Finally,
-copy the PolicyDefinitions directory from the repository, overwriting all
-existing files.
+ADMX templates for the local computer are in `C:\Windows\PolicyDefinitions`. To
+update existing files in this directory, you must change the owner to
+`Administrators` and replace owner on all subcontainers and objects. However,
+**doing this makes sfc unhappy!** It's safer to leave existing templates alone
+and only add missing ones.
 
-**Doing this makes sfc unhappy!** The solution is to run:
+If you do change the owner, open advanced security settings again, remove all
+non-inherited permissions, enable inheritance, and replace all child
+permissions. Finally, copy the PolicyDefinitions directory from the repository,
+overwriting all existing files. To fix SFC, run:
 
 ```
 dism /online /cleanup-image /restorehealth
 sfc /scannow
 ```
 
-DISM requires working NCSI (see notes below) or you get error 0x800f0906. Since
-the templates are only required to edit the policy, it's probably better to just
-leave them alone.
+DISM requires working NCSI (see notes below) or you'll get error 0x800f0906.
+Since the templates are only required to edit the policy, it's better to just
+leave them alone. Do a clean Windows install in a VM when a new version is
+released and update the policy there instead of messing with local templates.
 
-### Active Directory
+### Domain
 
 1. Copy PolicyDefinitions directory to `\\<domain>\SYSVOL\<domain>\Policies\`.
+   If this directory already exists, delete or rename it first.
 2. Create a blank GPO using Group Policy Management Console.
 3. Right-click on the new GPO and go through the "Import Settings..." wizard
    using the GPO directory as the backup source.
@@ -104,8 +111,9 @@ Notes
   these settings are only supported by Enterprise and Education editions.
 * Some functions that are only relevant to domain environments, like dynamic DNS
   updates, app virtualization, remote printing, etc., are disabled.
-* NTFS 8dot3name creation is disabled for all volumes, but existing short names
-  must be stripped manually (e.g. `fsutil 8dot3name strip /s C:`).
+* NTFS 8dot3name creation is disabled for all volumes. Existing short names can
+  be stripped manually (e.g. `fsutil 8dot3name strip /s C:`), though it's safer
+  to leave them alone for a new installation.
 * NTP client is configured to use pool.ntp.org. Local NTP traffic should be
   intercepted/redirected by the firewall.
 * "Turn off all Windows spotlight features" policy must be applied within 15
@@ -120,6 +128,7 @@ Bugs
 Suggestions to implement in a separate GPO
 ------------------------------------------
 
+* Automatic Windows updates
 * Interactive logon: Machine inactivity limit
 * Disable UAC on servers
 * Firewall rules and logging (intentionally left unconfigured to allow local
@@ -133,7 +142,6 @@ Suggestions to implement in a separate GPO
   assumption that Firefox, Chrome, or another browser is the user's default, and
   IE/Edge is used only on servers or as an occasional backup)
 * Remote Shell access
-* Automatic Windows updates
 
 LGPO
 ----
@@ -165,17 +173,99 @@ DWORD:0
 Updating policy
 ---------------
 
-Domain policies store machine and user extension GUIDs in LDAP. These must be
-updated in Backup.xml in order for the policy to import and work correctly.
-Create a backup using the Group Policy Management Console and copy
-`MachineExtensionGuids` and `UserExtensionGuids` elements from the backup.
+Update files under `GPO\{07BDCD6A-3F72-473C-82B9-67BB69DBE54D}\DomainSysvol\GPO`
+by copying new versions either from a backup or directly from the policy
+directory (`\\<domain>\SYSVOL\<domain>\Policies\{<GUID>}` for domains or
+`%SystemRoot%\System32\GroupPolicy` for local computer policy). When
+Registry.pol files are updated, run `parse && sort && build` to update LGPO text
+files and sort entry order.
 
-The files under `GPO\{07BDCD6A-3F72-473C-82B9-67BB69DBE54D}\DomainSysvol\GPO`
-may be copied either from the backup or directly from the policy directory
-(`\\<domain>\SYSVOL\<domain>\Policies\{<GUID>}`).
+GPO backups contain a lot of domain-specific information, which has been removed
+from the XML files in this repository. Therefore, creating a new backup and
+overwriting all files in the GPO directory is a bad idea. Also, the XML parser
+used by the import wizard is horrible. Adding a new line in the wrong place
+causes mmc.exe to crash, so the XML files are a mess.
 
-Note: The XML parser used by the import wizard is horrible. Adding a new line in
-the wrong place causes mmc.exe to crash, so the XML files are a mess.
+Domain policies store client-side extension (CSE) GUIDs in LDAP. The CSEs must
+be updated manually in Backup.xml in order for the policy to be imported and
+processed correctly. Create a separate backup using the Group Policy Management
+Console and copy `MachineExtensionGuids` and `UserExtensionGuids` elements from
+there.
+
+Local computer policy stores CSEs in
+`%SystemRoot%\System32\GroupPolicy\GPT.INI`. LGPO.exe can be used to enable CSEs
+via the `/e` option, but it does not distinguish between machine and user CSEs,
+which is annoying, and has other problems that are noted below. Therefore, local
+CSEs are enabled by copying over a pre-configured GPT.INI file.
+
+**Keep Backup.xml and GPT.INI files synchronized!**
+
+Refreshing CSEs
+---------------
+
+If you configure and then unconfigure a setting that requires a CSE, that CSE
+remains enabled, which may slow down policy processing. You can check which CSEs
+are enabled by generating a report via `gpreport /h GPReport.html`, and looking
+at the "Component Status" computer and user sections.
+
+To get rid of unnecessary CSEs, create a new GPO (or clear out the local
+computer policy), and copy all policy files from the repository into the new
+GPO. For local computer policy, run `Tools\LGPO.exe /g GPO`, but do not copy
+GPT.INI. This will preserve all settings in gpedit, but all CSEs will remain
+disabled.
+
+To re-enable required CSEs:
+
+1. Open gpedit and filter Administrative Templates to show only configured
+   settings (set Managed and Commented to "Any" and clear all checkboxes).
+2. Open "All Settings" container and double-click on the first setting.
+3. For each setting, toggle Enabled/Disabled via Alt-E and Alt-D shortcuts,
+   which will force gpedit to re-apply it, and then go to the next setting via
+   Alt-N.
+4. Repeat for all user settings.
+5. Finally, toggle one policy under Security Settings and another one under
+   Advanced Audit Policy Configuration.
+
+There are two important caveats when doing this:
+
+1. If you go too fast, you may run into the following error: "The process cannot
+   access the file because it is being used by another process. (Exception from
+   HRESULT: 0x80070020)." Just repeat the operation for the current setting and
+   keep going. Gpedit uses separate threads to commit changes and these threads
+   get in each other's way sometimes.
+2. **Some settings that show up as disabled, but have extra options, must
+   actually be enabled!** For example, "Allow Cloud Search" can be disabled, or
+   it can be enabled with the extra option set to "Disable Cloud Search". If you
+   do the latter and then re-open the setting, you'll see that it actually shows
+   up as disabled. However, if you compare LGPO text exports of the resulting
+   Registry.pol files, you'll notice that disabling the setting manually causes
+   the associated key (SpynetReporting) to be deleted, whereas enabling it and
+   setting the option to "Disable Cloud Search" sets the key to DWORD:0, which
+   is what we want. If you find any of this confusing, I personally like to
+   imagine myself slowly strangling the people who designed and implemented this
+   stuff. Try it... It's very therapeutic.
+
+The following table describes all CSE GUIDs referenced by this GPO:
+
+| GUID                                     | Description |
+| ---------------------------------------- | ----------- |
+| `{169EBF44-942F-4C43-87CE-13C93996EBBE}` | UE-V |
+| `{29BBE2D5-DE47-4855-97D7-2745E166DC6D}` | Cortana search |
+| `{2BFCC077-22D2-48DE-BDE1-2F618D9B476D}` | App-V |
+| `[{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{DF3DC19F-F72C-4030-940E-4C2A65A6B612}]` | Registry settings, combined with computer or user GUID |
+| `{7933F41E-56F8-41D6-A31C-4148A711EE93}` | Windows search |
+| `{C631DF4C-088F-4156-B058-4375F0853CD8}` | Offline files |
+| `{CDEAFC3D-948D-49DD-AB12-E578BA4AF7AA}` | TCP/IP |
+| `{D02B1F72-3407-48AE-BA88-E8213C6761F1}` | Computer setting |
+| `{D02B1F73-3407-48AE-BA88-E8213C6761F1}` | User setting |
+| `[{F3CCC681-B74C-4060-9F26-CD84525DCA2A}{0F3F3735-573D-9804-99E4-AB2A69BA5FD4}]` | [Advanced audit policy configuration](https://msdn.microsoft.com/en-us/library/dd976882.aspx) |
+
+`LGPO.exe /e audit` does not add the same GUID pair for Advanced Audit Policy
+Configuration as gpedit. The value above is added by gpedit to
+gPCMachineExtensionNames (only), whereas LGPO v2.2 adds
+`[{F3CCC681-B74C-4060-9F26-CD84525DCA2A}{DF3DC19F-F72C-4030-940E-4C2A65A6B612}]`
+to both gPCMachineExtensionNames and gPCUserExtensionNames. This is probably not
+correct, and is another reason to avoid LGPO's CSE handling.
 
 References
 ----------
@@ -192,3 +282,4 @@ References
 * https://blogs.technet.microsoft.com/josebda/2012/11/13/windows-server-2012-file-server-tip-disable-8-3-naming-and-strip-those-short-names-too/
 * https://support.microsoft.com/en-us/help/2526083/disabling-user-account-control-uac-on-windows-server
 * https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy
+* https://deploywindows.info/2016/02/11/windows-10-group-policy-client-side-extension-cse-list/
