@@ -288,11 +288,6 @@ MSCompatibilityMode
 DWORD:0
 
 Computer
-SOFTWARE\Policies\Microsoft\MicrosoftEdge\Extensions
-ExtensionsEnabled
-DWORD:0
-
-Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\Internet Settings
 ProvisionedHomePages
 SZ:<about:blank>
