@@ -239,8 +239,8 @@ There are two important caveats when doing this:
    do the latter and then re-open the setting, you'll see that it actually shows
    up as disabled. However, if you compare LGPO text exports of the resulting
    Registry.pol files, you'll notice that disabling the setting manually causes
-   the associated key (SpynetReporting) to be deleted, whereas enabling it and
-   setting the option to "Disable Cloud Search" sets the key to DWORD:0, which
+   the associated value (SpynetReporting) to be deleted, whereas enabling it and
+   setting the option to "Disable Cloud Search" sets the value to DWORD:0, which
    is what we want. If you find any of this confusing, I personally like to
    imagine myself slowly strangling the people who designed and implemented this
    stuff. Try it... It's very therapeutic.
