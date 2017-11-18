@@ -77,7 +77,7 @@ These are contained in the PolicyDefinitions directory:
 * Windows 10 and Server 2016 (1607)
 * Windows 10 Fall Creators Update (1709)
 * MSS (Legacy) from Windows 10 and Server 2016 Security Baseline (1709)
-* Windows Restricted Traffic Limited Functionality Baseline (1703)
+* Windows Restricted Traffic Limited Functionality Baseline (1709)
 
 When an update is released, the entire PolicyDefinitions directory should be
 rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
