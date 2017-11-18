@@ -179,6 +179,11 @@ DWORD:1
 
 User
 Software\Policies\Microsoft\Windows\Explorer
+HidePeopleBar
+DWORD:1
+
+User
+Software\Policies\Microsoft\Windows\Explorer
 NoBalloonFeatureAdvertisements
 DWORD:1
 
