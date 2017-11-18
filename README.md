@@ -241,15 +241,18 @@ There are two important caveats when doing this:
    get in each other's way sometimes.
 2. **Some settings that show up as disabled, but have extra options, must
    actually be enabled!** For example, "Allow Cloud Search" can be disabled, or
-   it can be enabled with the extra option set to "Disable Cloud Search". If you
-   do the latter and then re-open the setting, you'll see that it actually shows
-   up as disabled. However, if you compare LGPO text exports of the resulting
-   Registry.pol files, you'll notice that disabling the setting manually causes
-   the associated value (SpynetReporting) to be deleted, whereas enabling it and
-   setting the option to "Disable Cloud Search" sets the value to DWORD:0, which
-   is what we want. If you find any of this confusing, I personally like to
-   imagine myself slowly strangling the people who designed and implemented this
-   stuff. Try it... It's very therapeutic.
+   enabled with the extra option set to "Disable Cloud Search". If you do the
+   latter and then re-open the setting, it will show up as disabled. However, if
+   you compare LGPO text exports of the resulting Registry.pol files, you'll
+   notice that disabling the setting manually causes the associated value
+   (SpynetReporting) to be deleted, whereas enabling it and setting the option
+   to "Disable Cloud Search" sets the value to DWORD:0, which is what we want.
+   If you find any of this confusing, I personally like to imagine myself slowly
+   strangling the people who designed and implemented this stuff. Try it... It's
+   very therapeutic. Here's a (possibly incomplete) list of such settings:
+   * Allow Cloud Search
+   * Join Microsoft MAPS
+   * Limit Enhanced diagnostic data to the minimum required by Windows Analytics
 
 The following table describes all CSE GUIDs referenced by this GPO:
 
@@ -258,12 +261,16 @@ The following table describes all CSE GUIDs referenced by this GPO:
 | `{169EBF44-942F-4C43-87CE-13C93996EBBE}` | UE-V |
 | `{29BBE2D5-DE47-4855-97D7-2745E166DC6D}` | Cortana search |
 | `{2BFCC077-22D2-48DE-BDE1-2F618D9B476D}` | App-V |
-| `[{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{DF3DC19F-F72C-4030-940E-4C2A65A6B612}]` | Registry settings, combined with computer or user GUID |
+| `{2D4156A2-897A-11DB-BA21-001185AD2B89}` | Network List Manager Policies MMC snap-in |
+| `{35378EAC-683F-11D2-A89A-00C04FBBCFA2}` | Registry settings |
 | `{7933F41E-56F8-41D6-A31C-4148A711EE93}` | Windows search |
+| `{803E14A0-B4FB-11D0-A0D0-00A0C90F574B}` | Security settings MMC snap-in |
+| `{827D319E-6EAC-11D2-A4EA-00C04F79F83A}` | Security (domain-only) |
 | `{C631DF4C-088F-4156-B058-4375F0853CD8}` | Offline files |
 | `{CDEAFC3D-948D-49DD-AB12-E578BA4AF7AA}` | TCP/IP |
 | `{D02B1F72-3407-48AE-BA88-E8213C6761F1}` | Computer setting |
 | `{D02B1F73-3407-48AE-BA88-E8213C6761F1}` | User setting |
+| `{DF3DC19F-F72C-4030-940E-4C2A65A6B612}` | No idea |
 | `[{F3CCC681-B74C-4060-9F26-CD84525DCA2A}{0F3F3735-573D-9804-99E4-AB2A69BA5FD4}]` | [Advanced audit policy configuration](https://msdn.microsoft.com/en-us/library/dd976882.aspx) |
 
 `LGPO.exe /e audit` does not add the same GUID pair for Advanced Audit Policy
