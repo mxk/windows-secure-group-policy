@@ -211,8 +211,8 @@ Refreshing CSEs
 
 If you configure and then unconfigure a setting that requires a CSE, that CSE
 remains enabled, which may slow down policy processing. You can check which CSEs
-are enabled by generating a report via `gpreport /h GPReport.html`, and looking
-at the "Component Status" computer and user sections.
+are enabled by generating a report via `gpresult /h GPReport.html`, and looking
+at "Extensions Configured" under Computer/User Details -> Group Policy Objects.
 
 To get rid of unnecessary CSEs, create a new GPO (or clear out the local
 computer policy), and copy all policy files from the repository into the new
