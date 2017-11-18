@@ -122,8 +122,14 @@ Notes
 Bugs
 ----
 
-* Denying `Let Windows apps run in the background` right (Windows Components ->
+* Denying "Let Windows apps run in the background" right (Windows Components ->
   App Privacy) [breaks Start menu search in v1703](https://superuser.com/a/1208858).
+* Disabling "Allow Extensions" in Microsoft Edge settings prevents Edge from
+  starting for the first time in v1709. If Edge is started manually, the window
+  closes immediately. If Edge is started by opening an html file, you get "The
+  remote procedure call failed" error message. This does not happen on
+  subsequent launches, so just allow extensions temporarily when starting Edge
+  for the first time.
 
 Suggestions to implement in a separate GPO
 ------------------------------------------
