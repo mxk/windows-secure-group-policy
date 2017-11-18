@@ -1479,6 +1479,31 @@ DELETE
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallEveryWeek
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallFirstWeek
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallFourthWeek
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallSecondWeek
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallThirdWeek
+DELETE
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
 ScheduledInstallTime
 DELETE
 
