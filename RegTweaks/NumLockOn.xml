@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="NumLock On" bypassErrors="1" changed="2017-06-12 15:51:17" uid="{2870021C-F20E-4D74-B62D-2EE28D625CFC}">
+	<Filters><FilterOs bool="AND" not="0" class="NT" version="WINTHRESHOLD" type="NE" edition="NE" sp="NE"/></Filters>
+	<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="InitialKeyboardIndicators" status="InitialKeyboardIndicators" image="7" bypassErrors="1" changed="2017-06-12 15:53:42" uid="{64ED98E3-3071-4A6E-A545-9081BF465875}"><Properties action="U" displayDecimal="0" default="0" hive="HKEY_USERS" key=".DEFAULT\Control Panel\Keyboard" name="InitialKeyboardIndicators" type="REG_SZ" value="2147483650"/></Registry>
+</Collection>

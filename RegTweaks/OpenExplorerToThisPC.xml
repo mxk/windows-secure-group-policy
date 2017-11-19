@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="LaunchTo" status="LaunchTo" image="12" desc="Open File Explorer to: This PC" bypassErrors="1" changed="2017-06-02 12:19:58" uid="{AF051A63-0730-446D-A6EE-C5FFE2D64AD7}"><Properties action="U" displayDecimal="1" default="0" hive="HKEY_CURRENT_USER" key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" name="LaunchTo" type="REG_DWORD" value="00000001"/>
+	<Filters><FilterRunOnce hidden="1" not="0" bool="AND" id="{A33C51CF-A95A-4F28-8389-EC184716784C}"/></Filters>
+</Registry>
