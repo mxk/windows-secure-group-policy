@@ -84,6 +84,7 @@ rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
 files without removing old ones first may cause problems.
 
 * [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://support.microsoft.com/en-us/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra)
+* [Group Policy Settings Reference Spreadsheet Windows 1809](https://www.microsoft.com/en-us/download/details.aspx?id=57464)
 * [New policies for Windows 10](https://docs.microsoft.com/en-us/windows/client-management/new-policies-for-windows-10)
 
 Notes
