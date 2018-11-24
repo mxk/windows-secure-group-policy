@@ -44,7 +44,7 @@ If you enable it, a screen saver runs, provided the following two conditions hol
 
 Also, see the "Prevent changing Screen Saver" setting.</string>
       <string id="CPL_Personalization_SetScreenSaver">Force specific screen saver</string>
-      <string id="CPL_Personalization_SetScreenSaver_Help">Note: This setting is obsolete and will not be available in the future. Use "Force a specific default lock screen and logon image" instead.
+      <string id="CPL_Personalization_SetScreenSaver_Help">Note: This setting is obsolete and will not be available in the future. Use "Force a specific default lock screen and logon image" and "Prevent changing lock screen and logon image" instead.
 
 Specifies the screen saver for the user's desktop.
 
@@ -174,9 +174,7 @@ If you disable or do not configure this setting, a user may change the font size
 
 If you enable this policy setting, users that are not required to press CTRL + ALT + DEL before signing in will see their selected tile after locking their PC.
 
-If you disable or do not configure this policy setting, users that are not required to press CTRL + ALT + DEL before signing in will see a lock screen after locking their PC. They must dismiss the lock screen using touch, the keyboard, or by dragging it with the mouse.
-
-Note: This setting only applies to Enterprise, Education, and Server SKUs.</string>
+If you disable or do not configure this policy setting, users that are not required to press CTRL + ALT + DEL before signing in will see a lock screen after locking their PC. They must dismiss the lock screen using touch, the keyboard, or by dragging it with the mouse.</string>
       <string id="CPL_Personalization_NoChangingLockScreen">Prevent changing lock screen and logon image</string>
       <string id="CPL_Personalization_NoChangingLockScreen_Help">Prevents users from changing the background image shown when the machine is locked or when on the logon screen.
 

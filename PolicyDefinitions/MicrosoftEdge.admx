@@ -49,6 +49,16 @@
           <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
         </or>
       </definition>
+      <definition name="SUPPORTED_INTERNET_BROWSER_RS4" displayName="$(string.SUPPORTED_INTERNET_BROWSER_RS4_DisplayName)">
+        <or>
+          <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
+      <definition name="SUPPORTED_INTERNET_BROWSER_RS5" displayName="$(string.SUPPORTED_INTERNET_BROWSER_RS5_DisplayName)">
+        <or>
+          <range ref="products:MicrosoftEdge" minVersionIndex="1" maxVersionIndex="1"/>
+        </or>
+      </definition>
     </definitions>
   </supportedOn>
   <categories>
@@ -86,6 +96,21 @@
       </enabledValue>
       <disabledValue>
         <string>no</string>
+      </disabledValue>
+    </policy>
+    <policy name="AllowConfigurationUpdateForBooksLibrary"
+        class="Both"
+        displayName="$(string.AllowConfigurationUpdateForBooksLibrary)"
+        explainText="$(string.AllowConfigurationUpdateForBooksLibrary_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\BooksLibrary"
+        valueName="AllowConfigurationUpdateForBooksLibrary">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
       </disabledValue>
     </policy>
     <policy name="AllowDeveloperTools"
@@ -127,6 +152,36 @@
         valueName="ExtensionsEnabled">
       <parentCategory ref="MicrosoftEdge" />
       <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1607" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowSideloadingOfExtensions"
+            class="Both"
+            displayName="$(string.AllowSideloadingOfExtensions)"
+            explainText="$(string.AllowSideloadingOfExtensions_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Extensions"
+            valueName="AllowSideloadingOfExtensions">
+        <parentCategory ref="MicrosoftEdge" />
+        <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
+    </policy>
+    <policy name="AllowFullScreenMode"
+            class="Both"
+            displayName="$(string.AllowFullScreenMode)"
+            explainText="$(string.AllowFullScreenMode_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+            valueName="AllowFullScreenMode">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -177,6 +232,36 @@
       </enabledValue>
       <disabledValue>
         <string>no</string>
+      </disabledValue>
+    </policy>
+    <policy name="AllowPrinting"
+        class="Both"
+        displayName="$(string.AllowPrinting)"
+        explainText="$(string.AllowPrinting_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="AllowPrinting">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowSavingHistory"
+        class="Both"
+        displayName="$(string.AllowSavingHistory)"
+        explainText="$(string.AllowSavingHistory_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="AllowSavingHistory">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
       </disabledValue>
     </policy>
     <policy name="AllowSearchEngineCustomization"
@@ -254,6 +339,54 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="ConfigureFavoritesBar"
+        class="Both"
+        displayName="$(string.ConfigureFavoritesBar)"
+        explainText="$(string.ConfigureFavoritesBar_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="ConfigureFavoritesBar">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="ConfigureTelemetryForMicrosoft365Analytics"
+            class="Both"
+            displayName="$(string.ConfigureTelemetryForMicrosoft365Analytics)"
+            explainText="$(string.ConfigureTelemetryForMicrosoft365Analytics_Explain)"
+            key="Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection"
+            presentation="$(presentation.ConfigureTelemetryForMicrosoft365Analytics_Presentation)">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <elements>
+        <enum id="ZonesListBox" valueName="MicrosoftEdgeDataOptIn" required="true">
+          <item displayName="$(string.ZonesList_None)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ZonesList_IntranetOnly)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ZonesList_InternetOnly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ZonesList_Both)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="Cookies"
             class="Both"
             displayName="$(string.Cookies)"
@@ -319,6 +452,87 @@
         <text id="ConfiguredFavoritesPrompt" valueName="ConfiguredFavorites"/>
       </elements>
     </policy>
+    <policy name="ConfigureHomeButton"
+            class="Both"
+            displayName="$(string.ConfigureHomeButton)"
+            explainText="$(string.ConfigureHomeButton_Explain)"
+            presentation="$(presentation.ConfigureHomeButton_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <elements>
+        <enum id="ConfigureHomeButtonDropdown" valueName="ConfigureHomeButton" required="true">
+          <item displayName="$(string.ConfigureHomeButton_StartPage)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureHomeButton_NewTabPage)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureHomeButton_SpecificPage)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureHomeButton_HideHomeButton)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ConfigureOpenEdgeWith"
+            class="Both"
+            displayName="$(string.ConfigureOpenEdgeWith)"
+            explainText="$(string.ConfigureOpenEdgeWith_Explain)"
+            presentation="$(presentation.ConfigureOpenEdgeWith_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <elements>
+        <enum id="ConfigureOpenEdgeWithListBox" valueName="ConfigureOpenMicrosoftEdgeWith" required="true">
+          <item displayName="$(string.ConfigureOpenEdgeWithList_EdgeStartPage)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureOpenEdgeWithList_NewTabPage)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureOpenEdgeWithList_PreviousPages)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigureOpenEdgeWithList_ProvisionedHomePages)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="EnableExtendedBooksTelemetry"
+            class="Both"
+            displayName="$(string.EnableExtendedBooksTelemetry)"
+            explainText="$(string.EnableExtendedBooksTelemetry_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\BooksLibrary"
+            valueName="EnableExtendedBooksTelemetry">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnterpriseModeSiteList"
             class="Both"
             displayName="$(string.EnterpriseModeSiteList)"
@@ -330,6 +544,18 @@
       <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10" />
       <elements>
         <text id="EnterSiteListPrompt" valueName="SiteList" required="true" />
+      </elements>
+    </policy>
+    <policy name="PreventTurningOffRequiredExtensions"
+            class="Both"
+            displayName="$(string.PreventTurningOffRequiredExtensions)"
+            explainText="$(string.PreventTurningOffRequiredExtensions_Explain)"
+            presentation="$(presentation.PreventTurningOffRequiredExtensions_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Extensions">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <elements>
+        <text id="PreventTurningOffRequiredExtensions_Prompt" valueName="PreventTurningOffRequiredExtensions" required="true"  maxLength="2048" />
       </elements>
     </policy>
     <policy name="HideLocalHostIPAddress"
@@ -391,6 +617,21 @@
           <decimal value="0" />
         </disabledValue>
     </policy>
+    <policy name="PreventCertErrorOverrides"
+            class="Both"
+            displayName="$(string.PreventCertErrorOverrides)"
+            explainText="$(string.PreventCertErrorOverrides_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings"
+            valueName="PreventCertErrorOverrides">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="PreventSmartScreenPromptOverride"
             class="Both"
             displayName="$(string.PreventSmartScreenPromptOverride)"
@@ -433,6 +674,18 @@
         <list id="ProvisionedFavorites_List" additive="true" explicitValue="true" />
       </elements>
     </policy>
+    <policy name="SetHomeButtonURL"
+            class="Both"
+            displayName="$(string.SetHomeButtonURL)"
+            explainText="$(string.SetHomeButtonURL_Explain)"
+            presentation="$(presentation.SetHomeButtonURL_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <elements>
+        <text id="SetHomeButtonURLPrompt" valueName="HomeButtonURL" required="true" />
+      </elements>
+    </policy>
     <policy name="SendIntranetTraffictoInternetExplorer"
             class="Both"
             displayName="$(string.SendIntranetTraffictoInternetExplorer)"
@@ -448,20 +701,41 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="SetNewTabPageURL"
+            class="Both"
+            displayName="$(string.SetNewTabPageURL)"
+            explainText="$(string.SetNewTabPageURL_Explain)"
+            presentation="$(presentation.SetNewTabPageURL_Presentation)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <elements>
+        <text id="SetNewTabPageURLPrompt" valueName="NewTabPageURL" required="true" />
+      </elements>
+    </policy>
     <policy name="ShowMessageWhenOpeningSitesInInternetExplorer"
             class="Both"
             displayName="$(string.ShowMessageWhenOpeningSitesInInternetExplorer)"
             explainText="$(string.ShowMessageWhenOpeningSitesInInternetExplorer_Explain)"
             key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+            presentation="$(presentation.ShowMessageWhenOpeningSitesInInternetExplorer_Presentation)"
             valueName="ShowMessageWhenOpeningSitesInInternetExplorer">
       <parentCategory ref="MicrosoftEdge" />
       <supportedOn ref="SUPPORTED_INTERNET_BROWSER_WIN10V1607" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
+      <elements>
+        <enum id="ShowMessageWhenOpeningSitesInInternetExplorer_Dropdown" valueName="ShowMessageWhenOpeningSitesInInternetExplorer" required="true">
+          <item displayName="$(string.ShowMessageWhenOpeningSitesInInternetExplorer_Hide_ContinueInEdge)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ShowMessageWhenOpeningSitesInInternetExplorer_Show_ContinueInEdge)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <policy name="PreventAccessToAboutFlagsInMicrosoftEdge"
             class="Both"
@@ -523,6 +797,36 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="UnlockHomeButton"
+            class="Both"
+            displayName="$(string.UnlockHomeButton)"
+            explainText="$(string.UnlockHomeButton_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Internet Settings"
+            valueName="UnlockHomeButton">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="UseSharedFolderForBooks"
+            class="Both"
+            displayName="$(string.UseSharedFolderForBooks)"
+            explainText="$(string.UseSharedFolderForBooks_Explain)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\BooksLibrary"
+            valueName="UseSharedFolderForBooks">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowFlashClickToRun"
             class="Both"
             displayName="$(string.AllowFlashClickToRun)"
@@ -567,7 +871,7 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
-    </policy>      
+    </policy>
     <policy name="AllowCVList"
             class="Both"
             displayName="$(string.AllowCVList)"
@@ -582,6 +886,78 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="AllowTabPreloading"
+            class="Both"
+            displayName="$(string.AllowTabPreloading)"
+            explainText="$(string.AllowTabPreloading_Explain)"
+            presentation="$(presentation.AllowTabPreloading)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\TabPreloader">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS4" />
+      <elements>
+        <enum id="AllowTabPreloadingDropdown" valueName="AllowTabPreloading" required="true">
+          <item displayName="$(string.AllowTabPreloadingDropdown_AllowTabPreloading)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.AllowTabPreloadingDropdown_PreventTabPreloading)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="AllowPrelaunch"
+            class="Both"
+            displayName="$(string.AllowPrelaunch)"
+            explainText="$(string.AllowPrelaunch_Explain)"
+            presentation="$(presentation.AllowPrelaunch)"
+            key="Software\Policies\Microsoft\MicrosoftEdge\Main">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <elements>
+        <enum id="AllowPrelaunchDropdown" valueName="AllowPrelaunch" required="true">
+          <item displayName="$(string.AllowPrelaunchDropdown_AllowPrelaunch)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.AllowPrelaunchDropdown_PreventPrelaunch)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ConfigureKioskMode"
+      class="Both"
+      displayName="$(string.ConfigureKioskMode)"
+      explainText="$(string.ConfigureKioskMode_Explain)"
+      presentation="$(presentation.ConfigureKioskMode_Presentation)"
+      key="Software\Policies\Microsoft\MicrosoftEdge\KioskMode"
+      valueName="ConfigureKioskMode">
+        <parentCategory ref="MicrosoftEdge" />
+        <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+        <elements>
+            <decimal id="ConfigureKioskMode_TextBox" valueName="ConfigureKioskMode" minValue="0" maxValue="1" />
+        </elements>
+    </policy>
+    <policy name="ConfigureKioskResetAfterIdleTimeout"
+      class="Both"
+      displayName="$(string.ConfigureKioskResetAfterIdleTimeout)"
+      explainText="$(string.ConfigureKioskResetAfterIdleTimeout_Explain)"
+      presentation="$(presentation.ConfigureKioskResetAfterIdleTimeout_Presentation)"
+      key="Software\Policies\Microsoft\MicrosoftEdge\KioskMode"
+      valueName="ConfigureKioskResetAfterIdleTimeout">
+        <parentCategory ref="MicrosoftEdge" />
+        <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+        <elements>
+            <decimal id="ConfigureKioskResetAfterIdleTimeout_TextBox" valueName="ConfigureKioskResetAfterIdleTimeout" minValue="0" maxValue="1440" />
+        </elements>
     </policy>
   </policies>
 </policyDefinitions>

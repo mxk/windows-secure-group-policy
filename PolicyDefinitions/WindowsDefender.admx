@@ -154,6 +154,29 @@
                 <decimal value="0" />
             </disabledValue>
         </policy>
+        <policy name="Root_PUAProtection" class="Machine" displayName="$(string.Root_PUAProtection)" explainText="$(string.Root_PUAProtection_Explain)" key="Software\Policies\Microsoft\Windows Defender" valueName="PUAProtection" presentation="$(presentation.Root_PUAProtection)">
+            <parentCategory ref="AntiSpywareDefender" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS1" />
+            <elements>
+                <enum id="Root_PUAProtection" valueName="PUAProtection" required="true">
+                    <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable)">
+                        <value>
+                            <decimal value="0" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block)">
+                        <value>
+                            <decimal value="1" />
+                        </value>
+                    </item>
+                    <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit)">
+                        <value>
+                            <decimal value="2" />
+                        </value>
+                    </item>
+                </enum>
+            </elements>
+        </policy>
         <policy name="Exclusions_Extensions" class="Machine" displayName="$(string.Exclusions_Extensions)" explainText="$(string.Exclusions_Extensions_Explain)" key="Software\Policies\Microsoft\Windows Defender\Exclusions" valueName="Exclusions_Extensions" presentation="$(presentation.Exclusions_Extensions)">
             <parentCategory ref="Exclusions" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
@@ -372,12 +395,6 @@
         <policy name="Remediation_Scan_ScheduleDay" class="Machine" displayName="$(string.Remediation_Scan_ScheduleDay)" explainText="$(string.Remediation_Scan_ScheduleDay_Explain)" key="Software\Policies\Microsoft\Windows Defender\Remediation" valueName="Scan_ScheduleDay" presentation="$(presentation.Remediation_Scan_ScheduleDay)">
             <parentCategory ref="Remediation" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
-            <enabledValue>
-                <decimal value="0" />
-            </enabledValue>
-            <disabledValue>
-                <decimal value="8" />
-            </disabledValue>
             <elements>
                 <enum id="Remediation_Scan_ScheduleDay" valueName="Scan_ScheduleDay" required="true">
                     <item displayName="$(string.Remediation_Scan_ScheduleDay_0)">
@@ -743,12 +760,6 @@
         <policy name="Scan_ScheduleDay" class="Machine" displayName="$(string.Scan_ScheduleDay)" explainText="$(string.Scan_ScheduleDay_Explain)" key="Software\Policies\Microsoft\Windows Defender\Scan" valueName="ScheduleDay" presentation="$(presentation.Scan_ScheduleDay)">
             <parentCategory ref="Scan" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
-            <enabledValue>
-                <decimal value="0" />
-            </enabledValue>
-            <disabledValue>
-                <decimal value="8" />
-            </disabledValue>
             <elements>
                 <enum id="Scan_ScheduleDay" valueName="ScheduleDay" required="true">
                     <item displayName="$(string.Scan_ScheduleDay_0)">
@@ -819,6 +830,16 @@
             <elements>
                 <decimal id="Scan_MissedScheduledScanCountBeforeCatchup" valueName="MissedScheduledScanCountBeforeCatchup" minValue="2" maxValue="20" />
             </elements>
+        </policy>
+        <policy name="Scan_LowCpuPriority" class="Machine" displayName="$(string.Scan_LowCpuPriority)" explainText="$(string.Scan_LowCpuPriority_Explain)" key="Software\Policies\Microsoft\Windows Defender\Scan" valueName="LowCpuPriority">
+            <parentCategory ref="Scan" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
         </policy>
         <policy name="SignatureUpdate_ASSignatureDue" class="Machine" displayName="$(string.SignatureUpdate_ASSignatureDue)" explainText="$(string.SignatureUpdate_ASSignatureDue_Explain)" key="Software\Policies\Microsoft\Windows Defender\Signature Updates" valueName="ASSignatureDue" presentation="$(presentation.SignatureUpdate_ASSignatureDue)">
             <parentCategory ref="SignatureUpdate" />
@@ -901,12 +922,6 @@
         <policy name="SignatureUpdate_ScheduleDay" class="Machine" displayName="$(string.SignatureUpdate_ScheduleDay)" explainText="$(string.SignatureUpdate_ScheduleDay_Explain)" key="Software\Policies\Microsoft\Windows Defender\Signature Updates" valueName="ScheduleDay" presentation="$(presentation.SignatureUpdate_ScheduleDay)">
             <parentCategory ref="SignatureUpdate" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />
-            <enabledValue>
-                <decimal value="0" />
-            </enabledValue>
-            <disabledValue>
-                <decimal value="8" />
-            </disabledValue>
             <elements>
                 <enum id="SignatureUpdate_ScheduleDay" valueName="ScheduleDay" required="true">
                     <item displayName="$(string.SignatureUpdate_ScheduleDay_0)">
@@ -1196,6 +1211,16 @@
             <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit)">
                 <value>
                     <decimal value="2" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_BlockDiskModifications)">
+                <value>
+                    <decimal value="3" />
+                </value>
+            </item>
+            <item displayName="$(string.ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_AuditDiskModifications)">
+                <value>
+                    <decimal value="4" />
                 </value>
             </item>
            </enum>

@@ -11,7 +11,7 @@
       <string id="FontMitigation_On">Block untrusted fonts and log events</string>
       <string id="FontMitigation_Off">Do not block untrusted fonts</string>
       <string id="FontMitigation_Audit">Log events without blocking untrusted fonts</string>
-	  
+
 	  <string id="ProcessMitigationOptions_List">Process Mitigation Options</string>
       <string id="ProcessMitigationOptions_List_Help">
         This security feature provides a means to override individual process MitigationOptions settings. This can be used to enforce a number of security policies specific to applications. The application name is specified as the Value name, including extension. The Value is specified as a bit field with a series of flags in particular positions. Bits can be set to either 0 (setting is forced off), 1 (setting is forced on), or ? (setting retains its existing value prior to GPO evaluation). The recognized bit locations are:
@@ -20,7 +20,7 @@
         Enables data execution prevention (DEP) for the child process
 
         PROCESS_CREATION_MITIGATION_POLICY_DEP_ATL_THUNK_ENABLE (0x00000002)
-        Enables DEP-ATL thunk emulation for the child process. DEP-ATL thunk emulation causes the system to intercept NX faults that originate from the Active Template Library (ATL) thunk layer. 
+        Enables DEP-ATL thunk emulation for the child process. DEP-ATL thunk emulation causes the system to intercept NX faults that originate from the Active Template Library (ATL) thunk layer.
 
         PROCESS_CREATION_MITIGATION_POLICY_SEHOP_ENABLE (0x00000004)
         Enables structured exception handler overwrite protection (SEHOP) for the child process. SEHOP blocks exploits that use the structured exception handler (SEH) overwrite technique.
@@ -35,7 +35,7 @@
         For instance, to enable PROCESS_CREATION_MITIGATION_POLICY_DEP_ENABLE and PROCESS_CREATION_MITIGATION_POLICY_FORCE_RELOCATE_IMAGES_ALWAYS_ON, disable PROCESS_CREATION_MITIGATION_POLICY_BOTTOM_UP_ASLR_ALWAYS_OFF, and to leave all other options at their default values, specify a value of:
         ???????????????0???????1???????1
 
-        Setting flags not specified here to any value other than ? results in undefined behavior.	  
+        Setting flags not specified here to any value other than ? results in undefined behavior.
 </string>
 
       <string id="ResetDfsClientInfoDuringRefreshPolicy">Enable AD/DFS domain controller synchronization during policy refresh</string>
@@ -56,6 +56,16 @@ If you disable this policy setting, the Windows device is not discoverable by ot
 
 If you do not configure this policy setting, the default behavior depends on the Windows edition. Changes to this policy take effect on reboot.
       </string>
+      <string id="EnableMMX">Phone-PC linking on this device</string>
+      <string id="EnableMMX_Help">
+This policy allows IT admins to turn off the ability to Link a Phone with a PC to continue reading, emailing and other tasks that requires linking between Phone and PC.
+
+If you enable this policy setting, the Windows device will be able to enroll in Phone-PC linking functionality and participate in Continue on PC experiences.
+
+If you disable this policy setting, the Windows device is not allowed to be linked to Phones, will remove itself from the device list of any linked Phones, and cannot participate in Continue on PC experiences.
+
+If you do not configure this policy setting, the default behavior depends on the Windows edition. Changes to this policy take effect on reboot.
+      </string>
       <string id="EnableAppUriHandlers">Configure web-to-app linking with app URI handlers</string>
       <string id="EnableAppUriHandlers_Help">
 This policy setting determines whether Windows supports web-to-app linking with app URI handlers.
@@ -70,26 +80,26 @@ If you do not configure this policy setting, the default behavior depends on the
       <string id="EnableFontProviders">Enable Font Providers</string>
       <string id="EnableFontProviders_Help">
         This policy setting determines whether Windows is allowed to download fonts and font catalog data from an online font provider.
-        
+
         If you enable this policy setting, Windows periodically queries an online font provider to determine whether a new font catalog is available. Windows may also download font data if needed to format or render text.
-        
+
         If you disable this policy setting, Windows does not connect to an online font provider and only enumerates locally-installed fonts.
-      
+
         If you do not configure this policy setting, the default behavior depends on the Windows edition. Changes to this policy take effect on reboot.
       </string>
       <string id="EnableLogonOptimization">Configure Group Policy Caching</string>
       <string id="EnableLogonOptimization_Help">
         This policy setting allows you to configure Group Policy caching behavior.
-        
+
         If you enable or do not configure this policy setting, Group Policy caches policy information after every background processing session. This cache saves applicable GPOs and the settings contained within them. When Group Policy runs in synchronous foreground mode, it refers to this cache, which enables it to run faster. When the cache is read, Group Policy attempts to contact a logon domain controller to determine the link speed. When Group Policy runs in background mode or asynchronous foreground mode, it continues to download the latest version of the policy information, and it uses a bandwidth estimate to determine slow link thresholds. (See the “Configure Group Policy Slow Link Detection” policy setting to configure asynchronous foreground behavior.)
-        
+
         The slow link value that is defined in this policy setting determines how long Group Policy will wait for a response from the domain controller before reporting the link speed as slow. The default is 500 milliseconds.
-        
+
         The timeout value that is defined in this policy setting determines how long Group Policy will wait for a response from the domain controller before determining that there is no network connectivity. This stops the current Group Policy processing. Group Policy will run in the background the next time a connection to a domain controller is established. Setting this value too high might result in longer waits for the user at boot or logon. The default is 5000 milliseconds.
-        
+
         If you disable this policy setting, the Group Policy client will not cache applicable GPOs or settings that are contained within the GPOs. When Group Policy runs synchronously, it downloads the latest version of the policy from the network and uses bandwidth estimates to determine slow link thresholds. (See the “Configure Group Policy Slow Link Detection” policy setting to configure asynchronous foreground behavior.)
       </string>
-      
+
       <string id="EnableLogonOptimizationOnServerSKU">Enable Group Policy Caching for Servers</string>
       <string id="EnableLogonOptimizationOnServerSKU_Help">
         This policy setting allows you to configure Group Policy caching behavior on Windows Server machines.
@@ -98,47 +108,47 @@ If you do not configure this policy setting, the default behavior depends on the
         The timeout value that is defined in this policy setting determines how long Group Policy will wait for a response from the domain controller before determining that there is no network connectivity. This stops the current Group Policy processing. Group Policy will run in the background the next time a connection to a domain controller is established. Setting this value too high might result in longer waits for the user at boot or logon. The default is 5000 milliseconds.
         If you disable or do not configure this policy setting, the Group Policy client will not cache applicable GPOs or settings that are contained within the GPOs. When Group Policy runs synchronously, it downloads the latest version of the policy from the network and uses bandwidth estimates to determine slow link thresholds. (See the “Configure Group Policy Slow Link Detection” policy setting to configure asynchronous foreground behavior.)
       </string>
-      
+
       <string id="LogonScriptDelay">Configure Logon Script Delay</string>
       <string id="LogonScriptDelay_Help">
         Enter “0” to disable Logon Script Delay.
-        
+
         This policy setting allows you to configure how long the Group Policy client waits after logon before running scripts.
-        
+
         By default, the Group Policy client waits five minutes before running logon scripts. This helps create a responsive desktop environment by preventing disk contention.
-        
+
         If you enable this policy setting, Group Policy will wait for the specified amount of time before running logon scripts.
-        
+
         If you disable this policy setting, Group Policy will run scripts immediately after logon.
-        
+
         If you do not configure this policy setting, Group Policy will wait five minutes before running logon scripts.
       </string>
-      
+
      <string id="SlowLinkDefaultForDirectAccess">Configure Direct Access connections as a fast network connection</string>
-      <string id="SlowLinkDefaultForDirectAccess_Help">This policy setting allows an administrator to define the Direct Access connection to be considered a fast network connection for the purposes of applying and updating Group Policy. 
- 
+      <string id="SlowLinkDefaultForDirectAccess_Help">This policy setting allows an administrator to define the Direct Access connection to be considered a fast network connection for the purposes of applying and updating Group Policy.
+
 When Group Policy detects the bandwidth speed of a Direct Access connection, the detection can sometimes fail to provide any bandwidth speed information. If Group Policy detects a bandwidth speed, Group Policy will follow the normal rules for evaluating if the Direct Access connection is a fast or slow network connection. If no bandwidth speed is detected, Group Policy will default to a slow network connection. This policy setting allows the administrator the option to override the default to slow network connection and instead default to using a fast network connection in the case that no network bandwidth speed is determined.
- 
-Note: When Group Policy detects a slow network connection, Group Policy will only process those client side extensions configured for processing across a slow link (slow network connection).  
- 
+
+Note: When Group Policy detects a slow network connection, Group Policy will only process those client side extensions configured for processing across a slow link (slow network connection).
+
 If you enable this policy, when Group Policy cannot determine the bandwidth speed across Direct Access, Group Policy will evaluate the network connection as a fast link and process all client side extensions.
- 
+
 If you disable this setting or do not configure it, Group Policy will evaluate the network connection as a slow link and process only those client side extensions configured to process over a slow link.
-          
+
       </string>
      <string id="SlowlinkDefaultToAsync">Change Group Policy processing to run asynchronously when a slow network connection is detected.</string>
-      <string id="SlowlinkDefaultToAsync_Help">This policy directs Group Policy processing to skip processing any client side extension that requires synchronous processing (that is, whether computers wait for the network to be fully initialized during computer startup and user logon) when a slow network connection is detected.  
- 
+      <string id="SlowlinkDefaultToAsync_Help">This policy directs Group Policy processing to skip processing any client side extension that requires synchronous processing (that is, whether computers wait for the network to be fully initialized during computer startup and user logon) when a slow network connection is detected.
+
 If you enable this policy setting, when a slow network connection is detected, Group Policy processing will always run in an asynchronous manner.
-Client computers will not wait for the network to be fully initialized at startup and logon. Existing users will be logged on using cached credentials, 
-which will result in shorter logon times. Group Policy will be applied in the background after the network becomes available.   
+Client computers will not wait for the network to be fully initialized at startup and logon. Existing users will be logged on using cached credentials,
+which will result in shorter logon times. Group Policy will be applied in the background after the network becomes available.
 Note that because this is a background refresh, extensions requiring synchronous processing such as Software Installation, Folder Redirection
 and Drive Maps preference extension will not be applied.
- 
+
 Note: There are two conditions that will cause Group Policy to be processed synchronously even if this policy setting is enabled:
 1 - At the first computer startup after the client computer has joined the domain.
 2 - If the policy setting "Always wait for the network at computer startup and logon" is enabled.
- 
+
 If you disable or do not configure this policy setting, detecting a slow network connection will not affect whether Group Policy processing will be synchronous or asynchronous.
 
       </string>
@@ -158,7 +168,7 @@ Note: For computers joined to a domain, it is strongly recommended that you only
 
 If you enable this policy setting, Group Policy will use this administratively configured maximum wait time and override any default or system-computed wait time.
 
-If you disable or do not configure this policy setting, Group Policy will use the default wait time of 30 seconds on computers running Windows Vista operating system. 
+If you disable or do not configure this policy setting, Group Policy will use the default wait time of 30 seconds on computers running Windows Vista operating system.
 </string>
 
       <string id="AllowX-ForestPolicy-and-RUP">Allow cross-forest user policy and roaming user profiles</string>

@@ -20,7 +20,7 @@
     </policy>
     <policy name="DeviceInstall_GenericDriverSendToWER" class="Machine" displayName="$(string.DeviceInstall_GenericDriverSendToWER)" explainText="$(string.DeviceInstall_GenericDriverSendToWER_Help)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Settings" valueName="DisableSendGenericDriverNotFoundToWER">
       <parentCategory ref="devinst:DeviceInstall_Category" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3ToVista" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -30,7 +30,7 @@
     </policy>
     <policy name="DeviceInstall_RequestAdditionalSoftwareSendToWER" class="Machine" displayName="$(string.DeviceInstall_RequestAdditionalSoftwareSendToWER)" explainText="$(string.DeviceInstall_RequestAdditionalSoftwareSendToWER_Help)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Settings" valueName="DisableSendRequestAdditionalSoftwareToWER">
       <parentCategory ref="devinst:DeviceInstall_Category" />
-      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3ToVista" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

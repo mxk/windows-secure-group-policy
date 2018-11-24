@@ -113,7 +113,7 @@
         <text id="Channel_LogFilePath" valueName="File" />
       </elements>
     </policy>
-    <policy name="Channel_LogMaxSize_2" class="Machine" displayName="$(string.Channel_LogMaxSize)" explainText="$(string.Channel_LogMaxSize_Help)" presentation="$(presentation.Channel_LogMaxSize_2)" key="Software\Policies\Microsoft\Windows\EventLog\Security">
+    <policy name="Channel_LogMaxSize_2" class="Machine" displayName="$(string.Channel_LogMaxSize)" explainText="$(string.Channel_LogMaxSizeSecurity_Help)" presentation="$(presentation.Channel_LogMaxSize_2)" key="Software\Policies\Microsoft\Windows\EventLog\Security">
       <parentCategory ref="EventLog_Security" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <elements>

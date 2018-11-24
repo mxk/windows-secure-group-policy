@@ -210,7 +210,7 @@
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_WindowsXPOrServerOnly" />
     </policy>
-    <policy name="NoFrequentUsedPrograms" class="User" displayName="$(string.NoFrequentUsedPrograms)" explainText="$(string.NoFrequentUsedPrograms_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoStartMenuMFUprogramsList">
+    <policy name="NoFrequentUsedPrograms" class="Both" displayName="$(string.NoFrequentUsedPrograms)" explainText="$(string.NoFrequentUsedPrograms_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoStartMenuMFUprogramsList">
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows7ToXPAndWindows10" />
     </policy>
@@ -222,7 +222,7 @@
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_WindowsVistaTo2k" />
     </policy>
-    <policy name="NoMoreProgramsList" class="User" displayName="$(string.NoMoreProgramsList)" explainText="$(string.NoMoreProgramsList_Help)" presentation="$(presentation.NoMoreProgramsList)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
+    <policy name="NoMoreProgramsList" class="Both" displayName="$(string.NoMoreProgramsList)" explainText="$(string.NoMoreProgramsList_Help)" presentation="$(presentation.NoMoreProgramsList)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
       <elements>
@@ -258,7 +258,7 @@
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows7ToXP" />
     </policy>
-    <policy name="NoRecentDocsHistory" class="User" displayName="$(string.NoRecentDocsHistory)" explainText="$(string.NoRecentDocsHistory_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoRecentDocsHistory">
+    <policy name="NoRecentDocsHistory" class="Both" displayName="$(string.NoRecentDocsHistory)" explainText="$(string.NoRecentDocsHistory_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoRecentDocsHistory">
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Win2k" />
     </policy>
@@ -503,7 +503,7 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="ForceStartSize" class="User" displayName="$(string.ForceStartSize_DisplayName)" explainText="$(string.ForceStartSize_ExplainText)" presentation="$(presentation.ForceStartSize)" key="Software\Policies\Microsoft\Windows\Explorer">
+    <policy name="ForceStartSize" class="Both" displayName="$(string.ForceStartSize_DisplayName)" explainText="$(string.ForceStartSize_ExplainText)" presentation="$(presentation.ForceStartSize)" key="Software\Policies\Microsoft\Windows\Explorer">
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
       <elements>
@@ -524,6 +524,14 @@
     <policy name="HidePeopleBar" class="User" displayName="$(string.HidePeopleBar_DisplayName)" explainText="$(string.HidePeopleBar_ExplainText)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="HidePeopleBar">
       <parentCategory ref="windows:StartMenu" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
+    </policy>
+    <policy name="HideRecentlyAddedApps" class="Both" displayName="$(string.HideRecentlyAddedApps)" explainText="$(string.HideRecentlyAddedApps_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="HideRecentlyAddedApps">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+    </policy>
+    <policy name="DisableContextMenusInStart" class="Both" displayName="$(string.DisableContextMenusInStart)" explainText="$(string.DisableContextMenusInStart_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableContextMenusInStart">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
     </policy>
   </policies>
 </policyDefinitions>

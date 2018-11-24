@@ -116,6 +116,21 @@
     If you enable this setting, the antimalware service will always remain running even if both antivirus and antispyware definitions are disabled.
 
     If you disable or do not configure this setting, the antimalware service will be stopped when both antivirus and antispyware definitions are disabled. If the computer is restarted, the service will be started if it is set to Automatic startup. After the service has started, there will be a check to see if antivirus and antispyware definitions are enabled. If at least one is enabled, the service will remain running. If both are disabled, the service will be stopped.</string>
+    <string id="Root_PUAProtection">Configure detection for potentially unwanted applications</string>
+    <string id="Root_PUAProtection_Explain">
+        Enable or disable detection for potentially unwanted applications. You can choose to block, audit, or allow when potentially unwanted software is being downloaded or attempts to install itself on your computer.
+
+        Enabled:
+        Specify the mode in the Options section:
+        -Block: Potentially unwanted software will be blocked.
+        -Audit Mode: Potentially unwanted software will not be blocked, however if this feature would have blocked access if it were set to Block, then a record of the event will be in the event logs.
+
+        Disabled:
+        Potentially unwanted software will not be blocked.
+
+        Not configured:
+        Same as Disabled.
+    </string>
     <string id="Exclusions_Extensions">Extension Exclusions</string>
     <string id="Exclusions_Extensions_Explain">This policy setting allows you specify a list of file types that should be excluded from scheduled, custom, and real-time scanning. File types should be added under the Options for this setting. Each entry must be listed as a name value pair, where the name should be a string representation of the file type extension (such as "obj" or "lib"). The value is not used and it is recommended that this be set to 0.</string>
     <string id="Exclusions_Paths">Path Exclusions</string>
@@ -520,6 +535,14 @@
     If you enable this setting, a catch-up scan will occur after the specified number consecutive missed scheduled scans.
 
     If you disable or do not configure this setting, a catch-up scan will occur after the 2 consecutive missed scheduled scans.</string>
+    <string id="Scan_LowCpuPriority">Configure low CPU priority for scheduled scans</string>
+    <string id="Scan_LowCpuPriority_Explain">
+        This policy setting allows you to enable or disable low CPU priority for scheduled scans.
+
+        If you enable this setting, low CPU priority will be used during scheduled scans.
+
+        If you disable or do not configure this setting, not changes will be made to CPU priority for scheduled scans.
+    </string>
     <string id="SignatureUpdate_ASSignatureDue">Define the number of days before spyware definitions are considered out of date</string>
     <string id="SignatureUpdate_ASSignatureDue_Explain">This policy setting allows you to define the number of days that must pass before spyware definitions are considered out of date. If definitions are determined to be out of date, this state may trigger several additional actions, including falling back to an alternative update source or displaying a warning icon in the user interface. By default, this value is set to 14 days.
 
@@ -834,27 +857,61 @@
     </string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess">Configure Controlled folder access</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Explain">
-    Enable or disable controlled folder access for untrusted applications. 
+    Enable or disable controlled folder access for untrusted applications. You can choose to block, audit, or allow attempts by untrusted apps to:
+    - Modify or delete files in protected folders, such as the Documents folder
+    - Write to disk sectors
+
+    You can also choose to only block or audit writes to disk sectors while still allowing the modification or deletion of files in protected folders.
+
+    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
+    Default system folders are automatically protected, but you can add folders in the Configure protected folders GP setting.
 
     Block:
-    Untrusted applications cannot modify or delete files in protected folders, such as the Documents folder.
+    The following will be blocked:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    - Attempts by untrusted apps to write to disk sectors
+    The Windows event log will record these blocks under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
+
 
     Disabled:
-    All applications can modify or delete files in protected folders, such as the Documents folder.
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    - Attempts by untrusted apps to write to disk sectors
+    These attempts will not be recorded in the Windows event log.
+
 
     Audit Mode:
-    Applications that would normally be considered ""untrusted"" if the setting was Enabled will still be able to modify or delete files in protected folders. However, each event will be recorded in the Windows event log.
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    - Attempts by untrusted apps to write to disk sectors
+    The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124.
+
+
+    Block disk modification only:
+    The following will be blocked:
+    - Attempts by untrusted apps to write to disk sectors
+    The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
+
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    These attempts will not be recorded in the Windows event log.
+
+
+    Audit disk modification only:
+    The following will not be blocked and will be allowed to run:
+    - Attempts by untrusted apps to write to disk sectors
+    - Attempts by untrusted apps to modify or delete files in protected folders
+    Only attempts to write to protected disk sectors will be recorded in the Windows event log (under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124).
+    Attempts to modify or delete files in protected folders will not be recorded.
 
     Not configured:
     Same as Disabled.
-
-    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the configure allowed applications GP setting.
-
-    Default system folders are automatically guarded, but you can add folders in the configure protected folders GP setting.
     </string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable">Disable (Default)</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block">Block</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Audit">Audit Mode</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_BlockDiskModifications">Block disk modification only</string>
+    <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_AuditDiskModifications">Audit disk modification only</string>
     <string id="ExploitGuard_ControlledFolderAccess_AllowedApplications">Configure allowed applications</string>
     <string id="ExploitGuard_ControlledFolderAccess_AllowedApplications_Explain">
     Add additional applications that should be considered "trusted" by controlled folder access.
@@ -883,7 +940,7 @@
     Files in these folders cannot be modified or deleted by untrusted applications.
 
     Default system folders are automatically protected. You can configure this setting to add additional folders. 
-    The list of default system folders that are protected is shown in the Windows Defender Security Center.
+    The list of default system folders that are protected is shown in Windows Security.
 
     Enabled:
     Specify additional folders that should be protected in the Options section.
@@ -1061,6 +1118,9 @@
     </presentation>
     <presentation id="ExploitGuard_EnableNetworkProtection">
         <dropdownList refId="ExploitGuard_EnableNetworkProtection" noSort="true" defaultItem="0"></dropdownList>
+    </presentation>
+    <presentation id="Root_PUAProtection">
+        <dropdownList refId="Root_PUAProtection" noSort="true" defaultItem="0"></dropdownList>
     </presentation>
    </presentationTable>
 </resources>

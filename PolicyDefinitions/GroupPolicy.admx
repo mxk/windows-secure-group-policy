@@ -10,8 +10,8 @@
     <category name="PolicyPolicies" displayName="$(string.PolicyPolicies)">
       <parentCategory ref="windows:System" />
     </category>
-    <category name="MitOptions" displayName="$(string.MitigationOptions)">  
-      <parentCategory ref="windows:System" />  
+    <category name="MitOptions" displayName="$(string.MitigationOptions)">
+      <parentCategory ref="windows:System" />
     </category>
     <category name="NetworkFonts" displayName="$(string.Fonts)">
       <parentCategory ref="windows:Network" />
@@ -60,7 +60,17 @@
     </policy>
     <policy name="EnableCDP" class="Machine" displayName="$(string.EnableCDP)" explainText="$(string.EnableCDP_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableCdp">
       <parentCategory ref="PolicyPolicies" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />	  
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableMMX" class="Machine" displayName="$(string.EnableMMX)" explainText="$(string.EnableMMX_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableMmx">
+      <parentCategory ref="PolicyPolicies" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

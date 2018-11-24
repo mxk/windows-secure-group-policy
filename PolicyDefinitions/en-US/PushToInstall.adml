@@ -6,7 +6,7 @@
     <stringTable>
       <string id="PushToInstall">Push To Install</string>
       <string id="DisablePushToInstall">Turn off Push To Install service</string>
-      <string id="DisablePushToInstall_Help">If you enable this setting, users will not be able to push Apps to this device from the Windows Store App running on other devices or the web.</string>
+      <string id="DisablePushToInstall_Help">If you enable this setting, users will not be able to push Apps to this device from the Microsoft Store running on other devices or the web.</string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

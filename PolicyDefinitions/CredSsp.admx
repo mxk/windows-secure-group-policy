@@ -240,13 +240,38 @@
     </policy>
     <policy name="AllowProtectedCreds" class="Machine" displayName="$(string.AllowProtectedCreds)" explainText="$(string.AllowProtectedCreds_Explain)" presentation="$(presentation.AllowProtectedCreds)" key="Software\Policies\Microsoft\Windows\CredentialsDelegation" valueName="AllowProtectedCreds">
       <parentCategory ref="CredentialsDelegation" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="AllowEncryptionOracle" class="Machine" displayName="$(string.AllowEncryptionOracle)" explainText="$(string.AllowEncryptionOracle_Explain)" presentation="$(presentation.AllowEncryptionOracle)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters">
+      <parentCategory ref="CredentialsDelegation" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum
+          id="AllowEncryptionOracleDrop"
+          valueName="AllowEncryptionOracle">
+          <item displayName="$(string.AllowEncryptionOracle_Force)">
+            <value>
+                <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.AllowEncryptionOracle_Secure)">
+            <value>
+                <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.AllowEncryptionOracle_Allow)">
+            <value>
+                <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

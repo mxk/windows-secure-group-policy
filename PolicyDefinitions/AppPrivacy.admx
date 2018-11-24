@@ -570,5 +570,36 @@
         <multiText id="LetAppsGetDiagnosticInfo_ForceDenyTheseApps_List" valueName="LetAppsGetDiagnosticInfo_ForceDenyTheseApps" />
       </elements>
     </policy>
+    <policy name="LetAppsAccessGazeInput"
+            class="Machine"
+            displayName="$(string.LetAppsAccessGazeInput_Name)"
+            explainText="$(string.LetAppsAccessGazeInput_Explain)"
+            presentation="$(presentation.LetAppsAccessGazeInput)"
+            key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum id="LetAppsAccessGazeInput_Enum" valueName="LetAppsAccessGazeInput">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsAccessGazeInput_UserInControlOfTheseApps_List" valueName="LetAppsAccessGazeInput_UserInControlOfTheseApps" />
+        <multiText id="LetAppsAccessGazeInput_ForceAllowTheseApps_List" valueName="LetAppsAccessGazeInput_ForceAllowTheseApps" />
+        <multiText id="LetAppsAccessGazeInput_ForceDenyTheseApps_List" valueName="LetAppsAccessGazeInput_ForceDenyTheseApps" />
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

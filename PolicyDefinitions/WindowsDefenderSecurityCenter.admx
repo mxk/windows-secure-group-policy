@@ -31,11 +31,30 @@
         <category name="EnterpriseCustomization" displayName="$(string.EnterpriseCustomization)">
             <parentCategory ref="WindowsDefenderSecurityCenter" />
         </category>
+        <category name="AccountProtection" displayName="$(string.AccountProtection)">
+            <parentCategory ref="WindowsDefenderSecurityCenter" />
+        </category>
+        <category name="DeviceSecurity" displayName="$(string.DeviceSecurity)">
+            <parentCategory ref="WindowsDefenderSecurityCenter" />
+        </category>
+        <category name="Systray" displayName="$(string.Systray)">
+            <parentCategory ref="WindowsDefenderSecurityCenter" />
+        </category>
     </categories>
     <policies>
-        <policy name="VirusThreatProtection_UILockdown" class="Machine" displayName="$(string.VirusThreatProtection_UILockdown)" explainText="$(string.FirewallNetworkProtection_UILockdown_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Virus and threat protection" valueName="UILockdown">
+        <policy name="VirusThreatProtection_UILockdown" class="Machine" displayName="$(string.VirusThreatProtection_UILockdown)" explainText="$(string.VirusThreatProtection_UILockdown_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Virus and threat protection" valueName="UILockdown">
             <parentCategory ref="VirusThreatProtection" />
             <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="VirusThreatProtection_HideRansomwareRecovery" class="Machine" displayName="$(string.VirusThreatProtection_HideRansomwareRecovery)" explainText="$(string.VirusThreatProtection_HideRansomwareRecovery_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Virus and threat protection" valueName="HideRansomwareRecovery">
+            <parentCategory ref="VirusThreatProtection" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
             <enabledValue>
                 <decimal value="1" />
             </enabledValue>
@@ -155,11 +174,81 @@
             </elements>
         </policy>
         <policy name="EnterpriseCustomization_URL" class="Machine" displayName="$(string.EnterpriseCustomization_URL)" explainText="$(string.EnterpriseCustomization_URL_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Enterprise Customization" presentation="$(presentation.Presentation_EnterpriseCustomization_URL)">
-            <parentCategory ref="EnterpriseCustomization" />            
+            <parentCategory ref="EnterpriseCustomization" />
             <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
             <elements>
                 <text id="Presentation_EnterpriseCustomization_URL" valueName="Url" required="true" />
             </elements>
+        </policy>
+        <policy name="AccountProtection_UILockdown" class="Machine" displayName="$(string.AccountProtection_UILockdown)" explainText="$(string.AccountProtection_UILockdown_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Account protection" valueName="UILockdown">
+            <parentCategory ref="AccountProtection" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DeviceSecurity_UILockdown" class="Machine" displayName="$(string.DeviceSecurity_UILockdown)" explainText="$(string.DeviceSecurity_UILockdown_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="UILockdown">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+            <policy name="DeviceSecurity_HideTPMTroubleshooting" class="Machine" displayName="$(string.DeviceSecurity_HideTPMTroubleshooting)" explainText="$(string.DeviceSecurity_HideTPMTroubleshooting_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="HideTPMTroubleshooting">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DeviceSecurity_HideSecureBoot" class="Machine" displayName="$(string.DeviceSecurity_HideSecureBoot)" explainText="$(string.DeviceSecurity_HideSecureBoot_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="HideSecureBoot">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DeviceSecurity_DisableClearTpmButton" class="Machine" displayName="$(string.DeviceSecurity_DisableClearTpmButton)" explainText="$(string.DeviceSecurity_DisableClearTpmButton_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="DisableClearTpmButton">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="DeviceSecurity_DisableTpmFirmwareUpdateWarning" class="Machine" displayName="$(string.DeviceSecurity_DisableTpmFirmwareUpdateWarning)" explainText="$(string.DeviceSecurity_DisableTpmFirmwareUpdateWarning_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Device security" valueName="DisableTpmFirmwareUpdateWarning">
+            <parentCategory ref="DeviceSecurity" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="Systray_HideSystray" class="Machine" displayName="$(string.Systray_HideSystray)" explainText="$(string.Systray_HideSystray_Explain)" key="SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray" valueName="HideSystray">
+            <parentCategory ref="Systray" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
         </policy>
     </policies>
 </policyDefinitions>

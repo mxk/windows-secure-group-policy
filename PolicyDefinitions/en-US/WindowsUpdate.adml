@@ -72,6 +72,8 @@ This setting lets you specify whether automatic updates are enabled on this comp
 
         4 = Automatically download updates and install them on the schedule specified below.
 
+        When "Automatic" is selected as the scheduled install time, Windows will automatically check, download, and install updates. The device will reboot as per Windows default settings unless configured by group policy. (Applies to Windows 10, version 1809 and higher)
+
         Specify the schedule using the options in the Group Policy Setting. If no schedule is specified, the default schedule for all installations will be every day at 3:00 AM. If any updates require a restart to complete the installation, Windows will restart the computer automatically. (If a user is signed in to the computer when Windows is ready to restart, the user will be notified and given the option to delay the restart.)
 
         On Windows 8 and later, you can set updates to install during automatic maintenance instead of a specific schedule. Automatic maintenance will install updates when the computer is not in use, and avoid doing so when the computer is running on battery power. If automatic maintenance is unable to install updates for 2 days, Windows Update will install updates right away. Users will then be notified about an upcoming restart, and that restart will only take place if there is no potential for accidental data loss.
@@ -79,6 +81,8 @@ This setting lets you specify whether automatic updates are enabled on this comp
         Automatic maintenance can be further configured by using Group Policy settings here: Computer Configuration-&gt;Administrative Templates-&gt;Windows Components-&gt;Maintenance Scheduler
 
         5 = Allow local administrators to select the configuration mode that Automatic Updates should notify and install updates.
+
+        Note! This option is not supported on Windows 10.
 
         With this option, local administrators will be allowed to use the Windows Update control panel to select a configuration option of their choice. Local administrators will not be allowed to disable the configuration for Automatic Updates.
 
@@ -122,6 +126,7 @@ If the status is set to Not Configured, use of Automatic Updates is not specifie
       <string id="AutoUpdateSchTime7">07:00</string>
       <string id="AutoUpdateSchTime8">08:00</string>
       <string id="AutoUpdateSchTime9">09:00</string>
+      <string id="AutoUpdateSchTimeAuto">Automatic</string>
       <string id="CorpWuURL">Specify intranet Microsoft update service location</string>
       <string id="CorpWuURL_Help">
         Specifies an intranet server to host updates from Microsoft Update. You can then use this update service to automatically update computers on your network.
@@ -206,13 +211,13 @@ If you are not using the Microsoft Update service, then the Software Notificatio
 If the "Configure Automatic Updates" policy setting is disabled or is not configured, then the Software Notifications policy setting has no effect.
       </string>
       <string id="FeaturedSoftwareNotification_Title">Turn on Software Notifications</string>
-      <string id="AUPowerManagement_Help">Specifies whether the Windows Update will use the Windows Power Management features to automatically wake up the system from hibernation, if there are updates scheduled for installation.
+      <string id="AUPowerManagement_Help">Specifies whether the Windows Update will use the Windows Power Management features to automatically wake up the system from sleep, if there are updates scheduled for installation.
 
-Windows Update will only automatically wake up the system if Windows Update is configured to install updates automatically. If the system is in hibernation when the scheduled install time occurs and there are updates to be applied, then Windows Update will use the Windows Power management features to automatically wake the system up to install the updates.
+Windows Update will only automatically wake up the system if Windows Update is configured to install updates automatically. If the system is in sleep when the scheduled install time occurs and there are updates to be applied, then Windows Update will use the Windows Power management features to automatically wake the system up to install the updates.
 
 Windows update will also wake the system up and install an update if an install deadline occurs.
 
-The system will not wake unless there are updates to be installed.  If the system is on battery power, when Windows Update wakes it up, it will not install updates and the system will automatically return to hibernation in 2 minutes.</string>
+The system will not wake unless there are updates to be installed. If the system is on battery power, when Windows Update wakes it up, it will not install updates and the system will automatically return to sleep in 2 minutes.</string>
       <string id="AUPowerManagement_Title">Enabling Windows Update Power Management to automatically wake up the system to install scheduled updates</string>
       <string id="NoAutoRebootWithLoggedOnUsers_Help">Specifies that to complete a scheduled installation, Automatic Updates will wait for the computer to be restarted by any user who is logged on, instead of causing the computer to restart automatically.
 
@@ -305,7 +310,7 @@ Note: This policy applies only when this PC is configured to connect to an intra
       <string id="ManagePreviewBuilds_Title">Manage preview builds</string>
       <string id="ManagePreviewBuilds_Help">Selecting "Disable preview builds" will prevent preview builds from installing on the device. This will prevent users from opting into the Windows Insider Program, through Settings -&gt; Update and Security.
 
-Selecting "Disable preview builds once next release is public" will prevent preview builds from installing once the next Windows release is public. This option is useful when your device is set up to install preview and you want to gracefully opt out the device for flighting. This option will provide preview builds until devices reaches the next public release. 
+Selecting "Disable preview builds once next release is public" will prevent preview builds from installing once the next Windows release is public. This option is useful when your device is set up to install preview and you want to gracefully opt out the device for flighting. This option will provide preview builds until devices reaches the next public release.
 
 Selecting "Enable preview builds" will enable preview builds installation on the device. Users can download and install Windows preview builds on their devices by opting-in through Settings -&gt; Update and Security -&gt; Windows Insider Program. Admins can also use other policies to manage flight settings on behalf of users when this value is set.</string>
       <string id="DisablePreviewBuilds">Disable preview builds</string>
@@ -332,7 +337,7 @@ When selecting a Preview Build:
 
 Preview Build enrollment requires a telemetry level setting of 2 or higher and your domain registered on insider.windows.com. For additional information on Preview Builds, see: https://aka.ms/wipforbiz
 
-When Selecting Current Branch or Current Branch for Business:
+When Selecting Semi-Annual Channel (Targeted) or Semi-Annual Channel:
     - You can defer receiving Feature Updates for up to 365 days.
     - To prevent Feature Updates from being received on their scheduled time, you can temporarily pause them. The pause will remain in effect for 35 days from the start time provided.
     - To resume receiving Feature Updates which are paused, clear the start date field.
@@ -355,7 +360,9 @@ Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effe
       <string id="ExcludeWUDriversInQualityUpdate_Title">Do not include drivers with Windows Updates</string>
       <string id="ExcludeWUDriversInQualityUpdate_Help">Enable this policy to not include drivers with Windows quality updates.
 
-If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.</string>
+If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.
+
+Note: For devices running Windows 10, version 1607 or Windows Server 2016, this policy only takes effect if you enable telemetry (that is, if the “Allow Telemetry” policy is not 0). For devices running Windows 10, version 1703 (or later) or Windows Server, version 1709 (or later), telemetry does not have to be enabled for this policy to take effect.</string>
       <string id="ActiveHours_Title">Turn off auto-restart for updates during active hours</string>
       <string id="ActiveHours_Help">If you enable this policy, the PC will not automatically restart after updates during active hours. The PC will attempt to restart outside of active hours.
 
@@ -394,15 +401,13 @@ Note that the default max active hours range is 18 hours from the active hours s
       <string id="ActiveHoursTime9PM">9 PM</string>
 
       <string id="AutoRestartDeadline_Title">Specify deadline before auto-restart for update installation</string>
-      <string id="AutoRestartDeadline_Help">Specify the deadline in days before automatically executing a scheduled restart outside of active hours. The deadline can be set between 2 and 14 days from the time the restart is scheduled.
+      <string id="AutoRestartDeadline_Help">Specify the deadline before the PC will automatically restart to apply updates. The deadline can be set 2 to 14 days past the default restart date.
 
-Note that the PC must restart for certain updates to take effect.
-
-If you enable this policy, a restart will automatically occur the specified number of days after the restart was scheduled.
+The restart may happen inside active hours.
 
 If you disable or do not configure this policy, the PC will restart according to the default schedule.
 
-If any of the following two policies are enabled, this policy has no effect:
+Enabling either of the following two policies will override the above policy:
     1. No auto-restart with logged on users for scheduled automatic updates installations.
     2. Always automatically restart at scheduled time.
       </string>
@@ -441,6 +446,13 @@ If any of the following two policies are enabled, this policy has no effect:
 
 If you enable this setting user access to Windows Update scan, download and install is removed.
       </string>
+
+      <string id="DisablePauseUXAccess_Title">Remove access to "Pause updates" feature</string>
+      <string id="DisablePauseUXAccess_Help">This setting allows to remove access to "Pause updates" feature.
+
+Once enabled user access to pause updates is removed.
+      </string>
+
       <string id="ActiveHoursMaxRange_Title">Specify active hours range for auto-restarts</string>
       <string id="ActiveHoursMaxRange_Help">Enable this policy to specify the maximum number of hours from the start time that users can set their active hours.
 
@@ -509,22 +521,23 @@ If you disable or do not configure this policy, the default notification behavio
       <string id="RestartWarnMins30">30</string>
       <string id="RestartWarnMins60">60</string>
       <string id="EngagedRestartTransitionSchedule_Title">Specify Engaged restart transition and notification schedule for updates</string>
-      <string id="EngagedRestartTransitionSchedule_Help">Enable this policy to control the timing before transitioning from Auto restarts scheduled_outside of active hours to Engaged restart, which requires the user to schedule. The period can be set between 2 and 30 days from the time the restart becomes pending.
+      <string id="EngagedRestartTransitionSchedule_Help">Enable this policy to control the timing before transitioning from Auto restarts scheduled outside of active hours to Engaged restart, which requires the user to schedule. The period can be set between 0 and 30 days from the time the restart becomes pending.
 
 You can specify the number of days a user can snooze Engaged restart reminder notifications. The snooze period can be set between 1 and 3 days.
 
-You can specify the deadline in days before automatically scheduling and executing a pending restart outside of active hours. The deadline can be set between 2 and 30 days from the time the restart becomes pending. If configured, the pending restart will transition from Auto-restart to Engaged restart (pending user schedule) to automatically executed, within the specified period.
+You can specify the deadline in days before automatically scheduling and executing a pending restart regardless of active hours. The deadline can be set between 2 and 30 days from the time the restart becomes pending. If configured, the pending restart will transition from Auto-restart to Engaged restart (pending user schedule) to automatically executed, within the specified period.
 
-If no deadline is specified or deadline is set to 0, the restart will not be automatically executed and will remain Engaged restart (e.g. pending user scheduling).
+If you do not specify a deadline or if the deadline is set to 0, the PC won't automatically restart and will require the person to schedule it prior to restart.
 
-If you disable or do not configure this policy, the default behaviors will be used.
+If you disable or do not configure this policy, the PC will restart following the default schedule.
 
-If any of the following policies are configured, this policy has no effect:
+Enabling any of the following policies will override the above policy:
     1. No auto-restart with logged on users for scheduled automatic updates installations
     2. Always automatically restart at scheduled time
     3. Specify deadline before auto-restart for update installation
       </string>
       <string id="EngagedRestart_0">0</string>
+      <string id="EngagedRestart_1">1</string>
       <string id="EngagedRestart_2">2</string>
       <string id="EngagedRestart_3">3</string>
       <string id="EngagedRestart_4">4</string>
@@ -557,7 +570,7 @@ If any of the following policies are configured, this policy has no effect:
       <string id="EngagedRestartSnooze_1">1</string>
       <string id="EngagedRestartSnooze_2">2</string>
       <string id="EngagedRestartSnooze_3">3</string>
-      
+
       <string id="SetEDURestart_Title">Update Power Policy for Cart Restarts</string>
       <string id="SetEDURestart_Help">Enabling this policy for EDU devices that remain on Carts overnight will skip power checks to ensure update reboots will happen at the scheduled install time.</string>
 
@@ -567,8 +580,21 @@ If any of the following policies are configured, this policy has no effect:
       <string id="DisableDualScan_Title">Do not allow update deferral policies to cause scans against Windows Update</string>
       <string id="DisableDualScan_Help">Enable this policy to not allow update deferral policies to cause scans against Windows Update.
 
-If this policy is disabled or not configured, then the Windows Update client may initiate automatic scans against Windows Update while update deferral policies are enabled.</string>
+If this policy is disabled or not configured, then the Windows Update client may initiate automatic scans against Windows Update while update deferral policies are enabled.
+Note: This policy applies only when the intranet Microsoft update service this computer is directed to is configured to support client-side targeting. If the "Specify intranet Microsoft update service location" policy is disabled or not configured, this policy has no effect.
+      </string>
+      <string id="UpdateNotificationLevel_Title">Display options for update notifications</string>
+      <string id="UpdateNotificationLevel_Help">0 (default) – Use the default Windows Update notifications
+1 – Turn off all notifications, excluding restart warnings
+2 – Turn off all notifications, including restart warnings
 
+This policy allows you to define what Windows Update notifications users see. This policy doesn’t control how and when updates are downloaded and installed.
+
+Important! If you choose not to get update notifications and also define the policy “Configure Automatic Updates” so that devices aren’t automatically getting updates, neither you nor device users will be aware of critical security, quality, or feature updates, and your devices may be at risk.
+      </string>
+      <string id="DefaultNotification">0 (default) – Default OS Windows Update notifications</string>
+      <string id="ExcludingRebootWarnings">1 – Disable all notifications, excluding restart warnings</string>
+      <string id="IncludingRebootWarnings">2 – Disable all notifications, including restart warnings</string>
     </stringTable>
 
     <presentationTable>
@@ -660,7 +686,9 @@ If this policy is disabled or not configured, then the Windows Update client may
         <dropdownList refId="ActiveHoursEndTime" noSort="true" defaultItem="17">End:</dropdownList>
       </presentation>
       <presentation id="AutoRestartDeadline_Title">
-        <dropdownList refId="AutoRestartDeadline" noSort="true" defaultItem="5">Specify the number of days before a pending restart will automatically be executed outside of active hours: </dropdownList>
+        <text>Specify the number of days before a pending restart will automatically be executed outside of active hours: </text>
+        <dropdownList refId="AutoRestartDeadline" noSort="true" defaultItem="5">Quality Updates (days): </dropdownList>
+        <dropdownList refId="AutoRestartDeadlineForFeatureUpdates" noSort="true" defaultItem="5">Feature Updates (days): </dropdownList>
       </presentation>
       <presentation id="ActiveHoursMaxRange_Title">
         <text>Specify the max active hours range:</text>
@@ -681,12 +709,22 @@ If this policy is disabled or not configured, then the Windows Update client may
         <dropdownList refId="RestartWarn" noSort="true" defaultItem="0">Warning (mins): </dropdownList>
       </presentation>
       <presentation id="EngagedRestartTransitionSchedule_Title">
-        <text>Specify the timing before transitioning from Auto-restart to Engaged restart (pending user schedule):</text>
-        <dropdownList refId="EngagedRestartTransitionSchedule" noSort="true" defaultItem="5">Transition (days): </dropdownList>
-        <text>Specify snooze for Engaged restart reminder notifications:</text>
-        <dropdownList refId="EngagedRestartSnoozeSchedule" noSort="true" defaultItem="2">Snooze (days):     </dropdownList>
-        <text>Specify the deadline before a pending restart will automatically be executed outside of active hours:</text>
-        <dropdownList refId="EngagedRestartDeadline" noSort="true" defaultItem="0">Deadline (days):  </dropdownList>
+        <text>Transition : Specify the timing before transitioning from Auto-restart to Engaged restart (pending user schedule).</text>
+        <text>Snooze : Specify snooze for Engaged restart reminder notifications.</text>
+        <text>Deadline : Specify the deadline before a pending restart will automatically be executed outside of active hours.</text>
+        <text></text>
+        <text>For Quality Updates : </text>
+        <dropdownList refId="EngagedRestartTransitionSchedule" noSort="true" defaultItem="7">Transition (days) : </dropdownList>
+        <dropdownList refId="EngagedRestartSnoozeSchedule" noSort="true" defaultItem="2">Snooze (days) :     </dropdownList>
+        <dropdownList refId="EngagedRestartDeadline" noSort="true" defaultItem="0">Deadline (days) :  </dropdownList>
+        <text></text>
+        <text>For Feature Updates : </text>
+        <dropdownList refId="EngagedRestartTransitionScheduleForFeatureUpdates" noSort="true" defaultItem="7">Transition (days) : </dropdownList>
+        <dropdownList refId="EngagedRestartSnoozeScheduleForFeatureUpdates" noSort="true" defaultItem="2">Snooze (days) :     </dropdownList>
+        <dropdownList refId="EngagedRestartDeadlineForFeatureUpdates" noSort="true" defaultItem="0">Deadline (days) :  </dropdownList>
+      </presentation>
+      <presentation id="UpdateNotificationLevel_Title">
+        <dropdownList refId="UpdateNotificationLevel" noSort="true" defaultItem="0">Specify the update notifications display options :</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

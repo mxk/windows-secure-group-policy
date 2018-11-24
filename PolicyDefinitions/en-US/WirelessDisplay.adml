@@ -22,7 +22,19 @@ If you turn it off or don't configure it, your PC is discoverable and can be pro
       <string id="RequirePinForPairing">Require pin for pairing</string>
       <string id="RequirePinForPairing_help">This policy setting allows you to require a pin for pairing.  
 
-If you turn this on, the pairing ceremony for new devices will always require a pin.  If you turn it off or don't configure it, a pin isn't required for pairing.</string>
+If you set this to 'Never', a pin isn't required for pairing.
+
+If you set this to 'First Time', the pairing ceremony for new devices will always require a PIN.
+
+If you set this to 'Always', all pairings will require PIN.</string>
+      <string id="RequirePinForPairing_0">Never</string>
+      <string id="RequirePinForPairing_1">First Time</string>
+      <string id="RequirePinForPairing_2">Always</string>
    </stringTable>
+   <presentationTable>
+      <presentation id="RequirePinForPairing">
+        <dropdownList refId="RequirePinForPairingDropdown" noSort="true" defaultItem="0">Choose one of the following actions</dropdownList>
+      </presentation>
+   </presentationTable>
   </resources>
 </policyDefinitionResources>

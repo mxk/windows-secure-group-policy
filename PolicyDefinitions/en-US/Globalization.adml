@@ -266,19 +266,13 @@ If you disable or do not configure this policy setting, Windows does not interpr
 
           If you disable or do not configure this policy setting, language packs that are installed as part of the system image but are not used by any user on that system will be removed as part of a scheduled clean up task.
       </string>
-      <string id="AllowInputPersonalization">Allow input personalization</string>
+      <string id="AllowInputPersonalization">Allow users to enable online speech recognition services</string>
       <string id="AllowInputPersonalization_Help">
-        This policy enables the automatic learning component of input personalization that includes speech, inking, and typing.
-
-        Automatic learning enables the collection of speech and handwriting patterns, typing history, contacts, and recent calendar information.  It is required for the use of Cortana.  Some of this collected information may be stored on the user's OneDrive, in the case of inking and typing; some of the information will be uploaded to Microsoft to personalize speech.
-
-        Automatic learning for speech may not be available for all languages, even when inking and typing is available.
-
-        If this policy is enabled, automatic learning of speech, inking, and typing will be enabled and users cannot change its value via PC Settings.
-
-        If this policy is disabled, automatic learning of speech, inking, and typing stops and users cannot change its value via PC Settings.
-
-        If this policy is not configured, the user may configure the speech, inking, and typing personalisation setting via PC Settings.
+        This policy specifies whether users on the device have the option to enable online speech recognition services.
+        
+        If this policy is enabled or not configured, control is deferred to users, and users may choose whether to enable speech services via settings.
+        
+        If this policy is disabled, speech services will be disabled, and users cannot enable speech services via settings.
       </string>
     </stringTable>
     <presentationTable>

@@ -58,8 +58,8 @@
       <string id="MicrosoftWindows_10_0">Windows 10 operating systems</string>
       <string id="MicrosoftWindows_10_0_RTM">Windows 10</string>
 
-      <string id="MicrosoftWindowsServer_10_0">Windows Server operating systems</string>
-      <string id="MicrosoftWindowsServer_10_0_RTM">Windows Server</string>
+      <string id="MicrosoftWindowsServer_10_0">Windows Server 2016 operating systems</string>
+      <string id="MicrosoftWindowsServer_10_0_RTM">Windows Server 2016</string>
 
       <string id="MicrosoftWindows_10_0_RT">Windows 10 RT operating systems</string>
       <string id="MicrosoftWindows_10_0_RT_RTM">Windows 10 RT</string>

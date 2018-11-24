@@ -261,6 +261,44 @@
     </policy>
     <policy
         class="Machine"
+        displayName="$(string.PercentageMaxBackgroundBandwidth)"
+        explainText="$(string.PercentageMaxBackgroundBandwidth_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="PercentageMaxBackgroundBandwidth"
+        presentation="$(presentation.PercentageMaxBackgroundBandwidth)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <decimal
+            id="PercentageMaxBackgroundBandwidth"
+            maxValue="100"
+            minValue="0"
+            valueName="DOPercentageMaxBackgroundBandwidth"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.PercentageMaxForegroundBandwidth)"
+        explainText="$(string.PercentageMaxForegroundBandwidth_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="PercentageMaxForegroundBandwidth"
+        presentation="$(presentation.PercentageMaxForegroundBandwidth)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <decimal
+            id="PercentageMaxForegroundBandwidth"
+            maxValue="100"
+            minValue="0"
+            valueName="DOPercentageMaxForegroundBandwidth"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
         displayName="$(string.MinFileSizeToCache)"
         explainText="$(string.MinFileSizeToCache_Help)"
         key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
@@ -356,6 +394,688 @@
             maxValue="100"
             minValue="0"
             valueName="DOMinBatteryPercentageAllowedToUpload"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.CacheHost)"
+        explainText="$(string.CacheHost_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="CacheHost"
+        presentation="$(presentation.CacheHost)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <text
+            id="CacheHost"
+            valueName="DOCacheHost"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.GroupIdSource)"
+        explainText="$(string.GroupIdSource_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="GroupIdSource"
+        presentation="$(presentation.GroupIdSource)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum
+            id="GroupIdSource"
+            valueName="DOGroupIdSource"
+            >
+          <item displayName="$(string.GroupIdSource_Unset)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_AD)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_SID)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_DHCP)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.GroupIdSource_DNS)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.DelayBackgroundDownloadFromHttp)"
+        explainText="$(string.DelayBackgroundDownloadFromHttp_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="DelayBackgroundDownloadFromHttp"
+        presentation="$(presentation.DelayBackgroundDownloadFromHttp)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <decimal
+            id="DelayBackgroundDownloadFromHttp"
+            maxValue="4294967295"
+            minValue="0"
+            valueName="DODelayBackgroundDownloadFromHttp"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.DelayForegroundDownloadFromHttp)"
+        explainText="$(string.DelayForegroundDownloadFromHttp_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="DelayForegroundDownloadFromHttp"
+        presentation="$(presentation.DelayForegroundDownloadFromHttp)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <decimal
+            id="DelayForegroundDownloadFromHttp"
+            maxValue="4294967295"
+            minValue="0"
+            valueName="DODelayForegroundDownloadFromHttp"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.RestrictPeerSelectionBy)"
+        explainText="$(string.RestrictPeerSelectionBy_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="RestrictPeerSelectionBy"
+        presentation="$(presentation.RestrictPeerSelectionBy)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum
+            id="RestrictPeerSelectionBy"
+            valueName="DORestrictPeerSelectionBy"
+            >
+          <item displayName="$(string.RestrictPeerSelectionBy_None)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.RestrictPeerSelectionBy_Subnet)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        clientExtension="{CFF649BD-601D-4361-AD3D-0FC365DB4DB7}"
+        displayName="$(string.SetHoursToLimitBackgroundDownloadBandwidth)"
+        explainText="$(string.SetHoursToLimitBackgroundDownloadBandwidth_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="SetHoursToLimitBackgroundDownloadBandwidth"
+        presentation="$(presentation.SetHoursToLimitBackgroundDownloadBandwidth)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum
+            id="SetHoursToLimitBackgroundDownloadBandwidthFrom"
+            required="true"
+            valueName="DOSetHoursToLimitBackgroundDownloadBandwidth_From"
+            >
+          <item displayName="$(string.Time12AM)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1AM)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2AM)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3AM)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4AM)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5AM)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6AM)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7AM)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8AM)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9AM)">
+            <value>
+              <decimal value="9"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10AM)">
+            <value>
+              <decimal value="10"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11AM)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time12PM)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1PM)">
+            <value>
+              <decimal value="13"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2PM)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3PM)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4PM)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5PM)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6PM)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7PM)">
+            <value>
+              <decimal value="19"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8PM)">
+            <value>
+              <decimal value="20"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9PM)">
+            <value>
+              <decimal value="21"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10PM)">
+            <value>
+              <decimal value="22"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11PM)">
+            <value>
+              <decimal value="23"/>
+            </value>
+          </item>
+        </enum>
+        <enum
+            id="SetHoursToLimitBackgroundDownloadBandwidthTo"
+            required="true"
+            valueName="DOSetHoursToLimitBackgroundDownloadBandwidth_To"
+            >
+          <item displayName="$(string.Time12AM)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1AM)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2AM)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3AM)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4AM)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5AM)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6AM)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7AM)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8AM)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9AM)">
+            <value>
+              <decimal value="9"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10AM)">
+            <value>
+              <decimal value="10"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11AM)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time12PM)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1PM)">
+            <value>
+              <decimal value="13"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2PM)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3PM)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4PM)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5PM)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6PM)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7PM)">
+            <value>
+              <decimal value="19"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8PM)">
+            <value>
+              <decimal value="20"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9PM)">
+            <value>
+              <decimal value="21"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10PM)">
+            <value>
+              <decimal value="22"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11PM)">
+            <value>
+              <decimal value="23"/>
+            </value>
+          </item>
+        </enum>
+        <decimal
+            id="SetHoursToLimitBackgroundDownloadBandwidthIn"
+            maxValue="100"
+            minValue="0"
+            valueName="DOSetHoursToLimitBackgroundDownloadBandwidth_In"
+            />
+        <decimal
+            id="SetHoursToLimitBackgroundDownloadBandwidthOut"
+            maxValue="100"
+            minValue="0"
+            valueName="DOSetHoursToLimitBackgroundDownloadBandwidth_Out"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        clientExtension="{CFF649BD-601D-4361-AD3D-0FC365DB4DB7}"
+        displayName="$(string.SetHoursToLimitForegroundDownloadBandwidth)"
+        explainText="$(string.SetHoursToLimitForegroundDownloadBandwidth_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="SetHoursToLimitForegroundDownloadBandwidth"
+        presentation="$(presentation.SetHoursToLimitForegroundDownloadBandwidth)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <enum
+            id="SetHoursToLimitForegroundDownloadBandwidthFrom"
+            required="true"
+            valueName="DOSetHoursToLimitForegroundDownloadBandwidth_From"
+            >
+          <item displayName="$(string.Time12AM)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1AM)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2AM)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3AM)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4AM)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5AM)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6AM)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7AM)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8AM)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9AM)">
+            <value>
+              <decimal value="9"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10AM)">
+            <value>
+              <decimal value="10"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11AM)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time12PM)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1PM)">
+            <value>
+              <decimal value="13"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2PM)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3PM)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4PM)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5PM)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6PM)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7PM)">
+            <value>
+              <decimal value="19"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8PM)">
+            <value>
+              <decimal value="20"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9PM)">
+            <value>
+              <decimal value="21"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10PM)">
+            <value>
+              <decimal value="22"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11PM)">
+            <value>
+              <decimal value="23"/>
+            </value>
+          </item>
+        </enum>
+        <enum
+            id="SetHoursToLimitForegroundDownloadBandwidthTo"
+            required="true"
+            valueName="DOSetHoursToLimitForegroundDownloadBandwidth_To"
+            >
+          <item displayName="$(string.Time12AM)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1AM)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2AM)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3AM)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4AM)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5AM)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6AM)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7AM)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8AM)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9AM)">
+            <value>
+              <decimal value="9"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10AM)">
+            <value>
+              <decimal value="10"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11AM)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time12PM)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time1PM)">
+            <value>
+              <decimal value="13"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time2PM)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time3PM)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time4PM)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time5PM)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time6PM)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time7PM)">
+            <value>
+              <decimal value="19"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time8PM)">
+            <value>
+              <decimal value="20"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time9PM)">
+            <value>
+              <decimal value="21"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time10PM)">
+            <value>
+              <decimal value="22"/>
+            </value>
+          </item>
+          <item displayName="$(string.Time11PM)">
+            <value>
+              <decimal value="23"/>
+            </value>
+          </item>
+        </enum>
+        <decimal
+            id="SetHoursToLimitForegroundDownloadBandwidthIn"
+            maxValue="100"
+            minValue="0"
+            valueName="DOSetHoursToLimitForegroundDownloadBandwidth_In"
+            />
+        <decimal
+            id="SetHoursToLimitForegroundDownloadBandwidthOut"
+            maxValue="100"
+            minValue="0"
+            valueName="DOSetHoursToLimitForegroundDownloadBandwidth_Out"
             />
       </elements>
     </policy>

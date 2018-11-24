@@ -606,6 +606,14 @@ If you disable or don’t configure this policy setting, Windows will automatica
       <string id="HidePeopleBar_ExplainText">This policy allows you to remove the People Bar from the taskbar and disables the My People experience.
 
 If you enable this policy the people icon will be removed from the taskbar, the corresponding settings toggle is removed from the taskbar settings page, and users will not be able to pin people to the taskbar.</string>
+      <string id="HideRecentlyAddedApps">Remove "Recently added" list from Start Menu</string>
+      <string id="HideRecentlyAddedApps_Help">This policy allows you to prevent the Start Menu from displaying a list of recently installed applications.
+
+If you enable this policy, the Start Menu will no longer display the "Recently added" list.  The corresponding setting will also be disabled in Settings.</string>
+      <string id="DisableContextMenusInStart">Disable context menus in the Start Menu</string>
+      <string id="DisableContextMenusInStart_Help">This policy allows you to prevent users from being able to open context menus in the Start Menu.
+
+If you enable this policy, then invocations of context menus within the Start Menu will be ignored.</string>
     </stringTable>
     <presentationTable>
       <presentation id="NoMoreProgramsList">

@@ -7,7 +7,6 @@
     <stringTable>
         <string id="MSPassportForWorkCategory">Windows Hello for Business</string>
         <string id="MSPassportForWorkPINComplexityCategory">PIN Complexity</string>
-        <string id="MSPassportForWorkRemoteCategory">Phone Sign-in</string>
         <string id="MSPassport_UsePassportForWork">Use Windows Hello for Business</string>
         <!-- Add support for certificate trust deployments -->
         <string id="WHFB_UseCertificateForOnPremAuth">Use certificate for on-premises authentication</string>
@@ -19,6 +18,13 @@ If you enable this policy, the device provisions Windows Hello for Business usin
 If you disable this policy setting, the device does not provision Windows Hello for Business for any user.
 
 If you do not configure this policy setting, users can provision Windows Hello for Business as a convenience credential that encrypts their domain password.
+
+Select "Do not start Windows Hello provisioning after sign-in" when you use a third-party solution to provision Windows Hello for Business.
+
+If you select "Do not start Windows Hello provisioning after sign-in", Windows Hello for Business does not automatically start provisioning after the user has signed in.
+
+If you do not select "Do not start Windows Hello provisioning after sign-in", Windows Hello for Business automatically starts provisioning after the user has signed in.
+
         </string>
         <string id="MSPassport_RequireSecurityDevice">Use a hardware security device</string>
         <string id="MSPassport_RequireSecurityDeviceExplain">A Trusted Platform Module (TPM) provides additional security benefits over software because data protected by it cannot be used on other devices.
@@ -103,13 +109,6 @@ If you disable or do not configure this policy setting, Windows does not create 
 
 NOTE: This policy is only applicable to devices which are registered with Azure Active Directory.
         </string>
-        <string id="MSPassport_UseRemote">Use phone sign-in</string>
-        <string id="MSPassport_UseRemoteExplain">Use this policy setting to configure use of phone sign-in. Phone sign-in provides the ability for a phone to be usable as a companion device for desktop authentication. Phone sign-in requires that both the PC and the phone are registered with the same Azure AD tenant. Additionally, the phone must be enrolled in Windows Hello for Business.
-
-If you enable this policy setting, phone sign-in will be enabled, allowing the use of a phone as a companion device for desktop authentication.
-
-If you disable or do not configure this policy setting, phone sign-in will be disabled, preventing the use of a phone as a companion device for desktop authentication.
-        </string>
         <!-- Explain Text for UseCertificateForOnPremAuth -->
         <string id="WHFB_UseCertificateForOnPremAuthExplain">Use this policy setting to configure Windows Hello for Business to enroll a sign-in certificate used for on-premises authentication.
 
@@ -162,6 +161,16 @@ This policy setting is incompatible with Windows Hello for Business credentials 
 
 Windows requires a reboot after you apply this setting to a computer.
         </string>
+        <!-- Explain text for certificate propagation policy -->
+        <string id="MSPassport_UseHelloCertificatesAsSmartCardCertificates">Use Windows Hello for Business certificates as smart card certificates</string>
+        <string id="MSPassport_UseHelloCertificatesAsSmartCardCertificatesExplain">If you enable this policy setting, applications use Windows Hello for Business certificates as smart card certificates. Biometric factors are unavailable when a user is asked to authorize the use of the certificate's private key. This policy setting is designed to allow compatibility with applications that rely exclusively on smart card certificates.
+
+If you disable or do not configure this policy setting, applications do not use Windows Hello for Business certificates as smart card certificates, and biometric factors are available when a user is asked to authorize the use of the certificate's private key.
+
+This policy setting is incompatible with Windows Hello for Business credentials provisioned when the "Turn off smart card emulation" is enabled.
+
+Windows requires a user to lock and unlock their session after changing this setting if the user is currently signed in.
+        </string>
     </stringTable>
     <presentationTable>
         <presentation id="MSPassport_MinimumPINLengthControl">
@@ -191,6 +200,9 @@ Windows requires a reboot after you apply this setting to a computer.
       <presentation id="MSPassport_ExcludeSecurityDevicesControl">
         <text>Do not use the following security devices:</text>
         <checkBox refId="MSPassport_ExcludeTPM12DataType" defaultChecked="false">TPM 1.2</checkBox>
+      </presentation>
+      <presentation id="MSPassport_UsePassportForWorkControl">
+        <checkBox refId="MSPassport_DisablePostLogonProvisioning" defaultChecked="false">Do not start Windows Hello provisioning after sign-in</checkBox>
       </presentation>
       <presentation id="MSPassport_UseDeviceUnlock_Control">
         <textBox refId="MSPassport_UseDeviceUnlock_GroupA">

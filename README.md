@@ -74,15 +74,16 @@ Required ADMX templates
 
 These are contained in the PolicyDefinitions directory:
 
-* Windows 10 and Server 2016 (1607)
-* Windows 10 Fall Creators Update (1709)
-* MSS (Legacy) from Windows 10 and Server 2016 Security Baseline (1709)
-* Windows Restricted Traffic Limited Functionality Baseline (1709)
+* [Windows 10 and Server 2016 (1607)](https://www.microsoft.com/en-us/download/details.aspx?id=53430)
+* [Windows 10 October 2018 Update (1809)](https://www.microsoft.com/en-us/download/details.aspx?id=57576)
+* [MSS (Legacy) from Windows 10 and Windows Server 2019 Security Baseline (1809)](https://blogs.technet.microsoft.com/secguide/2018/11/20/security-baseline-final-for-windows-10-v1809-and-windows-server-2019/)
+* [Windows Restricted Traffic Limited Functionality Baseline (1809)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
 
 When an update is released, the entire PolicyDefinitions directory should be
 rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
 files without removing old ones first may cause problems.
 
+* [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://support.microsoft.com/en-us/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra)
 * [New policies for Windows 10](https://docs.microsoft.com/en-us/windows/client-management/new-policies-for-windows-10)
 
 Notes
@@ -130,6 +131,12 @@ Bugs
   remote procedure call failed" error message. This does not happen on
   subsequent launches, so just allow extensions temporarily when starting Edge
   for the first time.
+* Enabling "Configure H.264/AVC hardware encoding for Remote Desktop
+  Connections" breaks Hyper-V Enhanced Sessions. The resulting error is "The
+  session was disconnected. If you want to continue, try to connect again. If
+  the problem persists, contact your system administrator. Would you like to try
+  to reconnect?" To switch to a basic session, right-click on the VM, Edit
+  Session Settings, then just close the "Connect to <VM>" dialog.
 
 Suggestions to implement in a separate GPO
 ------------------------------------------

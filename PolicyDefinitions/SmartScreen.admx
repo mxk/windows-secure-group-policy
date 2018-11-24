@@ -44,15 +44,39 @@
         </enum>
       </elements>
     </policy>
-    <policy name="ConfigureAppInstallControl" class="Machine" displayName="$(string.ConfigureAppInstallControl)" explainText="$(string.ConfigureAppInstallControl_Explain)" key="Software\Policies\Microsoft\Windows Defender\SmartScreen" valueName="ConfigureAppInstallControl">
+    <policy name="ConfigureAppInstallControl" class="Machine" displayName="$(string.ConfigureAppInstallControl)" explainText="$(string.ConfigureAppInstallControl_Explain)" key="Software\Policies\Microsoft\Windows Defender\SmartScreen" valueName="ConfigureAppInstallControlEnabled" presentation="$(presentation.ConfigureAppInstallControl)">
       <parentCategory ref="Shell" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS5" />
       <enabledValue>
-        <string>StoreOnly</string>
+        <decimal value="1" />
       </enabledValue>
       <disabledValue>
-        <string>Anywhere</string>
+        <decimal value="0" />
       </disabledValue>
+      <elements>
+        <enum id="ConfigureAppInstallControl_Dropdown" key="Software\Policies\Microsoft\Windows Defender\SmartScreen" valueName="ConfigureAppInstallControl" required="true">
+          <item displayName="$(string.SmartScreen_Anywhere)">
+            <value>
+              <string>Anywhere</string>
+            </value>
+          </item>
+          <item displayName="$(string.SmartScreen_AppRecommendations)">
+            <value>
+              <string>Recommendations</string>
+            </value>
+          </item>
+          <item displayName="$(string.SmartScreen_PreferStore)">
+            <value>
+              <string>PreferStore</string>
+            </value>
+          </item>
+          <item displayName="$(string.SmartScreen_StoreOnly)">
+            <value>
+              <string>StoreOnly</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
     <!-- Edge -->
     <policy name="EdgeConfigureSmartScreen" class="Both" displayName="$(string.EdgeConfigureSmartScreen)" explainText="$(string.EdgeConfigureSmartScreen_Help)" key="Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter" valueName="EnabledV9">

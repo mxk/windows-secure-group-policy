@@ -26,5 +26,25 @@
         <text id="DisplayTurnOffGdiDPIScalingPrompt" valueName="DisableGdiDPIScaling" required="true" />
       </elements>
     </policy>
+    <policy name="DisplayPerProcessSystemDpiSettings" class="Both" displayName="$(string.DisplayPerProcessSystemDpiSettings)" explainText="$(string.DisplayPerProcessSystemDpiSettingsHelp)" presentation="$(presentation.DisplayPerProcessSystemDpiSettings)" key="Software\Policies\Microsoft\Windows\Display">
+      <parentCategory ref="DisplayCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+      <elements>
+        <enum id="DisplayGlobalPerProcessSystemDpiSettings" key="Software\Policies\Microsoft\Windows\Control Panel\Desktop" valueName="EnablePerProcessSystemDPI">
+          <item displayName="$(string.DisplayGlobalPerProcessSystemDpiEnable)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplayGlobalPerProcessSystemDpiDisable)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <text id="DisplayEnablePerProcessSystemDpiSettings" valueName="EnablePerProcessSystemDPIForProcesses"/>
+        <text id="DisplayDisablePerProcessSystemDpiSettings" valueName="DisablePerProcessSystemDPIForProcesses"/>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

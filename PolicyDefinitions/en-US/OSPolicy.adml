@@ -20,6 +20,28 @@
             If you disable this policy setting, activities of type User Activity are not allowed to be published.
             Policy change takes effect immediately.
       </string>
+      <string id="UploadUserActivities">Allow upload of User Activities</string>
+      <string id="UploadUserActivities_Help">
+            This policy setting determines whether published User Activities can be uploaded.
+            If you enable this policy setting, activities of type User Activity are allowed to be uploaded.
+            If you disable this policy setting, activities of type User Activity are not allowed to be uploaded.
+            Deletion of activities of type User Activity are independent of this setting.
+            Policy change takes effect immediately.
+      </string>
+      <string id="AllowCrossDeviceClipboard">Allow Clipboard synchronization across devices</string>
+      <string id="AllowCrossDeviceClipboard_Help">
+            This policy setting determines whether Clipboard contents can be synchronized across devices.
+            If you enable this policy setting, Clipboard contents are allowed to be synchronized across devices logged in under the same Microsoft account or Azure AD account.
+            If you disable this policy setting, Clipboard contents cannot be shared to other devices.
+            Policy change takes effect immediately.
+      </string>
+      <string id="AllowClipboardHistory">Allow Clipboard History</string>
+      <string id="AllowClipboardHistory_Help">
+            This policy setting determines whether history of Clipboard contents can be stored in memory.
+            If you enable this policy setting, history of Clipboard contents are allowed to be stored.
+            If you disable this policy setting, history of Clipboard contents are not allowed to be stored.
+            Policy change takes effect immediately.
+      </string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

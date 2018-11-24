@@ -15,15 +15,17 @@ If you enable this policy setting, MDM Enrollment will be disabled for all users
 
 If you disable this policy setting, MDM Enrollment will be enabled for all users.
 </string>
-        <string id="MDM_JoinMDM_DisplayName">Auto MDM Enrollment with AAD Token</string>
+        <string id="MDM_JoinMDM_DisplayName">Enable automatic MDM enrollment using default Azure AD credentials</string>
         <string id="MDM_JoinMDM_Help">
-            This policy setting specifies whether to attempt Mobile Device Management (MDM) Enrollment. If Successful, the computer will remotely managed by the MDM Server configured in AAD.
+            This policy setting specifies whether to automatically enroll the device to the Mobile Device Management (MDM) service configured in Azure Active Directory (Azure AD). If the enrollment is successful, the device will remotely managed by the MDM service.
 
-            If you do not configure this policy setting, MDM will be left alone
+            Important: The device must be registered in Azure AD for enrollment to succeed.
 
-            If you enable this policy setting, MDM Device will attempt to get an AAD token, and if so, will enroll with it using the URL configured in AAD
+            If you do not configure this policy setting, automatic MDM enrollment will not be initiated.
 
-            If you disable this policy setting, MDM will be unenrolled
+            If you enable this policy setting, a task is created to initiate enrollment of the device to MDM service specified in the Azure AD.
+
+            If you disable this policy setting, MDM will be unenrolled.
         </string>
     </stringTable>
   </resources>

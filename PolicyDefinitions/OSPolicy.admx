@@ -32,5 +32,35 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="UploadUserActivities" class="Machine" displayName="$(string.UploadUserActivities)" explainText="$(string.UploadUserActivities_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="UploadUserActivities">
+      <parentCategory ref="PolicyPolicies" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowCrossDeviceClipboard" class="Machine" displayName="$(string.AllowCrossDeviceClipboard)" explainText="$(string.AllowCrossDeviceClipboard_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="AllowCrossDeviceClipboard">
+      <parentCategory ref="PolicyPolicies" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowClipboardHistory" class="Machine" displayName="$(string.AllowClipboardHistory)" explainText="$(string.AllowClipboardHistory_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="AllowClipboardHistory">
+      <parentCategory ref="PolicyPolicies" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

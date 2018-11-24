@@ -18,17 +18,14 @@
             clientExtension="{9650FDBC-053A-4715-AD14-FC2DC65E8330}"
             displayName="$(string.AppHVSI_AllowAppHVSI_DisplayName)"
             explainText="$(string.AppHVSI_AllowAppHVSI_Explain)"
+            presentation="$(presentation.AppHVSI_AllowAppHVSI_Presentation)"
             key="SOFTWARE\Policies\Microsoft\AppHVSI"
-            valueName="AllowAppHVSI_ProviderSet"
             >
         <parentCategory ref="AppHVSICat" />
         <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
-        <enabledValue>
-          <decimal value="1" />
-        </enabledValue>
-        <disabledValue>
-          <decimal value="0" />
-        </disabledValue>
+        <elements>
+          <decimal id="AppHVSI_AllowAppHVSI_TextBox" valueName="AllowAppHVSI_ProviderSet" minValue="0" maxValue="3" />
+        </elements>
     </policy>
     <!-- Clipboard Settings -->
     <policy name="AppHVSI_ClipboardConfig"
@@ -70,6 +67,22 @@
         <decimal id="AppHVSIClipboardFileType_AllowedFileType_TextBox" valueName="AppHVSIClipboardFileType" minValue="1" maxValue="3" />
       </elements>
     </policy>
+
+     <!-- CertificateThumbprints -->
+    <policy name="AppHVSI_CertificateThumbprints"
+            class="Machine"
+            displayName="$(string.AppHVSI_CertificateThumbprints_DisplayName)"
+            explainText="$(string.AppHVSI_CertificateThumbprints_Explain)"
+            presentation="$(presentation.AppHVSICertificateThumbprints_Presentation)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+        <elements>
+          <text id="AppHVSICertificateThumbprints_TextBox" valueName="CertificateThumbprints" required="true"  /> <!--maxLength="16383" -->
+        </elements>
+    </policy>
+
     <!-- Printing Settings -->
     <policy name="AppHVSI_PrintingConfig"
             class="Machine"
@@ -101,6 +114,23 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <!-- AllowCameraMicrophoneRedirection -->
+    <policy name="AppHVSI_AllowCameraMicrophoneRedirectionConfig"
+            class="Machine"
+            displayName="$(string.AppHVSI_AllowCameraMicrophoneRedirection_DisplayName)"
+            explainText="$(string.AppHVSI_AllowCameraMicrophoneRedirection_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="AllowCameraMicrophoneRedirection"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <!-- AllowPersistence -->
     <policy name="AppHVSI_AllowPersistence"
             class="Machine"
@@ -108,6 +138,23 @@
             explainText="$(string.AppHVSI_AllowPersistence_Explain)"
             key="SOFTWARE\Policies\Microsoft\AppHVSI"
             valueName="AllowPersistence"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <!-- AllowVirtualGPU -->
+    <policy name="AppHVSI_AllowVirtualGPU"
+            class="Machine"
+            displayName="$(string.AppHVSI_AllowVirtualGPU_DisplayName)"
+            explainText="$(string.AppHVSI_AllowVirtualGPU_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="AllowVirtualGPU"
             >
       <parentCategory ref="AppHVSICat" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
@@ -134,6 +181,77 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <!-- SaveFilestoHost -->
+    <policy name="AppHVSI_SaveFilesToHost"
+            class="Machine"
+            displayName="$(string.AppHVSI_SaveFilesToHost_DisplayName)"
+            explainText="$(string.AppHVSI_SaveFilesToHost_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="SaveFilesToHost"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- File Trust Criteria - Can only be mutually exclusive -->
+    <policy name="AppHVSI_FileTrustCriteria"
+            class="Machine"
+            displayName="$(string.AppHVSI_FileTrustCriteria_DisplayName)"
+            explainText="$(string.AppHVSI_FileTrustCriteria_Explain)"
+            presentation="$(presentation.AppHVSI_FileTrustCriteria_Presentation)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <elements>
+        <decimal id="AppHVSI_FileTrustCriteria_TextBox" valueName="FileTrustCriteria" minValue="0" maxValue="2" />
+      </elements>
+    </policy>
+    
+    <!-- File Trust Origin - Can be logically OR'ed-->
+    <policy name="AppHVSI_FileTrustOrigin"
+            class="Machine"
+            displayName="$(string.AppHVSI_FileTrustOrigin_DisplayName)"
+            explainText="$(string.AppHVSI_FileTrustOrigin_Explain)"
+            presentation="$(presentation.AppHVSI_FileTrustOrigin_Presentation)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI\FileTrustOrigin"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+        <elements>
+            <!-- File Trust Origin - RemovableMedia-->
+            <boolean id="AppHVSI_FileTrustOrigin_RemovableMedia_Checkbox" valueName="FileTrustOriginRemovableMedia">
+                <trueValue>
+                    <decimal value="1" />
+                </trueValue>
+                <falseValue>
+                    <decimal value="0" />
+                </falseValue>
+            </boolean>
+            <boolean id="AppHVSI_FileTrustOrigin_NetworkShares_Checkbox" valueName="FileTrustOriginNetworkShare">
+                <trueValue>
+                    <decimal value="1" />
+                </trueValue>
+                <falseValue>
+                    <decimal value="0" />
+                </falseValue>
+            </boolean>
+            <boolean id="AppHVSI_FileTrustOrigin_MOTW_Checkbox" valueName="FileTrustOriginMarkOfTheWeb">
+                <trueValue>
+                    <decimal value="1" />
+                </trueValue>
+                <falseValue>
+                    <decimal value="0" />
+                </falseValue>
+            </boolean>
+        </elements>
     </policy>
   </policies>
 </policyDefinitions>

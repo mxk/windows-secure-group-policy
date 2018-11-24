@@ -32,7 +32,7 @@
       <parentCategory ref="DeviceInstall_Category" />
       <supportedOn ref="windows:SUPPORTED_Windows7" />
       <elements>
-        <decimal id="DeviceInstall_InstallTimeout_Time" valueName="InstallTimeout" minValue="300" maxValue="4294968" />
+        <decimal id="DeviceInstall_InstallTimeout_Time" valueName="InstallTimeout" minValue="240" maxValue="4294968" />
       </elements>
     </policy>
     <policy name="DeviceInstall_SystemRestore" class="Machine" displayName="$(string.DeviceInstall_SystemRestore)" explainText="$(string.DeviceInstall_SystemRestore_Help)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Settings" valueName="DisableSystemRestore">

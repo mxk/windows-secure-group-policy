@@ -953,6 +953,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="TS_CAMERA_REDIRECTION" class="Machine" displayName="$(string.TS_CAMERA_REDIRECTION)" explainText="$(string.TS_CAMERA_REDIRECTION_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisableCameraRedir">
+      <parentCategory ref="TS_REDIRECTION" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="TS_CLIENT_PRINTER" class="Machine" displayName="$(string.TS_CLIENT_PRINTER)" explainText="$(string.TS_PRINTERMAP_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisableCpm">
       <parentCategory ref="TS_PRINT_REDIRECTION" />
       <supportedOn ref="windows:SUPPORTED_WindowsXP" />
@@ -1912,28 +1922,15 @@
     </policy>
 
     <!--AVC HW Encode Preferred Mode; Introduced Win10+-->
-    <policy name="TS_SERVER_AVC_HW_ENCODE_PREFERRED" class="Machine" displayName="$(string.TS_SERVER_AVC_HW_ENCODE_PREFERRED)" explainText="$(string.TS_SERVER_AVC_HW_ENCODE_PREFERRED_EXPLAIN)" presentation="$(presentation.TS_SERVER_AVC_HW_ENCODE_PREFERRED)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services">
-        <parentCategory ref="TS_SESSIONS" />
-        <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
-        <elements>
-            <enum id="TS_AVC_HW_ENCODE_ENUM" valueName="AVCHardwareEncodePreferred">
-                <item displayName="$(string.TS_AVC_HW_ENCODE_ALWAYS)">
-                    <value>
-                        <decimal value="1" />
-                    </value>
-                </item>
-                <item displayName="$(string.TS_AVC_HW_ENCODE_VGPU)">
-                    <value>
-                        <decimal value="2" />
-                    </value>
-                </item>
-                <item displayName="$(string.TS_AVC_HW_ENCODE_NONVGPU)">
-                    <value>
-                        <decimal value="3" />
-                    </value>
-                </item>
-            </enum>
-        </elements>
+    <policy name="TS_SERVER_AVC_HW_ENCODE_PREFERRED" class="Machine" displayName="$(string.TS_SERVER_AVC_HW_ENCODE_PREFERRED)" explainText="$(string.TS_SERVER_AVC_HW_ENCODE_PREFERRED_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="AVCHardwareEncodePreferred">
+      <parentCategory ref="TS_SESSIONS" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
 
     <!--AVC444 Preferred Mode; Introduced Win10+-->

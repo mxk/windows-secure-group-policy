@@ -13,6 +13,12 @@
       <string id="ShellConfigureSmartScreen">Configure Windows Defender SmartScreen</string>
       <string id="SmartScreen_PreventBypass">Warn and prevent bypass</string>
       <string id="SmartScreen_Warn">Warn</string>
+      <!-- AIC -->
+      <string id="SmartScreen_Anywhere">Turn off app recommendations</string>
+      <string id="SmartScreen_StoreOnly">Allow apps from Store only</string>
+      <string id="SmartScreen_AppRecommendations">Show me app recommendations</string>
+      <string id="SmartScreen_PreferStore">Warn me before installing apps from outside the Store</string>
+
       <string id="ShellConfigureSmartScreen_Help">This policy allows you to turn Windows Defender SmartScreen on or off.  SmartScreen helps protect PCs by warning users before running potentially malicious programs downloaded from the Internet.  This warning is presented as an interstitial dialog shown before running an app that has been downloaded from the Internet and is unrecognized or known to be malicious.  No dialog is shown for apps that do not appear to be suspicious.
 
 Some information is sent to Microsoft about files and programs run on PCs with this feature enabled.
@@ -32,11 +38,17 @@ If you do not configure this policy, SmartScreen will be enabled by default, but
       <string id="ConfigureAppInstallControl">Configure App Install Control</string>
       <string id="ConfigureAppInstallControl_Explain">App Install Control is a feature of Windows Defender SmartScreen that helps protect PCs by allowing users to install apps only from the Store.  SmartScreen must be enabled for this feature to work properly.
 
-If you enable this setting, users will only be able to install apps from the Store.
+If you enable this setting, you must choose from the following behaviors:
 
-If you disable this setting, users will be able to install apps from anywhere, including files downloaded from the Internet.
+     - Turn off app recommendations
 
-If you do not configure this setting, users will be able to choose their own setting for App Install Control.</string>
+     - Show me app recommendations
+
+     - Warn me before installing apps from outside the Store
+
+     - Allow apps from Store only
+
+If you disable or don't configure this setting, users will be able to install apps from anywhere, including files downloaded from the Internet.</string>
       <!-- Edge -->
       <string id="EdgeConfigureSmartScreen">Configure Windows Defender SmartScreen</string>
       <string id="EdgeConfigureSmartScreen_Help">This policy setting lets you configure whether to turn on Windows Defender SmartScreen. Windows Defender SmartScreen provides warning messages to help protect your employees from potential phishing scams and malicious software. By default, Windows Defender SmartScreen is turned on.
@@ -57,6 +69,9 @@ If you disable or don't configure this setting, employees can ignore Windows Def
     <presentationTable>
       <presentation id="ShellConfigureSmartScreen">
         <dropdownList refId="ShellConfigureSmartScreen_Dropdown" noSort="true" defaultItem="0">Pick one of the following settings:</dropdownList>
+      </presentation>
+      <presentation id="ConfigureAppInstallControl">
+        <dropdownList refId="ConfigureAppInstallControl_Dropdown" noSort="true" defaultItem="0">Pick one of the following settings:</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

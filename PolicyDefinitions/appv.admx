@@ -45,7 +45,7 @@ revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPoli
   <policies>
     <policy name="EnableAppV" clientExtension="{2BFCC077-22D2-48DE-BDE1-2F618D9B476D}" class="Machine" displayName="$(string.EnableAppV)" explainText="$(string.EnableAppV_Help)" key="Software\Policies\Microsoft\AppV\Client" valueName="Enabled">
       <parentCategory ref="CAT_AppV" />
-      <supportedOn ref="windows: SUPPORTED_Windows_10_0_NOARM" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
         <enabledValue>
           <decimal value="1" />
         </enabledValue>

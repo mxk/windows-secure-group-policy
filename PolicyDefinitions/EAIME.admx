@@ -109,6 +109,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_TurnOnLiveStickers" class="User" displayName="$(string.L_TurnOnLiveSticker)" explainText="$(string.L_TurnOnLiveStickerExplain)" key="Software\Policies\Microsoft\InputMethod\Settings\CHS" valueName="EnableLiveSticker">
+      <parentCategory ref="L_IME" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS4" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="L_TurnOnLexiconUpdate" class="User" displayName="$(string.L_TurnOnLexiconUpdate)" explainText="$(string.L_TurnOnLexiconUpdateExplain)" key="Software\Policies\Microsoft\InputMethod\Settings\CHS" valueName="Enable Lexicon Update">
       <parentCategory ref="L_IME" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />

@@ -35,16 +35,16 @@
         <list id="RestrictCplsList" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\RestrictCpl" valuePrefix="" />
       </elements>
     </policy>
-    <policy name="SettingsPageVisibility" class="Machine" displayName="$(string.SettingsPageVisibility)" explainText="$(string.SettingsPageVisibility_Help)" presentation="$(presentation.SettingsPageVisibility)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
+    <policy name="SettingsPageVisibility" class="Both" displayName="$(string.SettingsPageVisibility)" explainText="$(string.SettingsPageVisibility_Help)" presentation="$(presentation.SettingsPageVisibility)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
       <parentCategory ref="windows:ControlPanel" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />
       <elements>
         <text id="SettingsPageVisibilityBox" valueName="SettingsPageVisibility" required="true" />
       </elements>
     </policy>
     <policy name="AllowOnlineTips" class="Machine" displayName="$(string.AllowOnlineTips)" explainText="$(string.AllowOnlineTips_Help)" presentation="$(presentation.AllowOnlineTips)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer">
       <parentCategory ref="windows:ControlPanel" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
       <elements>
         <boolean id="CheckBox_AllowOnlineTips" valueName="AllowOnlineTips">
            <trueValue>

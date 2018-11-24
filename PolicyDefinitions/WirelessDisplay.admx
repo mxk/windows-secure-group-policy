@@ -13,23 +13,36 @@
   <policies>
     <policy name="AllowProjectionToPC" class="Machine" displayName="$(string.AllowProjectionToPC)" explainText="$(string.AllowProjectionToPC_help)" key="Software\Policies\Microsoft\Windows\Connect" valueName="AllowProjectionToPC">
       <parentCategory ref="Connect" />
-	  <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
       <enabledValue>
-        <decimal value="0" />
+        <decimal value="1" />
       </enabledValue>
       <disabledValue>
-        <decimal value="1" />
+        <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="RequirePinForPairing" class="Machine" displayName="$(string.RequirePinForPairing)" explainText="$(string.RequirePinForPairing_help)" key="Software\Policies\Microsoft\Windows\Connect" valueName="RequirePinForPairing">
+    <policy name="RequirePinForPairing" class="Machine" displayName="$(string.RequirePinForPairing)" explainText="$(string.RequirePinForPairing_help)" presentation="$(presentation.RequirePinForPairing)" key="Software\Policies\Microsoft\Windows\Connect" valueName="RequirePinForPairing">
       <parentCategory ref="Connect" />
-	  <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+      <elements>
+        <enum id="RequirePinForPairingDropdown" valueName="RequirePinForPairing" required="true">
+          <item displayName="$(string.RequirePinForPairing_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.RequirePinForPairing_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.RequirePinForPairing_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

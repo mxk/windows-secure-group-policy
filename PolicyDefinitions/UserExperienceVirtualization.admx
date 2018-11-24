@@ -19,13 +19,27 @@
   <policies>
     <policy name="EnableUEV" clientExtension="{169EBF44-942F-4C43-87CE-13C93996EBBE}" class="Machine" displayName="$(string.EnableUEV)" explainText="$(string.EnableUEV_Help)" presentation="$(presentation.EnableUEV)" key="Software\Policies\Microsoft\UEV\Agent" valueName="Enabled">
       <parentCategory ref="UEV" />
-      <supportedOn ref="windows: SUPPORTED_Windows_10_0_NOARM" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
         <enabledValue>
           <decimal value="1" />
         </enabledValue>
         <disabledValue>
           <decimal value="0" />
         </disabledValue>
+        <enabledList>
+          <item key="Software\Policies\Microsoft\Windows\UEV\Agent" valueName="Enabled">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enabledList>
+        <disabledList>
+        <item key="Software\Policies\Microsoft\Windows\UEV\Agent" valueName="Enabled">
+          <value>
+            <decimal value="0" />
+          </value>
+        </item>
+      </disabledList>
       <elements>
         <boolean id="RegisterInboxTemplates" valueName="RegisterInboxTemplates" />
       </elements>

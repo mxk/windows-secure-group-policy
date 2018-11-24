@@ -45,7 +45,8 @@
       </disabledValue>
     </policy>
 
-    <policy name="NoCloudNotification" class="User" displayName="$(string.NoCloudNotification)" explainText="$(string.NoCloudNotificationExplain)"  key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" valueName="NoCloudApplicationNotification">
+    <!-- In the future for DSMA SKUs session 0 will not exist and this key should be restricted to user session -->
+    <policy name="NoCloudNotification" class="Machine" displayName="$(string.NoCloudNotification)" explainText="$(string.NoCloudNotificationExplain)"  key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" valueName="NoCloudApplicationNotification">
       <parentCategory ref="NotificationsCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows8" />
       <enabledValue>
@@ -58,7 +59,7 @@
 
     <policy name="NoQuietHours" class="User" displayName="$(string.NoQuietHours)" explainText="$(string.NoQuietHoursExplain)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours" valueName="Enable">
       <parentCategory ref="NotificationsCategory" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
         <enabledValue>
           <decimal value="0" />
         </enabledValue>
@@ -69,7 +70,7 @@
 
     <policy name="QuietHoursDailyBeginMinute" class="User" displayName="$(string.QuietHoursDailyBeginMinute)" explainText="$(string.QuietHoursDailyBeginMinuteExplain)" presentation="$(presentation.QuietHoursBeginTimePicker)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours">
       <parentCategory ref="NotificationsCategory" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
       <elements>
         <decimal id="QuietHoursDailyBeginMinuteControl" valueName="EntryTime" minValue="0" maxValue="1439" />
       </elements>
@@ -77,7 +78,7 @@
 
     <policy name="QuietHoursDailyEndMinute" class="User" displayName="$(string.QuietHoursDailyEndMinute)" explainText="$(string.QuietHoursDailyEndMinuteExplain)" presentation="$(presentation.QuietHoursEndTimePicker)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours">
       <parentCategory ref="NotificationsCategory" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
       <elements>
         <decimal id="QuietHoursDailyEndMinuteControl" valueName="ExitTime" minValue="0" maxValue="1439" />
       </elements>
@@ -85,7 +86,7 @@
 
     <policy name="NoCallsDuringQuietHours" class="User" displayName="$(string.NoCallsDuringQuietHours)" explainText="$(string.NoCallsDuringQuietHoursExplain)" key="SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours" valueName="AllowCalls">
       <parentCategory ref="NotificationsCategory" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>

@@ -278,7 +278,7 @@ By default, Windows Ultimate, Professional and Home SKUs will continue to search
 
         If you disable this policy setting or do not configure it, then all printer extensions that have been installed will be allowed to run.</string>
       <string id="MXDWUseLegacyOutputFormatMSXPS">Change Microsoft XPS Document Writer (MXDW) default output format to the legacy Microsoft XPS format (*.xps)</string>
-      <string id="MXDWUseLegacyOutputFormatMSXPS_Help">Microsoft XPS Document Writer (MXDW) generates OpenXPS (*.oxps) files by default in Windows 10, Windows 10 and Windows Server.
+      <string id="MXDWUseLegacyOutputFormatMSXPS_Help">Microsoft XPS Document Writer (MXDW) generates OpenXPS (*.oxps) files by default in Windows 10, Windows 10 and Windows Server 2019.
 
           If you enable this group policy setting, the default MXDW output format is the legacy Microsoft XPS (*.xps).
 

@@ -18,7 +18,7 @@ This parameter controls the rate at which the W32time corrects the local clock's
 This parameter indicates how many consistent time samples the client computer must receive in a series before subsequent time samples are evaluated as potential spikes. Default: 5
 
         LargePhaseOffset
-If a time sample differs from the the client computer's local clock by more than LargePhaseOffset, the local clock is deemed to have drifted considerably, or spiked in other words. Default: 50,000,000 100-nanosecond units (ns) or 5 seconds.
+If a time sample differs from the client computer's local clock by more than LargePhaseOffset, the local clock is deemed to have drifted considerably, or in other words, spiked. Default: 50,000,000 100-nanosecond units (ns) or 5 seconds.
 
         MaxAllowedPhaseOffset
 If a response is received that has a time variation that is larger than this parameter value, W32time sets the client computer's local clock immediately to the time that is accepted as accurate from the Network Time Protocol (NTP) server. If the time variation is less than this value, the client computer's local clock is corrected gradually. Default: 300 seconds.
@@ -62,7 +62,7 @@ This parameter controls the minimum polling interval that defines the minimum am
 This parameter indicates the maximum number of seconds a system clock can nominally hold its accuracy without synchronizing with a time source. If this period of time passes without W32time obtaining new samples from any of its input providers, W32time initiates a rediscovery of time sources. Default: 7800 seconds.
 
         RequireSecureTimeSyncRequests
-This parameter controls whether or not the the DC will respond to time sync requests that use older authentication protocols. If enabled (set to 1), the DC will not respond to requests using such protocols. Default: 0 Boolean.
+This parameter controls whether or not the DC will respond to time sync requests that use older authentication protocols. If enabled (set to 1), the DC will not respond to requests using such protocols. Default: 0 Boolean.
 
         UtilizeSslTimeData
 This parameter controls whether W32time will use time data computed from SSL traffic on the machine as an additional input for correcting the local clock.  Default: 1 (enabled) Boolean

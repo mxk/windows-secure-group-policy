@@ -79,17 +79,7 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="AlwaysInstallElevated_1" class="User" displayName="$(string.AlwaysInstallElevated)" explainText="$(string.AlwaysInstallElevated_Help)" presentation="$(presentation.AlwaysInstallElevated_1)" key="Software\Policies\Microsoft\Windows\Installer" valueName="AlwaysInstallElevated">
-      <parentCategory ref="MSI" />
-      <supportedOn ref="windows:SUPPORTED_Win2k" />
-      <enabledValue>
-        <decimal value="1" />
-      </enabledValue>
-      <disabledValue>
-        <decimal value="0" />
-      </disabledValue>
-    </policy>
-    <policy name="AlwaysInstallElevated_2" class="Machine" displayName="$(string.AlwaysInstallElevated)" explainText="$(string.AlwaysInstallElevated_Help)" presentation="$(presentation.AlwaysInstallElevated_2)" key="Software\Policies\Microsoft\Windows\Installer" valueName="AlwaysInstallElevated">
+    <policy name="AlwaysInstallElevated" class="Both" displayName="$(string.AlwaysInstallElevated)" explainText="$(string.AlwaysInstallElevated_Help)" presentation="$(presentation.AlwaysInstallElevated_1)" key="Software\Policies\Microsoft\Windows\Installer" valueName="AlwaysInstallElevated">
       <parentCategory ref="MSI" />
       <supportedOn ref="windows:SUPPORTED_Win2k" />
       <enabledValue>
@@ -330,7 +320,7 @@
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
-      <disabledValue>explainText="$(string.DisableSharedComponent_Help)" 
+      <disabledValue>
         <decimal value="0" />
       </disabledValue>
     </policy>

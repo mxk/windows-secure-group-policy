@@ -38,6 +38,16 @@ The "Enabled with UEFI lock" option ensures that Credential Guard cannot be disa
 The "Enabled without lock" option allows Credential Guard to be disabled remotely by using Group Policy. The devices that use this setting must be running at least Windows 10 (Version 1511).
 
 The "Not Configured" option leaves the policy setting undefined. Group Policy does not write the policy setting to the registry, and so it has no impact on computers or users. If there is a current setting in the registry it will not be modified.
+      
+Secure Launch
+
+This setting sets the configuration of Secure Launch to secure the boot chain.
+
+The "Not Configured" setting is the default, and allows configuration of the feature by Administrative users.
+
+The "Enabled" option turns on Secure Launch on supported hardware.
+
+The "Disabled" option turns off Secure Launch, regardless of hardware support.
       </string>
       <string id="SecureBoot">Secure Boot</string>
       <string id="SecureBootAndDmaProtection">Secure Boot and DMA Protection</string>
@@ -66,7 +76,8 @@ If using a signed and protected policy then disabling this policy setting doesn'
         <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Select Platform Security Level:</dropdownList>
         <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="3">Virtualization Based Protection of Code Integrity:</dropdownList>        
         <checkBox refId="CheckboxMAT">Require UEFI Memory Attributes Table</checkBox>        
-        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">Credential Guard Configuration:</dropdownList>                
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">Credential Guard Configuration:</dropdownList>
+        <dropdownList refId="SystemGuardDrop" defaultItem="2">Secure Launch Configuration:</dropdownList>                
       </presentation>
       <presentation id="ConfigCIPolicy">
         <textBox refId="ConfigCIPolicyFilePathText">

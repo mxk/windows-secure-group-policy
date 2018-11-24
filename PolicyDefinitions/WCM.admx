@@ -52,5 +52,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-  </policies>
+    <policy name="WCM_EnableSoftDisconnect" class="Machine" displayName="$(string.WCM_EnableSoftDisconnect)" explainText="$(string.WCM_EnableSoftDisconnect_Help)" key="Software\Policies\Microsoft\Windows\WcmSvc\GroupPolicy" valueName="fSoftDisconnectConnections">
+      <parentCategory ref="WCM_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    </policies>
 </policyDefinitions>
