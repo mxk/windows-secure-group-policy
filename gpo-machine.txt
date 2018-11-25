@@ -13,6 +13,11 @@ AutoConnectAllowedOEM
 DWORD:0
 
 Computer
+SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection
+MicrosoftEdgeDataOptIn
+DWORD:0
+
+Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
 AllowOnlineTips
 DWORD:0
@@ -81,6 +86,11 @@ Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 VerboseStatus
 DWORD:1
+
+Computer
+SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\TextInput
+AllowLinguisticDataCollection
+DWORD:0
 
 Computer
 SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Windows
@@ -281,6 +291,21 @@ Computer
 SOFTWARE\Policies\Microsoft\MicrosoftAccount
 DisableUserAuth
 DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\MicrosoftEdge\BooksLibrary
+AllowConfigurationUpdateForBooksLibrary
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\MicrosoftEdge\BooksLibrary
+EnableExtendedBooksTelemetry
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\MicrosoftEdge\BooksLibrary
+UseSharedFolderForBooks
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\BrowserEmulation
@@ -594,6 +619,26 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsAccessGazeInput
+DWORD:2
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsAccessGazeInput_ForceAllowTheseApps
+MULTISZ:\0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsAccessGazeInput_ForceDenyTheseApps
+MULTISZ:\0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsAccessGazeInput_UserInControlOfTheseApps
+MULTISZ:\0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsAccessLocation
 DWORD:2
 
@@ -871,6 +916,16 @@ Computer
 SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\MDM
 DisableRegistration
 DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications
+NoCloudApplicationNotification
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\DataCollection
+AllowDeviceNameInTelemetry
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\DataCollection
@@ -1184,6 +1239,16 @@ DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
+AllowClipboardHistory
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+AllowCrossDeviceClipboard
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
 AllowUserInfoAccess
 DWORD:2
 
@@ -1239,6 +1304,11 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
+EnableMmx
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
 EnableSmartScreen
 DWORD:0
 
@@ -1280,6 +1350,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
 SlowLinkDetectEnabled
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
+UploadUserActivities
 DWORD:0
 
 Computer
@@ -1515,6 +1590,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\Windows Defender
 DisableRoutinelyTakingAction
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows Defender
+PUAProtection
 DWORD:1
 
 Computer

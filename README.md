@@ -296,11 +296,11 @@ References
 * https://blogs.technet.microsoft.com/secguide/
 * https://blogs.technet.microsoft.com/secguide/2016/10/02/the-mss-settings/
 * https://blogs.technet.microsoft.com/secguide/2015/11/18/changes-from-the-windows-8-1-baseline-to-the-windows-10-th11507-baseline/
-* https://docs.microsoft.com/en-us/windows/configuration/configure-windows-telemetry-in-your-organization
-* https://docs.microsoft.com/en-us/windows/configuration/manage-connections-from-windows-operating-system-components-to-microsoft-services
+* https://docs.microsoft.com/en-us/windows/privacy/
 * http://iase.disa.mil/stigs/os/windows/Pages/index.aspx
 * https://www.stigviewer.com/stig/windows_10/
 * https://blogs.technet.microsoft.com/josebda/2012/11/13/windows-server-2012-file-server-tip-disable-8-3-naming-and-strip-those-short-names-too/
 * https://support.microsoft.com/en-us/help/2526083/disabling-user-account-control-uac-on-windows-server
 * https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-privacy
 * https://deploywindows.info/2016/02/11/windows-10-group-policy-client-side-extension-cse-list/
+* https://www.vacuumbreather.com/index.php/blog/itemlist/category/11-windows-10
