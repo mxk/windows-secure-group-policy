@@ -165,6 +165,12 @@ covered by any ADMX template. This allows the settings to apply via Local
 Computer Policy, which does not support Preferences (without hacks).
 
 ```
+; Disable Inking & Typing Personalization (still checked, so partial?)
+User
+Software\Microsoft\InputPersonalization\TrainedDataStore
+HarvestContacts
+DWORD:0
+
 ; Disable shared experiences
 User
 Software\Microsoft\Windows\CurrentVersion\CDP

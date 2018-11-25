@@ -8,6 +8,11 @@ HttpAcceptLanguageOptOut
 DWORD:1
 
 User
+Software\Microsoft\InputPersonalization\TrainedDataStore
+HarvestContacts
+DWORD:0
+
+User
 Software\Microsoft\Internet Explorer\VersionManager
 DownloadVersionList
 DWORD:0
