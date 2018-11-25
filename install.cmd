@@ -1,9 +1,11 @@
 @echo off
 setlocal
 
+if /i "%1" == "/y" goto :install
 set /p "confirm=Install GPO as Local Computer Policy (y/[n])? "
 if /i "%confirm%" neq "y" goto :eof
 
+:install
 set gpo=GPO\{07BDCD6A-3F72-473C-82B9-67BB69DBE54D}\DomainSysvol\GPO
 
 pushd %~dp0
@@ -16,4 +18,5 @@ popd
 echo.
 echo Restart computer to apply changes!
 echo.
-pause
+
+if /i "%1" neq "/y" pause
