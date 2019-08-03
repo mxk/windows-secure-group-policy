@@ -57,10 +57,41 @@ If you do not configure this policy setting, MSDT support mode is enabled by def
 No reboots or service restarts are required for this policy setting to take effect. Changes take effect immediately.
 
 </string>
+<string id="TroubleshootingAllowRecommendations">Troubleshooting: Allow users to access recommended troubleshooting for known problems</string>
+<string id="TroubleshootingAllowRecommendationsExplain">This policy setting applies recommended troubleshooting for known problems on the device and lets administrators configure how it's applied to their domains/IT environments.
+Not configuring this policy setting will allow the user to configure if and how recommended troubleshooting is applied.
+
+Enabling this policy allows you to configure how recommended troubleshooting is applied on the user's device. You can select from one of the following values:
+0 = Turn this feature off.
+1 = Turn this feature off but still apply critical troubleshooting.
+2 = Notify users when recommended troubleshooting is available, then allow the user to run or ignore it.
+3 = Run recommended troubleshooting automatically and notify the user after it's been successfully run.
+4 = Run recommended troubleshooting automatically without notifying the user.
+5 = Allow the user to choose their own recommended troubleshooting settings.
+
+After setting this new setting, to trigger recommended troubleshooting for devices in your domain, follow these instructions:
+1. Create a bat script with the following contents:
+rem The following batch script triggers Recommended Troubleshooting
+C:\Windows\System32\mitigationscanner.exe
+
+2. To create a new immediate task, navigate to the Group Policy Management Editor &gt; Computer Configuration &gt; Preferences and select Control Panel Settings. 
+3. Under Control Panel settings, right-click on Scheduled Tasks and select New. Select Immediate Task (At least Windows 7).
+4. Provide name and description as appropriate, then under Security Options set the user account to System and select the Run with highest privileges checkbox.
+5. In the Actions tab, create a new action, select Start a Program as its type, then enter the file created in step 1.
+6. Configure the task to deploy to your domain.</string>
+<string id="RecommendationsDropDown_DoNothing">Turn this feature off</string>
+<string id="RecommendationsDropDown_ApplyCoreSystemMitigationsOnly">Turn this feature off but still apply critical troubleshooting.</string>
+<string id="RecommendationsDropDown_AskFirst">Notify users when recommended troubleshooting is available, then allow the user to run or ignore it.</string>
+<string id="RecommendationsDropDown_ApplyThenNotify">Run recommended troubleshooting automatically and notify the user after it's been successfully run.</string>
+<string id="RecommendationsDropDown_ApplySilently">Run recommended troubleshooting automatically without notifying the user.</string>
+<string id="RecommendationsDropDown_DeferToUser">Allow the user to choose their own recommended troubleshooting settings.</string>
     </stringTable>
     <presentationTable>
       <presentation id="MsdtToolDownloadPolicy">
         <dropdownList refId="MsdtToolDownloadPolicyLevel" noSort="true" defaultItem="1">Tool downloads allowed</dropdownList>
+      </presentation>
+      <presentation id="TroubleshootingAllowRecommendations">
+        <dropdownList refId="TroubleshootingAllowRecommendations_Dropdown" noSort="true" defaultItem="0">Allow recommended troubleshooting from Microsoft for known problems</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

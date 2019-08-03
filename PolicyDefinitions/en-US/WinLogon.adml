@@ -72,12 +72,34 @@ If you disable this setting or do not configure it, the setting is ignored and t
 
 Tip: To find the folders indicated by the Path environment variable, click System Properties in Control Panel, click the Advanced tab, click the Environment Variables button, and then, in the System variables box, click Path.</string>
 
-      <string id="AutomaticRestartSignOnDescription">Sign-in last interactive user automatically after a system-initiated restart</string>
-      <string id="AutomaticRestartSignOnDescription_Help">This policy setting controls whether a device will automatically sign-in the last interactive user after Windows Update restarts the system.
+      <string id="AutomaticRestartSignOnDescription">Sign-in and lock last interactive user automatically after a restart</string>
+      <string id="AutomaticRestartSignOnDescription_Help">This policy setting controls whether a device will automatically sign in and lock the last interactive user after the system restarts or after a shutdown and cold boot.
 
-If you enable or do not configure this policy setting, the device securely saves the user's credentials (including the user name, domain and encrypted password) to configure automatic sign-in after a Windows Update restart. After the Windows Update restart, the user is automatically signed-in and the session is automatically locked with all the lock screen apps configured for that user.
+This only occurs if the last interactive user didn’t sign out before the restart or shutdown.​
 
-If you disable this policy setting, the device does not store the user's credentials for automatic sign-in after a Windows Update restart. The users' lock screen apps are not restarted after the system restarts.</string>
+If the device is joined to Active Directory or Azure Active Directory, this policy only applies to Windows Update restarts. Otherwise, this will apply to both Windows Update restarts and user-initiated restarts and shutdowns.​
+
+If you don’t configure this policy setting, it is enabled by default. When the policy is enabled, the user is automatically signed in and the session is automatically locked with all lock screen apps configured for that user after the device boots.​
+
+After enabling this policy, you can configure its settings through the ConfigAutomaticRestartSignOn policy, which configures the mode of automatically signing in and locking the last interactive user after a restart or cold boot​.
+
+If you disable this policy setting, the device does not configure automatic sign in. The user’s lock screen apps are not restarted after the system restarts.</string>
+
+      <string id="ConfigAutomaticRestartSignOnDescription">Configure the mode of automatically signing in and locking last interactive user after a restart or cold boot</string>
+      <string id="ConfigAutomaticRestartSignOnDescription_Help">This policy setting controls the configuration under which an automatic restart and sign on and lock occurs after a restart or cold boot. If you chose “Disabled” in the “Sign-in and lock last interactive user automatically after a restart” policy, then automatic sign on will not occur and this policy does not need to be configured.
+
+If you enable this policy setting, you can choose one of the following two options:
+
+1. “Enabled if BitLocker is on and not suspended” specifies that automatic sign on and lock will only occur if BitLocker is active and not suspended during the reboot or shutdown. Personal data can be accessed on the device’s hard drive at this time if BitLocker is not on or suspended during an update. BitLocker suspension temporarily removes protection for system components and data but may be needed in certain circumstances to successfully update boot-critical components.
+     BitLocker is suspended during updates if:
+        - The device doesn’t have TPM 2.0 and PCR7, or
+        - The device doesn’t use a TPM-only protector
+2. “Always Enabled” specifies that automatic sign on will happen even if BitLocker is off or suspended during reboot or shutdown. When BitLocker is not enabled, personal data is accessible on the hard drive. Automatic restart and sign on should only be run under this condition if you are confident that the configured device is in a secure physical location.
+
+If you disable or don’t configure this setting, automatic sign on will default to the “Enabled if BitLocker is on and not suspended” behavior.</string>
+
+      <string id="ConfigAutomaticRestartSignOn_EnableIfSecure">Enabled if BitLocker is on and not suspended</string>
+      <string id="ConfigAutomaticRestartSignOn_EnableAlways">Always Enabled</string>
 
     </stringTable>
     <presentationTable>
@@ -86,6 +108,9 @@ If you disable this policy setting, the device does not store the user's credent
       </presentation>
       <presentation id="SoftwareSASGenerationDescription">
         <dropdownList refId="SoftwareSASGenerationDescription" noSort="true">Set which software is allowed to generate the Secure Attention Sequence</dropdownList>
+      </presentation>
+      <presentation id="ConfigAutomaticRestartSignOnDescription">
+        <dropdownList refId="ConfigAutomaticRestartSignOnDescription" noSort="true">Configure the mode of automatically signing in and locking last interactive user after a restart or cold boot</dropdownList>
       </presentation>
       <presentation id="CustomShell">
         <textBox refId="CustomShellInst">

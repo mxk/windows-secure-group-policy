@@ -120,6 +120,8 @@ Options available are:
 
 4 = DNS Suffix. 
 
+5 = AAD Tenant ID. 
+
 When set, the Group ID will be assigned automatically from the selected source. If you set this policy, the GroupID policy will be ignored. 
       
 The options set in this policy only apply to Group (2) download mode. If Group (2) isn't set as Download mode, this policy will be ignored. 
@@ -130,6 +132,7 @@ For option 3 - DHCP Option ID, the client will query DHCP Option ID 234 and use 
       <string id="GroupIdSource_SID">Authenticated domain SID (2)</string>
       <string id="GroupIdSource_DHCP">DHCP Option ID (3)</string>
       <string id="GroupIdSource_DNS">DNS Suffix (4)</string>
+      <string id="GroupIdSource_AAD">AAD Tenant ID (5)</string>
       <string id="DelayBackgroundDownloadFromHttp">Delay background download from http (in secs)</string>
       <string id="DelayBackgroundDownloadFromHttp_Help">This policy allows you to delay the use of an HTTP source in a background download that is allowed to use P2P.
       
@@ -146,6 +149,14 @@ After the max delay has reached, the download will resume using HTTP, either dow
 Note that a download that is waiting for peer sources, will appear to be stuck for the end user.
       
 The recommended value is 1 minute (60).</string>
+      <string id="DelayCacheServerFallbackBackground">Delay Background download Cache Server fallback (in seconds)</string>
+      <string id="DelayCacheServerFallbackBackground_Help">Set this policy to delay the fallback from Cache Server to the HTTP source for a background content download by X seconds. 
+
+Note: if you set the policy to delay background download from http, it will apply first (to allow downloads from peers first).</string>
+      <string id="DelayCacheServerFallbackForeground">Delay Foreground download Cache Server fallback (in seconds)</string>
+      <string id="DelayCacheServerFallbackForeground_Help">Set this policy to delay the fallback from Cache Server to the HTTP source for a foreground content download by X seconds. 
+
+Note: if you set the policy to delay foreground download from http, it will apply first (to allow downloads from peers first).</string>
       <string id="RestrictPeerSelectionBy">Select a method to restrict Peer Selection</string>
       <string id="RestrictPeerSelectionBy_Help">Set this policy to restrict peer selection via selected option. 
       
@@ -263,7 +274,7 @@ Option 1 (Subnet mask) applies to both Download Mode LAN (1) and Group (2).</str
         </textBox>
       </presentation>
       <presentation id="GroupIdSource">
-        <dropdownList defaultItem="0" noSort="true" refId="GroupIdSource">source of Group IDs:</dropdownList>        
+        <dropdownList defaultItem="0" noSort="true" refId="GroupIdSource">Source of Group IDs:</dropdownList>        
       </presentation>
       <presentation id="DelayBackgroundDownloadFromHttp">
         <decimalTextBox defaultValue="0" refId="DelayBackgroundDownloadFromHttp">Delay background download from http (in secs):</decimalTextBox>
@@ -271,6 +282,14 @@ Option 1 (Subnet mask) applies to both Download Mode LAN (1) and Group (2).</str
       </presentation>
       <presentation id="DelayForegroundDownloadFromHttp">
         <decimalTextBox defaultValue="0" refId="DelayForegroundDownloadFromHttp">Delay Foreground download from http (in secs):</decimalTextBox>
+        <text>The default value is 0 (no delay)</text>
+      </presentation>
+      <presentation id="DelayCacheServerFallbackBackground">
+        <decimalTextBox defaultValue="0" refId="DelayCacheServerFallbackBackground">Delay Background download Cache Server fallback (in secs):</decimalTextBox>
+        <text>The default value is 0 (no delay)</text>
+      </presentation>
+      <presentation id="DelayCacheServerFallbackForeground">
+        <decimalTextBox defaultValue="0" refId="DelayCacheServerFallbackForeground">Delay Foreground download Cache Server fallback (in secs):</decimalTextBox>
         <text>The default value is 0 (no delay)</text>
       </presentation>
       <presentation id="RestrictPeerSelectionBy">

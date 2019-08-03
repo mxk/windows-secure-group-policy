@@ -183,5 +183,15 @@
         <text id="ConfigureMicrosoft365UploadEndpointValue" valueName="ConfigureMicrosoft365UploadEndpoint" required="true"/>
       </elements>
     </policy>
+    <policy name="AllowCommercialDataPipeline" class="Machine" displayName="$(string.AllowCommercialDataPipeline)" explainText="$(string.AllowCommercialDataPipeline_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="AllowCommercialDataPipeline">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

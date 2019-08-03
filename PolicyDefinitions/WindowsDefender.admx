@@ -862,6 +862,13 @@
                 <text id="SignatureUpdate_DefinitionUpdateFileSharesSources" valueName="DefinitionUpdateFileSharesSources" required="true" />
             </elements>
         </policy>
+        <policy name="SignatureUpdate_SharedSignaturesLocation" class="Machine" displayName="$(string.SignatureUpdate_SharedSignaturesLocation)" explainText="$(string.SignatureUpdate_SharedSignaturesLocation_Explain)" key="Software\Policies\Microsoft\Windows Defender\Signature Updates" presentation="$(presentation.SignatureUpdate_SharedSignaturesLocation)">
+            <parentCategory ref="SignatureUpdate" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_19H1" />
+            <elements>
+                <text id="SignatureUpdate_SharedSignaturesLocation" valueName="SharedSignatureRoot" required="true" />
+            </elements>
+        </policy>
         <policy name="SignatureUpdate_DisableScanOnUpdate" class="Machine" displayName="$(string.SignatureUpdate_DisableScanOnUpdate)" explainText="$(string.SignatureUpdate_DisableScanOnUpdate_Explain)" key="Software\Policies\Microsoft\Windows Defender\Signature Updates" valueName="DisableScanOnUpdate">
             <parentCategory ref="SignatureUpdate" />
             <supportedOn ref="windows:SUPPORTED_Windows8" />

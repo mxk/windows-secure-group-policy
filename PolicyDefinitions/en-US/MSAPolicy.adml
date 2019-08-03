@@ -7,7 +7,10 @@
     <stringTable>
         <string id="MicrosoftAccountCategory">Microsoft account</string>
         <string id="MicrosoftAccount_DisableUserAuth">Block all consumer Microsoft account user authentication</string>
-        <string id="MicrosoftAccount_DisableUserAuthExplain">When enabled, this policy will prevent all applications and services on the device from new consumer Microsoft account authentication via the Windows OnlineID and WebAccountManager APIs. This policy may not affect applications which have already authenticated until the authentication cache expires, so it is recommended to set this policy when setting up a device to prevent any cached tokens from being present on the device. This policy does not affect authentication performed directly by the user in browsers or in apps that use OAuth.
+        <string id="MicrosoftAccount_DisableUserAuthExplain">This setting controls whether users can provide Microsoft accounts for authentication for applications or services. If this setting is enabled, all applications and services on the device are prevented from using Microsoft accounts for authentication.  
+This applies both to existing users of a device and new users who may be added. However, any application or service that has already authenticated a user will not be affected by enabling this setting until the authentication cache expires.  
+It is recommended to enable this setting before any user signs in to a device to prevent cached tokens from being present. If this setting is disabled or not configured, applications and services can use Microsoft accounts for authentication.  
+By default, this setting is Disabled. This setting does not affect whether users can sign in to devices by using Microsoft accounts, or the ability for users to provide Microsoft accounts via the browser for authentication with web-based applications. 
         </string>
     </stringTable>
   </resources>

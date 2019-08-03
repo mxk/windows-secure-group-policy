@@ -106,13 +106,32 @@
 
     <policy name="AutomaticRestartSignOn" class="Machine" displayName="$(string.AutomaticRestartSignOnDescription)" explainText="$(string.AutomaticRestartSignOnDescription_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System" valueName="DisableAutomaticRestartSignOn">
       <parentCategory ref="Logon" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6_NOSERVER" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>
       <disabledValue>
         <decimal value="1" />
       </disabledValue>
+    </policy>
+
+    <policy name="ConfigAutomaticRestartSignOn" class="Machine" displayName="$(string.ConfigAutomaticRestartSignOnDescription)" explainText="$(string.ConfigAutomaticRestartSignOnDescription_Help)" presentation="$(presentation.ConfigAutomaticRestartSignOnDescription)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System">
+      <parentCategory ref="Logon" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6_NOSERVER" />
+      <elements>
+        <enum id="ConfigAutomaticRestartSignOnDescription" valueName="AutomaticRestartSignOnConfig">
+          <item displayName="$(string.ConfigAutomaticRestartSignOn_EnableIfSecure)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ConfigAutomaticRestartSignOn_EnableAlways)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
   </policies>

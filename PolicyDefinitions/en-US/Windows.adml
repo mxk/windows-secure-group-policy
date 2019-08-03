@@ -52,10 +52,11 @@
       <string id="SUPPORTED_Windows_10_0_RS4">At least Windows Server 2016, Windows 10 Version 1803</string>
       <string id="SUPPORTED_Windows_10_0_RS5">At least Windows Server 2016, Windows 10 Version 1809</string>
       <string id="SUPPORTED_Windows_10_0_RS6">At least Windows Server 2016, Windows 10 Version 1903</string>
+      <string id="SUPPORTED_Windows_10_0_RS6_NOSERVER">At least Windows 10 Version 1903</string>
       <string id="SUPPORTED_Windows_10_0_RS7">At least Windows Server 2016, Windows 10 Version 1909</string>
       <string id="SUPPORTED_Windows_10_0_NOARM">At least Windows Server 2016 or Windows 10</string>
       <string id="SUPPORTED_Windows_10_0_NOSERVER">At least Windows 10</string>
-      <string id="SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE">At least Windows 10 Enterprise</string>
+      <string id="SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE_EDUCATION">Windows 10 Enterprise, Windows 10 Education, or later</string>
       <string id="SUPPORTED_Windows_10_0_SERVER">At least Windows Server 2016</string>
       <string id="SUPPORTED_Windows8_Or_IE10">At least Windows Server 2012, Windows 8 or Windows RT or at least Internet Explorer 10</string>
       <string id="SUPPORTED_WindowsVistaTo2k">Windows Server 2008, Windows Server 2003, Windows Vista, Windows XP, and Windows 2000</string>

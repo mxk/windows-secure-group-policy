@@ -517,6 +517,11 @@
               <decimal value="4" />
             </value>
           </item>
+          <item displayName="$(string.TS_LICENSING_MODE_AAD_PER_USER)">
+            <value>
+              <decimal value="6" />
+            </value>
+          </item>
         </enum>
       </elements>
     </policy>
@@ -1910,6 +1915,17 @@
       </elements>
     </policy>
 
+    <policy name="TS_SERVER_WDDM_GRAPHICS_DRIVER" class="Machine" displayName="$(string.TS_SERVER_WDDM_GRAPHICS_DRIVER)" explainText="$(string.TS_SERVER_WDDM_GRAPHICS_DRIVER_DEFAULT_ON_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fEnableWddmDriver">
+      <parentCategory ref="TS_SESSIONS" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    
     <policy name="TS_SERVER_ADVANCED_REMOTEFX_REMOTEAPP" class="Machine" displayName="$(string.TS_SERVER_ADVANCED_REMOTEFX_REMOTEAPP)" explainText="$(string.TS_SERVER_ADVANCED_REMOTEFX_REMOTEAPP_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fEnableRemoteFXAdvancedRemoteApp">
       <parentCategory ref="TS_SESSIONS" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3_NOARM" />

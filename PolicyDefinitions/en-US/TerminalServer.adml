@@ -406,20 +406,24 @@ If you enable this policy setting, these notifications will not be displayed on 
 
 If you disable or do not configure this policy setting, these notifications will be displayed on the RD Session Host server after you log on as a local administrator.</string>
       <string id="TS_LICENSING_MODE">Set the Remote Desktop licensing mode</string>
-      <string id="TS_LICENSING_MODE_EXPLAIN">This policy setting allows you to specify the type of Remote Desktop Services client access license (RDS CAL) that is required to connect to this RD Session Host server.
+      <string id="TS_LICENSING_MODE_EXPLAIN">
+        This policy setting allows you to specify the type of Remote Desktop Services client access license (RDS CAL) that is required to connect to this RD Session Host server.
 
-You can use this policy setting to select one of two licensing modes: Per User or Per Device.
+        You can use this policy setting to select one of three licensing modes: Per User , Per Device and AAD Per User .
 
-Per User licensing mode requires that each user account connecting to this RD Session Host server have an RDS Per User CAL.
+        Per User licensing mode requires that each user account connecting to this RD Session Host server have an RDS Per User CAL issued from an RD Licensing server.
 
-Per Device licensing mode requires that each device connecting to this RD Session Host server have an RDS Per Device CAL.
+        Per Device licensing mode requires that each device connecting to this RD Session Host server have an RDS Per Device CAL issued from an RD Licensing server.
 
-If you enable this policy setting, the Remote Desktop licensing mode that you specify is honored by the Remote Desktop license server.
+        AAD Per User licensing mode requires that each user account connecting to this RD Session Host server have a service plan that supports RDS licenses assigned in AAD.
+        
+        If you enable this policy setting, the Remote Desktop licensing mode that you specify is honored by the Remote Desktop license server and RD Session Host.
 
-If you disable or do not configure this policy setting, the licensing mode is not specified at the Group Policy level.
-</string>
+        If you disable or do not configure this policy setting, the licensing mode is not specified at the Group Policy level.
+      </string>
       <string id="TS_LICENSING_MODE_PER_DEVICE">Per Device</string>
       <string id="TS_LICENSING_MODE_PER_USER">Per User</string>
+      <string id="TS_LICENSING_MODE_AAD_PER_USER">AAD Per User</string>
       <string id="TS_LPTPORTMAP_EXPLAIN">This policy setting specifies whether to prevent the redirection of data to client LPT ports during a Remote Desktop Services session.
 
 You can use this setting to prevent users from mapping local LPT ports and redirecting data from the remote computer to local LPT port peripherals. By default, Remote Desktop Services allows LPT port redirection.
@@ -973,6 +977,37 @@ If you enable or do not configure this policy setting, RemoteApp programs publis
 
 If you disable this policy setting, RemoteApp programs published from this RD Session Host server will not use these advanced graphics. You may want to choose this option if you discover that applications published as RemoteApp programs do not support these advanced graphics. 
 
+    </string>
+
+    <!--WDDM Graphics Driver Mode; Introduced Win10+-->
+    <string id="TS_SERVER_WDDM_GRAPHICS_DRIVER">Use WDDM graphics display driver for Remote Desktop Connections</string>
+    <string id="TS_SERVER_WDDM_GRAPHICS_DRIVER_DEFAULT_OFF_EXPLAIN">This policy setting lets you enable WDDM graphics display driver for Remote Desktop Connections.
+
+If you enable this policy setting, Remote Desktop Connections will use WDDM graphics display driver.
+
+If you disable or do not configure this policy setting, Remote Desktop Connections will NOT use WDDM graphics display driver. In this case, the Remote Desktop Connections will use XDDM graphics display driver.
+
+For this change to take effect, you must restart Windows.
+    </string>
+
+    <string id="TS_SERVER_WDDM_GRAPHICS_DRIVER_DEFAULT_ON_EXPLAIN">This policy setting lets you enable WDDM graphics display driver for Remote Desktop Connections.
+
+If you enable or do not configure this policy setting, Remote Desktop Connections will use WDDM graphics display driver.
+
+If you disable this policy setting, Remote Desktop Connections will NOT use WDDM graphics display driver. In this case, the Remote Desktop Connections will use XDDM graphics display driver.
+
+For this change to take effect, you must restart Windows.
+    </string>
+
+    <string id="TS_SERVER_WDDM_GRAPHICS_DRIVER_DEFAULT_ON_SINGLEUSER_EXPLAIN">This policy setting lets you enable WDDM graphics display driver for Remote Desktop Connections.
+
+If you enable this policy setting, Remote Desktop Connections will use WDDM graphics display driver.
+
+If you disable this policy setting, Remote Desktop Connections will NOT use WDDM graphics display driver. In this case, the Remote Desktop Connections will use XDDM graphics display driver.
+
+If you do not configure this policy setting, Remote Desktop Connections on the RD Session Host server will NOT use WDDM graphics display driver. In all other cases, Remote Desktop Connections will use WDDM graphics display driver.
+
+For this change to take effect, you must restart Windows.
     </string>
 
     <!--AVC HW Encode Preferred Mode; Introduced Win10+-->

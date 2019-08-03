@@ -1,13 +1,11 @@
-Windows 10 and Server 2016 Secure Baseline GPO
+Windows 10 and Server 2019 Secure Baseline GPO
 ==============================================
 
-This GPO contains security settings and administrative policies that should
-apply by default to all domain and standalone (via Local Computer Policy)
-Windows 10 and Server 2016 computers. These settings aim to provide maximum
-privacy, security, and performance (in that order), with minimum network
-communication. Security features that send data to Microsoft, such as
-SmartScreen, are disabled. The following network traffic is allowed, everything
-else should be blocked:
+This is a baseline group policy for domain and standalone Windows 10 and Server
+2016/2019 computers that aims to provide maximum privacy, security, and
+performance, in that order. Security features that send data to Microsoft, such
+as SmartScreen, are disabled. Some settings are only effective on the Enterprise
+edition. The following network traffic is allowed:
 
 * Network Connectivity Status Indicator (NCSI) tests (see Notes below).
 * Windows updates.
@@ -15,17 +13,17 @@ else should be blocked:
 * Defender definition updates.
 * Storage Health (Disk Failure Prediction Model) updates.
 
-**Use a separate GPO to override settings as needed! Do not use for
-site-specific configuration!** This policy should apply to any Windows system,
-especially laptops that get connected to insecure networks. Edit only to improve
-privacy, security, and performance, or to disable non-essential features added
-in new Windows releases.
+In a domain environment, this should be the first GPO applied to any Windows
+system, with any site-specific settings configured in separate GPOs.
 
-This GPO overrides most, but not all, settings in the Default Domain
+This policy overrides most, but not all, settings in the Default Domain
 [Controllers] Policy. It also contains unmanaged (preference-type) registry
 settings that are not disabled when the GPO goes out of scope. Use filters to
 identify. Some of these settings are not covered by any ADMX template (see LGPO
 section below).
+
+Additional tweaks and fixes are located in the Calculator and RegTweaks
+directories.
 
 Installation
 ------------
@@ -74,10 +72,10 @@ Required ADMX templates
 
 These are contained in the PolicyDefinitions directory:
 
-* [Windows 10 and Server 2016 (1607)](https://www.microsoft.com/en-us/download/details.aspx?id=53430)
-* [Windows 10 October 2018 Update (1809)](https://www.microsoft.com/en-us/download/details.aspx?id=57576)
-* [MSS (Legacy) from Windows 10 and Windows Server 2019 Security Baseline (1809)](https://blogs.technet.microsoft.com/secguide/2018/11/20/security-baseline-final-for-windows-10-v1809-and-windows-server-2019/)
-* [Windows Restricted Traffic Limited Functionality Baseline (1809)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
+1. [Windows 10 and Server 2016 (1607)](https://www.microsoft.com/en-us/download/details.aspx?id=53430)
+2. Windows 10 (1903) Clean Install (`C:\Windows\PolicyDefinitions`)
+3. [MSS (Legacy) from Windows 10 and Windows Server Security Baseline (1903)](https://blogs.technet.microsoft.com/secguide/2019/05/23/security-baseline-final-for-windows-10-v1903-and-windows-server-v1903/)
+4. [Windows Restricted Traffic Limited Functionality Baseline (1903)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
 
 When an update is released, the entire PolicyDefinitions directory should be
 rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
@@ -86,6 +84,7 @@ files without removing old ones first may cause problems.
 * [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://support.microsoft.com/en-us/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra)
 * [Group Policy Settings Reference Spreadsheet Windows 1809](https://www.microsoft.com/en-us/download/details.aspx?id=57464)
 * [New policies for Windows 10](https://docs.microsoft.com/en-us/windows/client-management/new-policies-for-windows-10)
+* [ADMX Version History](https://blogs.technet.microsoft.com/grouppolicy/2016/10/12/admx-version-history/)
 
 Notes
 -----

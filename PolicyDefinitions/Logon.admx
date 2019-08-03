@@ -168,5 +168,9 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableAcrylicBackgroundOnLogon" class="Machine" displayName="$(string.DisableAcrylicBackgroundOnLogon)" explainText="$(string.DisableAcrylicBackgroundOnLogon_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="DisableAcrylicBackgroundOnLogon">
+      <parentCategory ref="Logon" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />
+    </policy>
   </policies>
 </policyDefinitions>

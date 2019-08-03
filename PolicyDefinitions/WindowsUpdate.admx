@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--  (c) 2006 Microsoft Corporation  -->
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
@@ -620,14 +620,19 @@
                 <decimal value="8" />
               </value>
             </item>
-            <item displayName="$(string.SemiAnnualChannelTargetedFeatureUpdates)">
+            <item displayName="$(string.SemiAnnualChannelFeatureUpdates)">
               <value>
                 <decimal value="16" />
               </value>
             </item>
-            <item displayName="$(string.SemiAnnualChannelFeatureUpdates)">
+            <item displayName="$(string.SemiAnnualChannelFeatureUpdatesDeprecated)">
               <value>
                 <decimal value="32" />
+              </value>
+            </item>
+            <item displayName="$(string.SemiAnnualChannelFeatureUpdatesTargetedDeprecated)">
+              <value>
+                <decimal value="16" />
               </value>
             </item>
           </enum>
@@ -2249,6 +2254,361 @@
             </value>
           </item>
         </enum>
+      </elements>
+    </policy>
+    <policy name="ComplianceDeadline"
+      class="Machine"
+      displayName="$(string.ComplianceDeadline_Title)"
+      explainText="$(string.ComplianceDeadline_Help)"
+      key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+      presentation="$(presentation.ComplianceDeadline_Title)"
+      valueName="SetComplianceDeadline">
+      <parentCategory ref="WindowsUpdateCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="ConfigureDeadlineForQualityUpdates" valueName="ConfigureDeadlineForQualityUpdates" required="true">
+          <item displayName="$(string.ComplianceDeadlineDay2)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay4)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay5)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay6)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay7)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay8)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay9)">
+            <value>
+              <decimal value="9"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay10)">
+            <value>
+              <decimal value="10"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay11)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay12)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay13)">
+            <value>
+              <decimal value="13"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay14)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay15)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay16)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay17)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay18)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay19)">
+            <value>
+              <decimal value="19"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay20)">
+            <value>
+              <decimal value="20"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay21)">
+            <value>
+              <decimal value="21"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay22)">
+            <value>
+              <decimal value="22"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay23)">
+            <value>
+              <decimal value="23"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay24)">
+            <value>
+              <decimal value="24"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay25)">
+            <value>
+              <decimal value="25"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay26)">
+            <value>
+              <decimal value="26"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay27)">
+            <value>
+              <decimal value="27"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay28)">
+            <value>
+              <decimal value="28"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay29)">
+            <value>
+              <decimal value="29"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay30)">
+            <value>
+              <decimal value="30"/>
+            </value>
+          </item>
+        </enum>
+        <enum id="ConfigureDeadlineForFeatureUpdates" valueName="ConfigureDeadlineForFeatureUpdates" required="true">
+          <item displayName="$(string.ComplianceDeadlineDay2)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay4)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay5)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay6)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay7)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay8)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay9)">
+            <value>
+              <decimal value="9"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay10)">
+            <value>
+              <decimal value="10"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay11)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay12)">
+            <value>
+              <decimal value="12"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay13)">
+            <value>
+              <decimal value="13"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay14)">
+            <value>
+              <decimal value="14"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay15)">
+            <value>
+              <decimal value="15"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay16)">
+            <value>
+              <decimal value="16"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay17)">
+            <value>
+              <decimal value="17"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay18)">
+            <value>
+              <decimal value="18"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay19)">
+            <value>
+              <decimal value="19"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay20)">
+            <value>
+              <decimal value="20"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay21)">
+            <value>
+              <decimal value="21"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay22)">
+            <value>
+              <decimal value="22"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay23)">
+            <value>
+              <decimal value="23"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay24)">
+            <value>
+              <decimal value="24"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay25)">
+            <value>
+              <decimal value="25"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay26)">
+            <value>
+              <decimal value="26"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay27)">
+            <value>
+              <decimal value="27"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay28)">
+            <value>
+              <decimal value="28"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay29)">
+            <value>
+              <decimal value="29"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay30)">
+            <value>
+              <decimal value="30"/>
+            </value>
+          </item>
+        </enum>
+        <enum id="ConfigureDeadlineGracePeriod" valueName="ConfigureDeadlineGracePeriod" required="true">
+          <item displayName="$(string.ComplianceDeadlineDay0)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay1)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay2)">
+            <value>
+              <decimal value="2"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay3)">
+            <value>
+              <decimal value="3"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay4)">
+            <value>
+              <decimal value="4"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay5)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay6)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.ComplianceDeadlineDay7)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+        </enum>
+        <boolean id="ConfigureDeadlineNoAutoReboot" valueName="ConfigureDeadlineNoAutoReboot" />
       </elements>
     </policy>
   </policies>

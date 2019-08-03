@@ -71,5 +71,44 @@
             <decimal value="0" />
       </disabledValue>
     </policy>
+    
+    <policy name="TroubleshootingAllowRecommendations" class="Machine" displayName="$(string.TroubleshootingAllowRecommendations)" explainText="$(string.TroubleshootingAllowRecommendationsExplain)" key="Software\Policies\Microsoft\Windows\Troubleshooting\AllowRecommendations" presentation="$(presentation.TroubleshootingAllowRecommendations)" valueName="TroubleshootingAllowRecommendations">
+            <parentCategory ref="WdiScenarioCategory" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />
+            <elements>
+              <enum id="TroubleshootingAllowRecommendations_Dropdown" valueName="TroubleshootingAllowRecommendations">
+                <item displayName="$(string.RecommendationsDropDown_DoNothing)">
+                  <value>
+                    <decimal value="0" />
+                  </value>
+                </item>
+				<item displayName="$(string.RecommendationsDropDown_ApplyCoreSystemMitigationsOnly)">
+                  <value>
+                    <decimal value="1" />
+                  </value>
+                </item>
+                <item displayName="$(string.RecommendationsDropDown_AskFirst)">
+                  <value>
+                    <decimal value="2" />
+                  </value>
+                </item>
+                <item displayName="$(string.RecommendationsDropDown_ApplyThenNotify)">
+                  <value>
+                    <decimal value="3" />
+                  </value>
+                </item>
+                <item displayName="$(string.RecommendationsDropDown_ApplySilently)">
+                  <value>
+                    <decimal value="4" />
+                  </value>
+                </item>
+                <item displayName="$(string.RecommendationsDropDown_DeferToUser)">
+                  <value>
+                    <decimal value="5" />
+                  </value>
+                </item>
+              </enum>
+            </elements>
+    </policy>
   </policies>
 </policyDefinitions>

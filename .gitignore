@@ -1,1 +1,4 @@
+*.7z
+*.zip
+/PolicyDefinitions-*/
 GPO.cmt

@@ -454,6 +454,11 @@
               <decimal value="4"/>
             </value>
           </item>
+          <item displayName="$(string.GroupIdSource_AAD)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
         </enum>
       </elements>
     </policy>
@@ -492,6 +497,44 @@
             maxValue="4294967295"
             minValue="0"
             valueName="DODelayForegroundDownloadFromHttp"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.DelayCacheServerFallbackBackground)"
+        explainText="$(string.DelayCacheServerFallbackBackground_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="DelayCacheServerFallbackBackground"
+        presentation="$(presentation.DelayCacheServerFallbackBackground)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <decimal
+            id="DelayCacheServerFallbackBackground"
+            maxValue="2592000"
+            minValue="0"
+            valueName="DODelayCacheServerFallbackBackground"
+            />
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.DelayCacheServerFallbackForeground)"
+        explainText="$(string.DelayCacheServerFallbackForeground_Help)"
+        key="SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+        name="DelayCacheServerFallbackForeground"
+        presentation="$(presentation.DelayCacheServerFallbackForeground)"
+        >
+      <parentCategory ref="DeliveryOptimizationCat"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <elements>
+        <decimal
+            id="DelayCacheServerFallbackForeground"
+            maxValue="2592000"
+            minValue="0"
+            valueName="DODelayCacheServerFallbackForeground"
             />
       </elements>
     </policy>

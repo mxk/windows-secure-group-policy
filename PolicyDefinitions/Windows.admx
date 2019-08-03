@@ -196,6 +196,13 @@
           </or>
       </definition>
 
+      <!--At least Windows 10 RS6 no SERVER-->
+      <definition name="SUPPORTED_Windows_10_0_RS6_NOSERVER" displayName="$(string.SUPPORTED_Windows_10_0_RS6_NOSERVER)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="15"/>
+        </or>
+      </definition>
+
       <!--At least Windows 10 RS7-->
       <definition name="SUPPORTED_Windows_10_0_RS7" displayName="$(string.SUPPORTED_Windows_10_0_RS7)">
           <or>
@@ -218,7 +225,7 @@
       </definition>
 
       <!--At least Windows Threshold no SERVER Enterprise-->
-      <definition name="SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" displayName="$(string.SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE)">
+      <definition name="SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE_EDUCATION" displayName="$(string.SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE_EDUCATION)">
         <or>
           <range ref="products:MicrosoftWindows" minVersionIndex="14" maxVersionIndex="14"/>
         </or>

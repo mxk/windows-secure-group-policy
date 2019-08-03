@@ -100,11 +100,19 @@ Set the Allow Telemetry policy setting to prevent people from sending diagnostic
           If you disable or don't configure this policy setting, the Diagnostic Data Viewer will be enabled in Settings page.
       </string>
 
-      <string id="ConfigureMicrosoft365UploadEndpoint">Configure Microsoft 365 Update Readiness upload endpoint</string>
+      <string id="ConfigureMicrosoft365UploadEndpoint">Configure diagnostic data upload endpoint for Desktop Analytics</string>
       <string id="ConfigureMicrosoft365UploadEndpoint_Explain">
-          This policy sets the upload endpoint for this device’s diagnostic data as part of the Microsoft 365 Update Readiness program.
+          This policy sets the upload endpoint for this device’s diagnostic data as part of the Desktop Analytics program.
           If your organization is participating in the program and has been instructed to configure a custom upload endpoint, then use this setting to define that endpoint.
           The value for this setting will be provided by Microsoft as part of the onboarding process for the program. 
+      </string>
+
+      <string id="AllowCommercialDataPipeline">Allow commercial data pipeline</string>
+      <string id="AllowCommercialDataPipeline_Explain">
+          AllowCommercialDataPipeline opts the device into the Windows enterprise data pipeline.
+          If you enable this setting, data collected from the device will be opted into the Windows enterprise data pipeline.
+          If you disable or don't configure this setting, all data from the device will be collected and processed in accordance with our policies for the Windows standard data pipeline.
+          Configuring this setting does not change the telemetry collection level or the ability of the user to change the level. This setting only applies to the Windows operating system and apps included with Windows, not third-party apps or services running on Windows 10.
       </string>
     </stringTable>
     <presentationTable>
@@ -135,7 +143,7 @@ Set the Allow Telemetry policy setting to prevent people from sending diagnostic
       </presentation>
       <presentation id="ConfigureMicrosoft365UploadEndpoint">
         <textBox refId="ConfigureMicrosoft365UploadEndpointValue">
-          <label>Microsoft 365 Update Readiness Custom Upload Endpoint:</label>
+          <label>Desktop Analytics Custom Upload Endpoint:</label>
         </textBox>
       </presentation>
     </presentationTable>

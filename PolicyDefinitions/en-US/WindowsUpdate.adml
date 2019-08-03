@@ -74,15 +74,11 @@ This setting lets you specify whether automatic updates are enabled on this comp
 
         When "Automatic" is selected as the scheduled install time, Windows will automatically check, download, and install updates. The device will reboot as per Windows default settings unless configured by group policy. (Applies to Windows 10, version 1809 and higher)
 
-        Specify the schedule using the options in the Group Policy Setting. If no schedule is specified, the default schedule for all installations will be every day at 3:00 AM. If any updates require a restart to complete the installation, Windows will restart the computer automatically. (If a user is signed in to the computer when Windows is ready to restart, the user will be notified and given the option to delay the restart.)
+        Specify the schedule using the options in the Group Policy Setting. For version 1709 and above, there is an additional choice of limiting updating to a weekly, bi-weekly, or monthly occurrence. If no schedule is specified, the default schedule for all installations will be every day at 3:00 AM. If any updates require a restart to complete the installation, Windows will restart the computer automatically. (If a user is signed in to the computer when Windows is ready to restart, the user will be notified and given the option to delay the restart.)
 
-        On Windows 8 and later, you can set updates to install during automatic maintenance instead of a specific schedule. Automatic maintenance will install updates when the computer is not in use, and avoid doing so when the computer is running on battery power. If automatic maintenance is unable to install updates for 2 days, Windows Update will install updates right away. Users will then be notified about an upcoming restart, and that restart will only take place if there is no potential for accidental data loss.
+        On Windows 8 and later, you can set updates to install during automatic maintenance instead of a specific schedule. Automatic maintenance will install updates when the computer is not in use and avoid doing so when the computer is running on battery power. If automatic maintenance is unable to install updates for 2 days, Windows Update will install updates right away. Users will then be notified about an upcoming restart, and that restart will only take place if there is no potential for accidental data loss.
 
-        Automatic maintenance can be further configured by using Group Policy settings here: Computer Configuration-&gt;Administrative Templates-&gt;Windows Components-&gt;Maintenance Scheduler
-
-        5 = Allow local administrators to select the configuration mode that Automatic Updates should notify and install updates.
-
-        Note! This option is not supported on Windows 10.
+        5 = Allow local administrators to select the configuration mode that Automatic Updates should notify and install updates. (This option has not been carried over to any Win 10 Versions)
 
         With this option, local administrators will be allowed to use the Windows Update control panel to select a configuration option of their choice. Local administrators will not be allowed to disable the configuration for Automatic Updates.
 
@@ -319,16 +315,21 @@ Selecting "Enable preview builds" will enable preview builds installation on the
       <string id="PreviewBuildFastFeatureUpdates">Preview Build - Fast</string>
       <string id="PreviewBuildSlowFeatureUpdates">Preview Build - Slow</string>
       <string id="ReleasePreviewBranchFeatureUpdates">Release Preview</string>
-      <string id="SemiAnnualChannelTargetedFeatureUpdates">Semi-Annual Channel (Targeted)</string>
       <string id="SemiAnnualChannelFeatureUpdates">Semi-Annual Channel</string>
+      <string id="SemiAnnualChannelFeatureUpdatesDeprecated">Semi-Annual Channel for 1809 and below (Deprecated)</string>
+      <string id="SemiAnnualChannelFeatureUpdatesTargetedDeprecated">Semi-Annual Channel (Targeted) for 1809 and below (Deprecated)</string>
       <string id="DeferFeatureUpdates_Title">Select when Preview Builds and Feature Updates are received</string>
       <string id="DeferFeatureUpdates_Help">Enable this policy to specify the level of Preview Build or Feature Updates to receive, and when.
 
 * Preview Build - Fast: Devices set to this level will be the first to receive new builds of Windows with features not yet available to the general public. Select Fast to participate in identifying and reporting issues to Microsoft, and provide suggestions on new functionality.
 * Preview Build - Slow: Devices set to this level receive new builds of Windows before they are available to the general public, but at a slower cadence than those set to Fast, and with changes and fixes identified in earlier builds.
 * Release Preview: Receive builds of Windows just before Microsoft releases them to the general public.
-* Semi-Annual Channel (Targeted): Receive feature updates when they are released to the general public.
-* Semi-Annual Channel: Feature updates will arrive when they are declared Semi-Annual Channel. This usually occurs about 4 months after Semi-Annual Channel (Targeted), indicating that Microsoft, Independent Software Vendors (ISVs), partners and customer believe that the release is ready for broad deployment.
+* Semi-Annual Channel: Receive feature updates when they are released to the general public.
+
+The following Windows Readiness levels have been deprecated and are only applicable to 1809 and below:
+* Semi-Annual Channel (Targeted) for 1809 and below: Feature updates have been released.
+* Semi-Annual Channel for 1809 and below: Feature updates have been declared Semi-Annual Channel, a designation indicating the release is ready for broad deployment.
+Please review the release information page at http://aka.ms/ReleaseInformationPage for the Semi-Annual Channel (Targeted) and Semi-Annual Channel release dates.
 
 When selecting a Preview Build:
     - You can defer receiving Preview Builds for up to 14 days.
@@ -337,12 +338,10 @@ When selecting a Preview Build:
 
 Preview Build enrollment requires a telemetry level setting of 2 or higher and your domain registered on insider.windows.com. For additional information on Preview Builds, see: https://aka.ms/wipforbiz
 
-When Selecting Semi-Annual Channel (Targeted) or Semi-Annual Channel:
+When Selecting Semi-Annual Channel:
     - You can defer receiving Feature Updates for up to 365 days.
     - To prevent Feature Updates from being received on their scheduled time, you can temporarily pause them. The pause will remain in effect for 35 days from the start time provided.
     - To resume receiving Feature Updates which are paused, clear the start date field.
-
-To configure Feature Updates you must have a telemetry level setting of 1 or higher.
 
 If you disable or do not configure this policy, Windows Update will not alter its behavior.</string>
       <string id="DeferQualityUpdates_Title">Select when Quality Updates are received</string>
@@ -354,15 +353,11 @@ To prevent quality updates from being received on their scheduled time, you can 
 
 To resume receiving Quality Updates which are paused, clear the start date field.
 
-If you disable or do not configure this policy, Windows Update will not alter its behavior.
-
-Note: If the "Allow Telemetry" policy is set to 0, this policy will have no effect.</string>
+If you disable or do not configure this policy, Windows Update will not alter its behavior.</string>
       <string id="ExcludeWUDriversInQualityUpdate_Title">Do not include drivers with Windows Updates</string>
       <string id="ExcludeWUDriversInQualityUpdate_Help">Enable this policy to not include drivers with Windows quality updates.
 
-If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.
-
-Note: For devices running Windows 10, version 1607 or Windows Server 2016, this policy only takes effect if you enable telemetry (that is, if the “Allow Telemetry” policy is not 0). For devices running Windows 10, version 1703 (or later) or Windows Server, version 1709 (or later), telemetry does not have to be enabled for this policy to take effect.</string>
+If you disable or do not configure this policy, Windows Update will include updates that have a Driver classification.</string>
       <string id="ActiveHours_Title">Turn off auto-restart for updates during active hours</string>
       <string id="ActiveHours_Help">If you enable this policy, the PC will not automatically restart after updates during active hours. The PC will attempt to restart outside of active hours.
 
@@ -590,11 +585,57 @@ Note: This policy applies only when the intranet Microsoft update service this c
 
 This policy allows you to define what Windows Update notifications users see. This policy doesn’t control how and when updates are downloaded and installed.
 
-Important! If you choose not to get update notifications and also define the policy “Configure Automatic Updates” so that devices aren’t automatically getting updates, neither you nor device users will be aware of critical security, quality, or feature updates, and your devices may be at risk.
+Important: if you choose not to get update notifications and also define other Group policy so that devices aren’t automatically getting updates, neither you nor device users will be aware of critical security, quality, or feature updates, and your devices may be at risk.
       </string>
       <string id="DefaultNotification">0 (default) – Default OS Windows Update notifications</string>
       <string id="ExcludingRebootWarnings">1 – Disable all notifications, excluding restart warnings</string>
       <string id="IncludingRebootWarnings">2 – Disable all notifications, including restart warnings</string>
+      <string id="ComplianceDeadline_Title">Specify deadlines for automatic updates and restarts</string>
+      <string id="ComplianceDeadline_Help">This policy lets you specify the number of days that a user has before quality and feature updates are installed on their devices automatically, and a grace period after which required restarts occur automatically.  Updates and restarts will occur regardless of active hours, and the user will not be able to reschedule.
+
+Deadlines for feature updates and quality updates can be up to 30 days.  The auto-restart grace period can be from 0 to 7 days.
+
+You can also disable auto-restarts until the end of the auto-restart grace period.
+
+If you disable or do not configure this policy, devices will get updates and will restart according to the default schedule.
+
+This policy will override the following policies:
+1.  Specify deadline before auto restart for update installation
+2.  Specify Engaged restart transition and notification schedule for updates
+3.  Always automatically restart at the scheduled time
+4.  No auto-restart with logged on users for scheduled automatic updates installation
+      </string>
+      <string id="ComplianceDeadlineDay0">0</string>
+      <string id="ComplianceDeadlineDay1">1</string>
+      <string id="ComplianceDeadlineDay2">2</string>
+      <string id="ComplianceDeadlineDay3">3</string>
+      <string id="ComplianceDeadlineDay4">4</string>
+      <string id="ComplianceDeadlineDay5">5</string>
+      <string id="ComplianceDeadlineDay6">6</string>
+      <string id="ComplianceDeadlineDay7">7</string>
+      <string id="ComplianceDeadlineDay8">8</string>
+      <string id="ComplianceDeadlineDay9">9</string>
+      <string id="ComplianceDeadlineDay10">10</string>
+      <string id="ComplianceDeadlineDay11">11</string>
+      <string id="ComplianceDeadlineDay12">12</string>
+      <string id="ComplianceDeadlineDay13">13</string>
+      <string id="ComplianceDeadlineDay14">14</string>
+      <string id="ComplianceDeadlineDay15">15</string>
+      <string id="ComplianceDeadlineDay16">16</string>
+      <string id="ComplianceDeadlineDay17">17</string>
+      <string id="ComplianceDeadlineDay18">18</string>
+      <string id="ComplianceDeadlineDay19">19</string>
+      <string id="ComplianceDeadlineDay20">20</string>
+      <string id="ComplianceDeadlineDay21">21</string>
+      <string id="ComplianceDeadlineDay22">22</string>
+      <string id="ComplianceDeadlineDay23">23</string>
+      <string id="ComplianceDeadlineDay24">24</string>
+      <string id="ComplianceDeadlineDay25">25</string>
+      <string id="ComplianceDeadlineDay26">26</string>
+      <string id="ComplianceDeadlineDay27">27</string>
+      <string id="ComplianceDeadlineDay28">28</string>
+      <string id="ComplianceDeadlineDay29">29</string>
+      <string id="ComplianceDeadlineDay30">30</string>
     </stringTable>
 
     <presentationTable>
@@ -725,6 +766,16 @@ Important! If you choose not to get update notifications and also define the pol
       </presentation>
       <presentation id="UpdateNotificationLevel_Title">
         <dropdownList refId="UpdateNotificationLevel" noSort="true" defaultItem="0">Specify the update notifications display options :</dropdownList>
+      </presentation>
+      <presentation id="ComplianceDeadline_Title">
+        <text>Specify the number of days (up to 30 days) that a user has before updates run automatically, regardless of active hours, with no ability to reschedule.</text>
+        <dropdownList refId="ConfigureDeadlineForQualityUpdates" noSort="true" defaultItem="5">Quality updates (days):</dropdownList>
+        <dropdownList refId="ConfigureDeadlineForFeatureUpdates" noSort="true" defaultItem="5">Feature updates (days):</dropdownList>
+        <text></text>
+        <text>Specify an auto-restart grace period (0 to 7 days), from the time a restart is required until the device automatically restarts.  Devices will restart regardless of active hours, with no ability to reschedule.</text>
+        <dropdownList refId="ConfigureDeadlineGracePeriod" noSort="true" defaultItem="2">Grace period (days)</dropdownList>
+        <text></text>
+        <checkBox refId="ConfigureDeadlineNoAutoReboot" defaultChecked="false">Don't auto-restart until end of grace period</checkBox>
       </presentation>
     </presentationTable>
   </resources>

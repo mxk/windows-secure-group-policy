@@ -595,7 +595,7 @@ If you enable this policy setting, you can specify additional options that contr
 
 If you disable this policy setting, BitLocker cannot use hardware-based encryption with operating system drives and BitLocker software-based encryption will be used by default when the drive is encrypted.
 
-If you do not configure this policy setting, BitLocker will use hardware-based encryption with the encryption algorithm set for the drive. If hardware-based encryption is not available BitLocker software-based encryption will be used instead.
+If you do not configure this policy setting, BitLocker will use software-based encryption irrespective of hardware-based encryption availability.
 
 Note: The “Choose drive encryption method and cipher strength” policy setting does not apply to hardware-based encryption. The encryption algorithm used by hardware-based encryption is set when the drive is partitioned. By default, BitLocker uses the algorithm configured on the drive to encrypt the drive. The “Restrict encryption algorithms and cipher suites allowed for hardware-based encryption” option enables you to restrict the encryption algorithms that BitLocker can use with hardware encryption. If the algorithm set for the drive is not available, BitLocker will disable the use of hardware-based encryption.
 Encryption algorithms are specified by object identifiers (OID). For example:
@@ -609,7 +609,7 @@ If you enable this policy setting, you can specify additional options that contr
 
 If you disable this policy setting, BitLocker cannot use hardware-based encryption with operating system drives and BitLocker software-based encryption will be used by default when the drive is encrypted.
 
-If you do not configure this policy setting, BitLocker will use hardware-based encryption with the encryption algorithm set for the drive. If hardware-based encryption is not available BitLocker software-based encryption will be used instead.
+If you do not configure this policy setting, BitLocker will use software-based encryption irrespective of hardware-based encryption availability.
 
 Note: The “Choose drive encryption method and cipher strength” policy setting does not apply to hardware-based encryption. The encryption algorithm used by hardware-based encryption is set when the drive is partitioned. By default, BitLocker uses the algorithm configured on the drive to encrypt the drive. The “Restrict encryption algorithms and cipher suites allowed for hardware-based encryption” option enables you to restrict the encryption algorithms that BitLocker can use with hardware encryption. If the algorithm set for the drive is not available, BitLocker will disable the use of hardware-based encryption.
 Encryption algorithms are specified by object identifiers (OID). For example:
@@ -623,7 +623,7 @@ If you enable this policy setting, you can specify additional options that contr
 
 If you disable this policy setting, BitLocker cannot use hardware-based encryption with operating system drives and BitLocker software-based encryption will be used by default when the drive is encrypted.
 
-If you do not configure this policy setting, BitLocker will use hardware-based encryption with the encryption algorithm set for the drive. If hardware-based encryption is not available BitLocker software-based encryption will be used instead.
+If you do not configure this policy setting, BitLocker will use software-based encryption irrespective of hardware-based encryption availability.
 
 Note: The “Choose drive encryption method and cipher strength” policy setting does not apply to hardware-based encryption. The encryption algorithm used by hardware-based encryption is set when the drive is partitioned. By default, BitLocker uses the algorithm configured on the drive to encrypt the drive. The “Restrict encryption algorithms and cipher suites allowed for hardware-based encryption” option enables you to restrict the encryption algorithms that BitLocker can use with hardware encryption. If the algorithm set for the drive is not available, BitLocker will disable the use of hardware-based encryption.
 Encryption algorithms are specified by object identifiers (OID). For example:
