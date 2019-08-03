@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Find My Device</displayName>
+  <description>Configuration for FindMyDevice</description>
+  <resources>
+    <stringTable>
+        <string id="FindMyDeviceCat_DisplayName">Find My Device</string>
+        <string id="FindMyDevice_AllowFindMyDevice_DisplayName">Turn On/Off Find My Device</string>
+        <string id="FindMyDevice_AllowFindMyDevice_Explain">This policy turns on Find My Device.
+        
+When Find My Device is on, the device and its location are registered in the cloud so that the device can be located when the user initiates a Find command from account.microsoft.com.
+
+When Find My Device is off, the device and its location are not registered and the Find My Device feature will not work.
+        </string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

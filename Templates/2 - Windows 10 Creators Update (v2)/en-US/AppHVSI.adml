@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Windows Defender Application Guard</displayName>
+  <description>Configuration for Windows Defender Application Guard</description>
+  <resources>
+    <stringTable>
+        <string id="AppHVSICat_DisplayName">Windows Defender Application Guard</string>
+        <string id="AppHVSI_AllowAppHVSI_DisplayName">Turn On/Off Windows Defender Application Guard (WDAG)</string>
+        <string id="AppHVSI_AllowAppHVSI_Explain">This policy enables application isolation using Windows Defender Application Guard.
+
+Windows Defender Application Guard uses the Windows Hypervisor to launch applications in a virtualized environment. When applications are configured to use virtualization based security isolation, untrusted user behavior while using these applications and vulnerabilities in those applications cannot compromise the kernel and other applications running outside the virtualized environment.
+Before enabling this policy, you need to define enterprise trusted sites lists. These lists can be set up by using the Networking isolation policy (insert link to specific networking policy). They ensure that only non-enterprise sites open within the virtualized environment.
+Note: To lock down a system, ensure that both Device Guard security features and application isolation for applications are both enabled. Please see the documentation for a complete set of requirements to securely lock down a system.
+        </string>
+        <string id="AppHVSI_ClipboardSettings_DisplayName">Configure Windows Defender Application Guard clipboard settings</string>
+        <string id="AppHVSI_ClipboardSettings_Explain">Specifies clipboard behavior when using application isolation with Windows Defender Application Guard.
+
+Administrators can:
+Disable clipboard functionality completely when Virtualization Security is enabled.
+Enable copying of certain content from an isolated session to the host computer.
+Enable copying of certain content from the host computer to isolated session.
+
+Note: We recommend that administrators do not enable copying content from the host computer to the isolated session. This would mean that a compromised isolated session could access the host computer’s clipboard and the content on it.
+        </string>
+        <string id="AppHVSI_ClipboardSettings_DropdownList_Option_OperationDisabled">Block clipboard operations(default)</string>
+        <string id="AppHVSI_ClipboardSettings_DropdownList_Option_ContainerToHostEnabled">Enable clipboard operation from an isolated session to the host</string>
+        <string id="AppHVSI_ClipboardSettings_DropdownList_Option_HostToContainerEnabled">Enable clipboard operation from an host to the isolated session</string>
+        <string id="AppHVSI_ClipboardSettings_DropdownList_Option_BothDirectionsEnabled">Enable clipboard operation both directions</string>
+        <string id="AppHVSI_PrintingSettings_DisplayName">Configure Windows Defender Application Guard Print Settings</string>
+        <string id="AppHVSI_PrintingSettings_Explain">If Enable printing to XPS is selected, users can print documents from within the container to XPS format.
+If Enable printing to PDF is selected, users can print documents from within the container to PDF format.
+If Enable printing to local printers is selected, users can print documents from within the container to a locally attached printer.
+If Enable printing to existing network printers is selected, users can use the existing network printers to print documents from within the isolated container. Users cannot browse for new network printers.
+        </string>
+        <string id="AppHVSI_BlockNonEnterpriseContent_DisplayName">Block Entperise websites to load non-Enterprise content in IE and Edge</string>
+        <string id="AppHVSI_BlockNonEnterpriseContent_Explain">If enabled, blocks any Internet Explorer and Microsoft Edge network traffic to non-enterprise sites that can’t launch in a Windows Defender Application Guard container.
+
+If disabled, renders on the host computer any network traffic to non-enterprise sites that can’t launch in a Windows Defender Application Guard container.
+        </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="AppHVSIClipboardSettings_Presentation">
+        <dropdownList refId="AppHVSIClipboardSettings_CopyPasteDirection_DropdownList" noSort="true" defaultItem="0">Select an Option:</dropdownList>
+        <decimalTextBox refId="AppHVSIClipboardFileType_AllowedFileType_TextBox" defaultValue="1">Specifies what is permitted for clipboard behavior when clipboard operations is enabled (decimal):
+        </decimalTextBox>
+        <text>This value is a bitmask that controls which file types can be used for clipboard operations:
+
+b0001 - TEXT file
+b0010 - Bitmap file
+b0011 - both TEXT and Bitmap files are supported
+        </text>
+      </presentation>
+      <presentation id="AppHVSIPrintingSettings_Presentation">
+        <decimalTextBox refId="AppHVSIPrintingSettings_TextBox" defaultValue="0">Specifies which printers are enabled (in decimal)
+        </decimalTextBox>
+        <text>This value is a bitmask that controls which printers are enabled in an isolated session    
+b0000 - Printing is disabled
+b0001 - Enable Printing to XPS (Default)
+b0010 - Enable Printing to PDF
+b0100 - Enable Printing to Local printers
+b1000 - Enable Printing to existing Network printers
+
+For example:
+If XPS and Local printers are enabled, the value will become b0001 | b0100, which is b0101 (decimal 5)
+        </text>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

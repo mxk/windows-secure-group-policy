@@ -1,0 +1,128 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="WindowsHermitModeCustomPolicy" namespace="Microsoft.Policies.WindowsHermitModeCustomPolicy" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_Windows10" displayName="$(string.SUPPORTED_Windows10)"/>
+    </definitions>
+  </supportedOn>
+
+  <categories>
+    <category name="Cat_WHMCP" displayName="$(string.WHMCP)">
+       <!-- placeholder if seeAlso or keywords elements desired -->
+    </category>
+  </categories>
+
+  <policies>
+
+    <policy
+        name="Pol_WHMCP_LetWebsitesProvideLocallyRelevantContentByAccessingMyLanguageList"
+        displayName="$(string.LWPLRCBAMLL)"
+        explainText="$(string.LWPLRCBAMLL_Help)"
+        class="User"
+        key="Control Panel\International\User Profile"
+        valueName="HttpAcceptLanguageOptOut">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="0"/>
+          </enabledValue>
+          <disabledValue>
+            <decimal value="1" />
+          </disabledValue>
+    <!--
+        1 for no traffic
+        other choice is 0 or delete value
+    -->
+    </policy>
+    
+    <policy
+        name="Pol_WHMCP_MessagingCloudSync"
+        displayName="$(string.MessagingCloudSync)"
+        explainText="$(string.MessagingCloudSync_Help)"
+        class="User"
+        key="SOFTWARE\Microsoft\Messaging"
+        valueName="CloudServiceSyncEnabled">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+    <!--
+        0 for no traffic
+        Choices: 0 or 1 (delete)
+    -->
+    </policy>
+    
+    <policy
+        name="Pol_WHMCP_TurnOffMaliciousSoftwareReporting"
+        displayName="$(string.TurnOffMaliciousSoftwareReporting)"
+        explainText="$(string.TurnOffMaliciousSoftwareReporting_Help)"
+        class="Machine"
+        key="Software\Policies\Microsoft\MRT"
+        valueName="DontReportInfectionInformation">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+    <!--
+        1 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+
+    <policy
+        name="Pol_WHMCP_AllowSpeechModelUpdate"
+        displayName="$(string.AllowSpeechModelUpdate)"
+        explainText="$(string.AllowSpeechModelUpdate_Help)"
+        class="Machine"
+        key="Software\Microsoft\PolicyManager\current\device\Speech"
+        valueName="AllowSpeechModelUpdate">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+    <!--
+        0 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+
+    <policy
+        name="Pol_WHMCP_DisableDefenderEnhancedNotifications"
+        displayName="$(string.DisableDefenderEnhancedNotifications)"
+        explainText="$(string.DisableDefenderEnhancedNotifications_Help)"
+        class="Machine"
+        key="SOFTWARE\Microsoft\Windows Defender\Reporting"
+        valueName="DisableEnhancedNotifications">
+          <parentCategory ref="Cat_WHMCP" />
+          <supportedOn ref="SUPPORTED_Windows10" />
+          <enabledValue>
+            <decimal value="1" />
+          </enabledValue>
+          <disabledValue>
+            <decimal value="0" />
+          </disabledValue>
+    <!--
+        1 for no traffic
+        Choices: 1 or 0 / delete
+    -->
+    </policy>
+
+  </policies>
+</policyDefinitions>

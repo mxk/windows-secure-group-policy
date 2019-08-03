@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft account</displayName>
+  <description>Configuration for Microsoft account</description>
+  <resources>
+    <stringTable>
+        <string id="MicrosoftAccountCategory">Microsoft account</string>
+        <string id="MicrosoftAccount_DisableUserAuth">Block all consumer Microsoft account user authentication</string>
+        <string id="MicrosoftAccount_DisableUserAuthExplain">When enabled, this policy will prevent all applications and services on the device from new consumer Microsoft account authentication via the Windows OnlineID and WebAccountManager APIs. This policy may not affect applications which have already authenticated until the authentication cache expires, so it is recommended to set this policy when setting up a device to prevent any cached tokens from being present on the device. This policy does not affect authentication performed directly by the user in browsers or in apps that use OAuth.
+        </string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

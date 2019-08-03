@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>System Center Configuration Manager</displayName>
+  <description>System Center Configuration Manager</description>
+  <resources>
+    <stringTable>
+      <string id="Cat_CCM">Configuration Manager</string>
+      <string id="Pol_CCM_UserStateManagement">User State Management Client Side Extension</string>
+      <string id="Pol_CCM_UserStateManagement_Help">Enable or disable the Client Side Extension for User State Management. This setting is managed by System Center Configuration Manager</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft Edge Group Policies</displayName>
+  <description>Policies defined to manage Microsoft Edge settings via Group Policy Management services.</description>
+  <resources>
+    <stringTable>
+      <!-- Product -->
+      <string id="SUPPORTED_INTERNET_BROWSER_1_DisplayName">Only Microsoft Edge 1.0</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_WIN10_DisplayName">Microsoft Edge on Windows 10 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1511_DisplayName">Microsoft Edge on Windows 10, Version 1511 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1607_DisplayName">Microsoft Edge on Windows 10, Version 1607 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_WIN10V1703_DisplayName">Microsoft Edge on Windows 10, Version 1703 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_WIN10RS3RELEASE_DisplayName">Microsoft Edge on Windows 10, Version 1709 or later</string>
+      <string id="SUPPORTED_INTERNET_BROWSER_RS3_DisplayName">Microsoft Edge on Windows 10, Version 1708 or later</string>
+      <!-- Bug 13574024 is tracking the proper string for the RS4 version -->
+      <string id="SUPPORTED_INTERNET_BROWSER_RS4_DisplayName">Microsoft Edge on Windows 10, Version 1802 or later</string>
+      <string id="InternetBrowser_DisplayName">Microsoft Edge</string>
+      <string id="InternetBrowser_ExplainCat">Microsoft Edge Category</string>
+
+      <!-- Categories -->
+
+      <!-- NOTE: Please try to keep this list sorted by the string id="" field -->
+      <!-- Policies -->
+      <string id="HomePages">Configure Start pages</string>
+      <string id="HomePages_Explain">This policy setting lets you configure one or more Start pages for domain-joined devices. Your employees won't be able to change this after you set it.
+
+If you enable this setting, you can configure one or more Start pages. If this setting is enabled, you must also include URLs to the pages, separating multiple pages by using angle brackets in this format:
+     &lt;support.contoso.com&gt;&lt;support.microsoft.com&gt;
+
+Version 1703 or later: If you don't want to send traffic to Microsoft, you can use the &lt;about:blank&gt; value, which is honored for both domain- and non-domain-joined machines, when it's the only configured URL.
+
+If you disable or don't configure this setting, your default Start pages are the webpages specified in App settings.
+</string>
+
+      <string id="DisableLockdownOfStartPages">Disable lockdown of Start pages</string>
+      <string id="DisableLockdownOfStartPages_Explain">This policy setting lets you disable the lock down of Start pages, letting users modify the Start pages when the "Configure Start pages" setting is in effect.
+
+        Note
+        This setting only applies when you're using the “"Configure Start pages" setting.
+
+        Important
+        This setting can only be used with domain-joined or MDM-enrolled devices. For more info, see the Microsoft browser extension policy (aka.ms/browserpolicy). 
+
+If you enable this setting, you can't lock down any Start pages that are configured using the "Configure Start pages" setting, which means that users can modify them.
+
+If you disable or don't configure this setting, users can't change any Start pages configured using the "Configure Start pages" setting. The Start pages will remain locked down.</string>
+      <string id="LockdownFavorites">Prevent changes to Favorites on Microsoft Edge</string>
+      <string id="LockdownFavorites_Explain">This policy setting lets you decide whether employees can add, import, sort, or edit the Favorites list on Microsoft Edge.
+
+If you enable this setting, employees won't be able to add, import, or change anything in the Favorites list. Also as part of this, Save a Favorite, Import settings, and the context menu items (such as, Create a new folder) are all turned off.
+
+Important
+Don't enable both this setting and the Keep favorites in sync between Internet Explorer and Microsoft Edge setting. Enabling both settings stops employees from syncing their favorites between Internet Explorer and Microsoft Edge.
+
+If you disable or don't configure this setting (default), employees can add, import and make changes to the Favorites list.</string>
+
+      <string id="AllowAddressBarDropdown">Allow Address bar drop-down list suggestions</string>
+      <string id="AllowAddressBarDropdown_Explain">This policy setting lets you decide whether the Address bar drop-down functionality is available in Microsoft Edge. We recommend disabling this setting if you want to minimize network connections from Microsoft Edge to Microsoft services.
+
+        Note: Disabling this setting turns off the Address bar drop-down functionality. Therefore, because search suggestions are shown in the drop-down, this setting takes precedence over the "Configure search suggestions in Address bar" setting.
+
+        If you enable or don't configure this setting, employees can see the Address bar drop-down functionality in Microsoft Edge.
+
+        If you disable this setting, employees won't see the Address bar drop-down functionality in Microsoft Edge. This setting also disables the user-defined setting, "Show search and site suggestions as I type".</string>
+      <string id="AllowAutofill">Configure Autofill</string>
+      <string id="AllowAutofill_Explain">This policy setting lets you decide whether employees can use Autofill to automatically fill in form fields while using Microsoft Edge. By default, employees can choose whether to use Autofill.
+
+If you enable this setting, employees can use Autofill to automatically fill in forms while using Microsoft Edge.
+
+If you disable this setting, employees can't use Autofill to automatically fill in forms while using Microsoft Edge.
+
+If you don't configure this setting, employees can choose whether to use Autofill to automatically fill in forms while using Microsoft Edge.</string>
+      <string id="AllowDeveloperTools">Allow Developer Tools</string>
+      <string id="AllowDeveloperTools_Explain">This policy setting lets you decide whether F12 Developer Tools are available on Microsoft Edge.
+
+If you enable or don't configure this setting, the F12 Developer Tools are available in Microsoft Edge.
+
+If you disable this setting, the F12 Developer Tools aren't available in Microsoft Edge.</string>
+      <string id="AllowDoNotTrack">Configure Do Not Track</string>
+      <string id="AllowDoNotTrack_Explain">This policy setting lets you decide whether employees can send Do Not Track requests to websites that ask for tracking info. By default, Do Not Track requests aren't sent, but employees can choose to turn on and send requests.
+
+If you enable this setting, Do Not Tracker requests are always sent to websites asking for tracking info.
+
+If you disable this setting, Do Not Track requests are never sent to websites asking for tracking info.
+
+If you don't configure this setting, employees can choose whether to send Do Not Track requests to websites asking for tracking info.</string>
+      <string id="AllowInPrivate">Allow InPrivate browsing</string>
+      <string id="AllowInPrivate_Explain">This policy setting lets you decide whether employees can browse using InPrivate website browsing.
+
+If you enable or don't configure this setting, employees can use InPrivate website browsing.
+
+If you disable this setting, employees can't use InPrivate website browsing.</string>
+      <string id="AllowPasswordManager">Configure Password Manager</string>
+      <string id="AllowPasswordManager_Explain">This policy setting lets you decide whether employees can save their passwords locally, using Password Manager. By default, Password Manager is turned on.
+
+If you enable this setting, employees can use Password Manager to save their passwords locally.
+
+If you disable this setting, employees can't use Password Manager to save their passwords locally.
+
+If you don't configure this setting, employees can choose whether to use Password Manager to save their passwords locally.</string>
+      <string id="AllowPopups">Configure Pop-up Blocker</string>
+      <string id="AllowPopups_Explain">This policy setting lets you decide whether to turn on Pop-up Blocker. By default, Pop-up Blocker is turned on..
+
+If you enable this setting, Pop-up Blocker is turned on, stopping pop-up windows from appearing.
+
+If you disable this setting, Pop-up Blocker is turned off, letting pop-ups windows appear.
+
+If you don't configure this setting, employees can choose whether to use Pop-up Blocker.</string>
+      <string id="AllowSearchEngineCustomization">Allow search engine customization</string>
+      <string id="AllowSearchEngineCustomization_Explain">This policy setting lets you decide whether users can change their search engine. If you disable this setting, users can't add new search engines or change the default used in the address bar.
+
+Important
+This setting can only be used with domain-joined or MDM-enrolled devices. For more info, see the Microsoft browser extension policy (aka.ms/browserpolicy).
+
+If you enable or don't configure this policy, users can add new search engines and change the default used in the address bar from within Microsoft Edge Settings.
+
+If you disable this setting, users can't add search engines or change the default used in the address bar.</string>
+      <string id="AllowSearchSuggestionsinAddressBar">Configure search suggestions in Address bar</string>
+      <string id="AllowSearchSuggestionsinAddressBar_Explain">This policy setting lets you decide whether search suggestions appear in the Address bar of Microsoft Edge. By default, employees can choose whether search suggestions appear in the Address bar of Microsoft Edge.
+
+If you enable this setting, employees can see search suggestions in the Address bar of Microsoft Edge.
+
+If you disable this setting, employees can't see search suggestions in the Address bar of Microsoft Edge.
+
+If you don't configure this setting, employees can choose whether search suggestions appear in the Address bar of Microsoft Edge.</string>
+      <string id="AllowSmartScreen">Configure Windows Defender SmartScreen</string>
+      <string id="AllowSmartScreen_Explain">This policy setting lets you configure whether to turn on Windows Defender SmartScreen. Windows Defender SmartScreen provides warning messages to help protect your employees from potential phishing scams and malicious software. By default, Windows Defender SmartScreen is turned on.
+
+If you enable this setting, Windows Defender SmartScreen is turned on and employees can't turn it off.
+
+If you disable this setting, Windows Defender SmartScreen is turned off and employees can't turn it on.
+
+If you don't configure this setting, employees can choose whether to use Windows Defender SmartScreen.</string>
+      <string id="AllowWebContentOnNewTabPage">Allow web content on New Tab page</string>
+      <string id="AllowWebContentOnNewTabPage_Explain">This policy setting lets you configure what appears when Microsoft Edge opens a new tab. By default, Microsoft Edge opens the New Tab page.
+
+If you enable this setting, Microsoft Edge opens a new tab with the New Tab page.
+
+If you disable this setting, Microsoft Edge opens a new tab with a blank page. If you use this setting, employees can't change it.
+
+If you don't configure this setting, employees can choose how new tabs appears.</string>
+      <string id="ConfiguredFavorites">Provision Favorites</string>
+      <string id="ConfiguredFavorites_Explain">This policy setting allows you to configure a default set of favorites, which will appear for employees. Employees cannot modify, sort, move, export or delete these provisioned favorites.
+
+If you enable this setting, you can set favorite URL's and favorite folders to appear on top of users' favorites list (either in the Hub or Favorites Bar). The user favorites will appear after these provisioned favorites.
+
+Important
+Don't enable both this setting and the Keep favorites in sync between Internet Explorer and Microsoft Edge setting. Enabling both settings stops employees from syncing their favorites between Internet Explorer and Microsoft Edge.
+
+If you disable or don't configure this setting, employees will see the favorites they set in the Hub and Favorites Bar.</string>
+      <string id="AlwaysEnableBooksLibrary">Always show the Books Library in Microsoft Edge</string>
+      <string id="AlwaysEnableBooksLibrary_Explain">This policy setting helps you to decide whether to make the Books tab visible, regardless of a device's country or region setting, as configured in the Country or region area of Windows settings.
+ 
+If you enable this setting, Microsoft Edge shows the Books Library, regardless of the device's country or region.
+ 
+If you disable or don't configure this setting, Microsoft Edge shows the Books Library only in countries or regions where it's supported.</string>
+      <string id="EnableExtendedBooksTelemetry">Allow extended telemetry for the Books tab</string>
+      <string id="EnableExtendedBooksTelemetry_Explain">This policy setting lets you decide how much data to send to Microsoft about the book you're reading from the Books tab in Microsoft Edge.
+
+If you enable this setting, Microsoft Edge sends additional telemetry data, on top of the basic telemetry data, from the Books tab.
+
+If you disable or don't configure this setting, Microsoft Edge only sends basic telemetry data, depending on your device configuration.</string>
+      <string id="UseSharedFolderForBooks">Allow a shared Books folder</string>
+      <string id="UseSharedFolderForBooks_Explain">This policy setting lets you decide whether Microsoft Edge stores books from the Books tab to a default, shared folder for Windows.
+
+If you enable this setting, Microsoft Edge automatically downloads book files to a common, shared folder and prevents students and teachers from removing the book from the Books tab. For this to work properly, your students and teachers must be signed in using a school account.
+
+If you disable or don't configure this setting, Microsoft Edge downloads book files to a per-user folder for each student or teacher.</string>
+      <string id="AllowConfigurationUpdateForBooksLibrary">Allow configuration updates for the Books Library</string>
+      <string id="AllowConfigurationUpdateForBooksLibrary_Explain">This policy setting lets you decide whether Microsoft Edge can automatically update the configuration data for the Books Library.
+
+If you enable (default) or don't configure this setting, Microsoft Edge automatically updates the configuration data for the Books Library.
+
+If you disable this setting, Microsoft Edge won't automatically download updated configuration data for the Books Library.</string>
+      <string id="Cookies">Configure cookies</string>
+      <string id="Cookies_Explain">This setting lets you configure how to work with cookies.
+
+If you enable this setting, you must also decide whether to:
+     Allow all cookies (default): Allows all cookies from all websites.
+     Block all cookies: Blocks all cookies from all websites.
+     Block only 3rd-party cookies: Blocks only cookies from 3rd-party websites.
+
+If you disable or don't configure this setting, all cookies are allowed from all sites.</string>
+      <string id="CookiesList_Block_None">Allow all cookies (default)</string>
+      <string id="CookiesList_Block_ThirdParty">Block only 3rd-party cookies</string>
+      <string id="CookiesList_Block_All">Block all cookies</string>
+      <string id="EnterpriseModeSiteList">Configure the Enterprise Mode Site List</string>
+      <string id="EnterpriseModeSiteList_Explain">This policy setting lets you configure whether to use Enterprise Mode and the Enterprise Mode Site List to address common compatibility problems with legacy apps.
+
+If you enable this setting, Microsoft Edge looks for the Enterprise Mode Site List XML file. This file includes the sites and domains that need to be viewed using Internet Explorer 11 and Enterprise Mode.
+
+If you disable or don't configure this setting, Microsoft Edge won't use the Enterprise Mode Site List XML file. In this case, employees might experience compatibility problems while using legacy apps.</string>
+      <string id="AllowExtensions">Allow Extensions</string>
+      <string id="AllowExtensions_Explain">This setting lets you decide whether employees can load extensions in Microsoft Edge.
+
+If you enable or don't configure this setting, employees can use Edge Extensions.
+
+If you disable this setting, employees can't use Edge Extensions.</string>
+      <string id="HideLocalHostIPAddress">Prevent using Localhost IP address for WebRTC</string>
+      <string id="HideLocalHostIPAddress_Explain">This policy setting lets you decide whether an employee's LocalHost IP address shows while making calls using the WebRTC protocol.
+
+If you enable this setting, LocalHost IP addresses are hidden while making calls using the WebRTC protocol.
+
+If you disable or don't configure this setting, LocalHost IP addresses are shown while making calls using the WebRTC protocol.</string>
+      <string id="ItemNameDisable">Disable</string>
+      <string id="ItemNameEnable">Enable</string>
+      <string id="PreventSmartScreenPromptOverride">Prevent bypassing Windows Defender SmartScreen prompts for sites</string>
+      <string id="PreventSmartScreenPromptOverride_Explain">This policy setting lets you decide whether employees can override the Windows Defender SmartScreen warnings about potentially malicious websites.
+
+If you enable this setting, employees can't ignore Windows Defender SmartScreen warnings and they are blocked from continuing to the site.
+
+If you disable or don't configure this setting, employees can ignore Windows Defender SmartScreen warnings and continue to the site.</string>
+      <string id="PreventSmartScreenPromptOverrideForFiles">Prevent bypassing Windows Defender SmartScreen prompts for files</string>
+      <string id="PreventSmartScreenPromptOverrideForFiles_Explain">This policy setting lets you decide whether employees can override the Windows Defender SmartScreen warnings about downloading unverified files.
+
+If you enable this setting, employees can't ignore Windows Defender SmartScreen warnings and they are blocked from downloading the unverified files.
+
+If you disable or don't configure this setting, employees can ignore Windows Defender SmartScreen warnings and continue the download process.</string>
+      <string id="SetDefaultSearchEngine">Set default search engine</string>
+      <string id="SetDefaultSearchEngine_Explain">This policy setting lets you configure the default search engine for your employees. Your employees can change the default search engine at any time.
+
+Important
+This setting can only be used with domain-joined or MDM-enrolled devices. For more info, see the Microsoft browser extension policy (aka.ms/browserpolicy).
+
+If you enable this setting, you can choose a default search engine for your employees. If this setting is enabled, you must also add the default engine to the “Set default search engine” setting, by adding a link to your OpenSearch XML file, including at least the short name and https: URL of the search engine. For more info about creating the OpenSearch XML file, see the Understanding OpenSearch Standards (https://msdn.microsoft.com/en-us/library/dd163546.aspx) topic. Use this format to specify the link you wish to add: &lt;https://fabrikam.com/opensearch.xml&gt;
+
+Note
+If you'd like your employees to use the default Microsoft Edge settings for each market, you can set the string to EDGEDEFAULT. If you'd like your employees to use Microsoft Bing as the default search engine, you can set the string to EDGEBING.
+
+Employees can change the default search engine at any time, unless you disable the "Allow search engine customization" setting, which restricts any changes.
+
+If you disable this setting, the policy-set default search engine is removed. If this is also the current in-use default, the engine changes to the Microsoft Edge specified engine for the market.
+
+If you don't configure this setting, the default search engine is set to the one specified in App settings.</string>
+      <string id="ConfigureAdditionalSearchEngines">Configure additional search engines</string>
+      <string id="ConfigureAdditionalSearchEngines_Explain">This policy setting lets you add up to 5 additional search engines, which can't be removed by your employees, but can be made a personal default engine. This setting doesn't set the default search engine. For that, you must use the "Set default search engine" setting.
+
+Important
+This setting can only be used with domain-joined or MDM-enrolled devices. For more info, see the Microsoft browser extension policy (aka.ms/browserpolicy).
+
+If you enable this setting, you can add up to 5 additional search engines. For each additional engine, you must also add a link to your OpenSearch XML file, including at least the short name and https: URL of the search engine. For more info about creating the OpenSearch XML file, see the Understanding OpenSearch Standards (https://msdn.microsoft.com/en-us/library/dd163546.aspx) topic. Use this format to specify the link(s) you wish to add: &lt;https://fabrikam.com/opensearch.xml&gt;&lt;https://www.contoso.com/opensearch.xml&gt;
+
+If you disable this setting, any added search engines are removed from your employee's devices.
+
+If you don't configure this setting, the search engine list is set to what is specified in App settings.</string>
+      <string id="ProvisionedFavorites">Configure Favorites</string>
+      <string id="ProvisionedFavorites_Explain">This policy setting lets you configure the default list of Favorites that appear for your employees. Employees can change their favorites by adding or removing items at any time.
+
+If you enable this setting, you can configure what default Favorites appear for your employees. If this setting is enabled, you must also provide a list of Favorites in the Options section. This list is imported after your policy is deployed.
+
+If you disable or don't configure this setting, employees will see the Favorites that they set in the Favorites hub.</string>
+      <string id="SendIntranetTraffictoInternetExplorer">Send all intranet sites to Internet Explorer 11</string>
+      <string id="SendIntranetTraffictoInternetExplorer_Explain">This policy setting lets you decide whether your intranet sites should all open using Internet Explorer 11. This setting should only be used if there are known compatibility problems with Microsoft Edge.
+
+If you enable this setting, all intranet sites are automatically opened using Internet Explorer 11.
+
+If you disable or don't configure this setting, all intranet sites are automatically opened using Microsoft Edge.</string>
+      <string id="ShowMessageWhenOpeningSitesInInternetExplorer">Show message when opening sites in Internet Explorer</string>
+      <string id="ShowMessageWhenOpeningSitesInInternetExplorer_Explain">This policy setting lets you decide whether employees see an additional page in Microsoft Edge, stating that a site has been opened using Internet Explorer 11.
+
+If you enable this setting, employees see an additional page in Microsoft Edge, stating that a site has been opened using Internet Explorer 11.
+
+If you disable or don't configure this setting, the default app behavior occurs and no additional page appears.</string>
+      <string id="PreventAccessToAboutFlagsInMicrosoftEdge">Prevent access to the about:flags page in Microsoft Edge</string>
+      <string id="PreventAccessToAboutFlagsInMicrosoftEdge_Explain">This policy settings lets you decide whether employees can access the about:flags page, which is used to change developer settings and to enable experimental features.
+
+If you enable this policy setting, employees can't access the about:flags page.
+
+If you disable or don't configure this setting, employees can access the about:flags page.</string>
+      <string id="PreventLiveTileDataCollection">Prevent Microsoft Edge from gathering Live Tile information when pinning a site to Start</string>
+      <string id="PreventLiveTileDataCollection_Explain">This policy lets you decide whether Microsoft Edge can gather Live Tile metadata from the ieonline.microsoft.com service to provide a better experience while pinning a Live Tile to the Start menu.
+
+If you enable this setting, Microsoft Edge won't gather the Live Tile metadata, providing a minimal experience when a user pins a Live Tile to the Start menu.
+
+If you disable or don't configure this setting, Microsoft Edge gathers the Live Tile metadata, providing a fuller and more complete experience when a user pins a Live Tile to the Start menu.</string>
+      <string id="PreventFirstRunPage">Prevent the First Run webpage from opening on Microsoft Edge</string>
+      <string id="PreventFirstRunPage_Explain">
+This policy setting lets you decide whether employees see Microsoft's First Run webpage when opening Microsoft Edge for the first time.
+
+If you enable this setting, employees won't see the First Run page when opening Microsoft Edge for the first time.
+
+If you disable or don't configure this setting, employees will see the First Run page when opening Microsoft Edge for the first time.</string>
+      <string id="SyncFavoritesBetweenIEAndMicrosoftEdge">Keep favorites in sync between Internet Explorer and Microsoft Edge</string>
+      <string id="SyncFavoritesBetweenIEAndMicrosoftEdge_Explain">This setting lets you decide whether people can sync their favorites between Internet Explorer and Microsoft Edge.
+
+If you enable this setting, employees can sync their favorites between Internet Explorer and Microsoft Edge.
+
+If you disable or don't configure this setting, employees can’t sync their favorites between Internet Explorer and Microsoft Edge.
+      </string>
+
+      <string id="AllowFlashClickToRun">Configure the Adobe Flash Click-to-Run setting</string>
+      <string id="AllowFlashClickToRun_Explain">
+        If you enable or don’t configure the Adobe Flash Click-to-Run setting, Microsoft Edge will require a user to click the Click-to-Run button, to click the content, or for the site to appear on the auto-allowed list, before loading and running the content.
+
+Sites get onto the auto-allowed list based on user feedback, specifically by how often the content is allowed to load and run.
+      </string>
+
+      <string id="AllowClearingBrowsingDataOnExit">Allow clearing browsing data on exit</string>
+      <string id="AllowClearingBrowsingDataOnExit_Explain">This policy setting allows the automatic clearing of browsing data when Microsoft Edge closes.
+
+If you enable this policy setting, clearing browsing history on exit is turned on.
+
+If you disable or don't configure this policy setting, it can be turned on and configured by the employee in the Clear browsing data options under Settings.
+      </string>
+
+      <string id="AllowFlash">Allow Adobe Flash</string>
+      <string id="AllowFlash_Explain">This setting lets you decide whether employees can run Adobe Flash in Microsoft Edge.
+
+If you enable or don't configure this setting, employees can use Adobe Flash.
+
+If you disable this setting, employees can't use Adobe Flash.
+
+      </string>
+
+      <string id="AllowCVList">Allow Microsoft Compatibility List</string>
+      <string id="AllowCVList_Explain">This policy setting lets you decide whether to use the Microsoft Compatibility List (a Microsoft-provided list that helps sites with known compatibility issues to display properly) in Microsoft Edge. By default, the Microsoft Compatibility List is enabled and can be viewed by visiting about:compat.
+
+If you enable or don’t configure this setting, Microsoft Edge periodically downloads the latest version of the list from Microsoft, applying the updates during browser navigation. Visiting any site on the Microsoft Compatibility List prompts the employee to use Internet Explorer 11, where the site is automatically rendered as though it’s in whatever version of IE is necessary for it to appear properly.
+
+If you disable this setting, the Microsoft Compatibility List isn’t used during browser navigation.</string>
+
+      <string id="PreventTabPreloading">Prevent Microsoft Edge from starting and loading the Start and New Tab page at Windows startup and each time Microsoft Edge is closed</string>
+      <string id="PreventTabPreloading_Explain">This policy setting lets you decide whether Microsoft Edge can load the Start and New Tab page during Windows sign in and each time Microsoft Edge is closed. By default this setting is to allow preloading.
+
+If you prevent preloading, Microsoft Edge won’t load the Start or New Tab page during Windows sign in and each time Microsoft Edge is closed.
+
+If you allow preloading, disable, or don’t configure this policy setting, Microsoft Edge loads the Start and New Tab page during Windows sign in and each time Microsoft Edge is closed; minimizing the amount of time required to start up Microsoft Edge and to start a new tab.</string>
+      <string id="PreventTabPreloadingDropdown_PreventTabPreloading">Prevent tab preloading</string>
+      <string id="PreventTabPreloadingDropdown_AllowTabPreloading">Allow tab preloading</string>
+    </stringTable>
+
+    <!-- Presentation -->
+    <presentationTable>
+      <presentation id="ConfiguredFavorites_Presentation">
+        <textBox refId="ConfiguredFavoritesPrompt">
+          <label>Specify the URL which points to the file that has all the data for provisioning favorites (in html format). You can export a set of favorites from Edge and use that html file for provisioning user machines.
+
+URL can be specified as
+1. HTTP location: http://localhost:8080/URLs.html
+2. Local network: \\network\shares\URLs.html
+3. Local file: file:///c:\\Users\\&lt;user&gt;\\Documents\\URLs.html or C:\\Users\\&lt;user&gt;\\Documents\\URLs.html
+          </label>
+        </textBox>
+      </presentation>
+      <presentation id="EnterpriseModeSiteList_Presentation">
+        <textBox refId="EnterSiteListPrompt">
+          <label>Type the location (URL) of your Enterprise Mode IE website list</label>
+        </textBox>
+      </presentation>
+      <presentation id="HomePageSite_Presentation">
+        <textBox refId="HomePageSitePrompt">
+          <label>Type the location (URL) of your Home Page website</label>
+        </textBox>
+      </presentation>
+      <presentation id="HomePages_Presentation">
+        <textBox refId="HomePagesPrompt">
+          <label>Use this format:  &lt;support.contoso.com&gt;&lt;https://support.microsoft.com/&gt;</label>
+        </textBox>
+      </presentation>
+      <presentation id="SetDefaultSearchEngine_Presentation">
+        <textBox refId="SetDefaultSearchEngine_Prompt">
+          <label>Use this format to specify the link you wish to add: &lt;https://fabrikam.com/opensearch.xml&gt;</label>
+        </textBox>
+      </presentation>
+      <presentation id="ConfigureAdditionalSearchEngines_Presentation">
+        <textBox refId="ConfigureAdditionalSearchEngines_Prompt">
+          <label>Use this format to specify the link(s) you wish to add: &lt;https://fabrikam.com/opensearch.xml&gt;&lt;https://www.contoso.com/opensearch.xml&gt;</label>
+        </textBox>
+      </presentation>
+      <presentation id="ProvisionedFavorites_Presentation">
+        <listBox refId="ProvisionedFavorites_List">Enter the name of the favorite in the first column and the URL of the favorite in the other column like Contoso http://www.contoso.com/</listBox>
+      </presentation>
+      <presentation id="Cookies">
+        <dropdownList refId="CookiesListBox" noSort="true" defaultItem="2">Configure Cookies </dropdownList>
+      </presentation>
+      <presentation id="PreventTabPreloading">
+        <dropdownList refId="PreventTabPreloadingDropdown" defaultItem="0">Configure tab preloading</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

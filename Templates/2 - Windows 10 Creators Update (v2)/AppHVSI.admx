@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2016 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="appHVSI" namespace="Microsoft.Policies.AppHVSI" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="AppHVSICat" displayName="$(string.AppHVSICat_DisplayName)">
+        <parentCategory ref="windows:WindowsComponents" />
+    </category>
+  </categories>
+  <policies>
+    <!-- AllowAppHVSI -->
+    <policy name="AppHVSI_AllowAppHVSIConfig"
+            class="Machine"
+            clientExtension="{9650FDBC-053A-4715-AD14-FC2DC65E8330}"
+            displayName="$(string.AppHVSI_AllowAppHVSI_DisplayName)"
+            explainText="$(string.AppHVSI_AllowAppHVSI_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="AllowAppHVSI_ProviderSet"
+            >
+        <parentCategory ref="AppHVSICat" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+        <enabledValue>
+          <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+          <decimal value="0" />
+        </disabledValue>
+    </policy>
+    <!-- Clipboard Settings -->
+    <policy name="AppHVSI_ClipboardConfig"
+            class="Machine"
+            displayName="$(string.AppHVSI_ClipboardSettings_DisplayName)"
+            explainText="$(string.AppHVSI_ClipboardSettings_Explain)"
+            presentation="$(presentation.AppHVSIClipboardSettings_Presentation)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <elements>
+        <enum 
+          id="AppHVSIClipboardSettings_CopyPasteDirection_DropdownList"
+          valueName="AppHVSIClipboardSettings"
+          required="true"
+          >
+          <item displayName="$(string.AppHVSI_ClipboardSettings_DropdownList_Option_OperationDisabled)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.AppHVSI_ClipboardSettings_DropdownList_Option_ContainerToHostEnabled)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.AppHVSI_ClipboardSettings_DropdownList_Option_HostToContainerEnabled)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.AppHVSI_ClipboardSettings_DropdownList_Option_BothDirectionsEnabled)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+        <decimal id="AppHVSIClipboardFileType_AllowedFileType_TextBox" valueName="AppHVSIClipboardFileType" minValue="1" maxValue="3" />
+      </elements>
+    </policy>
+    <!-- Printing Settings -->
+    <policy name="AppHVSI_PrintingConfig"
+            class="Machine"
+            displayName="$(string.AppHVSI_PrintingSettings_DisplayName)"
+            explainText="$(string.AppHVSI_PrintingSettings_Explain)"
+            presentation="$(presentation.AppHVSIPrintingSettings_Presentation)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <elements>
+        <decimal id="AppHVSIPrintingSettings_TextBox" valueName="AppHVSIPrintingSettings" minValue="0" maxValue="15" />
+      </elements>
+    </policy>
+    <!-- BlockNonEnterpriseContent -->
+    <policy name="AppHVSI_BlockNonEnterpriseContentConfig"
+            class="Machine"
+            displayName="$(string.AppHVSI_BlockNonEnterpriseContent_DisplayName)"
+            explainText="$(string.AppHVSI_BlockNonEnterpriseContent_Explain)"
+            key="SOFTWARE\Policies\Microsoft\AppHVSI"
+            valueName="BlockNonEnterpriseContent"
+            >
+      <parentCategory ref="AppHVSICat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER_ENTERPRISE" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
