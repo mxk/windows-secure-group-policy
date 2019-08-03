@@ -120,17 +120,19 @@ Notes
 * "Turn off all Windows spotlight features" policy must be applied within 15
   minutes after Windows 10 is installed.
 
-Bugs
-----
+Known Issues
+------------
 
 * Denying "Let Windows apps run in the background" right (Windows Components ->
   App Privacy) [breaks Start menu search in v1703](https://superuser.com/a/1208858).
+  * This is now set to "User is in control."
 * Disabling "Allow Extensions" in Microsoft Edge settings prevents Edge from
   starting for the first time in v1709. If Edge is started manually, the window
   closes immediately. If Edge is started by opening an html file, you get "The
   remote procedure call failed" error message. This does not happen on
   subsequent launches, so just allow extensions temporarily when starting Edge
   for the first time.
+  * This setting is no longer configured.
 * Enabling "Configure H.264/AVC hardware encoding for Remote Desktop
   Connections" breaks Hyper-V Enhanced Sessions. The resulting error is "The
   session was disconnected. If you want to continue, try to connect again. If

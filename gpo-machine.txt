@@ -819,6 +819,16 @@ MULTISZ:\0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsActivateWithVoice
+DWORD:2
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+LetAppsActivateWithVoiceAboveLock
+DWORD:2
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsGetDiagnosticInfo
 DWORD:2
 
@@ -840,7 +850,7 @@ MULTISZ:\0
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsRunInBackground
-DWORD:2
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -996,16 +1006,6 @@ Computer
 SOFTWARE\Policies\Microsoft\Windows\Explorer
 CheckSameSourceAndTargetForFRAndDFS
 DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Explorer
-NoDataExecutionPrevention
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\Explorer
-NoHeapTerminationOnCorruption
-DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\Explorer
@@ -1334,6 +1334,11 @@ DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\System
+NoLocalPasswordResetQuestions
+DWORD:1
+
+Computer
+SOFTWARE\Policies\Microsoft\Windows\System
 PublishUserActivities
 DWORD:0
 
@@ -1485,7 +1490,7 @@ DWORD:1
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 BranchReadinessLevel
-DWORD:32
+DWORD:16
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
@@ -1495,7 +1500,7 @@ DWORD:1
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 DeferFeatureUpdatesPeriodInDays
-DWORD:14
+DWORD:30
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
