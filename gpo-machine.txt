@@ -319,6 +319,11 @@ SZ:<about:blank>
 
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
+AllowPrelaunch
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main
 DoNotTrack
 DWORD:1
 
@@ -360,6 +365,11 @@ DWORD:0
 Computer
 SOFTWARE\Policies\Microsoft\MicrosoftEdge\ServiceUI
 ShowOneBox
+DWORD:0
+
+Computer
+SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader
+AllowTabPreloading
 DWORD:0
 
 Computer
