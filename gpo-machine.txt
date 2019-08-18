@@ -570,7 +570,7 @@ MULTISZ:\0
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsAccessCamera
-DWORD:2
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -690,7 +690,7 @@ MULTISZ:\0
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 LetAppsAccessMicrophone
-DWORD:2
+DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
@@ -1721,16 +1721,6 @@ Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Reliability
 TimeStampInterval
 DELETE
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-AVC444ModePreferred
-DWORD:1
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
-AVCHardwareEncodePreferred
-DWORD:1
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services

@@ -4,31 +4,27 @@
     <using prefix="ns0" namespace="Microsoft.Policies.AppPrivacy"></using>
     <using prefix="ns1" namespace="Microsoft.Policies.ApplicationCompatibility"></using>
     <using prefix="ns2" namespace="Microsoft.Policies.CredentialsUI"></using>
-    <using prefix="ns3" namespace="Microsoft.Policies.DataCollection"></using>
-    <using prefix="ns4" namespace="Microsoft.Policies.FileSys"></using>
-    <using prefix="ns5" namespace="Microsoft.Policies.InternetCommunicationManagement"></using>
-    <using prefix="ns6" namespace="Microsoft.Policies.MicrosoftEdge"></using>
-    <using prefix="ns7" namespace="Microsoft.Policies.NCSI"></using>
-    <using prefix="ns8" namespace="Microsoft.Policies.NetworkConnections"></using>
-    <using prefix="ns9" namespace="Microsoft.Policies.ServiceControlManager"></using>
-    <using prefix="ns10" namespace="Microsoft.Policies.WindowsDefender"></using>
-    <using prefix="ns11" namespace="Microsoft.Policies.WindowsExplorer2"></using>
-    <using prefix="ns12" namespace="Microsoft.Policies.WindowsInitialization"></using>
-    <using prefix="ns13" namespace="Microsoft.Policies.WindowsTimeService"></using>
-    <using prefix="ns14" namespace="Microsoft.Policies.WindowsUpdate"></using>
+    <using prefix="ns3" namespace="Microsoft.Policies.FileSys"></using>
+    <using prefix="ns4" namespace="Microsoft.Policies.InternetCommunicationManagement"></using>
+    <using prefix="ns5" namespace="Microsoft.Policies.MicrosoftEdge"></using>
+    <using prefix="ns6" namespace="Microsoft.Policies.NCSI"></using>
+    <using prefix="ns7" namespace="Microsoft.Policies.NetworkConnections"></using>
+    <using prefix="ns8" namespace="Microsoft.Policies.TerminalServer"></using>
+    <using prefix="ns9" namespace="Microsoft.Policies.WindowsInitialization"></using>
+    <using prefix="ns10" namespace="Microsoft.Policies.WindowsTimeService"></using>
   </policyNamespaces>
   <comments>
     <admTemplate>
       <comment policyRef="ns0:LetAppsRunInBackground" commentText="$(resource.ns0_LetAppsRunInBackground)"></comment>
       <comment policyRef="ns1:AppCompatTurnOffEngine" commentText="$(resource.ns1_AppCompatTurnOffEngine)"></comment>
       <comment policyRef="ns2:EnableSecureCredentialPrompting" commentText="$(resource.ns2_EnableSecureCredentialPrompting)"></comment>
-      <comment policyRef="ns4:LongPathsEnabled" commentText="$(resource.ns4_LongPathsEnabled)"></comment>
-      <comment policyRef="ns5:NoActiveProbe" commentText="$(resource.ns5_NoActiveProbe)"></comment>
-      <comment policyRef="ns6:AllowExtensions" commentText="$(resource.ns6_AllowExtensions)"></comment>
-      <comment policyRef="ns7:NCSI_PassivePolling" commentText="$(resource.ns7_NCSI_PassivePolling)"></comment>
-      <comment policyRef="ns8:NC_DoNotShowLocalOnlyIcon" commentText="$(resource.ns8_NC_DoNotShowLocalOnlyIcon)"></comment>
-      <comment policyRef="ns12:Hiberboot" commentText="$(resource.ns12_Hiberboot)"></comment>
-      <comment policyRef="ns13:W32TIME_POLICY_CONFIG" commentText="$(resource.ns13_W32TIME_POLICY_CONFIG)"></comment>
+      <comment policyRef="ns3:LongPathsEnabled" commentText="$(resource.ns3_LongPathsEnabled)"></comment>
+      <comment policyRef="ns4:NoActiveProbe" commentText="$(resource.ns4_NoActiveProbe)"></comment>
+      <comment policyRef="ns5:AllowExtensions" commentText="$(resource.ns5_AllowExtensions)"></comment>
+      <comment policyRef="ns6:NCSI_PassivePolling" commentText="$(resource.ns6_NCSI_PassivePolling)"></comment>
+      <comment policyRef="ns7:NC_DoNotShowLocalOnlyIcon" commentText="$(resource.ns7_NC_DoNotShowLocalOnlyIcon)"></comment>
+      <comment policyRef="ns9:Hiberboot" commentText="$(resource.ns9_Hiberboot)"></comment>
+      <comment policyRef="ns10:W32TIME_POLICY_CONFIG" commentText="$(resource.ns10_W32TIME_POLICY_CONFIG)"></comment>
     </admTemplate>
   </comments>
   <resources minRequiredRevision="1.0">
@@ -36,15 +32,15 @@
       <string id="ns0_LetAppsRunInBackground">Disabling this breaks start menu search.</string>
       <string id="ns1_AppCompatTurnOffEngine">Intentionally left unconfigured (on), along with PCA and SwitchBack. Disabling may cause problems that are very difficult to debug. Might be worth disabling on servers.</string>
       <string id="ns2_EnableSecureCredentialPrompting">Really annoying. Do not enable.</string>
-      <string id="ns4_LongPathsEnabled">Should be enabled eventually, but not until Explorer can handle such paths.</string>
-      <string id="ns5_NoActiveProbe">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
-      <string id="ns6_AllowExtensions">Disabling prevents Edge from starting for the very first time in v1709.</string>
-      <string id="ns7_NCSI_PassivePolling">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
-      <string id="ns8_NC_DoNotShowLocalOnlyIcon">Do not enable. NCSI problems affect Windows Update and other components, so this information is useful.</string>
-      <string id="ns12_Hiberboot">May cause problems for Group Policy processing. Contrary to the documentation, disabling this setting does disable fast startup (see event 27 in the System log):
+      <string id="ns3_LongPathsEnabled">Should be enabled eventually, but not until Explorer can handle such paths.</string>
+      <string id="ns4_NoActiveProbe">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
+      <string id="ns5_AllowExtensions">Disabling prevents Edge from starting for the very first time in v1709.</string>
+      <string id="ns6_NCSI_PassivePolling">Disabling NCSI breaks Windows Update (0x800704cf), DISM (0x800f0906), and probably other things. Passive-only configuration does not work.</string>
+      <string id="ns7_NC_DoNotShowLocalOnlyIcon">Do not enable. NCSI problems affect Windows Update and other components, so this information is useful.</string>
+      <string id="ns9_Hiberboot">May cause problems for Group Policy processing. Contrary to the documentation, disabling this setting does disable fast startup (see event 27 in the System log):
 
 https://technet.microsoft.com/en-us/library/jj573586.aspx</string>
-      <string id="ns13_W32TIME_POLICY_CONFIG">Intentionally left unconfigured. Server and client have different defaults and there is a lot of conflicting/outdated information out there on how to set these parameters correctly.</string>
+      <string id="ns10_W32TIME_POLICY_CONFIG">Intentionally left unconfigured. Server and client have different defaults and there is a lot of conflicting/outdated information out there on how to set these parameters correctly.</string>
     </stringTable>
   </resources>
 </policyComments>
