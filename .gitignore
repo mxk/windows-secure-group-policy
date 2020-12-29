@@ -1,4 +1,5 @@
 *.7z
 *.zip
+/PolicyAnalyzer/
 /PolicyDefinitions-*/
 GPO.cmt
