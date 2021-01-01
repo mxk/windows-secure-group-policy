@@ -60,7 +60,7 @@
           </falseValue>
         </boolean>
       </elements>
-    </policy>    
+    </policy>
     <policy name="NCSI_GlobalDns" class="Machine" displayName="$(string.NCSI_GlobalDns)" explainText="$(string.NCSI_GlobalDns_Help)" presentation="$(presentation.NCSI_GlobalDns)" key="Software\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator">
       <parentCategory ref="NCSI_Category" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3" />

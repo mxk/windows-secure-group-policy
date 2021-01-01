@@ -47,6 +47,16 @@
                 <decimal value="0" />
             </disabledValue>
         </policy>
+        <policy name="HideSCAMeetNow" class="User" displayName="$(string.HideSCAMeetNow)" explainText="$(string.HideSCAMeetNow_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="HideSCAMeetNow">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0_19H1" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
         <policy name="TaskbarLockAll" class="User" displayName="$(string.TaskbarLockAll)" explainText="$(string.TaskbarLockAll_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="TaskbarLockAll">
             <parentCategory ref="windows:StartMenu" />
             <supportedOn ref="windows:SUPPORTED_WindowsVista" />

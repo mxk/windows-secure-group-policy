@@ -30,7 +30,7 @@
     </policy>
     <policy name="DeviceInstall_RequestAdditionalSoftwareSendToWER" class="Machine" displayName="$(string.DeviceInstall_RequestAdditionalSoftwareSendToWER)" explainText="$(string.DeviceInstall_RequestAdditionalSoftwareSendToWER_Help)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Settings" valueName="DisableSendRequestAdditionalSoftwareToWER">
       <parentCategory ref="devinst:DeviceInstall_Category" />
-      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3ToVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS3ToWindows7" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

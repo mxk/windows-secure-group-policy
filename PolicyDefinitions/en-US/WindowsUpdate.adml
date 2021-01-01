@@ -16,6 +16,8 @@
       <string id="WU_SUPPORTED_WindowsXPSP1_NoWinRT">At least Windows Server 2003 operating systems or Windows XP Professional with SP1, excluding Windows RT</string>
       <string id="WU_SUPPORTED_Win2kSP3_Or_XPSP1_Through_Win81_or_Server2012R2">At least Windows XP Professional Service Pack 1 or At least Windows 2000 Service Pack 3 through Windows 8.1 or Windows Server 2012 R2 with most current service pack</string>
       <string id="WU_SUPPORTED_WindowsVista_Through_Win81_or_Server2012R2">At least Windows Vista through Windows 8.1 or Windows Server 2012 R2 with most current service pack</string>
+      <string id="WU_SUPPORTED_XPSP1_or_Win2kSP3_AUOption7_SUPPORTED_Server2016">Windows XP Professional Service Pack 1 or At least Windows 2000 Service Pack 3
+Option 7 only supported on servers of at least Windows Server 2016 edition​</string>
       <string id="AUDontShowUasHelp">This policy setting allows you to manage whether the 'Install Updates and Shut Down' option is displayed in the Shut Down Windows dialog box.
 
 If you enable this policy setting, 'Install Updates and Shut Down' will not appear as a choice in the Shut Down Windows dialog box, even if updates are available for installation when the user selects the Shut Down option in the Start menu.
@@ -82,10 +84,15 @@ This setting lets you specify whether automatic updates are enabled on this comp
 
         With this option, local administrators will be allowed to use the Windows Update control panel to select a configuration option of their choice. Local administrators will not be allowed to disable the configuration for Automatic Updates.
 
+        7 = Notify for install and notify for restart. (Windows Server only)
+
+        With this option from Windows Server 2016, applicable only to Server SKU devices, local administrators will be allowed to use Windows Update to proceed with installations or reboots manually.
+
 If the status for this policy is set to Disabled, any updates that are available on Windows Update must be downloaded and installed manually. To do this, search for Windows Update using Start.
 
 If the status is set to Not Configured, use of Automatic Updates is not specified at the Group Policy level. However, an administrator can still configure Automatic Updates through Control Panel.</string>
 
+      <string id="AutoUpdateModeNotifyToInstallNotifyToReboot">7 - Auto Download, Notify to install, Notify to Restart</string>
       <string id="AutoUpdateModeAdminChooses">5 - Allow local admin to choose setting</string>
       <string id="AutoUpdateModeAuto">4 - Auto download and schedule the install</string>
       <string id="AutoUpdateModeDownload">3 - Auto download and notify for install</string>
@@ -145,7 +152,17 @@ If the status is set to Not Configured, use of Automatic Updates is not specifie
 
         Note: The option to "Download files with no Url..." is only used if the "Alternate Download Server" is set.
 
-        Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.</string>
+        Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.
+
+        Note on proxies: To ensure the highest level of security, Microsoft recommends securing WSUS with TLS/SSL protocol, thereby using HTTPS based intranet servers to keep systems secure. If a proxy is required, we recommend configuring system proxy.
+
+        Selecting a proxy behavior will have no effect on clients using HTTPS based intranet servers to detect for updates. 
+
+        In order to keep clients inherently secure, we are no longer allowing HTTP based intranet servers to leverage user proxy by default for detecting updates. If you need to leverage user proxy for detecting updates while using an HTTP based intranet server despite the vulnerabilities it presents, you must configure the proxy behavior to "Allow user proxy to be used as a fallback if detection using system proxy fails".
+
+        Detection for updates will fail when HTTP based intranet servers are used without a configured system proxy if the policy to use an alternate proxy behavior is not configured.</string>
+      <string id="OnlyUseSystemProxyForUpdateDetection">Only use system proxy for detecting updates (default)</string>
+      <string id="AllowUserProxyAsFallbackForUpdateDetection">Allow user proxy to be used as a fallback if detection using system proxy fails</string>
       <string id="DetectionFrequency_Help">Specifies the hours that Windows will use to determine how long to wait before checking for available updates. The exact wait time is a sum of the specific value and a random variant of 0-4 hours.
 
         If the status is set to Enabled, Windows will check for available updates at the specified interval.
@@ -354,6 +371,14 @@ To prevent quality updates from being received on their scheduled time, you can 
 To resume receiving Quality Updates which are paused, clear the start date field.
 
 If you disable or do not configure this policy, Windows Update will not alter its behavior.</string>
+      <string id="TargetReleaseVersion_Title">Select the target Feature Update version</string>
+      <string id="TargetReleaseVersion_Help">Enable this policy to specify a Feature Update version to be requested in subsequent scans.
+
+Enter version as listed in the Windows Release Information page aka.ms/ReleaseInformationPage</string>
+      <string id="DisableWUfBSafeguards">Disable safeguards for Feature Updates</string>
+      <string id="DisableWUfBSafeguards_Help">
+          Enable this setting when Feature Updates should be deployed to devices without blocking on any safeguard holds. Safeguard holds are known compatibility issues that block the upgrade from being deployed to affected devices until the issue is resolved. Enabling this policy can allow an organization to deploy the Feature Update to devices for testing, or to deploy the Feature Update without blocking on safeguard holds.
+      </string>
       <string id="ExcludeWUDriversInQualityUpdate_Title">Do not include drivers with Windows Updates</string>
       <string id="ExcludeWUDriversInQualityUpdate_Help">Enable this policy to not include drivers with Windows quality updates.
 
@@ -667,8 +692,9 @@ This policy will override the following policies:
         <textBox refId="CorpWUContentHost_Name">
           <label>Set the alternate download server:</label>
         </textBox>
-        <text>(example: http://IntranetUpd01)</text>
+        <text>(example: https://IntranetUpd01)</text>
         <checkBox refId="CorpWUFillEmptyContentUrls" defaultChecked="false">Download files with no Url in the metadata if alternate download server is set.</checkBox>
+        <dropdownList refId="SetProxyBehaviorForUpdateDetection" noSort="true" defaultItem="0">Select the proxy behavior for Windows Update client for detecting updates with non-TLS (HTTP) based service:</dropdownList>
       </presentation>
       <presentation id="DetectionFrequency_Title">
         <text>Check for updates at the following</text>
@@ -703,6 +729,11 @@ This policy will override the following policies:
         <text>this much time to save their</text>
         <decimalTextBox refId="AlwaysAutoRebootAtScheduledTime_Minutes" defaultValue="15">work (minutes): </decimalTextBox>
       </presentation>
+      <presentation id="TargetReleaseVersion">
+        <textBox refId="TargetReleaseVersionId">
+          <label>Target Version for Feature Updates</label>
+        </textBox>
+      </presentation>      
       <presentation id="ManagePreviewBuilds">
         <dropdownList refId="ManagePreviewBuildsId" noSort="true" defaultItem="2">Set the behavior for receiving preview builds:</dropdownList>
       </presentation>

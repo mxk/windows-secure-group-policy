@@ -139,11 +139,25 @@
               <range ref="products:MicrosoftWindows" minVersionIndex="13"/>
           </or>
       </definition>
-      
+
       <!--Windows 10 RS2 to Windows Vista-->
       <definition name="SUPPORTED_Windows_10_0_RS2ToVista" displayName="$(string.SUPPORTED_Windows_10_0_RS2ToVista)">
           <or>
               <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--Windows 10 RS3 to Windows Vista-->
+      <definition name="SUPPORTED_Windows_10_0_RS3ToVista" displayName="$(string.SUPPORTED_Windows_10_0_RS3ToVista)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="13"/>
+          </or>
+      </definition>
+
+      <!--Windows 10 RS3 to Windows 7-->
+      <definition name="SUPPORTED_Windows_10_0_RS3ToWindows7" displayName="$(string.SUPPORTED_Windows_10_0_RS3ToWindows7)">
+          <or>
+              <range ref="products:MicrosoftWindows" minVersionIndex="6" maxVersionIndex="13"/>
           </or>
       </definition>
 

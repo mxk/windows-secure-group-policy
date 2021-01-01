@@ -249,6 +249,21 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowMixedModePrintingInPdf"
+        class="Both"
+        displayName="$(string.AllowMixedModePrintingInPdf)"
+        explainText="$(string.AllowMixedModePrintingInPdf_Explain)"
+        key="Software\Policies\Microsoft\MicrosoftEdge\Main"
+        valueName="AllowMixedModePrintingInPDF">
+      <parentCategory ref="MicrosoftEdge" />
+      <supportedOn ref="SUPPORTED_INTERNET_BROWSER_RS5" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowSavingHistory"
         class="Both"
         displayName="$(string.AllowSavingHistory)"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  (c) 2006 Microsoft Corporation  -->
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <displayName>Windows Connection Manager Group Policy Settings</displayName>
   <description>Windows Connection Manager Group Policy Settings</description>
@@ -22,7 +22,7 @@ Manual connection attempts
 If this policy setting is not configured or is disabled, computers are allowed to connect simultaneously to both domain and non-domain networks.
       </string>
       <string id="WCM_DisableRoaming">Prohibit connection to roaming Mobile Broadband networks</string>
-      <string id="WCM_DisableRoaming_Help">This policy setting prevents clients from connecting to Mobile Broadband networks when the client is registered on a roaming provider network. 
+      <string id="WCM_DisableRoaming_Help">This policy setting prevents clients from connecting to Mobile Broadband networks when the client is registered on a roaming provider network.
 
 If this policy setting is enabled, all automatic and manual connection attempts to roaming provider networks are blocked until the client registers with the home provider network.
 
@@ -47,7 +47,7 @@ If this policy setting is not configured or is disabled, clients are allowed to 
         This policy setting is related to the "Enable Windows to soft-disconnect a computer from a network" policy setting.
       </string>
       <string id="WCM_DisablePowerManagement">Disable power management in connected standby mode</string>
-      <string id="WCM_DisablePowerManagement_Help">This policy setting specifies that power management is disabled when the machine enters connected standby mode. 
+      <string id="WCM_DisablePowerManagement_Help">This policy setting specifies that power management is disabled when the machine enters connected standby mode.
 
 If this policy setting is enabled, Windows Connection Manager does not manage adapter radios to reduce power consumption when the machine enters connected standby mode.
 
@@ -63,7 +63,7 @@ If this policy setting is disabled, Windows will disconnect a computer from a ne
 When soft disconnect is enabled:
 - When Windows decides that the computer should no longer be connected to a network, it waits for traffic to settle on that network. The existing TCP session will continue uninterrupted.
 - Windows then checks the traffic level on the network periodically. If the traffic level is above a certain threshold, no further action is taken. The computer stays connected to the network and continues to use it. For example, if the network connection is currently being used to download files from the Internet, the files will continue to be downloaded using that network connection.
-- When the network traffic drops below this threshold, the computer will be disconnected from the network. Apps that keep a network connection active even when they’re not actively using it (for example, email apps) might lose their connection. If this happens, these apps should re-establish their connection over a different network. 
+- When the network traffic drops below this threshold, the computer will be disconnected from the network. Apps that keep a network connection active even when they’re not actively using it (for example, email apps) might lose their connection. If this happens, these apps should re-establish their connection over a different network.
 
 This policy setting depends on other group policy settings. For example, if 'Minimize the number of simultaneous connections to the Internet or a Windows Domain' is disabled, Windows will not disconnect from any networks.
       </string>

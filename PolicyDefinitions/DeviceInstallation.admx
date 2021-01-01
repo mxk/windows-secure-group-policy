@@ -133,6 +133,40 @@
         </boolean>
       </elements>
     </policy>
+    <policy name="DeviceInstall_Instance_IDs_Allow" class="Machine" displayName="$(string.DeviceInstall_Instance_IDs_Allow)" explainText="$(string.DeviceInstall_Instance_IDs_Allow_Help)" presentation="$(presentation.DeviceInstall_Instance_IDs_Allow)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions" valueName="AllowInstanceIDs">
+      <parentCategory ref="DeviceInstall_Restrictions_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <list id="DeviceInstall_Instance_IDs_Allow_List" key="Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions\AllowInstanceIDs" valuePrefix="" />
+      </elements>
+    </policy>
+    <policy name="DeviceInstall_Instance_IDs_Deny" class="Machine" displayName="$(string.DeviceInstall_Instance_IDs_Deny)" explainText="$(string.DeviceInstall_Instance_IDs_Deny_Help)" presentation="$(presentation.DeviceInstall_Instance_IDs_Deny)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions" valueName="DenyInstanceIDs">
+      <parentCategory ref="DeviceInstall_Restrictions_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <list id="DeviceInstall_Instance_IDs_Deny_List" key="Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions\DenyInstanceIDs" valuePrefix="" />
+        <boolean id="DeviceInstall_Instance_IDs_Deny_Retroactive" valueName="DenyInstanceIDsRetroactive" >
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+      </elements>
+    </policy>
     <policy name="DeviceInstall_Removable_Deny" class="Machine" displayName="$(string.DeviceInstall_Removable_Deny)" explainText="$(string.DeviceInstall_Removable_Deny_Help)" key="Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions" valueName="DenyRemovableDevices">
       <parentCategory ref="DeviceInstall_Restrictions_Category" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />

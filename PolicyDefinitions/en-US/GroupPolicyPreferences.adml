@@ -919,6 +919,7 @@ Notes:
       </presentation>
       <presentation id="CSE_Drives">
         <checkBox refId="CSE_ALLOWSLOWLINK" defaultChecked="true">Allow processing across a slow network connection</checkBox>
+        <checkBox refId="CSE_NOBACKGROUND">Do not apply during periodic background processing</checkBox>
         <checkBox refId="CSE_NOCHANGES" defaultChecked="true">Process even if the Group Policy objects have not changed</checkBox>
         <dropdownList refId="CSE_BACKGROUNDPRIORTYLEVEL" noSort="true" defaultItem="3">Background priority</dropdownList>
       </presentation>

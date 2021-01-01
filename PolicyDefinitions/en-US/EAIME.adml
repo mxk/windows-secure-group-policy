@@ -13,7 +13,7 @@ If you enable this policy setting, misconversion logging is turned on.
 
 If you disable or do not configure this policy setting, misconversion logging is turned off.
 
-This policy setting applies to Japanese Microsoft IME.</string>
+This policy setting applies to Japanese Microsoft IME and Traditional Chinese IME.</string>
       <string id="L_TurnOffSavingAutoTuningDataToFile">Turn off saving auto-tuning data to file</string>
       <string id="L_TurnOffSavingAutoTuningDataToFileExplain">This policy setting allows you to turn off saving the auto-tuning result to file.
 
@@ -138,6 +138,42 @@ If you disable this policy setting, the functionality associated with this featu
 If you don't configure this policy setting, it will be turned on by default, and the user can turn on and turn off the lexicon udpate feature.
 
 This Policy setting applies only to Microsoft CHS Pinyin IME.</string>
+      <string id="L_ConfigureSimplifiedChineseImeVersion">Configure Simplified Chinese IME version</string>
+      <string id="L_ConfigureSimplifiedChineseImeVersionExplain">This policy setting controls the version of Microsoft IME.​
+
+If you don’t configure this policy setting, user can control IME version to use. The new Microsoft IME is on by default.​
+
+If you enable this, user is not allowed to control IME version to use. The previous version of Microsoft IME is always selected.​
+
+If you disable this, user is not allowed to control IME version to use. The new Microsoft IME is always selected.
+
+This Policy setting applies only to Microsoft Simplified Chinese IME.
+
+Note: Changes to this setting will not take effect until the user logs off.</string>
+      <string id="L_ConfigureTraditionalChineseImeVersion">Configure Traditional Chinese IME version</string>
+      <string id="L_ConfigureTraditionalChineseImeVersionExplain">This policy setting controls the version of Microsoft IME.​
+
+If you don’t configure this policy setting, user can control IME version to use. The new Microsoft IME is on by default.​
+
+If you enable this, user is not allowed to control IME version to use. The previous version of Microsoft IME is always selected.​
+
+If you disable this, user is not allowed to control IME version to use. The new Microsoft IME is always selected.
+
+This Policy setting applies only to Microsoft Traditional Chinese IME.
+
+Note: Changes to this setting will not take effect until the user logs off.</string>
+      <string id="L_ConfigureJapaneseImeVersion">Configure Japanese IME version</string>
+      <string id="L_ConfigureJapaneseImeVersionExplain">This policy setting controls the version of Microsoft IME.​
+
+If you don’t configure this policy setting, user can control IME version to use. The new Microsoft IME is on by default.​
+
+If you enable this, user is not allowed to control IME version to use. The previous version of Microsoft IME is always selected.​
+
+If you disable this, user is not allowed to control IME version to use. The new Microsoft IME is always selected.
+
+This Policy setting applies only to Microsoft Japanese IME.
+
+Note: Changes to this setting will not take effect until the user logs off.</string>
     </stringTable>
     <presentationTable>
       <presentation id="L_RestrictCharacterCodeRangeOfConversion">

@@ -2,7 +2,7 @@
 <!--  Copyright (C) Microsoft. All rights reserved.  -->
 <policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <!-- displayName and description are not used. Not supported by current Group Policy tools. -->
-  <displayName>Appx Package Manager</displayName> 
+  <displayName>Appx Package Manager</displayName>
   <description>Appx Package Manager</description>
   <resources>
     <stringTable>
@@ -33,7 +33,7 @@ If you disable or do not configure this policy setting, Group Policy blocks depl
         Allows or denies development of Windows Store applications and installing them directly from an IDE.
 
         If you enable this setting and enable the "Allow all trusted apps to install" Group Policy, you can develop Windows Store apps and install them directly from an IDE.
-        
+
         If you disable or do not configure this setting, you cannot develop Windows Store apps or install them directly from an IDE.
       </string>
       <string id="DisableDeploymentToNonSystemVolumes">Disable installing Windows apps on non-system volumes</string>
@@ -54,10 +54,17 @@ If you disable or do not configure this policy setting, Group Policy blocks depl
       </string>
       <string id="AllowSharedLocalAppData">Allow a Windows app to share application data between users</string>
       <string id="AllowSharedLocalAppDataExplanation">Manages a Windows app's ability to share data between users who have installed the app.
-      
+
         If you enable this policy, a Windows app can share app data with other instances of that app. Data is shared through the SharedLocal folder. This folder is available through the Windows.Storage API.
 
-        If you disable this policy, a Windows app can't share app data with other instances of that app. If this policy was previously enabled, any previously shared app data will remain in the SharedLocal folder. 
+        If you disable this policy, a Windows app can't share app data with other instances of that app. If this policy was previously enabled, any previously shared app data will remain in the SharedLocal folder.
+      </string>
+      <string id="BlockNonAdminUserInstall">Prevent non-admin users from installing packaged Windows apps</string>
+      <string id="BlockNonAdminUserInstallExplanation">Manages non-Administrator users' ability to install Windows app packages.
+
+        If you enable this policy, non-Administrators will be unable to initiate installation of Windows app packages. Administrators who wish to install an app will need to do so from an Administrator context (for example, an Administrator PowerShell window). All users will still be able to install Windows app packages via the Microsoft Store, if permitted by other policies.
+
+        If you disable or do not configure this policy, all users will be able to initiate installation of Windows app packages.
       </string>
     </stringTable>
   </resources>

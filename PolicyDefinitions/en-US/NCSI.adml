@@ -73,7 +73,7 @@
       </presentation>
       <presentation id="NCSI_PassivePolling">
         <text>The following checkbox disables the passive polling mechanism in NCSI.   This can improve CPU workload on servers or other machines whose network connectivity is static.</text>
-        <checkBox refId="NCSI_DisablePassivePolling_Checkbox">Disable passive polling</checkBox>  
+        <checkBox refId="NCSI_DisablePassivePolling_Checkbox">Disable passive polling</checkBox>
       </presentation>
       <presentation id="NCSI_GlobalDns">
         <text>The following checkbox disables interface binding when doing DNS lookups in NCSI.   This can enable NCSI to work better with special network configurations, like a DNS server running on localhost.</text>

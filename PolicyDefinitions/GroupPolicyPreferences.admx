@@ -331,6 +331,14 @@
             <decimal value="1" />
           </falseValue>
         </boolean>
+        <boolean id="CSE_NOBACKGROUND" valueName="NoBackgroundPolicy">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
         <boolean id="CSE_NOCHANGES" valueName="NoGPOListChanges">
           <trueValue>
             <decimal value="0" />

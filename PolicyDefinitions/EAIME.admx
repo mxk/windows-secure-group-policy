@@ -129,5 +129,35 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="L_ConfigureSimplifiedChineseImeVersion" class="User" displayName="$(string.L_ConfigureSimplifiedChineseImeVersion)" explainText="$(string.L_ConfigureSimplifiedChineseImeVersionExplain)" key="Software\Policies\Microsoft\InputMethod\Settings\CHS" valueName="ConfigureImeVersion">
+      <parentCategory ref="L_IME" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_19H1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ConfigureTraditionalChineseImeVersion" class="User" displayName="$(string.L_ConfigureTraditionalChineseImeVersion)" explainText="$(string.L_ConfigureTraditionalChineseImeVersionExplain)" key="Software\Policies\Microsoft\InputMethod\Settings\CHT" valueName="ConfigureImeVersion">
+      <parentCategory ref="L_IME" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_19H1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="L_ConfigureJapaneseImeVersion" class="User" displayName="$(string.L_ConfigureJapaneseImeVersion)" explainText="$(string.L_ConfigureJapaneseImeVersionExplain)" key="Software\Policies\Microsoft\InputMethod\Settings\JPN" valueName="ConfigureImeVersion">
+      <parentCategory ref="L_IME" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_19H1" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

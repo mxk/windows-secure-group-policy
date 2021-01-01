@@ -55,7 +55,7 @@ When Storage Sense runs, it can delete files in the user’s Recycle Bin if they
 If the group policy "Allow Storage Sense" is disabled, then this policy does not have any effect.
 
 Enabled:
-You must provide the minimum age threshold (in days) of a file in the Recycle Bin before Storage Sense will delete it. Support values are: 0 - 365.
+You must provide the minimum age threshold (in days) of a file in the Recycle Bin before Storage Sense will delete it. Supported values are: 0 - 365.
 If you set this value to zero, Storage Sense will not delete files in the user’s Recycle Bin. The default is 30 days.
 
 Disabled or Not Configured:
@@ -63,12 +63,12 @@ By default, Storage Sense will delete files in the user’s Recycle Bin that hav
     </string>
     <string id="SS_ConfigStorageSenseDownloadsCleanupThreshold">Configure Storage Storage Downloads cleanup threshold</string>
     <string id="SS_ConfigStorageSenseDownloadsCleanupThreshold_Explain">
-When Storage Sense runs, it can delete files in the user’s Downloads folder if they have been there for over a certain amount of days.
+When Storage Sense runs, it can delete files in the user’s Downloads folder if they haven’t been opened for more than a certain number of days.
 
 If the group policy "Allow Storage Sense" is disabled, then this policy does not have any effect.
 
 Enabled:
-You must provide the minimum age threshold (in days) of a file in the Downloads folder before Storage Sense will delete it. Support values are: 0 - 365.
+You must provide the minimum number of days a file can remain unopened before Storage Sense deletes it from Downloads folder. Supported values are: 0 - 365.
 If you set this value to zero, Storage Sense will not delete files in the user’s Downloads folder. The default is 0, or never deleting files in the Downloads folder.
 
 Disabled or Not Configured:
@@ -81,7 +81,7 @@ When Storage Sense runs, it can dehydrate cloud-backed content that hasn’t bee
 If the group policy "Allow Storage Sense" is disabled, then this policy does not have any effect.
 
 Enabled:
-You must provide the number of days since a cloud-backed file has been opened before Storage Sense will dehydrate it. Support values are: 0 - 365.
+You must provide the minimum number of days a cloud-backed file can remain unopened before Storage Sense dehydrates it from the sync root. Supported values are: 0 - 365.
 If you set this value to zero, Storage Sense will not dehydrate any cloud-backed content. The default value is 0, or never dehydrating cloud-backed content.
 
 Disabled or Not Configured:

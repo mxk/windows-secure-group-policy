@@ -69,7 +69,9 @@ showonly:about;bluetooth
 
 Example: to specify that only the Bluetooth page (which has URI ms-settings:bluetooth) should be hidden:
 
-hide:bluetooth</string>
+hide:bluetooth
+
+The availability of per-user support is documented here: https://go.microsoft.com/fwlink/?linkid=2102995</string>
       <string id="AllowOnlineTips">Allow Online Tips</string>
       <string id="AllowOnlineTips_Help">Enables or disables the retrieval of online tips and help for the Settings app.
 

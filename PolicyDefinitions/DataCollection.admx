@@ -183,6 +183,36 @@
         <text id="ConfigureMicrosoft365UploadEndpointValue" valueName="ConfigureMicrosoft365UploadEndpoint" required="true"/>
       </elements>
     </policy>
+    <policy name="AllowUpdateComplianceProcessing" class="Machine" displayName="$(string.AllowUpdateComplianceProcessing)" explainText="$(string.AllowUpdateComplianceProcessing_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="AllowUpdateComplianceProcessing">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS7" />
+      <enabledValue>
+        <decimal value="16" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowDesktopAnalyticsProcessing" class="Machine" displayName="$(string.AllowDesktopAnalyticsProcessing)" explainText="$(string.AllowDesktopAnalyticsProcessing_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="AllowDesktopAnalyticsProcessing">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS7" />
+      <enabledValue>
+        <decimal value="2" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowWUfBCloudProcessing" class="Machine" displayName="$(string.AllowWUfBCloudProcessing)" explainText="$(string.AllowWUfBCloudProcessing_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="AllowWUfBCloudProcessing">
+      <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS7" />
+      <enabledValue>
+        <decimal value="8" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="AllowCommercialDataPipeline" class="Machine" displayName="$(string.AllowCommercialDataPipeline)" explainText="$(string.AllowCommercialDataPipeline_Explain)" key="Software\Policies\Microsoft\Windows\DataCollection" valueName="AllowCommercialDataPipeline">
       <parentCategory ref="windows:DataCollectionAndPreviewBuilds" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />

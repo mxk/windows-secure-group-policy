@@ -69,6 +69,13 @@
         </or>
       </definition>
 
+      <!--Windows XP Professional Service Pack 1 or At least Windows 2000 Service Pack 3, Option 7 only supported on servers of at least Windows Server 2012 edition-->
+      <definition name="WU_SUPPORTED_XPSP1_or_Win2kSP3_AUOption7_SUPPORTED_Server2016" displayName="$(string.WU_SUPPORTED_XPSP1_or_Win2kSP3_AUOption7_SUPPORTED_Server2016)">
+        <or>
+          <range ref="products:MicrosoftWindows" minVersionIndex="4" maxVersionIndex="12"/>
+        </or>
+      </definition>
+
     </definitions>
   </supportedOn>
 
@@ -147,7 +154,7 @@
     </policy>
     <policy name="AutoUpdateCfg" class="Machine" displayName="$(string.AutoUpdateCfg)" explainText="$(string.AutoUpdateCfg_Help)" presentation="$(presentation.AutoUpdateCfg)" key="Software\Policies\Microsoft\Windows\WindowsUpdate\AU" valueName="NoAutoUpdate">
       <parentCategory ref="WindowsUpdateCat" />
-      <supportedOn ref="windows:SUPPORTED_Win2kSP3_Or_XPSP1" />
+      <supportedOn ref="WU_SUPPORTED_XPSP1_or_Win2kSP3_AUOption7_SUPPORTED_Server2016" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>
@@ -174,6 +181,11 @@
           <item displayName="$(string.AutoUpdateModeAdminChooses)">
             <value>
               <decimal value="5" />
+            </value>
+          </item>
+          <item displayName="$(string.AutoUpdateModeNotifyToInstallNotifyToReboot)">
+            <value>
+              <decimal value="7" />
             </value>
           </item>
         </enum>
@@ -377,6 +389,18 @@
         <text id="CorpWUStatusURL_Name" valueName="WUStatusServer" required="true" />
         <text id="CorpWUContentHost_Name" valueName="UpdateServiceUrlAlternate" required="false" />
         <boolean id="CorpWUFillEmptyContentUrls" valueName="FillEmptyContentUrls" required="false" />
+        <enum id="SetProxyBehaviorForUpdateDetection" valueName="SetProxyBehaviorForUpdateDetection" required="true">
+            <item displayName="$(string.OnlyUseSystemProxyForUpdateDetection)">
+              <value>
+                <decimal value="0" />
+              </value>
+            </item>
+            <item displayName="$(string.AllowUserProxyAsFallbackForUpdateDetection)">
+              <value>
+                <decimal value="1" />
+              </value>
+            </item>
+          </enum>
       </elements>
     </policy>
     <policy name="DetectionFrequency_Title" class="Machine" displayName="$(string.DetectionFrequency_Title)" explainText="$(string.DetectionFrequency_Help)" presentation="$(presentation.DetectionFrequency_Title)" key="Software\Policies\Microsoft\Windows\WindowsUpdate\AU" valueName="DetectionFrequencyEnabled">
@@ -546,6 +570,35 @@
             valueName="DoNotConnectToWindowsUpdateInternetLocations">
       <parentCategory ref="WindowsUpdateCat" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="TargetReleaseVersion"
+        class="Machine"
+        displayName="$(string.TargetReleaseVersion_Title)"
+        explainText="$(string.TargetReleaseVersion_Help)"
+        key="Software\Policies\Microsoft\Windows\WindowsUpdate"
+        presentation="$(presentation.TargetReleaseVersion)"
+        valueName="TargetReleaseVersion">
+        <parentCategory ref="DeferUpdateCat" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+        <elements>
+          <text id="TargetReleaseVersionId" valueName="TargetReleaseVersionInfo" maxLength="4" />
+        </elements>
+    </policy>
+    <policy name="DisableWUfBSafeguards" class="Machine" displayName="$(string.DisableWUfBSafeguards)" explainText="$(string.DisableWUfBSafeguards_Help)" key="Software\Policies\Microsoft\Windows\WindowsUpdate" valueName="DisableWUfBSafeguards">
+      <parentCategory ref="DeferUpdateCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS6" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

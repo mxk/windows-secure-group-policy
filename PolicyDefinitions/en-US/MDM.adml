@@ -33,6 +33,11 @@ If you disable this policy setting, MDM Enrollment will be enabled for all users
     <presentationTable>
       <presentation id="AutoEnrollMDM">
         <dropdownList refId="UseAADCredentialTypeDrop" defaultItem="1">Select Credential Type to Use:</dropdownList>
+        <textBox refId="MDMApplicationId">
+          <label>MDM Application ID:</label>
+        </textBox>
+        <text>MDM Application ID represents the ID of your MDM application that is configured in Azure AD. This is optional and only required for automatic MDM enrollment using device credentials when multiple MDM applications are configured in Azure AD.</text>
+        <text/>
       </presentation>
     </presentationTable>	
   </resources>

@@ -45,6 +45,7 @@
       <string id="SUPPORTED_Windows_10_0">At least Windows Server 2016, Windows 10</string>
       <string id="SUPPORTED_Windows_10_0_RS2ToVista">Windows Server 2016 Version 1703, Windows 10 Version 1703, Windows 10, Windows 8.1, Windows 8, Windows 7, and Windows Vista only</string>
       <string id="SUPPORTED_Windows_10_0_RS3ToVista">Windows Server 2016 Version 1709, Windows 10 Version 1709, Windows Server 2016 Version 1703, Windows 10 Version 1703, Windows 10, Windows 8.1, Windows 8, Windows 7, and Windows Vista only</string>
+      <string id="SUPPORTED_Windows_10_0_RS3ToWindows7">Windows Server 2016 Version 1709, Windows 10 Version 1709, Windows Server 2016 Version 1703, Windows 10 Version 1703, Windows 10, Windows 8.1, Windows 8, and Windows 7 only</string>
       <string id="SUPPORTED_Windows_10_0_UP_TO_RS2">Windows Server 2016, Windows 10 up to Version 1703</string>
       <string id="SUPPORTED_Windows_10_0_RS1">At least Windows Server 2016, Windows 10 Version 1607</string>
       <string id="SUPPORTED_Windows_10_0_RS2">At least Windows Server 2016, Windows 10 Version 1703</string>

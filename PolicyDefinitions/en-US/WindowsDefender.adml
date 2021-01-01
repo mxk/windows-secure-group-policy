@@ -3,10 +3,10 @@
 <description>enter description here</description>
 <resources>
     <stringTable>
-    <string id="AntiSpywareDefender">Windows Defender Antivirus</string>
+    <string id="AntiSpywareDefender">Microsoft Defender Antivirus</string>
     <string id="AntiSpyware">Endpoint Protection</string>
     <string id="Exclusions">Exclusions</string>
-    <string id="ExploitGuard">Windows Defender Exploit Guard</string>
+    <string id="ExploitGuard">Microsoft Defender Exploit Guard</string>
     <string id="ExploitGuard_ASR">Attack Surface Reduction</string>
     <string id="ExploitGuard_ControlledFolderAccess">Controlled Folder Access</string>
     <string id="ExploitGuard_NetworkProtection">Network Protection</string>
@@ -34,10 +34,10 @@
         Allows an administrator to specify if Automatic Exclusions feature for Server SKUs should be turned off.
 
         Disabled (Default):
-        Windows defender will exclude pre-defined list of paths from the scan to improve performance.
+        Microsoft Defender will exclude pre-defined list of paths from the scan to improve performance.
 
         Enabled:
-        Windows defender will not exclude pre-defined list of paths from scans. This can impact machine performance in some scenarios.
+        Microsoft Defender will not exclude pre-defined list of paths from scans. This can impact machine performance in some scenarios.
 
         Not configured:
         Same as Disabled.
@@ -49,14 +49,14 @@
 
     If you disable or do not configure this policy setting, by default Endpoint Protection runs and computers are scanned for malware and other potentially unwanted software.
     </string>
-    <string id="DisableAntiSpywareDefender">Turn off Windows Defender Antivirus</string>
-    <string id="DisableAntiSpywareDefender_Explain">This policy setting turns off Windows Defender Antivirus.
+    <string id="DisableAntiSpywareDefender">Turn off Microsoft Defender Antivirus</string>
+    <string id="DisableAntiSpywareDefender_Explain">This policy setting turns off Microsoft Defender Antivirus.
     
-    If you enable this policy setting, Windows Defender Antivirus does not run, and will not scan computers for malware or other potentially unwanted software.
+    If you enable this policy setting, Microsoft Defender Antivirus does not run, and will not scan computers for malware or other potentially unwanted software.
 
-    If you disable this policy setting, Windows Defender Antivirus will run regardless of any other installed antivirus product.
+    If you disable this policy setting, Microsoft Defender Antivirus will run regardless of any other installed antivirus product.
 
-    If you do not configure this policy setting, Windows will internally manage Windows Defender Antivirus. If you install another antivirus program, Windows automatically disables Windows Defender Antivirus. Otherwise, Windows Defender Antivirus will scan your computers for malware and other potentially unwanted software.
+    If you do not configure this policy setting, Windows will internally manage Microsoft Defender Antivirus. If you install another antivirus program, Windows automatically disables Microsoft Defender Antivirus. Otherwise, Microsoft Defender Antivirus will scan your computers for malware and other potentially unwanted software.
 
     Enabling or disabling this policy may lead to unexpected or unsupported behavior. It is recommended that you leave this policy setting unconfigured.</string>
     <string id="DisableLocalAdminMerge">Configure local administrator merge behavior for lists</string>
@@ -67,11 +67,11 @@
     If you disable this setting, only items defined by Group Policy will be used in the resulting effective policy. Group Policy settings will override preference settings configured by the local administrator.</string>
     <string id="DisableRoutinelyTakingAction">Turn off routine remediation</string>
     <string id="DisableRoutinelyTakingActionDefender_Explain">
-    This policy setting allows you to configure whether Windows Defender Antivirus automatically takes action on all detected threats. The action to be taken on a particular threat is determined by the combination of the policy-defined action, user-defined action, and the signature-defined action.
+    This policy setting allows you to configure whether Microsoft Defender Antivirus automatically takes action on all detected threats. The action to be taken on a particular threat is determined by the combination of the policy-defined action, user-defined action, and the signature-defined action.
 
-    If you enable this policy setting, Windows Defender Antivirus does not automatically take action on the detected threats, but prompts users to choose from the actions available for each threat.
+    If you enable this policy setting, Microsoft Defender Antivirus does not automatically take action on the detected threats, but prompts users to choose from the actions available for each threat.
 
-    If you disable or do not configure this policy setting, Windows Defender Antivirus automatically takes action on all detected threats after a nonconfigurable delay of approximately five seconds.</string>
+    If you disable or do not configure this policy setting, Microsoft Defender Antivirus automatically takes action on all detected threats after a nonconfigurable delay of approximately five seconds.</string>
     <string id="DisableRoutinelyTakingAction_Explain">
         This policy setting allows you to configure whether Endpoint Protection automatically takes action on all detected threats. The action to be taken on a particular threat is determined by the combination of the policy-defined action, user-defined action, and the signature-defined action.
 
@@ -194,11 +194,11 @@
     <string id="DisableRealtimeMonitoring">Turn off real-time protection</string>
     <string id="DisableRealtimeMonitoringDefender_Explain">This policy setting turns off real-time protection prompts for known malware detection.
 
-    Windows Defender Antivirus alerts you when malware or potentially unwanted software attempts to install itself or to run on your computer.
+    Microsoft Defender Antivirus alerts you when malware or potentially unwanted software attempts to install itself or to run on your computer.
 
-    If you enable this policy setting, Windows Defender Antivirus will not prompt users to take actions on malware detections.
+    If you enable this policy setting, Microsoft Defender Antivirus will not prompt users to take actions on malware detections.
 
-    If you disable or do not configure this policy setting, Windows Defender Antivirus will prompt users to take actions on malware detections.</string>
+    If you disable or do not configure this policy setting, Microsoft Defender Antivirus will prompt users to take actions on malware detections.</string>
     <string id="DisableRealtimeMonitoring_Explain">
     This policy setting turns off real-time protection prompts for known malware detection.
 
@@ -331,11 +331,11 @@
     4 - Debug</string>
     <string id="Reporting_DisableEnhancedNotifications">Turn off enhanced notifications</string>
     <string id="Reporting_DisableEnhancedNotifications_Explain">
-      Use this policy setting to specify if you want Windows Defender Antivirus enhanced notifications to display on clients.
+      Use this policy setting to specify if you want Microsoft Defender Antivirus enhanced notifications to display on clients.
       
-      If you disable or do not configure this setting, Windows Defender Antivirus enhanced notifications will display on clients.
+      If you disable or do not configure this setting, Microsoft Defender Antivirus enhanced notifications will display on clients.
       
-      If you enable this setting, Windows Defender Antivirus enhanced notifications will not display on clients.
+      If you enable this setting, Microsoft Defender Antivirus enhanced notifications will not display on clients.
     </string>
 
       <string id="Scan_AllowPause">Allow users to pause scan</string>
@@ -756,10 +756,10 @@
       If you enable this setting AM UI won't show reboot notifications.
     </string>
     <string id="UX_Configuration_Notification_Suppress">Suppress all notifications</string>
-    <string id="UX_Configuration_Notification_Suppress_Explain">Use this policy setting to specify if you want Windows Defender Antivirus notifications to display on clients.
-      If you disable or do not configure this setting, Windows Defender Antivirus notifications will display on clients.
+    <string id="UX_Configuration_Notification_Suppress_Explain">Use this policy setting to specify if you want Microsoft Defender Antivirus notifications to display on clients.
+      If you disable or do not configure this setting, Microsoft Defender Antivirus notifications will display on clients.
 
-      If you enable this setting, Windows Defender Antivirus notifications will not display on clients.
+      If you enable this setting, Microsoft Defender Antivirus notifications will not display on clients.
     </string>
     <string id="UX_Configuration_CustomDefaultActionToastString">Display additional text to clients when they need to perform an action</string>
     <string id="UX_Configuration_CustomDefaultActionToastString_Explain">This policy setting allows you to configure whether or not to display additional text to clients when they need to perform an action. The text displayed is a custom administrator-defined string. For example, the phone number to call the company help desk. The client interface will only display a maximum of 1024 characters. Longer strings will be truncated before display.
@@ -769,27 +769,29 @@
     If you disable or do not configure this setting, there will be no additional text displayed.</string>
     <string id="MpCloudBlockLevel">Select cloud protection level</string>
     <string id="MpCloudBlockLevel_Explain">
-      This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files.
+      This policy setting determines how aggressive Microsoft Defender Antivirus will be in blocking and scanning suspicious files.
 
-      If this setting is on, Windows Defender Antivirus will be more aggressive when identifying suspicious files to block and scan; otherwise, it will be less aggressive and therefore block and scan with less frequency. 
+      If this setting is on, Microsoft Defender Antivirus will be more aggressive when identifying suspicious files to block and scan; otherwise, it will be less aggressive and therefore block and scan with less frequency. 
       
-      For more information about specific values that are supported, see the Windows Defender Antivirus documentation site.
+      For more information about specific values that are supported, see the Microsoft Defender Antivirus documentation site.
 
       Note: This feature requires the "Join Microsoft MAPS" setting enabled in order to function.
 
       Possible options are:
-      (0x0) Default windows defender blocking level
+      (0x0) Default Microsoft Defender Antivirus blocking level
+      (0x1) Moderate Microsoft Defender Antivirus blocking level, delivers verdict only for high confidence detections
       (0x2) High blocking level - aggressively block unknowns while optimizing client performance (greater chance of false positives)
       (0x4) High+ blocking level – aggressively block unknowns and apply additional protection measures (may impact  client performance)
       (0x6) Zero tolerance blocking level – block all unknown executables
     </string>
-    <string id="MpCloudBlockLevel_Default_Level">Default Windows Defender Antivirus blocking level</string>
+    <string id="MpCloudBlockLevel_Default_Level">Default blocking level</string>
+    <string id="MpCloudBlockLevel_Moderate_Level">Moderate blocking level</string>
     <string id="MpCloudBlockLevel_High_Level">High blocking level</string>
     <string id="MpCloudBlockLevel_High_Plus_Level">High+ blocking level</string>
     <string id="MpCloudBlockLevel_Zero_Tolerance_Level">Zero tolerance blocking level</string>
     <string id="MpBafsExtendedTimeout">Configure extended cloud check</string>
     <string id="MpBafsExtendedTimeout_Explain">
-      This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe.
+      This feature allows Microsoft Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe.
       
       The typical cloud check timeout is 10 seconds. To enable the extended cloud check feature, specify the extended time in seconds, up to an additional 50 seconds.
 
@@ -797,9 +799,22 @@
 
       Note: This feature depends on three other MAPS settings - "Configure the 'Block at First Sight' feature; "Join Microsoft MAPS"; "Send file samples when further analysis is required" all need to be enabled.
     </string>
+    <string id="MpEngine_EnableFileHashComputation">Enable file hash computation feature</string>
+    <string id="MpEngine_EnableFileHashComputation_Explain">
+        Enable or disable file hash computation feature.
+
+        Enabled:
+        When this feature is enabled Microsoft Defender will compute hash value for files it scans.
+
+        Disabled:
+        File hash value is not computed
+        
+        Not configured:
+        Same as Disabled.
+    </string>
     <string id="ExploitGuard_EnableNetworkProtection">Prevent users and apps from accessing dangerous websites</string>
     <string id="ExploitGuard_EnableNetworkProtection_Explain">
-    Enable or disable Windows Defender Exploit Guard network protection to prevent employees from using any application to access dangerous domains that may host phishing scams, exploit-hosting sites, and other malicious content on the Internet.
+    Enable or disable Microsoft Defender Exploit Guard network protection to prevent employees from using any application to access dangerous domains that may host phishing scams, exploit-hosting sites, and other malicious content on the Internet.
 
     Enabled:
     Specify the mode in the Options section:
@@ -865,55 +880,55 @@
     </string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess">Configure Controlled folder access</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Explain">
-    Enable or disable controlled folder access for untrusted applications. You can choose to block, audit, or allow attempts by untrusted apps to:
-    - Modify or delete files in protected folders, such as the Documents folder
-    - Write to disk sectors
+        Enable or disable controlled folder access for untrusted applications. You can choose to block, audit, or allow attempts by untrusted apps to:
+        - Modify or delete files in protected folders, such as the Documents folder
+        - Write to disk sectors
 
-    You can also choose to only block or audit writes to disk sectors while still allowing the modification or deletion of files in protected folders.
+        You can also choose to only block or audit writes to disk sectors while still allowing the modification or deletion of files in protected folders.
 
-    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
-    Default system folders are automatically protected, but you can add folders in the Configure protected folders GP setting.
+        Microsoft Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
+        Default system folders are automatically protected, but you can add folders in the Configure protected folders GP setting.
 
-    Block:
-    The following will be blocked:
-    - Attempts by untrusted apps to modify or delete files in protected folders
-    - Attempts by untrusted apps to write to disk sectors
-    The Windows event log will record these blocks under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
-
-
-    Disabled:
-    The following will not be blocked and will be allowed to run:
-    - Attempts by untrusted apps to modify or delete files in protected folders
-    - Attempts by untrusted apps to write to disk sectors
-    These attempts will not be recorded in the Windows event log.
+        Block:
+        The following will be blocked:
+        - Attempts by untrusted apps to modify or delete files in protected folders
+        - Attempts by untrusted apps to write to disk sectors
+        The Windows event log will record these blocks under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
 
 
-    Audit Mode:
-    The following will not be blocked and will be allowed to run:
-    - Attempts by untrusted apps to modify or delete files in protected folders
-    - Attempts by untrusted apps to write to disk sectors
-    The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124.
+        Disabled:
+        The following will not be blocked and will be allowed to run:
+        - Attempts by untrusted apps to modify or delete files in protected folders
+        - Attempts by untrusted apps to write to disk sectors
+        These attempts will not be recorded in the Windows event log.
 
 
-    Block disk modification only:
-    The following will be blocked:
-    - Attempts by untrusted apps to write to disk sectors
-    The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
-
-    The following will not be blocked and will be allowed to run:
-    - Attempts by untrusted apps to modify or delete files in protected folders
-    These attempts will not be recorded in the Windows event log.
+        Audit Mode:
+        The following will not be blocked and will be allowed to run:
+        - Attempts by untrusted apps to modify or delete files in protected folders
+        - Attempts by untrusted apps to write to disk sectors
+        The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124.
 
 
-    Audit disk modification only:
-    The following will not be blocked and will be allowed to run:
-    - Attempts by untrusted apps to write to disk sectors
-    - Attempts by untrusted apps to modify or delete files in protected folders
-    Only attempts to write to protected disk sectors will be recorded in the Windows event log (under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124).
-    Attempts to modify or delete files in protected folders will not be recorded.
+        Block disk modification only:
+        The following will be blocked:
+        - Attempts by untrusted apps to write to disk sectors
+        The Windows event log will record these attempts under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1123.
 
-    Not configured:
-    Same as Disabled.
+        The following will not be blocked and will be allowed to run:
+        - Attempts by untrusted apps to modify or delete files in protected folders
+        These attempts will not be recorded in the Windows event log.
+
+
+        Audit disk modification only:
+        The following will not be blocked and will be allowed to run:
+        - Attempts by untrusted apps to write to disk sectors
+        - Attempts by untrusted apps to modify or delete files in protected folders
+        Only attempts to write to protected disk sectors will be recorded in the Windows event log (under Applications and Services Logs &gt; Microsoft &gt; Windows &gt; Windows Defender &gt; Operational &gt; ID 1124).
+        Attempts to modify or delete files in protected folders will not be recorded.
+
+        Not configured:
+        Same as Disabled.
     </string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Disable">Disable (Default)</string>
     <string id="ExploitGuard_ControlledFolderAccess_EnableControlledFolderAccess_Block">Block</string>
@@ -926,7 +941,7 @@
 
     These applications are allowed to modify or delete files in controlled folder access folders.
 
-    Windows Defender Antivirus automatically determines which applications should be trusted. You can configure this setting to add additional applications.
+    Microsoft Defender Antivirus automatically determines which applications should be trusted. You can configure this setting to add additional applications.
 
     Enabled: 
     Specify additional allowed applications in the Options section..
@@ -961,7 +976,7 @@
 
     You can enable controlled folder access in the Configure controlled folder access GP setting.
 
-    Windows Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
+    Microsoft Defender Antivirus automatically determines which applications can be trusted. You can add additional trusted applications in the Configure allowed applications GP setting.
     </string>
     </stringTable>
     <presentationTable>

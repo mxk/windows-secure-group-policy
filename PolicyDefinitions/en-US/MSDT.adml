@@ -72,7 +72,7 @@ Enabling this policy allows you to configure how recommended troubleshooting is 
 After setting this new setting, to trigger recommended troubleshooting for devices in your domain, follow these instructions:
 1. Create a bat script with the following contents:
 rem The following batch script triggers Recommended Troubleshooting
-C:\Windows\System32\mitigationscanner.exe
+schtasks /run /TN "\Microsoft\Windows\Diagnosis\RecommendedTroubleshootingScanner"
 
 2. To create a new immediate task, navigate to the Group Policy Management Editor &gt; Computer Configuration &gt; Preferences and select Control Panel Settings. 
 3. Under Control Panel settings, right-click on Scheduled Tasks and select New. Select Immediate Task (At least Windows 7).

@@ -21,7 +21,7 @@ If you disable this policy setting, drivers that are signed by a Microsoft Windo
       <string id="DeviceInstall_Classes_Allow">Allow installation of devices using drivers that match these device setup classes</string>
       <string id="DeviceInstall_Classes_Allow_Help">This policy setting allows you to specify a list of device setup class globally unique identifiers (GUIDs) for device drivers that Windows is allowed to install. Use this policy setting only when the "Prevent installation of devices not described by other policy settings" policy setting is enabled. Other policy settings that prevent device installation take precedence over this one.
 
-If you enable this policy setting, Windows is allowed to install or update device drivers whose device setup class GUIDs appear in the list you create, unless another policy setting specifically prevents installation (for example, the "Prevent installation of devices that match these device IDs" policy setting, the "Prevent installation of devices for these device classes" policy setting, or the "Prevent installation of removable devices" policy setting). If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
+If you enable this policy setting, Windows is allowed to install or update device drivers whose device setup class GUIDs appear in the list you create, unless another policy setting specifically prevents installation (for example, the "Prevent installation of devices that match these device IDs" policy setting, the "Prevent installation of devices for these device classes" policy setting, the "Prevent installation of devices that match any of these device instance IDs" policy setting, or the "Prevent installation of removable devices" policy setting). If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
 
 If you disable or do not configure this policy setting, and no other policy setting describes the device, the "Prevent installation of devices not described by other policy settings" policy setting determines whether the device can be installed.</string>
       <string id="DeviceInstall_Classes_Deny">Prevent installation of devices using drivers that match these device setup classes</string>
@@ -34,13 +34,25 @@ If you disable or do not configure this policy setting, Windows can install and 
       <string id="DeviceInstall_IDs_Allow">Allow installation of devices that match any of these device IDs</string>
       <string id="DeviceInstall_IDs_Allow_Help">This policy setting allows you to specify a list of Plug and Play hardware IDs and compatible IDs for devices that Windows is allowed to install. Use this policy setting only when the "Prevent installation of devices not described by other policy settings" policy setting is enabled. Other policy settings that prevent device installation take precedence over this one.
 
-If you enable this policy setting, Windows is allowed to install or update any device whose Plug and Play hardware ID or compatible ID appears in the list you create, unless another policy setting specifically prevents that installation (for example, the "Prevent installation of devices that match any of these device IDs" policy setting, the "Prevent installation of devices for these device classes" policy setting, or the "Prevent installation of removable devices" policy setting). If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
+If you enable this policy setting, Windows is allowed to install or update any device whose Plug and Play hardware ID or compatible ID appears in the list you create, unless another policy setting specifically prevents that installation (for example, the "Prevent installation of devices that match any of these device IDs" policy setting, the "Prevent installation of devices for these device classes" policy setting, the "Prevent installation of devices that match any of these device instance IDs" policy setting, or the "Prevent installation of removable devices" policy setting). If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
 
 If you disable or do not configure this policy setting, and no other policy setting describes the device, the "Prevent installation of devices not described by other policy settings" policy setting determines whether the device can be installed.</string>
       <string id="DeviceInstall_IDs_Deny">Prevent installation of devices that match any of these device IDs</string>
       <string id="DeviceInstall_IDs_Deny_Help">This policy setting allows you to specify a list of Plug and Play hardware IDs and compatible IDs for devices that Windows is prevented from installing. This policy setting takes precedence over any other policy setting that allows Windows to install a device.
 
 If you enable this policy setting, Windows is prevented from installing a device whose hardware ID or compatible ID appears in the list you create. If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
+
+If you disable or do not configure this policy setting, devices can be installed and updated as allowed or prevented by other policy settings.</string>
+      <string id="DeviceInstall_Instance_IDs_Allow">Allow installation of devices that match any of these device instance IDs</string>
+      <string id="DeviceInstall_Instance_IDs_Allow_Help">This policy setting allows you to specify a list of Plug and Play device instance IDs for devices that Windows is allowed to install. Use this policy setting only when the "Prevent installation of devices not described by other policy settings" policy setting is enabled. Other policy settings that prevent device installation take precedence over this one.
+
+If you enable this policy setting, Windows is allowed to install or update any device whose Plug and Play device instance ID appears in the list you create, unless another policy setting specifically prevents that installation (for example, the "Prevent installation of devices that match any of these device IDs" policy setting, the "Prevent installation of devices for these device classes" policy setting, the "Prevent installation of devices that match any of these device instance IDs" policy setting, or the "Prevent installation of removable devices" policy setting). If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
+
+If you disable or do not configure this policy setting, and no other policy setting describes the device, the "Prevent installation of devices not described by other policy settings" policy setting determines whether the device can be installed.</string>
+      <string id="DeviceInstall_Instance_IDs_Deny">Prevent installation of devices that match any of these device instance IDs</string>
+      <string id="DeviceInstall_Instance_IDs_Deny_Help">This policy setting allows you to specify a list of Plug and Play device instance IDs for devices that Windows is prevented from installing. This policy setting takes precedence over any other policy setting that allows Windows to install a device.
+
+If you enable this policy setting, Windows is prevented from installing a device whose device instance ID appears in the list you create. If you enable this policy setting on a remote desktop server, the policy setting affects redirection of the specified devices from a remote desktop client to the remote desktop server.
 
 If you disable or do not configure this policy setting, devices can be installed and updated as allowed or prevented by other policy settings.</string>
       <string id="DeviceInstall_InstallTimeout">Configure device installation time-out</string>
@@ -72,9 +84,9 @@ If you disable or do not configure this policy setting, remote connections to th
       <string id="DeviceInstall_Unspecified_Deny">Prevent installation of devices not described by other policy settings</string>
       <string id="DeviceInstall_Unspecified_Deny_Help">This policy setting allows you to prevent the installation of devices that are not specifically described by any other policy setting.
 
-If you enable this policy setting, Windows is prevented from installing or updating the device driver for any device that is not described by either the "Allow installation of devices that match any of these device IDs" or the "Allow installation of devices for these device classes" policy setting.
+If you enable this policy setting, Windows is prevented from installing or updating the device driver for any device that is not described by either the "Allow installation of devices that match any of these device IDs", the "Allow installation of devices for these device classes", or the "Allow installation of devices that match any of these device instance IDs" policy setting.
 
-If you disable or do not configure this policy setting, Windows is allowed to install or update the device driver for any device that is not described by the "Prevent installation of devices that match any of these device IDs," "Prevent installation of devices for these device classes," or "Prevent installation of removable devices" policy setting.</string>
+If you disable or do not configure this policy setting, Windows is allowed to install or update the device driver for any device that is not described by the "Prevent installation of devices that match any of these device IDs", "Prevent installation of devices for these device classes" policy setting, "Prevent installation of devices that match any of these device instance IDs", or "Prevent installation of removable devices" policy setting.</string>
       <string id="DeviceInstall_DeniedPolicy_SimpleText">Display a custom message title when device installation is prevented by a policy setting</string>
       <string id="DeviceInstall_DeniedPolicy_SimpleText_Help">This policy setting allows you to display a custom message title in a notification when a device installation is attempted and a policy setting prevents the installation.
 
@@ -147,6 +159,19 @@ Note: If no reboot is forced, the device installation restriction right will not
         <text>type a Plug and Play hardware ID or compatible ID</text>
         <text>(for example, gendisk, USB\COMPOSITE, USB\Class_ff).</text>
         <checkBox refId="DeviceInstall_IDs_Deny_Retroactive">Also apply to matching devices that are already installed.</checkBox>
+      </presentation>
+      <presentation id="DeviceInstall_Instance_IDs_Allow">
+        <listBox refId="DeviceInstall_Instance_IDs_Allow_List">Allow installation of devices that match any of these device instance IDs:</listBox>
+        <text>To create a list of devices, click Show. In the Show Contents dialog box, in the Value column,</text>
+        <text>type a Plug and Play device instance ID</text>
+        <text>(for example, USB\VID_045E&amp;&amp;PID_0123\01234567890123456789).</text>
+      </presentation>
+      <presentation id="DeviceInstall_Instance_IDs_Deny">
+        <listBox refId="DeviceInstall_Instance_IDs_Deny_List">Prevent installation of devices that match any of these device instance IDs:</listBox>
+        <text>To create a list of devices, click Show. In the Show Contents dialog box, in the Value column,</text>
+        <text>type a Plug and Play device instance ID</text>
+        <text>(for example, USB\VID_045E&amp;&amp;PID_0123\01234567890123456789).</text>
+        <checkBox refId="DeviceInstall_Instance_IDs_Deny_Retroactive">Also apply to matching devices that are already installed.</checkBox>
       </presentation>
       <presentation id="DeviceInstall_InstallTimeout">
         <decimalTextBox refId="DeviceInstall_InstallTimeout_Time" defaultValue="300" spinStep="15">Device Installation Timeout (in seconds)</decimalTextBox>

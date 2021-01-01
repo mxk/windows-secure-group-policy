@@ -3917,6 +3917,55 @@ Note: If you've also enabled the Administrative Templates\Windows Components\Mic
 If you enable this setting, employees see an additional page in Internet Explorer 11, stating that a site has been opened using Microsoft Edge with Enterprise Mode.
 
 If you disable or don't configure this setting, the default app behavior occurs and no additional page appears.</string>
+      <string id="NeedEdgeBrowser">Configure which channel of Microsoft Edge to use for opening redirected sites</string>
+      <string id="IE_ExplainNeedEdgeBrowser">Enables you to configure up to three versions of Microsoft Edge to open a redirected site (in order of preference). Use this policy if your environment is configured to redirect sites from Internet Explorer 11 to Microsoft Edge. If any of the chosen versions are not installed on the device, that preference will be bypassed.
+
+If both the Windows Update for the next version of Microsoft Edge* and Microsoft Edge Stable channel are installed, the following behaviors occur:
+- If you disable or don't configure this policy, Microsoft Edge Stable channel is used. This is the default behavior.
+- If you enable this policy, you can configure redirected sites to open in up to three of the following channels where:
+    1 = Microsoft Edge Stable
+    2 = Microsoft Edge Beta version 77 or later
+    3 = Microsoft Edge Dev version 77 or later
+    4 = Microsoft Edge Canary version 77 or later
+
+If the Windows Update for the next version of Microsoft Edge* or Microsoft Edge Stable channel are not installed, the following behaviors occur:
+- If you disable or don't configure this policy, Microsoft Edge version 45 or earlier is automatically used. This is the default behavior.
+- If you enable this policy, you can configure redirected sites to open in up to three of the following channels where:
+    0 = Microsoft Edge version 45 or earlier
+    1 = Microsoft Edge Stable
+    2 = Microsoft Edge Beta version 77 or later
+    3 = Microsoft Edge Dev version 77 or later
+    4 = Microsoft Edge Canary version 77 or later
+
+*For more information about the Windows update for the next version of Microsoft Edge including how to disable it, see https://go.microsoft.com/fwlink/?linkid=2102115. This update applies only to Windows 10 version 1709 and higher.</string>
+      <string id="NeedEdgeBrowserChoice_None"></string>
+      <string id="NeedEdgeBrowserChoice_ChromiumStable">Microsoft Edge Stable</string>
+      <string id="NeedEdgeBrowserChoice_ChromiumBeta">Microsoft Edge Beta version 77 or later</string>
+      <string id="NeedEdgeBrowserChoice_ChromiumDev">Microsoft Edge Dev version 77 or later</string>
+      <string id="NeedEdgeBrowserChoice_ChromiumCanary">Microsoft Edge Canary version 77 or later</string>
+      <string id="NeedEdgeBrowserChoice_EdgeHTML">Microsoft Edge version 45 or earlier</string>
+      <string id="KeepIntranetSitesInInternetExplorer">Keep all intranet sites in Internet Explorer</string>
+      <string id="IE_ExplainKeepIntranetSitesInInternetExplorer">Prevents intranet sites from being opened in any browser except Internet Explorer. But note that If the ‘Send all sites not included in the Enterprise Mode Site List to Microsoft Edge’ (‘RestrictIE’) policy isn’t enabled, this policy has no effect.
+
+If you enable this policy, all intranet sites are opened in Internet Explorer 11. The only exceptions are sites listed in your Enterprise Mode Site List.
+
+If you disable or don’t configure this policy, all intranet sites are automatically opened in Microsoft Edge.
+
+We strongly recommend keeping this policy in sync with the ‘Send all intranet sites to Internet Explorer’ (‘SendIntranetToInternetExplorer’) policy. Additionally, it’s best to enable this policy only if your intranet sites have known compatibility problems with Microsoft Edge.
+
+Related policies:
+- Send all intranet sites to Internet Explorer (‘SendIntranetToInternetExplorer’)
+- Send all sites not included in the Enterprise Mode Site List to Microsoft Edge (‘RestrictIE’)
+
+For more info about how to use this policy together with other related policies to create the optimal configuration for your organization, see https://go.microsoft.com/fwlink/?linkid=2094210.</string>
+      <string id="AllowSaveTargetAsInIEMode">Allow "Save Target As" in Internet Explorer mode</string>
+      <string id="IE_ExplainAllowSaveTargetAsInIEMode">This policy setting allows admins to enable "Save Target As" context menu in Internet Explorer mode.
+
+If you enable this policy, "Save Target As" will show up in the Internet Explorer mode context menu and work the same as Internet Explorer.
+
+If you disable or do not configure this policy setting, "Save Target As" will not show up in the Internet Explorer mode context menu.
+
+For more information, see https://go.microsoft.com/fwlink/?linkid=2102115</string>
       <string id="VerMgmtDisable">Turn off blocking of outdated ActiveX controls for Internet Explorer</string>
       <string id="IE_ExplainVerMgmtDisable">This policy setting determines whether Internet Explorer blocks specific outdated ActiveX controls. Outdated ActiveX controls are never blocked in the Intranet Zone.
 
@@ -4787,6 +4836,11 @@ For more information, see "Out-of-date ActiveX control blocking" in the Internet
       </presentation>
       <presentation id="SiteDiscoveryDomainAllowList">
         <multiTextBox refId="SiteDiscoveryDomainAllowList">Domain list</multiTextBox>
+      </presentation>
+      <presentation id="NeedEdgeBrowser">
+        <dropdownList refId="NeedEdgeBrowser" noSort="true" defaultItem="0">First choice</dropdownList>
+        <dropdownList refId="NeedEdgeBrowser2" noSort="true" defaultItem="0">Second choice</dropdownList>
+        <dropdownList refId="NeedEdgeBrowser3" noSort="true" defaultItem="0">Third choice</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

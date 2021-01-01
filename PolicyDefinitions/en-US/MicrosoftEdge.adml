@@ -129,6 +129,12 @@ If you don't configure this setting, employees can choose whether to use Pop-up 
 If enabled, printing is allowed.
 
 If disabled, printing is not allowed.</string>
+      <string id="AllowMixedModePrintingInPdf">For PDF files that have both landscape and portrait pages, print each in its own orientation.</string>
+      <string id="AllowMixedModePrintingInPdf_Explain">With this policy, you can print PDF files based on per page orientation in Microsoft Edge.
+
+If enabled, mixed mode printing is allowed.
+
+If disabled, mixed mode printing is not allowed.</string>
       <string id="AllowSavingHistory">Allow Saving History</string>
       <string id="AllowSavingHistory_Explain">Microsoft Edge saves your user's browsing history, which is made up of info about the websites they visit, on their devices.
 

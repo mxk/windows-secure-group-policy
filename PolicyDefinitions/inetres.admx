@@ -35342,6 +35342,128 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="NeedEdgeBrowser" class="Both" displayName="$(string.NeedEdgeBrowser)" explainText="$(string.IE_ExplainNeedEdgeBrowser)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode" presentation="$(presentation.NeedEdgeBrowser)">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <elements>
+        <enum id="NeedEdgeBrowser" valueName="NeedEdgeBrowser">
+          <item displayName="$(string.NeedEdgeBrowserChoice_None)">
+            <value>
+              <delete />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumStable)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumBeta)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumDev)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumCanary)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_EdgeHTML)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="NeedEdgeBrowser2" valueName="NeedEdgeBrowser2">
+          <item displayName="$(string.NeedEdgeBrowserChoice_None)">
+            <value>
+              <delete />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumStable)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumBeta)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumDev)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumCanary)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_EdgeHTML)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+        <enum id="NeedEdgeBrowser3" valueName="NeedEdgeBrowser3">
+          <item displayName="$(string.NeedEdgeBrowserChoice_None)">
+            <value>
+              <delete />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumStable)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumBeta)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumDev)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_ChromiumCanary)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+          <item displayName="$(string.NeedEdgeBrowserChoice_EdgeHTML)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="KeepIntranetSitesInInternetExplorer" class="Both" displayName="$(string.KeepIntranetSitesInInternetExplorer)" explainText="$(string.IE_ExplainKeepIntranetSitesInInternetExplorer)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode" valueName="KeepIntranetSitesInInternetExplorer">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowSaveTargetAsInIEMode" class="Both" displayName="$(string.AllowSaveTargetAsInIEMode)" explainText="$(string.IE_ExplainAllowSaveTargetAsInIEMode)" key="Software\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode" valueName="AllowSaveTargetAsInIEMode">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE11" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DefaultDomainCacheLimitInMB" class="Both" displayName="$(string.DefaultDomainCacheLimitInMB)" explainText="$(string.IE_ExplainDefaultDomainCacheLimitInMB)" presentation="$(presentation.DefaultDomainCacheLimitInMB)" key="Software\Policies\Microsoft\Internet Explorer\BrowserStorage">
       <parentCategory ref="CategoryBrowsingHistory" />
       <supportedOn ref="SUPPORTED_IE10" />

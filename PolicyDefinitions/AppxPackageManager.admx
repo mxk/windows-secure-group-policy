@@ -72,5 +72,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="BlockNonAdminUserInstall" class="Machine" displayName="$(string.BlockNonAdminUserInstall)" explainText="$(string.BlockNonAdminUserInstallExplanation)" key="Software\Policies\Microsoft\Windows\Appx" valueName="BlockNonAdminUserInstall">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

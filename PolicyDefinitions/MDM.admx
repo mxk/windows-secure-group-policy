@@ -46,7 +46,8 @@
             </value>
           </item>
         </enum>
-      </elements>		
+        <text id="MDMApplicationId" valueName="MDMApplicationId" maxLength="255" required="false" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

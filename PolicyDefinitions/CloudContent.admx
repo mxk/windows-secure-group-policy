@@ -112,5 +112,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableCloudOptimizedContent" class="Machine" displayName="$(string.DisableCloudOptimizedContent)" explainText="$(string.DisableCloudOptimizedContent_Help)" key="Software\Policies\Microsoft\Windows\CloudContent" valueName="DisableCloudOptimizedContent">
+      <parentCategory ref="CloudContent" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

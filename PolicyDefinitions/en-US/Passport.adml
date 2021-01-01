@@ -54,30 +54,38 @@ NOTE: If the above specified conditions for the maximum PIN length are not met, 
         <string id="MSPassport_UppercaseLetters">Require uppercase letters</string>
         <string id="MSPassport_UppercaseLettersExplain">Use this policy setting to configure the use of uppercase letters in the PIN.
 
-If you enable this policy setting, Windows requires users to include at least one uppercase letter in their PIN.
+If you enable this policy setting, Windows requires the user to include at least one uppercase letter in their PIN.
 
-If you disable or do not configure this policy setting, Windows does not allow users to use uppercase letters in their PIN.
+If you disable this policy setting, Windows does not allow the user to include uppercase letters in their PIN.
+
+If you do not configure this policy setting, Windows allows, but does not require, uppercase letters in the PIN.
         </string>
         <string id="MSPassport_LowercaseLetters">Require lowercase letters</string>
         <string id="MSPassport_LowercaseLettersExplain">Use this policy setting to configure the use of lowercase letters in the PIN.
 
-If you enable this policy setting, Windows requires users to include at least one lowercase letter in their PIN.
+If you enable this policy setting, Windows requires the user to include at least one lowercase letter in their PIN.
 
-If you disable or do not configure this policy setting, Windows does not allow users to use lowercase letters in their PIN.
+If you disable this policy setting, Windows does not allow the user to include lowercase letters in their PIN.
+
+If you do not configure this policy setting, Windows allows, but does not require, lowercase letters in the PIN.
         </string>
         <string id="MSPassport_SpecialCharacters">Require special characters</string>
         <string id="MSPassport_SpecialCharactersExplain"><![CDATA[Use this policy setting to configure the use of special characters in the PIN.  Allowable special characters are: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .
 
-If you enable this policy setting, Windows requires users to include at least one special character in their PIN.
+If you enable this policy setting, Windows requires the user to include at least one special character in their PIN.
 
-If you disable or do not configure this policy setting, Windows does not allow users to use special characters in their PIN.]]>
+If you disable this policy setting, Windows does not allow the user to include special characters in their PIN.
+
+If you do not configure this policy setting, Windows allows, but does not require, special characters in the PIN.]]>
         </string>
         <string id="MSPassport_Digits">Require digits</string>
         <string id="MSPassport_DigitsExplain">Use this policy setting to configure the use of digits in the PIN.
 
-If you enable or do not configure this policy setting, Windows requires users to include at least one digit in their PIN.
+If you enable this policy setting, Windows requires the user to include at least one digit in their PIN.
 
-If you disable this policy setting, Windows does not allow users to use digits in their PIN.
+If you disable this policy setting, Windows does not allow the user to include digits in their PINs.
+
+If you do not configure this policy setting, Windows allows, but does not require, digits in the PIN.
         </string>
         <string id="MSPassport_PINHistory">History</string>
         <string id="MSPassport_PINHistoryExplain">This setting specifies the number of past PINs that can be associated to a user account that can’t be reused. This policy enables administrators to enhance security by ensuring that old PINs are not reused continually. PIN history is not preserved through PIN reset.

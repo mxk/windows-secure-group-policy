@@ -72,17 +72,23 @@ Required ADMX templates
 
 These are contained in the PolicyDefinitions directory:
 
-1. [Windows 10 and Server 2016 (1607)](https://www.microsoft.com/en-us/download/details.aspx?id=53430)
-2. Windows 10 (1903) Clean Install (`C:\Windows\PolicyDefinitions`)
-3. [MSS (Legacy) from Windows 10 and Windows Server Security Baseline (1903)](https://blogs.technet.microsoft.com/secguide/2019/05/23/security-baseline-final-for-windows-10-v1903-and-windows-server-v1903/)
-4. [Windows Restricted Traffic Limited Functionality Baseline (1903)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
+1. Windows Server 20H2 Dec 2020 ISO
+2. Windows 10 20H2 Dec 2020 ISO
+3. [Windows 10 and Windows Server Security Baseline (20H2)](https://www.microsoft.com/en-us/download/details.aspx?id=55319)
+4. [Windows Restricted Traffic Limited Functionality Baseline (2004)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
 
 When an update is released, the entire PolicyDefinitions directory should be
 rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
 files without removing old ones first may cause problems.
 
-* [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://support.microsoft.com/en-us/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra)
-* [Group Policy Settings Reference Spreadsheet Windows 1809](https://www.microsoft.com/en-us/download/details.aspx?id=57464)
+To extract PolicyDefinitions from a Windows 10 or Server ISO:
+
+1. Mount ISO file.
+2. Open `sources\install.wim` with 7-Zip.
+3. Check `[1].xml` for the appropriate version (though they should all be the same).
+4. Extract `\<N>\Windows\PolicyDefinitions`.
+
+* [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://docs.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 * [New policies for Windows 10](https://docs.microsoft.com/en-us/windows/client-management/new-policies-for-windows-10)
 * [ADMX Version History](https://blogs.technet.microsoft.com/grouppolicy/2016/10/12/admx-version-history/)
 
