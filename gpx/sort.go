@@ -110,10 +110,10 @@ func ParseLGPO(name string) (*LGPO, error) {
 	}
 	p := &LGPO{
 		Entries: entries,
-		Footer:  strings.TrimSpace(strings.Join(lines[comment:], CRLF)),
+		Footer:  strings.Join(lines[comment:], CRLF),
 	}
 	if len(entries) > 0 {
-		p.Header, entries[0].Comment = strings.TrimSpace(entries[0].Comment), ""
+		p.Header, entries[0].Comment = entries[0].Comment, ""
 	} else {
 		p.Header, p.Footer = p.Footer, ""
 	}
@@ -124,7 +124,7 @@ func (p *LGPO) Write(f *os.File) error {
 	w := bufio.NewWriter(f)
 	writeln := func(s string) { w.WriteString(s); w.WriteString(CRLF) }
 	if p.Header != "" {
-		writeln(p.Header)
+		w.WriteString(p.Header)
 	}
 	for _, e := range p.Entries {
 		if w.WriteString(CRLF); e.Comment != "" {
@@ -137,7 +137,7 @@ func (p *LGPO) Write(f *os.File) error {
 	}
 	if p.Footer != "" {
 		w.WriteString(CRLF)
-		writeln(p.Footer)
+		w.WriteString(p.Footer)
 	}
 	return w.Flush()
 }
