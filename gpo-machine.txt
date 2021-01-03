@@ -1033,16 +1033,6 @@ AllowGameDVR
 DWORD:0
 
 Computer
-SOFTWARE\Policies\Microsoft\Windows\GameUX
-DownloadGameInfo
-DWORD:0
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows\GameUX
-GameUpdateOptions
-DWORD:0
-
-Computer
 SOFTWARE\Policies\Microsoft\Windows\Group Policy\{35378EAC-683F-11D2-A89A-00C04FBBCFA2}
 NoBackgroundPolicy
 DWORD:0
@@ -1636,11 +1626,6 @@ Computer
 SOFTWARE\Policies\Microsoft\Windows Defender\Spynet
 SubmitSamplesConsent
 DWORD:2
-
-Computer
-SOFTWARE\Policies\Microsoft\Windows Mail
-ManualLaunchAllowed
-DWORD:0
 
 Computer
 SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform
