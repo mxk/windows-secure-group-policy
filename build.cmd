@@ -8,5 +8,5 @@ set user=%gpo%\User\Registry.pol
 pushd %~dp0
 Tools\LGPO.exe /q /r gpo-machine.txt /w %machine%
 Tools\LGPO.exe /q /r gpo-user.txt /w %user%
-Tools\multisz-fix.exe %machine% %user%
+Tools\gpx.exe polfix %machine% %user%
 popd
