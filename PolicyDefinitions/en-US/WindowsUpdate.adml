@@ -154,13 +154,11 @@ If the status is set to Not Configured, use of Automatic Updates is not specifie
 
         Note: This policy is not supported on Windows RT. Setting this policy will not have any effect on Windows RT PCs.
 
-        Note on proxies: To ensure the highest level of security, Microsoft recommends securing WSUS with TLS/SSL protocol, thereby using HTTPS based intranet servers to keep systems secure. If a proxy is required, we recommend configuring system proxy.
+        To ensure the highest level of security, Microsoft recommends securing WSUS with TLS/SSL protocol, thereby using HTTPS based intranet servers to keep systems secure. If a proxy is required, we recommend configuring system proxy. To ensure highest levels of security, additionally leverage WSUS TLS certificate pinning on all devices.
 
-        Selecting a proxy behavior will have no effect on clients using HTTPS based intranet servers to detect for updates. 
+        In order to keep clients inherently secure, we are no longer allowing intranet servers to leverage user proxy by default for detecting updates. If you need to leverage user proxy for detecting updates while using an intranet server despite the vulnerabilities it presents, you must configure the proxy behavior to "Allow user proxy to be used as a fallback if detection using system proxy fails".
 
-        In order to keep clients inherently secure, we are no longer allowing HTTP based intranet servers to leverage user proxy by default for detecting updates. If you need to leverage user proxy for detecting updates while using an HTTP based intranet server despite the vulnerabilities it presents, you must configure the proxy behavior to "Allow user proxy to be used as a fallback if detection using system proxy fails".
-
-        Detection for updates will fail when HTTP based intranet servers are used without a configured system proxy if the policy to use an alternate proxy behavior is not configured.</string>
+        Detection for updates against intranet servers will fail when user proxy is needed as a fallback and the alternate proxy behavior is not configured.</string>
       <string id="OnlyUseSystemProxyForUpdateDetection">Only use system proxy for detecting updates (default)</string>
       <string id="AllowUserProxyAsFallbackForUpdateDetection">Allow user proxy to be used as a fallback if detection using system proxy fails</string>
       <string id="DetectionFrequency_Help">Specifies the hours that Windows will use to determine how long to wait before checking for available updates. The exact wait time is a sum of the specific value and a random variant of 0-4 hours.
@@ -694,7 +692,8 @@ This policy will override the following policies:
         </textBox>
         <text>(example: https://IntranetUpd01)</text>
         <checkBox refId="CorpWUFillEmptyContentUrls" defaultChecked="false">Download files with no Url in the metadata if alternate download server is set.</checkBox>
-        <dropdownList refId="SetProxyBehaviorForUpdateDetection" noSort="true" defaultItem="0">Select the proxy behavior for Windows Update client for detecting updates with non-TLS (HTTP) based service:</dropdownList>
+        <checkBox refId="CorpWUDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection" defaultChecked="false">Do not enforce TLS certificate pinning for Windows Update client for detecting updates.</checkBox>
+        <dropdownList refId="SetProxyBehaviorForUpdateDetection" noSort="true" defaultItem="0">Select the proxy behavior for Windows Update client for detecting updates:</dropdownList>
       </presentation>
       <presentation id="DetectionFrequency_Title">
         <text>Check for updates at the following</text>

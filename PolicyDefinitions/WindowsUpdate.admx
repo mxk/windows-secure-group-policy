@@ -389,6 +389,7 @@
         <text id="CorpWUStatusURL_Name" valueName="WUStatusServer" required="true" />
         <text id="CorpWUContentHost_Name" valueName="UpdateServiceUrlAlternate" required="false" />
         <boolean id="CorpWUFillEmptyContentUrls" valueName="FillEmptyContentUrls" required="false" />
+        <boolean id="CorpWUDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection" valueName="DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection" required="false" />
         <enum id="SetProxyBehaviorForUpdateDetection" valueName="SetProxyBehaviorForUpdateDetection" required="true">
             <item displayName="$(string.OnlyUseSystemProxyForUpdateDetection)">
               <value>

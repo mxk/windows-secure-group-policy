@@ -2,9 +2,9 @@ Windows 10 and Server 2019 Secure Baseline GPO
 ==============================================
 
 This is a baseline group policy for domain and standalone Windows 10 and Server
-2016/2019 computers that aims to provide maximum privacy, security, and
-performance, in that order. Security features that send data to Microsoft, such
-as SmartScreen, are disabled. Some settings are only effective on the Enterprise
+2019 computers that aims to provide maximum privacy, security, and performance,
+in that order. Security features that send data to Microsoft, such as
+SmartScreen, are disabled. Some settings are only effective on the Enterprise
 edition. The following network traffic is allowed:
 
 * Network Connectivity Status Indicator (NCSI) tests (see Notes below).
@@ -61,7 +61,7 @@ released and update the policy there instead of messing with local templates.
 
 ### Domain
 
-1. Copy PolicyDefinitions directory to `\\<domain>\SYSVOL\<domain>\Policies\`.
+1. Copy PolicyDefinitions directory to `\\<domain>\SYSVOL\<domain>\Policies`.
    If this directory already exists, delete or rename it first.
 2. Create a blank GPO using Group Policy Management Console.
 3. Right-click on the new GPO and go through the "Import Settings..." wizard
@@ -70,12 +70,12 @@ released and update the policy there instead of messing with local templates.
 Required ADMX templates
 -----------------------
 
-These are contained in the PolicyDefinitions directory:
+PolicyDefinitions directory contains the following templates:
 
-1. Windows Server 20H2 Dec 2020 ISO
-2. Windows 10 20H2 Dec 2020 ISO
+1. Windows Server 20H2 Jan 2021 ISO (same as Server 2019 Jan 2021 ISO)
+2. Windows 10 20H2 Jan 2021 ISO
 3. [Windows 10 and Windows Server Security Baseline (20H2)](https://www.microsoft.com/en-us/download/details.aspx?id=55319)
-4. [Windows Restricted Traffic Limited Functionality Baseline (2004)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
+4. [Windows Restricted Traffic Limited Functionality Baseline - Enterprise (2004)](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
 
 When an update is released, the entire PolicyDefinitions directory should be
 rebuilt by copying templates over in the listed order. Copying updated ADMX/ADML
@@ -88,6 +88,7 @@ To extract PolicyDefinitions from a Windows 10 or Server ISO:
 3. Check `[1].xml` for the appropriate version (though they should all be the same).
 4. Extract `\<N>\Windows\PolicyDefinitions`.
 
+* [Microsoft Security Baselines](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines)
 * [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://docs.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 * [New policies for Windows 10](https://docs.microsoft.com/en-us/windows/client-management/new-policies-for-windows-10)
 * [ADMX Version History](https://blogs.technet.microsoft.com/grouppolicy/2016/10/12/admx-version-history/)
