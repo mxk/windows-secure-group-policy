@@ -146,6 +146,9 @@ Known Issues
   the problem persists, contact your system administrator. Would you like to try
   to reconnect?" To switch to a basic session, right-click on the VM, Edit
   Session Settings, then just close the "Connect to <VM>" dialog.
+* Windows Activation may fail with error 0x80010105. Fixing it requires
+  temporarily unconfiguring "Disable all apps from Microsoft Store" and/or "Turn
+  off the Store application" in Store settings.
 
 Suggestions to implement in a separate GPO
 ------------------------------------------
