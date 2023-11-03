@@ -1,0 +1,47 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Windows Restricted Traffic Custom Policy Settings</displayName>
+  <description>Settings for the Windows Restricted Traffic Baseline that are not exposed through existing Windows Group Policy Objects</description>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_Windows10">Windows 10 or Windows Server 2016</string>
+      <string id="WHMCP">Windows Restricted Traffic Custom Policy Settings</string>
+      <string id="LWPLRCBAMLL">Allow websites to provide locally relevant content by accessing user's language list</string>
+      <string id="LWPLRCBAMLL_Help">Allow websites to provide locally relevant content by accessing user's language list:
+If you disable this policy setting, the corresponding UI setting will be truned off, thus no traffic about it will be sent to Microsoft."
+
+if you enable or do not configure this policy setting, Windows will provide locally relevant content by accessing user's language list, user may see traffic sent to Microsoft.
+      </string>
+      <string id="MessagingCloudSync">Messaging cloud sync</string>
+      <string id="MessagingCloudSync_Help">Messaging cloud sync:
+Select Disabled for "no traffic."
+"Enabled" is the default.
+Potential side effects: (TBD)
+      </string>
+      <string id="TurnOffMaliciousSoftwareReporting">Turn off Windows Defender Notifications</string>
+      <string id="TurnOffMaliciousSoftwareReporting_Help">Turn off Windows Defender Notifications:
+If you disalbe or do not configure this policy setting, Windows Defender will send notifications with critical information about the health and security of your device.
+  
+If you enable this policy setting, Windows Defender will not send notifications with critical information about the health and security of your device.
+      </string>
+      <string id="BlockOneDriveNetworkActivityUntilUserSignIn">Prevent OneDrive from generating network traffic until the user signs in to OneDrive.</string>
+      <string id="BlockOneDriveNetworkActivityUntilUserSignIn_help">Enable this setting if you would like to prevent the OneDrive sync client (OneDrive.exe) from generating  network traffic (checking for updates, etc.) until the user signs in to OneDrive or starts syncing files to the local computer.
+
+If you enable this setting, users must sign in to the OneDrive sync client on the local computer, or select to sync OneDrive or SharePoint files on the computer, for the sync client to start automatically.
+
+If this setting is not enabled, the OneDrive sync client will start automatically when users sign in to Windows.
+
+If you enable or disable this setting, do not return the setting to Not Configured. Doing so will not change the configuration and the last configured setting will remain in effect.</string>
+      <string id="Pol_WHMCP_EanbleTrackProgramsInStart">Enable Track Programs In Start Menu</string>
+      <string id="Pol_WHMCP_EanbleTrackProgramsInStart_Help">Enable Track Programs In Start Menu and Task Bar:
+If you eanble and do not configure this policy setting, Windows will track app launches to improve Start and search results.
+If you disable this policy setting, Windows will not track app launches to improve Start and search results.
+
+      </string>
+      <string id="Pol_WHMCP_EnableWebContentEvaluation">Enable Web Content Evaluation</string>
+      <string id="Pol_WHMCP_EnableWebContentEvaluation_Help">Turn on SmartScreen Filter to check web content (URLs) that Windows Store apps use.
+Select Disabled for "no traffic."
+"Enabled" is the default.
+Potential side effects: (TBD)</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>
