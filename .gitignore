@@ -1,0 +1,5 @@
+/PolicyAnalyzer*/*
+!/PolicyAnalyzer*/GPO2PolicyRules.exe
+!/PolicyAnalyzer*/*.pdf
+/Temp/
+/*.zip
