@@ -38,8 +38,4 @@ To extract `PolicyDefinitions` from a Windows ISO:
 
 ## Local policy
 
-The current local policy can be obtained with the following command in a Command Prompt running as an Administrator:
-
-```
-rmdir /s /q LGPO & mkdir LGPO & LGPO.exe /b %cd%\LGPO & GPO2PolicyRules.exe .\LGPO LGPO.PolicyRules
-```
+Run `.\savelocal.cmd <out-file> <policy-name>` as an Administrator to save the local group policy as a `PolicyRules` file. This will overwrite the contents of `C:\GPO`.
