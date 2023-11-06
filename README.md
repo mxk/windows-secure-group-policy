@@ -2,13 +2,7 @@
 
 A local group policy intended for standalone Windows 11 devices. It aims to improve privacy, security, and performance, in that order.
 
-All settings are maintained in a single `PolicyRules` file that is applied using `LGPO.exe`. Security features that send data to Microsoft, such as SmartScreen, are disabled. Some settings are only effective on the Enterprise edition. The following network traffic is allowed:
-
-* Network Connectivity Status Indicator (NCSI) tests (see Notes below).
-* Windows updates.
-* Root CA updates.
-* Defender definition updates.
-* Storage Health (Disk Failure Prediction Model) updates.
+All settings are maintained in a single `PolicyRules` file that is applied using `LGPO.exe`. Security features that send data to Microsoft, such as SmartScreen, are disabled. Some settings are only effective on the Enterprise edition.
 
 ## Installation
 
