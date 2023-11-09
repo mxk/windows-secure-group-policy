@@ -4,6 +4,8 @@ A local group policy intended for standalone Windows 11 devices. It aims to impr
 
 All settings are maintained in a single `PolicyRules` file that is applied using `LGPO.exe`. Security features that send data to Microsoft, such as SmartScreen, are disabled. Some settings are only effective on the Enterprise edition.
 
+The target Feature Update version is Windows 11 23H2. This prevents automatic updates to the next release before the policy is updated.
+
 ## Installation
 
 Run `install.cmd` as an Administrator and restart the computer. Some settings may only be effective if applied immediately after a clean install.
