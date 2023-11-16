@@ -14,9 +14,8 @@ goto :eof
 pushd %~dp0
 rmdir /s /q C:\GPO
 mkdir C:\GPO
-.\LGPO\LGPO.exe /b C:\GPO /n "%~2"
+.\LGPO\LGPO.exe /b C:\GPO /n "%~2" /q
 move C:\GPO\{*} C:\GPO\{00000000-0000-0000-0000-000000000000}
-secedit /export /cfg "C:\GPO\{00000000-0000-0000-0000-000000000000}\DomainSysvol\GPO\Machine\microsoft\windows nt\SecEdit\GptTmpl.inf"
 copy /y "%SystemRoot%\System32\GroupPolicy\Machine\Microsoft\Windows NT\Audit\audit.csv" "C:\GPO\{00000000-0000-0000-0000-000000000000}\DomainSysvol\GPO\Machine\microsoft\windows nt\Audit\"
 .\PolicyAnalyzer\GPO2PolicyRules.exe C:\GPO "%~1"
 popd

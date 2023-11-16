@@ -34,4 +34,12 @@ To extract `PolicyDefinitions` from a Windows ISO:
 
 ## Local policy
 
-Run `.\savelocal.cmd <out-file> <policy-name>` as an Administrator to save the local group policy as a `PolicyRules` file. This will overwrite the contents of `C:\GPO`.
+Run `.\savelocal.cmd <out-file> <policy-name>` or `.\savewin11.cmd` as an Administrator to save the local group policy as a `PolicyRules` file. This will overwrite the contents of `C:\GPO`.
+
+## Updating policy
+
+When `LGPO.exe` and `GPO2PolicyRules.exe` export the local policy, they include many default settings that shouldn't be overwritten when applying the resulting `PolicyRules` file. These settings were manually removed from `Win11.PolicyRules` by doing a three-way comparison between `MSFT-Win11.PolicyRules`, `Win11.PolicyRules`, and `Win11-CleanInstall.PolicyRules` with the Policy Analyzer. Because of this, any changes to the policy have to be merged in manually. To make changes:
+
+1. Use `gpedit.msc` to modify the local policy.
+2. Run `.\savewin11.cmd` to create `Win11-Local.PolicyRules` file.
+3. Copy the relevant settings to `Win11.PolicyRules`.
