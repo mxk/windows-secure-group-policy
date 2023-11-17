@@ -47,4 +47,23 @@ When `LGPO.exe` and `GPO2PolicyRules.exe` export the local policy, they include 
 
 1. Use `gpedit.msc` to modify the local policy.
 2. Run `.\savewin11.cmd` to create `Win11-Local.PolicyRules` file.
-3. Identify and copy the relevant settings to `Win11.PolicyRules`.
+3. Diff and copy the relevant settings to `Win11.PolicyRules`.
+
+## Notes
+
+* Local Administrator is disabled and renamed to LocalAdmin. The password must be set before it can be enabled or you'll get error 7016 in `gpresult /h` report along with "Security has requested to process its policy settings again" message.
+* Microsoft Account sign-in is disabled. Do not disable "Microsoft Account Sign-in Assistant" service (aka "wlidsvc") as suggested by the Restricted Traffic Baseline. Doing so results in error 0x80070426 when running Windows Update.
+* Disabling active Network Connectivity Status Indicator (NCSI) tests breaks Windows Update (0x800704cf), DISM (0x800f0906 or 0x800f081f), and probably other things. Passive-only configuration doesn't fix this, so it's best to leave both passive and active tests enabled. Windows Update error only happens once if Windows was installed without any network connectivity. After a single successful update, disabling NCSI doesn't seem to cause further problems, but DISM will still run into errors. Guess how many days it took to figure this out.
+* "Turn off all Windows spotlight features" policy must be applied within 15 minutes after Windows is installed (was true for Windows 10, no longer the case for Windows 11?).
+
+### Settings without a template
+
+The following registry entries do not have an associated template and are treated as preference-type settings that do not get removed automatically when no longer applied by the policy:
+
+* `DisableWpad=1` and `AutoDetect=0` disable [Automatic proxy detection (WPAD)][WPAD]. Disabling "WinHTTP Web Proxy Auto-Discovery Service" (aka "WinHttpAutoProxySvc") [will break things][break].
+* `HKCU\Software\Classes\CLSID\{86CA1AA0-34AA-4E8B-A509-50C905BAE2A2}\InprocServer32` key restores classic File Explorer context menus.
+* `HideFileExt=0` shows all file extensions in File Explorer.
+* `ScoobeSystemSettingEnabled=0` disables "Let's finish setting up your device" notification (Settings > System > Notifications > Additional settings > Suggest ways to get the most out of Windows and finish setting up this device).
+
+[WPAD]: https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/disable-http-proxy-auth-features#how-to-disable-wpad
+[break]: https://github.com/MicrosoftDocs/windows-itpro-docs/issues/2965#issuecomment-475441420
