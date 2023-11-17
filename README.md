@@ -63,6 +63,7 @@ The following registry entries do not have an associated template and are treate
 * `DisableWpad=1` and `AutoDetect=0` disable [Automatic proxy detection (WPAD)][WPAD]. Disabling "WinHTTP Web Proxy Auto-Discovery Service" (aka "WinHttpAutoProxySvc") [will break things][break].
 * `HKCU\Software\Classes\CLSID\{86CA1AA0-34AA-4E8B-A509-50C905BAE2A2}\InprocServer32` key restores classic File Explorer context menus.
 * `HideFileExt=0` shows all file extensions in File Explorer.
+* `ShowSyncProviderNotifications=0` disables sync provider notifications in File Explorer.
 * `ScoobeSystemSettingEnabled=0` disables "Let's finish setting up your device" notification (Settings > System > Notifications > Additional settings > Suggest ways to get the most out of Windows and finish setting up this device).
 
 [WPAD]: https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/disable-http-proxy-auth-features#how-to-disable-wpad
