@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 119.0.2151.44-->
+  <!--microsoft_edge version: 119.0.2151.72-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -1398,6 +1398,26 @@
     <policy class="Both" displayName="$(string.KioskSwipeGesturesEnabled)" explainText="$(string.KioskSwipeGesturesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="KioskSwipeGesturesEnabled" presentation="$(presentation.KioskSwipeGesturesEnabled)" valueName="KioskSwipeGesturesEnabled">
       <parentCategory ref="KioskMode"/>
       <supportedOn ref="SUPPORTED_WIN7_V101"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EdgeManagementPolicyOverridesPlatformPolicy)" explainText="$(string.EdgeManagementPolicyOverridesPlatformPolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementPolicyOverridesPlatformPolicy" presentation="$(presentation.EdgeManagementPolicyOverridesPlatformPolicy)" valueName="EdgeManagementPolicyOverridesPlatformPolicy">
+      <parentCategory ref="Manageability"/>
+      <supportedOn ref="SUPPORTED_WIN7_V119"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.EdgeManagementUserPolicyOverridesCloudMachinePolicy)" explainText="$(string.EdgeManagementUserPolicyOverridesCloudMachinePolicy_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeManagementUserPolicyOverridesCloudMachinePolicy" presentation="$(presentation.EdgeManagementUserPolicyOverridesCloudMachinePolicy)" valueName="EdgeManagementUserPolicyOverridesCloudMachinePolicy">
+      <parentCategory ref="Manageability"/>
+      <supportedOn ref="SUPPORTED_WIN7_V119"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5343,7 +5363,7 @@
     </policy>
     <policy class="Both" displayName="$(string.InternetExplorerIntegrationZoneIdentifierMhtFileAllowed)" explainText="$(string.InternetExplorerIntegrationZoneIdentifierMhtFileAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="InternetExplorerIntegrationZoneIdentifierMhtFileAllowed" presentation="$(presentation.InternetExplorerIntegrationZoneIdentifierMhtFileAllowed)" valueName="InternetExplorerIntegrationZoneIdentifierMhtFileAllowed">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V118"/>
+      <supportedOn ref="SUPPORTED_WIN7_V117"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>

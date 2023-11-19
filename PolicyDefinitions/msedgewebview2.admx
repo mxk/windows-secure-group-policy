@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 119.0.2151.44-->
+  <!--microsoft_edge version: 119.0.2151.72-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.WebView2" prefix="microsoft_edge_webview2"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>

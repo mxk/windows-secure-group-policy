@@ -20,7 +20,7 @@ The `PolicyDefinitions` directory contains the following templates:
 1. Windows 11 Enterprise 23H2 ISO (22621.2428)
 2. [Windows 11 v23H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
-4. [Microsoft Edge (119.0.2151.44)][Edge]
+4. [Microsoft Edge (119.0.2151.72)][Edge]
 
 [SCT]: https://www.microsoft.com/en-us/download/details.aspx?id=55319
 [RTLFB]: https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services
