@@ -42,7 +42,7 @@ To update the policy for a new Windows feature release:
 5. Update and copy over the templates as described in the next section. Update this file with new version information.
 6. Save an updated `Win11-CleanInstall.PolicyRules` file.
 7. Install the current policy and restart.
-8. Follow the steps above the update the policy, comparing it against the new security baselines.
+8. Follow the steps above to update the policy, comparing it against the new security baselines.
 
 ## Templates
 
@@ -78,7 +78,7 @@ To extract `PolicyDefinitions` from a Windows ISO:
 
 The following registry entries do not have an associated template and are treated as preference-type settings that are not removed automatically when no longer applied by the policy:
 
-* `DisableWpad=1` and `AutoDetect=0` disable [automatic proxy detection (WPAD)][WPAD]. Disabling "WinHTTP Web Proxy Auto-Discovery Service" (aka "WinHttpAutoProxySvc") [will break things][WinHTTP].
+* `DisableWpad=1` and `AutoDetect=0` disable [automatic proxy detection (WPAD)][WPAD]. Do not disable "WinHTTP Web Proxy Auto-Discovery Service" (aka "WinHttpAutoProxySvc") - doing so [will break things][WinHTTP].
 * `HKCU\Software\Classes\CLSID\{86CA1AA0-34AA-4E8B-A509-50C905BAE2A2}\InprocServer32` key restores classic File Explorer context menus.
 * `HideFileExt=0` shows all file extensions in File Explorer.
 * `ShowSyncProviderNotifications=0` disables sync provider notifications, which are used to show Microsoft ads in File Explorer.
