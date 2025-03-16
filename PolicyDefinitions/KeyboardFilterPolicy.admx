@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 Microsoft Corporation  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="kbfilter" namespace="Microsoft.Policies.KbFilter" />
+    <using prefix="filesys" namespace="Microsoft.Policies.FileSys" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="KbFilter" displayName="$(string.KeyboardFilter)">
+      <parentCategory ref="windows:System" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="AllowKbFilterInRemoteSessions" class="Both"
+      displayName="$(string.AllowKbFilterInRemoteSessions)"
+      explainText="$(string.AllowKbFilterInRemoteSessions_Text)"
+      key="Software\Microsoft\Windows\CurrentVersion\Policies\System"
+      valueName="KbFilterAllowInRemoteSessions">
+      <parentCategory ref="KbFilter" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+          <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+          <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

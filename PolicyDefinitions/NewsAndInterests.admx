@@ -22,5 +22,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableWidgetsOnLockScreen" class="Machine" displayName="$(string.DisableWidgetsOnLockScreen)" explainText="$(string.Explain_DisableWidgetsOnLockScreen)" key="SOFTWARE\Policies\Microsoft\Dsh" valueName="DisableWidgetsOnLockScreen">
+      <parentCategory ref="NewsAndInterests" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2_NOSERVER" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

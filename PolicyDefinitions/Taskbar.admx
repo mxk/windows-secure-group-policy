@@ -222,7 +222,7 @@
                 <decimal value="2" />
             </disabledValue>
         </policy>
-        <policy name="DisableNotificationCenter" class="User" displayName="$(string.DisableNotificationCenter)" explainText="$(string.DisableNotificationCenter_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableNotificationCenter">
+        <policy name="DisableNotificationCenter" class="Both" displayName="$(string.DisableNotificationCenter)" explainText="$(string.DisableNotificationCenter_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableNotificationCenter">
             <parentCategory ref="windows:StartMenu" />
             <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
             <enabledValue>
@@ -292,6 +292,26 @@
         <policy name="HideTaskViewButton" class="Both" displayName="$(string.HideTaskViewButton)" explainText="$(string.HideTaskViewButton_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="HideTaskViewButton">
             <parentCategory ref="windows:StartMenu" />
             <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="AlwaysShowNotificationIcon" class="User" displayName="$(string.AlwaysShowNotificationIcon)" explainText="$(string.AlwaysShowNotificationIcon_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="AlwaysShowNotificationIcon">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
+        <policy name="TurnOffAbbreviatedDateTimeFormat" class="User" displayName="$(string.TurnOffAbbreviatedDateTimeFormat)" explainText="$(string.TurnOffAbbreviatedDateTimeFormat_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="TurnOffAbbreviatedDateTimeFormat">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
             <enabledValue>
                 <decimal value="1" />
             </enabledValue>

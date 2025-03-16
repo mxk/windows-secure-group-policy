@@ -69,13 +69,13 @@ If you disable or do not configure this policy setting, members of the Administr
       <string id="DriverSearchPlaces_SearchServerConfiguration_WU">Search Windows Update</string>
       <string id="DriverSearchPlaces_SearchServerConfiguration_WSUS">Search Managed Server</string>
       <string id="DriverSearchPlaces_SearchServerConfiguration_Both">Search Managed Server, then WU</string>
-      
-      <string id="DeviceMetadata_PreventDeviceMetadataFromNetwork">Prevent device metadata retrieval from the Internet</string>
-      <string id="DeviceMetadata_PreventDeviceMetadataFromNetwork_Help">This policy setting allows you to prevent Windows from retrieving device metadata from the Internet.
-          
-If you enable this policy setting, Windows does not retrieve device metadata for installed devices from the Internet. This policy setting overrides the setting in the Device Installation Settings dialog box (Control Panel &gt; System and Security &gt; System &gt; Advanced System Settings &gt; Hardware tab).
 
-If you disable or do not configure this policy setting, the setting in the Device Installation Settings dialog box controls whether Windows retrieves device metadata from the Internet.</string>
+      <string id="DeviceMetadata_PreventDeviceMetadataFromNetwork">Prevent automatic download of applications associated with device metadata</string>
+      <string id="DeviceMetadata_PreventDeviceMetadataFromNetwork_Help">This policy setting allows you to prevent Windows from downloading applications associated with device metadata.
+
+If you enable this policy setting, Windows does not download applications associated with device metadata for installed devices. This policy setting overrides the setting in the Device Installation Settings dialog box (Control Panel &gt; System and Security &gt; System &gt; Advanced System Settings &gt; Hardware tab).
+
+If you disable or do not configure this policy setting, the setting in the Device Installation Settings dialog box controls whether Windows downloads applications associated with device metadata.</string>
     </stringTable>
     <presentationTable>
       <presentation id="DriverSearchPlaces">

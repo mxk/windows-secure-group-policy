@@ -31,7 +31,7 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
-    </policy>    
+    </policy>
     <policy name="AllowDeploymentInSpecialProfiles" class="Machine" displayName="$(string.AllowDeploymentInSpecialProfiles)" explainText="$(string.AllowDeploymentInSpecialProfilesExplanation)" key="Software\Policies\Microsoft\Windows\Appx" valueName="AllowDeploymentInSpecialProfiles">
       <parentCategory ref="AppxDeployment" />
       <supportedOn ref="windows:SUPPORTED_Windows8" />
@@ -111,6 +111,23 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="DisablePerUserUnsignedPackagesByDefault" class="Machine" displayName="$(string.DisablePerUserUnsignedPackagesByDefault)" explainText="$(string.DisablePerUserUnsignedPackagesByDefaultExplanation)" key="Software\Policies\Microsoft\Windows\Appx" valueName="DisablePerUserUnsignedPackagesByDefault">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_22H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowedNonAdminPackageFamilyNameRules" class="Machine" displayName="$(string.AllowedNonAdminPackageFamilyNameRules)" explainText="$(string.AllowedNonAdminPackageFamilyNameRulesExplanation)" presentation="$(presentation.AllowedNonAdminPackageFamilyNameRules)" key="Software\Policies\Microsoft\Windows\Appx\AllowedNonAdminPackageFamilyNameRules">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <elements>
+        <list id="AllowedNonAdminPackageFamilyNameRulesList" additive="true" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>

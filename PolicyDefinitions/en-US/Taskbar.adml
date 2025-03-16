@@ -134,13 +134,13 @@ If you disable or do not configure this policy setting, users can pin files, fol
 If you enable this policy setting, users are not able to show taskbars on more than one display. The multiple display section is not enabled in the taskbar properties dialog.
 
 If you disable or do not configure this policy setting, users can show taskbars on more than one display.</string>
-        <string id="ShowWindowsStoreAppsOnTaskbar">Show Windows Store apps on the taskbar</string>
+        <string id="ShowWindowsStoreAppsOnTaskbar">Show packaged Microsoft Store apps on the taskbar</string>
         <string id="ShowWindowsStoreAppsOnTaskbar_Help">
-This policy setting allows users to see Windows Store apps on the taskbar.
+This policy setting allows users to see packaged Microsoft Store apps on the taskbar.
 
-If you enable this policy setting, users will see Windows Store apps on the taskbar.
+If you enable this policy setting, users will see packaged Microsoft Store apps on the taskbar.
 
-If you disable this policy setting, users won’t see Windows Store apps on the taskbar.
+If you disable this policy setting, users won’t see packaged Microsoft Store apps on the taskbar.
 
 If you don’t configure this policy setting, the default setting for the user’s device will be used, and the user can choose to change it.</string>
       <string id="DisableNotificationCenter">Remove Notifications and Action Center</string>
@@ -188,6 +188,22 @@ If you disable or do not configure this policy setting, the Chat icon will be co
       <string id="HideTaskViewButton_Help">This policy setting allows you to hide the TaskView button.
 
 If you enable this policy setting, the TaskView button will be hidden and the Settings toggle will be disabled.</string>
+      <string id="AlwaysShowNotificationIcon">Show notification bell icon</string>
+      <string id="AlwaysShowNotificationIcon_Help">
+This policy setting allows you to show the notification bell icon in the system tray.
+
+If you enable this policy setting, the notification icon will always be shown. Otherwise, the notification icon will only be shown when there's a special status (for example, Do Not Disturb is turned on).
+
+A reboot is required for this policy setting to take effect.
+      </string>
+      <string id="TurnOffAbbreviatedDateTimeFormat">Turn off abbreviated time and date format</string>
+      <string id="TurnOffAbbreviatedDateTimeFormat_Help">
+This policy setting allows you to show the longer time and date format in the system tray.​
+
+If this setting is enabled, the time format will include the AM/PM time marker and the date will include the year.​
+
+A reboot is required for this policy setting to take effect.
+        </string>
     </stringTable>
     <presentationTable>
       <presentation id="ConfigureTaskbarCalendar">

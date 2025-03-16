@@ -1,7 +1,6 @@
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Update" prefix="update"/>
-    <using namespace="Microsoft.Policies" prefix="Edge"/>
     <using prefix="windows" namespace="Microsoft.Policies.Windows" />
   </policyNamespaces>
   <supersededAdm fileName="EdgeUpdate.adm" />
@@ -22,6 +21,8 @@
           displayName="$(string.Sup_EdgeUpdate1_3_119_43)" />
       <definition name="Sup_EdgeUpdate1_3_127_1"
           displayName="$(string.Sup_EdgeUpdate1_3_127_1)" />
+      <definition name="Sup_EdgeUpdate1_3_128_0"
+          displayName="$(string.Sup_EdgeUpdate1_3_128_0)" />
       <definition name="Sup_EdgeUpdate1_3_133_3"
           displayName="$(string.Sup_EdgeUpdate1_3_133_3)" />
       <definition name="Sup_EdgeUpdate1_3_145_1"
@@ -32,6 +33,10 @@
           displayName="$(string.Sup_EdgeUpdate1_3_155_1)" />
       <definition name="Sup_EdgeUpdate1_3_168_21"
           displayName="$(string.Sup_EdgeUpdate1_3_168_21)" />
+      <definition name="Sup_EdgeUpdate1_3_179_5"
+          displayName="$(string.Sup_EdgeUpdate1_3_179_5)" />
+      <definition name="Sup_EdgeUpdate1_3_193_5"
+          displayName="$(string.Sup_EdgeUpdate1_3_193_5)" />
     </definitions>
   </supportedOn>
 
@@ -535,6 +540,41 @@
       <supportedOn ref="Sup_EdgeUpdate1_3_168_21" />
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="Pol_UninstallEdgeMicrosoftEdge" class="Machine"
+        displayName="$(string.Pol_UninstallEdge)"
+        explainText="$(string.Explain_UninstallEdgeMicrosoftEdge)"
+        presentation="$(presentation.Pol_UninstallEdge)"
+        key="Software\Policies\Microsoft\EdgeUpdate"
+        valueName="Uninstall{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}">
+      <parentCategory ref="Cat_MicrosoftEdge" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_193_5" />
+      <elements>
+        <enum id="Part_UninstallEdgePolicy"
+             valueName="Uninstall{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}" required="true">
+          <item displayName="$(string.Name_UninstallEdgeEnabledAndKeepData)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UninstallEdgeEnabledAndDeleteData)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UninstallEdgeDisabled)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_UninstallEdgeNotConfigured)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <policy name="Pol_AllowInstallationMicrosoftEdgeBeta" class="Machine"

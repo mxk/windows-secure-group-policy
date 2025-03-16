@@ -278,7 +278,7 @@ By default, Windows Ultimate, Professional and Home SKUs will continue to search
 
         If you disable this policy setting or do not configure it, then all printer extensions that have been installed will be allowed to run.</string>
       <string id="MXDWUseLegacyOutputFormatMSXPS">Change Microsoft XPS Document Writer (MXDW) default output format to the legacy Microsoft XPS format (*.xps)</string>
-      <string id="MXDWUseLegacyOutputFormatMSXPS_Help">Microsoft XPS Document Writer (MXDW) generates OpenXPS (*.oxps) files by default in Windows 10, Windows 10 and Windows Server 2022.
+      <string id="MXDWUseLegacyOutputFormatMSXPS_Help">Microsoft XPS Document Writer (MXDW) generates OpenXPS (*.oxps) files by default in Windows 10, Windows 10 and Windows Server 2025.
 
           If you enable this group policy setting, the default MXDW output format is the legacy Microsoft XPS (*.xps).
 
@@ -431,6 +431,14 @@ RPC over TCP port:
 
 If you disable or do not configure this policy setting, dynamic TCP ports are used.
       </string>
+      <string id="RpcIncomingAuthenticationLevelPolicy">Configure RPC packet level privacy setting for incoming connections</string>
+      <string id="RpcIncomingAuthenticationLevelPolicy_Help">
+This policy setting controls whether packet level privacy is enabled for RPC for incoming connections.
+
+By default packet level privacy is enabled for RPC for incoming connections.
+
+If you enable or do not configure this policy setting, packet level privacy is enabled for RPC for incoming connections.
+      </string>
       <string id="AlwaysSendIppPageCounts">Always send job page count information for IPP printers</string>
       <string id="AlwaysSendIppPageCounts_Help">
 Determines whether to always send page count information for accounting purposes for printers using the Microsoft IPP Class Driver.
@@ -441,6 +449,16 @@ If you enable this setting the system will render all print job pages up front a
 
 If you disable this setting or do not configure it, pages are printed as soon as they are rendered and page counts are only sent when page reordering is required to process the job.
       </string>
+      <string id="IppTlsCertificatePolicy">Set TLS/SSL security policy for IPP printers</string>
+      <string id="IppTlsCertificatePolicy_Help">
+Determines the TLS/SSL security policy (WINHTTP_OPTION_SECURITY_FLAGS) for printers using the Microsoft IPP Class Driver.
+
+By default, security policy is set to ignore all certificate errors, allowing use of self-signed certificates for printers.
+
+If you enable this setting the system defaults to enabling all certificate checking, disallowing certificate errors. Specific certificate checking can be set with the given checkboxes.
+
+If you disable this setting or do not configure it, the default is to ignore all certificate errors (all checkboxes unchecked).
+      </string>
       <string id="RedirectionGuardPolicy">Configure Redirection Guard</string>
       <string id="RedirectionGuardPolicy_Disabled">Redirection Guard Disabled</string>
       <string id="RedirectionGuardPolicy_Enabled">Redirection Guard Enabled</string>
@@ -450,7 +468,7 @@ Determines whether Redirection Guard is enabled for the print spooler.
 
 You can enable this setting to configure the Redirection Guard policy being applied to spooler.
 
-If you disable or do not configure this policy setting, Redirection Guard will default to being 'enabled'.
+If you disable or do not configure this policy setting, Redirection Guard will default to being 'Enabled'.
 
 If you enable this setting you may select the following options:
 
@@ -459,6 +477,18 @@ If you enable this setting you may select the following options:
 -- Disabed : Redirection Guard will not be enabled and file redirections may be used within the spooler process
 
 -- Audit   : Redirection Guard will log events as though it were enabled but will not actually prevent file redirections from being used within the spooler.
+      </string>
+      <string id="WindowsProtectedPrintPolicy">Configure Windows protected print</string>
+      <string id="WindowsProtectedPrintPolicy_Help">
+Determines whether Windows protected print is enabled on this computer.
+
+By default, Windows protected print is not enabled and there are not any restrictions on the print drivers that can be installed or print functionality.
+
+If you enable this setting, the computer will operate in Windows protected print mode which only allows printing to printers that support a subset of inbox Windows print drivers.
+
+If you disable this setting or do not configure it, there are not any restrictions on the print drivers that can be installed or print functionality.
+
+For more information, please see https://learn.microsoft.com/en-us/windows-hardware/drivers/print/windows-protected-print-mode
       </string>
     </stringTable>
     <presentationTable>
@@ -553,6 +583,12 @@ If you enable this setting you may select the following options:
       <presentation id="RpcTcpPortPolicy">
         <text>Configure port to use for RPC over TCP.</text>
         <decimalTextBox defaultValue="0" refId="RpcTcpPort">RPC over TCP port:</decimalTextBox>
+      </presentation>
+      <presentation id="IppTlsCertificatePolicy">
+        <checkBox refId="SecurityFlagsBlockUnknownCA" defaultChecked="true">Disallow invalid certificate authority</checkBox>
+        <checkBox refId="SecurityFlagsBlockCertWrongUsage" defaultChecked="true">Disallow non-server certificates</checkBox>
+        <checkBox refId="SecurityFlagsBlockCertCNInvalid" defaultChecked="true">Disallow invalid certificate common name</checkBox>
+        <checkBox refId="SecurityFlagsBlockCertDateInvalid" defaultChecked="true">Disallow invalid certificate date</checkBox>
       </presentation>
       <presentation id="RedirectionGuardPolicy">
         <text>Configure options for Redirection Guard</text>

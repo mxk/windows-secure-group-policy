@@ -10,6 +10,10 @@
       <string id="Explain_AllowNewsAndInterests">This policy specifies whether the widgets feature is allowed on the device.
 Widgets will be turned on by default unless you change this in your settings.
 If you turned this feature on before, it will stay on automatically unless you turn it off.</string>
+      <string id="DisableWidgetsOnLockScreen">Disable Widgets On Lock Screen</string>
+      <string id="Explain_DisableWidgetsOnLockScreen">This policy specifies whether to disable the Widgets feature on the lock screen. 
+If you disable or do not configure this policy setting, widgets will appear on the lock screen and can be managed in the Windows Settings app.
+If you enable this policy setting, widgets will not appear on the lock screen. </string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

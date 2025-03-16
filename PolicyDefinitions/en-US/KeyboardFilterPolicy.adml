@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2023 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Keyboard Filter group policy</displayName>
+  <description>Group policy settings for Keyboard Filter</description>
+  <resources>
+    <stringTable>
+      <string id="KeyboardFilter">Keyboard Filter</string>
+      <string id="AllowKbFilterInRemoteSessions">Allow Keyboard Filter in remote sessions</string>
+      <string id="AllowKbFilterInRemoteSessions_Text">Keyboard filter typically only applies to local sessions.
+      
+Enabling this setting will allow the keyboard filter to be applied to users that connect to the computer by remote sessions.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

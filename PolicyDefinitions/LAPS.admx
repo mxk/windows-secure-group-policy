@@ -100,6 +100,26 @@
               <decimal value="4"/>
             </value>
           </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_5)">
+            <value>
+              <decimal value="5"/>
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_6)">
+            <value>
+              <decimal value="6"/>
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_7)">
+            <value>
+              <decimal value="7"/>
+            </value>
+          </item>
+          <item displayName="$(string.LAPS_PwdComplexity_Item_8)">
+            <value>
+              <decimal value="8"/>
+            </value>
+          </item>
         </enum>
         <decimal
             id="LAPS_PasswordLength"
@@ -112,6 +132,12 @@
             valueName="PasswordAgeDays"
             minValue="1"
             maxValue="365"
+            />
+        <decimal
+            id="LAPS_PassphraseLength"
+            valueName="PassphraseLength"
+            minValue="3"
+            maxValue="10"
             />
       </elements>
     </policy>
@@ -139,7 +165,7 @@
         explainText="$(string.LAPS_DontAllowPwdExpirationBehindPolicy_Help)"
         key="SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\LAPS"
         name="LAPS_DontAllowPwdExpirationBehindPolicy"
-        valueName="PwdExpirationProtectionEnabled"
+        valueName="PasswordExpirationProtectionEnabled"
         >
       <parentCategory ref="LAPS_CAT"/>
       <supportedOn ref="SUPPORTED_Windows10"/>
@@ -262,7 +288,60 @@
               <decimal value="5"/>
             </value>
           </item>
+          <item displayName="$(string.PostAuthenticationActions_Item11)">
+            <value>
+              <decimal value="11"/>
+            </value>
+          </item>
         </enum>
+      </elements>
+    </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.LAPS_AutomaticAccountManagementPolicy)"
+        explainText="$(string.LAPS_AutomaticAccountManagementPolicy_Help)"
+        key="SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\LAPS"
+        name="LAPS_AutomaticAccountManagementPolicy"
+        valueName="AutomaticAccountManagementEnabled"
+        presentation="$(presentation.LAPS_AutomaticAccountManagementPolicy)"
+        >
+      <parentCategory ref="LAPS_CAT"/>
+      <supportedOn ref="SUPPORTED_Windows10"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum
+            id="LAPS_AutomaticAccountManagementTarget"
+            valueName="AutomaticAccountManagementTarget"
+            >
+          <item displayName="$(string.AutomaticAccountManagementTarget_Item0)">
+            <value>
+              <decimal value="0"/>
+            </value>
+          </item>
+          <item displayName="$(string.AutomaticAccountManagementTarget_Item1)">
+            <value>
+              <decimal value="1"/>
+            </value>
+          </item>
+        </enum>
+        <text
+            id="LAPS_AutomaticAccountManagementNameOrPrefix"
+            valueName="AutomaticAccountManagementNameOrPrefix"
+            maxLength="20"
+            />
+        <boolean
+            id="LAPS_AutomaticAccountManagementEnableAccount"
+            valueName="AutomaticAccountManagementEnableAccount"
+            />
+        <boolean
+            id="LAPS_AutomaticAccountManagementRandomizeName"
+            valueName="AutomaticAccountManagementRandomizeName"
+            />
       </elements>
     </policy>
   </policies>

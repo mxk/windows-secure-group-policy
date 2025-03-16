@@ -236,7 +236,7 @@
 
     <policy name="DisableLanguageSettingSync" presentation="$(presentation.DisableLanguageSettingSyncUserOverride)" class="Machine" displayName="$(string.DisableLanguageSettingSync)" explainText="$(string.DisableLanguageSettingSync_Help)" key="Software\Policies\Microsoft\Windows\SettingSync" valueName="DisableLanguageSettingSync">
       <parentCategory ref="SettingSync" />
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H1" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
       <enabledValue>
         <decimal value="2" />
       </enabledValue>

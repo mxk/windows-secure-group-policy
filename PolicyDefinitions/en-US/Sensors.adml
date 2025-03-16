@@ -64,15 +64,26 @@
       <string id="ForceAllowWakeWhenExternalDisplayConnected_1">Forced Checked</string>
       <string id="ForceAllowWakeWhenExternalDisplayConnected_2">Forced Unchecked</string>
       <string id="ForceAllowLockWhenExternalDisplayConnected_DisplayName">Force Allow Lock When External Display Connected</string>
-      <string id="ForceAllowLockWhenExternalDisplayConnected_ExplainText">Determines whether Allow Lock on Leave When Battery Saver On checkbox is forced checked/unchecked by the MDM policy. The user will not be able to change this setting and the checkbox in the UI will be greyed out.</string>
+      <string id="ForceAllowLockWhenExternalDisplayConnected_ExplainText">Determines whether Allow Lock on Leave When External Display Connected checkbox is forced checked/unchecked by the MDM policy. The user will not be able to change this setting and the checkbox in the UI will be greyed out.</string>
       <string id="ForceAllowLockWhenExternalDisplayConnected_0">Defaults to user choice</string>
       <string id="ForceAllowLockWhenExternalDisplayConnected_1">Forced Checked</string>
       <string id="ForceAllowLockWhenExternalDisplayConnected_2">Forced Unchecked</string>
       <string id="ForceAllowDimWhenExternalDisplayConnected_DisplayName">Force Allow Dim When External Display Connected</string>
-      <string id="ForceAllowDimWhenExternalDisplayConnected_ExplainText">Determines whether Allow Adaptive Dimming When Battery Saver On checkbox is forced checked/unchecked by the MDM policy. The user will not be able to change this setting and the checkbox in the UI will be greyed out.</string>
+      <string id="ForceAllowDimWhenExternalDisplayConnected_ExplainText">Determines whether Allow Adaptive Dimming When External Display Connected checkbox is forced checked/unchecked by the MDM policy. The user will not be able to change this setting and the checkbox in the UI will be greyed out.</string>
       <string id="ForceAllowDimWhenExternalDisplayConnected_0">Defaults to user choice</string>
       <string id="ForceAllowDimWhenExternalDisplayConnected_1">Forced Checked</string>
       <string id="ForceAllowDimWhenExternalDisplayConnected_2">Forced Unchecked</string>
+      <string id="ForcePrivacyScreen_DisplayName">Force Privacy Screen</string>
+      <string id="ForcePrivacyScreen_ExplainText">Determines whether the Privacy Screen feature is forced on/off by the MDM policy. The user will not be able to change this setting and the toggle in the UI will be greyed out.</string>
+      <string id="ForcePrivacyScreen_0">Defaults to user choice</string>
+      <string id="ForcePrivacyScreen_1">Forced On</string>
+      <string id="ForcePrivacyScreen_2">Forced Off</string>
+      <string id="ForcePrivacyScreenAction_DisplayName">Force Privacy Screen Action</string>
+      <string id="ForcePrivacyScreenAction_ExplainText">Determines whether the Privacy Screen action is forced by the MDM policy. The user will not be able to change this setting and the toggle in the UI will be greyed out.</string>
+      <string id="ForcePrivacyScreenAction_0">Defaults to user choice</string>
+      <string id="ForcePrivacyScreenAction_1">Dim</string>
+      <string id="ForcePrivacyScreenAction_2">Notify</string>
+      <string id="ForcePrivacyScreenAction_3">Dim and Notify</string>
     </stringTable>
     <presentationTable>
       <presentation id="ForceInstantWake">
@@ -98,6 +109,12 @@
       </presentation>
       <presentation id="ForceAllowDimWhenExternalDisplayConnected">
         <dropdownList refId="ForceAllowDimWhenExternalDisplayConnectedDropdown" noSort="true" defaultItem="0">Choose one of the following actions</dropdownList>
+      </presentation>
+      <presentation id="ForcePrivacyScreen">
+        <dropdownList refId="ForcePrivacyScreenDropdown" noSort="true" defaultItem="0">Choose one of the following actions</dropdownList>
+      </presentation>
+      <presentation id="ForcePrivacyScreenAction">
+        <dropdownList refId="ForcePrivacyScreenActionDropdown" noSort="true" defaultItem="0">Choose one of the following actions</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

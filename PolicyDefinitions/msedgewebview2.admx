@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 119.0.2151.72-->
+  <!--microsoft_edge version: 134.0.3124.72-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.WebView2" prefix="microsoft_edge_webview2"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -12,12 +12,19 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V116)" name="SUPPORTED_WIN7_V116"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V118)" name="SUPPORTED_WIN7_V118"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V87)" name="SUPPORTED_WIN7_V87"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V121)" name="SUPPORTED_WIN7_V121"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V123)" name="SUPPORTED_WIN7_V123"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V125)" name="SUPPORTED_WIN7_V125"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V123_V131)" name="OBSOLETE_WIN7_V123_V131"/>
     </definitions>
   </supportedOn>
   <categories>
     <category displayName="$(string.microsoft_edge_webview2)" name="microsoft_edge_webview2"/>
     <category displayName="$(string.microsoft_edge_webview2_recommended)" name="microsoft_edge_webview2_recommended"/>
     <category displayName="$(string.WebView2LoaderOverrideSettings_group)" name="WebView2LoaderOverrideSettings">
+      <parentCategory ref="microsoft_edge_webview2"/>
+    </category>
+    <category displayName="$(string.Network_group)" name="Network">
       <parentCategory ref="microsoft_edge_webview2"/>
     </category>
   </categories>
@@ -29,12 +36,56 @@
         <list explicitValue="true" id="BrowserExecutableFolderDesc" key="Software\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.ChannelSearchKind)" explainText="$(string.ChannelSearchKind_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ChannelSearchKind" presentation="$(presentation.ChannelSearchKind)">
+      <parentCategory ref="WebView2LoaderOverrideSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V121"/>
+      <elements>
+        <list explicitValue="true" id="ChannelSearchKindDesc" key="Software\Policies\Microsoft\Edge\WebView2\ChannelSearchKind"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ReleaseChannelPreference)" explainText="$(string.ReleaseChannelPreference_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ReleaseChannelPreference" presentation="$(presentation.ReleaseChannelPreference)">
       <parentCategory ref="WebView2LoaderOverrideSettings"/>
       <supportedOn ref="SUPPORTED_WIN7_V87"/>
       <elements>
         <list explicitValue="true" id="ReleaseChannelPreferenceDesc" key="Software\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ReleaseChannels)" explainText="$(string.ReleaseChannels_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ReleaseChannels" presentation="$(presentation.ReleaseChannels)">
+      <parentCategory ref="WebView2LoaderOverrideSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V121"/>
+      <elements>
+        <list explicitValue="true" id="ReleaseChannelsDesc" key="Software\Policies\Microsoft\Edge\WebView2\ReleaseChannels"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.AccessControlAllowMethodsInCORSPreflightSpecConformant)" explainText="$(string.AccessControlAllowMethodsInCORSPreflightSpecConformant_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="AccessControlAllowMethodsInCORSPreflightSpecConformant" presentation="$(presentation.AccessControlAllowMethodsInCORSPreflightSpecConformant)" valueName="AccessControlAllowMethodsInCORSPreflightSpecConformant">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.BlockTruncatedCookies)" explainText="$(string.BlockTruncatedCookies_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="BlockTruncatedCookies" presentation="$(presentation.BlockTruncatedCookies)" valueName="BlockTruncatedCookies">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V131"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V125"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ExperimentationAndConfigurationServiceControl)" explainText="$(string.ExperimentationAndConfigurationServiceControl_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ExperimentationAndConfigurationServiceControl" presentation="$(presentation.ExperimentationAndConfigurationServiceControl)">
       <parentCategory ref="microsoft_edge_webview2"/>
@@ -69,12 +120,39 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.HttpAllowlist)" explainText="$(string.HttpAllowlist_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="HttpAllowlist" presentation="$(presentation.HttpAllowlist)">
+      <parentCategory ref="microsoft_edge_webview2"/>
+      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <elements>
+        <list explicitValue="true" id="HttpAllowlistDesc" key="Software\Policies\Microsoft\Edge\WebView2\HttpAllowlist"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.NewBaseUrlInheritanceBehaviorAllowed)" explainText="$(string.NewBaseUrlInheritanceBehaviorAllowed_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="NewBaseUrlInheritanceBehaviorAllowed" presentation="$(presentation.NewBaseUrlInheritanceBehaviorAllowed)" valueName="NewBaseUrlInheritanceBehaviorAllowed">
+      <parentCategory ref="microsoft_edge_webview2"/>
+      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.NewPDFReaderWebView2List)" explainText="$(string.NewPDFReaderWebView2List_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="NewPDFReaderWebView2List" presentation="$(presentation.NewPDFReaderWebView2List)">
       <parentCategory ref="microsoft_edge_webview2"/>
       <supportedOn ref="SUPPORTED_WIN7_V116"/>
       <elements>
         <list explicitValue="true" id="NewPDFReaderWebView2ListDesc" key="Software\Policies\Microsoft\Edge\WebView2\NewPDFReaderWebView2List"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
+      <parentCategory ref="microsoft_edge_webview2"/>
+      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

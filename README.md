@@ -48,11 +48,11 @@ To update the policy for a new Windows feature release:
 
 Templates contained in the `PolicyDefinitions` directory:
 
-1. Windows 11 Enterprise 23H2 ISO (22621.2428)
-2. [Windows 11 v23H2 Security Baseline][SCT]
+1. Windows 11 Enterprise 24H2 ISO (26100.3194)
+2. [Windows 11 v24H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
-4. [Microsoft Edge (119.0.2151.72)][Edge]
-5. [Mozilla Firefox (5.4)][Firefox]
+4. [Microsoft Edge (134.0.3124.72)][Edge]
+5. [Mozilla Firefox (6.8)][Firefox]
 
 [RTLFB]: https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services
 [Edge]: https://www.microsoft.com/en-us/edge/business/download
@@ -66,6 +66,7 @@ To extract `PolicyDefinitions` from a Windows ISO:
 2. Open `sources\install.wim` with 7-Zip.
 3. Check `[1].xml` for the appropriate image index and build version.
 4. Extract `\<N>\Windows\PolicyDefinitions`.
+5. Record `BUILD` and `SPBUILD` versions.
 
 ## Notes
 

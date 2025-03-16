@@ -7,13 +7,25 @@
     <stringTable>
       <string id="WindowsCopilot">Windows Copilot</string>
       <string id="TurnOffWindowsCopilot">Turn off Windows Copilot</string>
-      <string id="TurnOffWindowsCopilot_Help">
-        This policy setting allows you to turn off Windows Copilot.
+      <string id="TurnOffWindowsCopilot_Help">This policy setting allows you to turn off Windows Copilot.
 
-        If you enable this policy setting, users will not be able to use Copilot. The Copilot icon will not appear on the taskbar either.
+If you enable this policy setting, users will not be able to use Copilot. The Copilot icon will not appear on the taskbar either.
 
-        If you disable or do not configure this policy setting, users will be able to use Copilot when it's available to them.
+If you disable or do not configure this policy setting, users will be able to use Copilot when it's available to them.
+      </string>
+      <string id="WindowsAI">Windows AI</string>
+      <string id="SetCopilotHardwareKey">Set Copilot Hardware Key</string>
+      <string id="SetCopilotHardwareKey_Help">This policy setting determines which app opens when the user presses the Copilot key on their keyboard. If the policy is enabled, the specified app will open when the user presses the Copilot key. Users can change the key assignment in Settings. If the policy is not configured, Copilot will open if it's available in that country or region.
       </string>
     </stringTable>
+    <presentationTable>
+      <presentation id="SetCopilotHardwareKey">
+        <textBox refId="SetCopilotHardwareKey_Name">
+          <label>Enter App AUMID</label>
+          <defaultValue>
+          </defaultValue>
+        </textBox>
+      </presentation>
+    </presentationTable>
   </resources>
 </policyDefinitionResources>

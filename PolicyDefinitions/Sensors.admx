@@ -269,5 +269,56 @@
         </enum>
       </elements>
     </policy>
+    <policy name="ForcePrivacyScreen" class="Machine" displayName="$(string.ForcePrivacyScreen_DisplayName)" explainText="$(string.ForcePrivacyScreen_ExplainText)" presentation="$(presentation.ForcePrivacyScreen)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForcePrivacyScreen">
+      <parentCategory ref="HumanPresence" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="ForcePrivacyScreenDropdown" valueName="ForcePrivacyScreen" required="true">
+          <item displayName="$(string.ForcePrivacyScreen_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForcePrivacyScreen_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForcePrivacyScreen_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ForcePrivacyScreenAction" class="Machine" displayName="$(string.ForcePrivacyScreenAction_DisplayName)" explainText="$(string.ForcePrivacyScreenAction_ExplainText)" presentation="$(presentation.ForcePrivacyScreenAction)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForcePrivacyScreenAction">
+      <parentCategory ref="HumanPresence" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="ForcePrivacyScreenActionDropdown" valueName="ForcePrivacyScreenAction" required="true">
+          <item displayName="$(string.ForcePrivacyScreenAction_0)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForcePrivacyScreenAction_1)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForcePrivacyScreenAction_2)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.ForcePrivacyScreenAction_3)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

@@ -1,10 +1,20 @@
-<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 119.0.2151.72--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
+<?xml version="1.0" ?><policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions"><!--microsoft_edge version: 134.0.3124.72--><displayName/><description/><resources><stringTable><string id="WebView2LoaderOverrideSettings_group">Loader Override Settings</string><string id="BrowserExecutableFolder">Configure the location of the browser executable folder</string><string id="BrowserExecutableFolder_Explain">This policy configures WebView2 applications to use the WebView2 Runtime in the specified path. The folder should contain the following files: msedgewebview2.exe, msedge.dll, and so on.
 
 To set the value for the folder path, provide a Value name and Value pair. Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.
 
 Example value:
 
-Name: *, Value: C:\Program Files\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64</string><string id="BrowserExecutableFolderDesc">Configure the location of the browser executable folder</string><string id="ReleaseChannelPreference">Set the release channel search order preference</string><string id="ReleaseChannelPreference_Explain">The default channel search order is WebView2 Runtime, Beta, Dev, and Canary.
+Name: *, Value: C:\Program Files\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64</string><string id="BrowserExecutableFolderDesc">Configure the location of the browser executable folder</string><string id="ChannelSearchKind">Configure the WebView2 release channel search kind</string><string id="ChannelSearchKind_Explain">This policy configures the channel search kind for WebView2 applications. By default the channel search kind is 0, which is equivalent to the &quot;Most Stable&quot; search kind in the corresponding WebView2 API; This indicates that WebView2 environment creation should search for a release channel from the most to least stable: WebView2 Runtime, Beta, Dev, and Canary.
+
+To reverse the default search order and use the &quot;Least Stable&quot; search kind, set this policy to 1.
+
+To set the value for the channel search kind, provide a Value name and Value pair. Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.
+
+Example value:
+
+Name: WebView2APISample.exe, Value: 1</string><string id="ChannelSearchKindDesc">Configure the WebView2 release channel search kind</string><string id="ReleaseChannelPreference">Set the release channel search order preference (deprecated)</string><string id="ReleaseChannelPreference_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+This policy is deprecated in favor of ChannelSearchKind, which has the same functionality, and will become obsolete in 124 release. The default channel search order is WebView2 Runtime, Beta, Dev, and Canary.
 
 To reverse the default search order, set this policy to 1.
 
@@ -12,7 +22,40 @@ To set the value for the release channel preference, provide a Value name and Va
 
 Example value:
 
-Name: *, Value: 1</string><string id="ReleaseChannelPreferenceDesc">Set the release channel search order preference</string><string id="ExperimentationAndConfigurationServiceControl">Control communication with the Experimentation and Configuration Service</string><string id="ExperimentationAndConfigurationServiceControl_Explain">The Experimentation and Configuration Service is used to deploy Experimentation and Configuration payloads to the client.
+Name: *, Value: 1</string><string id="ReleaseChannelPreferenceDesc">Set the release channel search order preference (deprecated)</string><string id="ReleaseChannels">Configure the WebView2 release channels</string><string id="ReleaseChannels_Explain">This policy configures the release channel options for WebView2 applications. To configure these options, set the value to a comma-separated string of integers, which map to the `COREWEBVIEW2_RELEASE_CHANNELS` values from the corresponding WebView2 API. These values are: WebView2 Runtime (0), Beta (1), Dev (2), and Canary (3). By default, environment creation searches for channels from most to least stable, using the first channel found on the device. When `ReleaseChannels` is provided, environment creation will only search for the channels specified in the set. For example, the values &quot;0,2&quot; and &quot;2,0&quot; indicate that environment creation should only search for Dev channel and the WebView2 Runtime, using the order indicated by `ChannelSearchKind`. Environment creation attempts to interpret each integer and treats any invalid entry as the Stable channel. Set `ChannelSearchKind` to reverse the search order so environment creation searches for least stable build first. If both `BrowserExecutableFolder` and `ReleaseChannels` are provided, the `BrowserExecutableFolder` takes precedence, regardless of whether the channel of `BrowserExecutableFolder` is included in the `ReleaseChannels`.
+
+To set the value for release channels, provide a Value name and Value pair. Set the value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.
+
+Example value:
+
+Name: WebView2APISample.exe, Value: 0,1,2</string><string id="ReleaseChannelsDesc">Configure the WebView2 release channels</string><string id="Network_group">Network settings</string><string id="AccessControlAllowMethodsInCORSPreflightSpecConformant">Make Access-Control-Allow-Methods matching in CORS preflight spec conformant</string><string id="AccessControlAllowMethodsInCORSPreflightSpecConformant_Explain">This policy controls whether request methods are uppercased when matching with Access-Control-Allow-Methods response headers in CORS preflight.
+
+If you disable this policy, request methods are uppercased. This is the behavior on or before Microsoft Edge 108.
+
+If you enable or don't configure this policy, request methods are not uppercased, unless matching case-insensitively with DELETE, GET, HEAD, OPTIONS, POST, or PUT.
+
+This would reject fetch(url, {method: 'Foo'}) + &quot;Access-Control-Allow-Methods: FOO&quot; response header,
+and would accept fetch(url, {method: 'Foo'}) + &quot;Access-Control-Allow-Methods: Foo&quot; response header.
+
+Note: request methods &quot;post&quot; and &quot;put&quot; are not affected, while &quot;patch&quot; is affected.
+
+This policy is intended to be temporary and will be removed in the future.</string><string id="BlockTruncatedCookies">Block truncated cookies (obsolete)</string><string id="BlockTruncatedCookies_Explain">OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 131.
+
+This policy provides a temporary opt-out for changes to how Microsoft Edge handles cookies set via JavaScript that contain certain control characters (NULL, carriage return, and line feed).
+Previously, the presence of any of these characters in a cookie string would cause it to be truncated but still set.
+Now, the presence of these characters will cause the whole cookie string to be ignored.
+
+If you enable or don't configure this policy, the new behavior is enabled.
+
+If you disable this policy, the old behavior is enabled.
+
+This policy is obsolete because this policy was originally implemented as a safety measure in case of breakage, but none have been reported.</string><string id="ZstdContentEncodingEnabled">Enable zstd content encoding support</string><string id="ZstdContentEncodingEnabled_Explain">This feature enables advertising &quot;zstd&quot; support in the Accept-Encoding request header and support for decompressing zstd web content.
+
+If you enable or don't configure this policy, Microsoft Edge will accept server responses compressed with zstd.
+
+If you disable this policy, the zstd content encoding feature will not be advertised or supported when processing server responses.
+
+This policy is temporary and will be removed in the future.</string><string id="ExperimentationAndConfigurationServiceControl">Control communication with the Experimentation and Configuration Service</string><string id="ExperimentationAndConfigurationServiceControl_Explain">The Experimentation and Configuration Service is used to deploy Experimentation and Configuration payloads to the client.
 
 Experimentation payload consists of a list of early in development features that Microsoft is enabling for testing and feedback.
 
@@ -48,7 +91,28 @@ Recommended alternatives exist, but the unload event has been used for a long ti
 
 If you disable this policy or don't configure it, unload event handlers will gradually be deprecated in-line with the deprecation rollout and sites which don't set Permissions-Policy header will stop firing `unload` events.
 
-If you enable this policy then unload event handlers will continue to work by default.</string><string id="NewPDFReaderWebView2List">Enable built-in PDF reader powered by Adobe Acrobat for WebView2</string><string id="NewPDFReaderWebView2List_Explain">This policy configures WebView2 applications to launch the new version of the PDF reader that's powered by Adobe Acrobat's PDF reader. The new PDF reader ensures that there's no loss of functionality and delivers an enhanced PDF experience. This experience includes richer rendering, improved performance, strong security for PDF file handling, and greater accessibility.
+If you enable this policy then unload event handlers will continue to work by default.</string><string id="HttpAllowlist">HTTP Allowlist</string><string id="HttpAllowlist_Explain">Setting the policy specifies a list of hostnames or hostname patterns (such as '[*.]example.com') that will not be upgraded to HTTPS and will not show an error interstitial if HTTPS-First Mode is enabled. Organizations can use this policy to maintain access to servers that do not support HTTPS, without needing to disable &quot;AutomaticHttpsDefault&quot;.
+
+Supplied hostnames must be canonicalized: Any IDNs must be converted to their A-label format, and all ASCII letters must be lowercase.
+
+Blanket host wildcards (i.e., &quot;*&quot; or &quot;[*]&quot;) are not allowed. Instead, HTTPS-First Mode and HTTPS Upgrades should be explicitly disabled via their specific policies.
+
+Note: This policy does not apply to HSTS upgrades.
+
+Example value:
+
+testserver.example.com
+[*.]example.org</string><string id="HttpAllowlistDesc">HTTP Allowlist</string><string id="NewBaseUrlInheritanceBehaviorAllowed">Allows enabling the feature NewBaseUrlInheritanceBehavior (deprecated)</string><string id="NewBaseUrlInheritanceBehaviorAllowed_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+NewBaseUrlInheritanceBehavior is a Microsoft Edge feature that causes about:blank and about:srcdoc frames to consistently inherit their base url values via snapshots of their initiator's base url.
+
+If you disable this policy, it prevents users or Microsoft Edge variations from enabling NewBaseUrlInheritanceBehavior, in case compatibility issues are discovered.
+
+If you enable or don't configure this policy, it allows enabling NewBaseUrlInheritanceBehavior.
+
+This policy is being deprecated because the feature NewBaseUrlInheritanceBehaviorAllowed has been removed.
+
+This policy will be obsolete in release 133.</string><string id="NewPDFReaderWebView2List">Enable built-in PDF reader powered by Adobe Acrobat for WebView2</string><string id="NewPDFReaderWebView2List_Explain">This policy configures WebView2 applications to launch the new version of the PDF reader that's powered by Adobe Acrobat's PDF reader. The new PDF reader ensures that there's no loss of functionality and delivers an enhanced PDF experience. This experience includes richer rendering, improved performance, strong security for PDF file handling, and greater accessibility.
 
 If this policy is specified for an application, it is possible that it may impact other related applications as well. The policy is applied to all WebView2s sharing the same WebView2 user data folder. These WebView2s could potentially belong to multiple applications if those applications, which are likely from the same product family, are designed to share the same user data folder.
 
@@ -62,4 +126,48 @@ Example value:
 
 {&quot;name&quot;: &quot;app1.exe&quot;, &quot;value&quot;: true}
 {&quot;name&quot;: &quot;app_id_for_app2&quot;, &quot;value&quot;: true}
-{&quot;name&quot;: &quot;*&quot;, &quot;value&quot;: false}</string><string id="NewPDFReaderWebView2ListDesc">Enable built-in PDF reader powered by Adobe Acrobat for WebView2</string><string id="SUPPORTED_WIN7_V97">Microsoft Edge version 97, Windows 7 or later</string><string id="SUPPORTED_WIN7_V116">Microsoft Edge version 116, Windows 7 or later</string><string id="SUPPORTED_WIN7_V118">Microsoft Edge version 118, Windows 7 or later</string><string id="SUPPORTED_WIN7_V87">Microsoft Edge version 87, Windows 7 or later</string><string id="microsoft_edge_webview2">Microsoft Edge WebView2</string><string id="microsoft_edge_webview2_recommended">Microsoft Edge WebView2 - Default Settings (users can override)</string></stringTable><presentationTable><presentation id="BrowserExecutableFolder"><listBox refId="BrowserExecutableFolderDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="ReleaseChannelPreference"><listBox refId="ReleaseChannelPreferenceDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="ExperimentationAndConfigurationServiceControl"><dropdownList refId="ExperimentationAndConfigurationServiceControl">Control communication with the Experimentation and Configuration Service</dropdownList></presentation><presentation id="ForcePermissionPolicyUnloadDefaultEnabled"/><presentation id="NewPDFReaderWebView2List"><listBox refId="NewPDFReaderWebView2ListDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation></presentationTable></resources></policyDefinitionResources>
+{&quot;name&quot;: &quot;*&quot;, &quot;value&quot;: false}</string><string id="NewPDFReaderWebView2ListDesc">Enable built-in PDF reader powered by Adobe Acrobat for WebView2</string><string id="RSAKeyUsageForLocalAnchorsEnabled">Check RSA key usage for server certificates issued by local trust anchors (deprecated)</string><string id="RSAKeyUsageForLocalAnchorsEnabled_Explain">DEPRECATED: This policy is deprecated. It is currently supported but will become obsolete in a future release.
+
+This policy is deprecated because RSAKeyUsageForLocalAnchorsEnabled feature has been removed.
+
+This policy will be removed in version 133.
+
+The X.509 key usage extension declares how the key in a certificate can be
+used. These instructions ensure certificates aren't used in an unintended
+context, which protects against a class of cross-protocol attacks on HTTPS and
+other protocols. HTTPS clients must verify that server certificates match the
+connection's TLS parameters.
+
+Starting in Microsoft Edge 124, this
+check is always enabled.
+
+Microsoft Edge 123 and earlier have the
+following behavior:
+
+If this policy is set to enabled,
+Microsoft Edge will perform this key
+check. This helps prevent attacks where an attacker manipulates the browser into
+interpreting a key in ways that the certificate owner did not intend.
+
+If this policy is set to disabled,
+Microsoft Edge will skip this key check in
+HTTPS connections that negotiate TLS 1.2 and use an RSA certificate that
+chains to a local trust anchor. Examples of local trust anchors include
+policy-provided or user-installed root certificates. In all other cases, the
+check is performed independent of this policy's setting.
+
+If this policy is not configured,
+Microsoft Edge will behave as if the
+policy is enabled.
+
+This policy is available for administrators to preview the behavior of a
+future release, which will enable this check by default. At that point, this
+policy will remain temporarily available for administrators that need more
+time to update their certificates to meet the new RSA key usage requirements.
+
+Connections that fail this check will fail with the error
+ERR_SSL_KEY_USAGE_INCOMPATIBLE. Sites that fail with this error likely have a
+misconfigured certificate. Modern ECDHE_RSA cipher suites use the
+&quot;digitalSignature&quot; key usage option, while legacy RSA decryption cipher suites
+use the &quot;keyEncipherment&quot; key usage option. If uncertain, administrators should
+include both in RSA certificates meant for HTTPS.</string><string id="SUPPORTED_WIN7_V97">Microsoft Edge version 97, Windows 7 or later</string><string id="SUPPORTED_WIN7_V116">Microsoft Edge version 116, Windows 7 or later</string><string id="SUPPORTED_WIN7_V118">Microsoft Edge version 118, Windows 7 or later</string><string id="SUPPORTED_WIN7_V87">Microsoft Edge version 87, Windows 7 or later</string><string id="SUPPORTED_WIN7_V121">Microsoft Edge version 121, Windows 7 or later</string><string id="SUPPORTED_WIN7_V123">Microsoft Edge version 123, Windows 7 or later</string><string id="SUPPORTED_WIN7_V125">Microsoft Edge version 125, Windows 7 or later</string><string id="OBSOLETE_WIN7_V123_V131">Microsoft Edge version 123-131, Windows 7 or later</string><string id="microsoft_edge_webview2">Microsoft Edge WebView2</string><string id="microsoft_edge_webview2_recommended">Microsoft Edge WebView2 - Default Settings (users can override)</string></stringTable><presentationTable><presentation id="BrowserExecutableFolder"><listBox refId="BrowserExecutableFolderDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="ChannelSearchKind"><listBox refId="ChannelSearchKindDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="ReleaseChannelPreference"><listBox refId="ReleaseChannelPreferenceDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="ReleaseChannels"><listBox refId="ReleaseChannelsDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="AccessControlAllowMethodsInCORSPreflightSpecConformant"/><presentation id="BlockTruncatedCookies"/><presentation id="ZstdContentEncodingEnabled"/><presentation id="ExperimentationAndConfigurationServiceControl"><dropdownList refId="ExperimentationAndConfigurationServiceControl">Control communication with the Experimentation and Configuration Service</dropdownList></presentation><presentation id="ForcePermissionPolicyUnloadDefaultEnabled"/><presentation id="HttpAllowlist"><listBox refId="HttpAllowlistDesc">HTTP Allowlist</listBox></presentation><presentation id="NewBaseUrlInheritanceBehaviorAllowed"/><presentation id="NewPDFReaderWebView2List"><listBox refId="NewPDFReaderWebView2ListDesc">Set value name to the Application User Model ID or the executable file name. You can use the &quot;*&quot; wildcard as value name to apply to all applications.</listBox></presentation><presentation id="RSAKeyUsageForLocalAnchorsEnabled"/></presentationTable></resources></policyDefinitionResources>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--  (c) 2015 Microsoft Corporation  -->
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
@@ -7,6 +7,9 @@
   </policyNamespaces>
   <resources minRequiredRevision="1.0" />
   <categories>
+    <category name="WindowsAI" displayName="$(string.WindowsAI)">
+      <parentCategory ref="windows:WindowsComponents" />
+    </category>
     <category name="WindowsCopilot" displayName="$(string.WindowsCopilot)">
       <parentCategory ref="windows:WindowsComponents" />
     </category>
@@ -21,6 +24,13 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="SetCopilotHardwareKey" class="User" displayName="$(string.SetCopilotHardwareKey)" presentation="$(presentation.SetCopilotHardwareKey)" explainText="$(string.SetCopilotHardwareKey_Help)" key="SOFTWARE\Policies\Microsoft\Windows\CopilotKey">
+      <parentCategory ref="WindowsCopilot" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <elements>
+        <text id="SetCopilotHardwareKey_Name" valueName="SetCopilotHardwareKey" required="true" />
+      </elements>
     </policy>
   </policies>
 </policyDefinitions>
