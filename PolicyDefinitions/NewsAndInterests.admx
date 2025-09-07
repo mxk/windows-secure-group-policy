@@ -32,5 +32,15 @@
         <decimal value="1" />
       </disabledValue>
     </policy>
+    <policy name="DisableWidgetsBoard" class="Machine" displayName="$(string.DisableWidgetsBoard)" explainText="$(string.Explain_DisableWidgetsBoard)" key="SOFTWARE\Policies\Microsoft\Dsh" valueName="DisableWidgetsBoard">
+      <parentCategory ref="NewsAndInterests" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2_NOSERVER" />
+      <enabledValue>
+        <decimal value="0" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

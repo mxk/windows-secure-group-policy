@@ -449,6 +449,13 @@ If you enable this setting the system will render all print job pages up front a
 
 If you disable this setting or do not configure it, pages are printed as soon as they are rendered and page counts are only sent when page reordering is required to process the job.
       </string>
+      <string id="RequireIpps">Require IPPS for IPP printers</string>
+      <string id="RequireIpps_Help">Determines whether communication with printers using the Microsoft IPP Class Driver must use IPPS (which uses TLS for secure communication).
+
+If you enable this policy setting, then only IPP printers which support IPPS can be installed.
+
+If you disable this setting or do not configure it, the default is to allow installation of IPP printers which do not support IPPS.
+      </string>
       <string id="IppTlsCertificatePolicy">Set TLS/SSL security policy for IPP printers</string>
       <string id="IppTlsCertificatePolicy_Help">
 Determines the TLS/SSL security policy (WINHTTP_OPTION_SECURITY_FLAGS) for printers using the Microsoft IPP Class Driver.

@@ -13,8 +13,35 @@
     <category name="WindowsCopilot" displayName="$(string.WindowsCopilot)">
       <parentCategory ref="windows:WindowsComponents" />
     </category>
+    <category name="Paint" displayName="$(string.Paint)">
+      <parentCategory ref="windows:WindowsComponents" />
+    </category>
   </categories>
   <policies>
+    <policy name="DisableAIDataAnalysis" class="Both" displayName="$(string.DisableAIDataAnalysis)" explainText="$(string.DisableAIDataAnalysis_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="DisableAIDataAnalysis">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="SetDenyAppListForRecall" class="Both" displayName="$(string.SetDenyAppListForRecall)" presentation="$(presentation.SetDenyAppListForRecall)" explainText="$(string.SetDenyAppListForRecall_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="SetDenyAppListForRecall">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <elements>
+        <text id="SetDenyAppListForRecall_Name" valueName="DenyAppListForRecall" />
+      </elements>
+    </policy>
+    <policy name="SetDenyUriListForRecall" class="Both" displayName="$(string.SetDenyUriListForRecall)" presentation="$(presentation.SetDenyUriListForRecall)" explainText="$(string.SetDenyUriListForRecall_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="SetDenyUriListForRecall">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <elements>
+        <text id="SetDenyUriListForRecall_Name" valueName="DenyUriListForRecall" />
+      </elements>
+    </policy>
     <policy name="TurnOffWindowsCopilot" class="User" displayName="$(string.TurnOffWindowsCopilot)" explainText="$(string.TurnOffWindowsCopilot_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" valueName="TurnOffWindowsCopilot">
       <parentCategory ref="WindowsCopilot" />
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
@@ -31,6 +58,152 @@
       <elements>
         <text id="SetCopilotHardwareKey_Name" valueName="SetCopilotHardwareKey" required="true" />
       </elements>
+    </policy>
+    <policy name="SetMaximumStorageSpaceForRecallSnapshots" class="Both" displayName="$(string.SetMaximumStorageSpaceForRecallSnapshots)" explainText="$(string.SetMaximumStorageSpaceForRecallSnapshots_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="SetMaximumStorageSpaceForRecallSnapshots" presentation="$(presentation.SetMaximumStorageSpaceForRecallSnapshots)">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <elements>
+        <enum id="SetMaximumStorageSpace_Text" valueName="SetMaximumStorageSpaceForRecallSnapshots">
+          <item displayName="$(string.SetMaximumStorageSpace_Default)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageSpace_10GB)">
+            <value>
+              <decimal value="10240" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageSpace_25GB)">
+            <value>
+              <decimal value="25600" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageSpace_50GB)">
+            <value>
+              <decimal value="51200" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageSpace_75GB)">
+            <value>
+              <decimal value="76800" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageSpace_100GB)">
+            <value>
+              <decimal value="102400" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageSpace_150GB)">
+            <value>
+              <decimal value="153600" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="SetMaximumStorageDurationForRecallSnapshots" class="Both" displayName="$(string.SetMaximumStorageDurationForRecallSnapshots)" explainText="$(string.SetMaximumStorageDurationForRecallSnapshots_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="SetMaximumStorageDurationForRecallSnapshots" presentation="$(presentation.SetMaximumStorageDurationForRecallSnapshots)">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <elements>
+        <enum id="SetMaximumStorageDuration_Text" valueName="SetMaximumStorageDurationForRecallSnapshots">
+          <item displayName="$(string.SetMaximumStorageDuration_OSDefined)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageDuration_30Days)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageDuration_60Days)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageDuration_90Days)">
+            <value>
+              <decimal value="90" />
+            </value>
+          </item>
+          <item displayName="$(string.SetMaximumStorageDuration_180Days)">
+            <value>
+              <decimal value="180" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="AllowRecallEnablement" class="Machine" displayName="$(string.AllowRecallEnablement)" explainText="$(string.AllowRecallEnablement_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="AllowRecallEnablement">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableClickToDo" class="Both" displayName="$(string.DisableClickToDo)" explainText="$(string.DisableClickToDo_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="DisableClickToDo">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableImageCreator" class="Machine" displayName="$(string.DisableImageCreator)" explainText="$(string.DisableImageCreator_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Paint" valueName="DisableImageCreator">
+      <parentCategory ref="Paint" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableCocreator" class="Machine" displayName="$(string.DisableCocreator)" explainText="$(string.DisableCocreator_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Paint" valueName="DisableCocreator">
+      <parentCategory ref="Paint" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableGenerativeFill" class="Machine" displayName="$(string.DisableGenerativeFill)" explainText="$(string.DisableGenerativeFill_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\Paint" valueName="DisableGenerativeFill">
+      <parentCategory ref="Paint" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowRecallExport" class="Machine" displayName="$(string.AllowRecallExport)" explainText="$(string.AllowRecallExport_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="AllowRecallExport">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="DisableSettingsAgent" class="Machine" displayName="$(string.DisableSettingsAgent)" explainText="$(string.DisableSettingsAgent_Help)" key="SOFTWARE\Policies\Microsoft\Windows\WindowsAI" valueName="DisableSettingsAgent">
+      <parentCategory ref="WindowsAI" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER_ENTERPRISE_EDUCATION_PRO_SANDBOX" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

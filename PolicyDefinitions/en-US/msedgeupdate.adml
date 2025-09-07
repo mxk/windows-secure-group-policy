@@ -47,6 +47,7 @@ If you don't configure this policy, on an unmanaged device the behavior is same 
   If you don't configure this policy for a channel, the 'Create Desktop Shortcut upon install default' policy configuration determines shortcut creation when Microsoft Edge is installed.</string>
       <string id="Sup_EdgeUpdate1_3_119_43">Microsoft Edge Update 1.3.119.43 and later</string>
       <string id="Pol_AllowSideBySideExperience">Allow Microsoft Edge Side by Side browser experience</string>
+      <string id="Name_EdgePreviewEnrollmentTypeOptIn">Opt-in</string>
       <string id="Explain_AutoUpdateCheckPeriod">Minimum number of minutes between automatic update checks.
 
 Set this policy to the value 0 to disable all periodic network traffic by Microsoft Edge Update. This is not recommended, as it prevents Microsoft Edge Update itself from receiving stability and security updates.
@@ -55,6 +56,7 @@ The 'Update policy override default' and per-application 'Update policy override
 
 The values for this policy can range from 0 to 43200.</string>
       <string id="TargetChannel_Extended_Stable_DropDown">Extended Stable</string>
+      <string id="Sup_EdgeUpdate1_3_195_63">Microsoft Edge Update 1.3.195.63 and later</string>
       <string id="Explain_DefaultUpdatePolicy">Lets you specify the default behavior for all channels concerning the way Microsoft Edge Update handles available updates for Microsoft Edge. Can be overridden for individual channels by specifying the 'Update policy override' policy for those specific channels.
 
 If you enable this policy, Microsoft Edge Update handles Microsoft Edge updates according to how you configure the following options:
@@ -135,6 +137,7 @@ If you disable (2) this policy, the installation of Microsoft Edge is blocked. T
 This policy doesn't prevent Microsoft Edge Update from running or prevent users from installing Microsoft Edge software using other methods.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.</string>
+      <string id="Name_EdgePreviewEnrollmentTypeOptOut">Opt-out</string>
       <string id="Sup_EdgeUpdate1_3_155_1">Microsoft Edge Update 1.3.155.1 and later</string>
       <string id="TargetChannel_Stable_DropDown">Stable</string>
       <string id="Cat_Google">Microsoft</string>
@@ -150,6 +153,7 @@ This policy is available only on Windows instances that are joined to a Microsof
   If you enable this policy, users in your organization can't change the proxy settings in Microsoft Edge Update.
 
   If you disable or don't configure this policy, no proxy server settings are configured, but users in your organization can choose their own proxy settings for Microsoft Edge Update.</string>
+      <string id="Name_UninstallEdgeEnabledAndKeepData">Enabled</string>
       <string id="Sup_GoogleUpdate1_3_26_0">Microsoft Edge Update 1.3.26.0 and later</string>
       <string id="Pol_RemoveDesktopShortcut">Remove Desktop Shortcuts upon update</string>
       <string id="Sup_EdgeUpdate1_3_147_1">Microsoft Edge Update 1.3.147.1 and later</string>
@@ -194,12 +198,13 @@ This policy is available only on Windows instances that are joined to a Microsof
       <string id="Pol_TargetVersionPrefix">Target version override</string>
       <string id="Pol_UninstallEdge">Specify uninstall behavior for Microsoft Edge</string>
       <string id="Name_MeteredUpdatesDisabled">Metered Disable updates</string>
+      <string id="Name_EdgePreviewEnrollmentTypeRequired">Required</string>
       <string id="Pol_DownloadPreference">Download URL class override</string>
       <string id="Pol_UpdateCheckSuppressedPeriod">Time period in each day to suppress auto-update check</string>
       <string id="Sup_EdgeUpdate1_3_128_0">Microsoft Edge Update 1.3.128.0 and later</string>
       <string id="Cat_WebView">Microsoft Edge WebView2 Runtime</string>
       <string id="Pol_UpdatePolicy">Update policy override</string>
-      <string id="Name_UninstallEdgeEnabledAndKeepData">Enabled</string>
+      <string id="Pol_EdgePreviewEnrollmentType">Edge Preview enrollment type</string>
       <string id="Pol_ProxyServer">Address or URL of proxy server</string>
       <string id="Explain_DefaultCreateDesktopShortcut">Lets you specify the default behavior for all channels for creating a desktop shortcut when Microsoft Edge is installed.
 
@@ -299,6 +304,7 @@ This policy is available only on Windows instances that are joined to a Microsof
   - If you disable (0) this policy, users in the Windows Insider Program cannot be enrolled in Edge Preview via Microsoft Edge Update.
 
   - If you don't configure this policy, users in the Windows Insider Program are enrolled in Edge Preview via Microsoft Edge Update by default.</string>
+      <string id="Explain_EdgePreviewEnrollmentTypeMicrosoftEdge">Details for this policy will be available in a future release</string>
       <string id="Explain_MeteredUpdatesPolicyMicrosoftEdge">Specifies whether Microsoft Edge Update will update on connections marked as metered, such as cellular connections or others where data usage is controlled for the Microsoft Edge browser. 
 
 If you don't enable and configure this policy, updates occur based the 'Download Updates over metered connections' toggle in the About Page of the Microsoft Edge browser. If a user doesn't make a choice, the Windows setting is used. You can find out more about the Windows setting here: https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#allowautowindowsupdatedownloadovermeterednetwork
@@ -401,6 +407,7 @@ This policy is available only on Windows instances that are joined to a Microsof
   - If you disable (0) this policy, users in the Windows Insider Program cannot be enrolled in Edge Preview via Microsoft Edge Update.
 
   - If you don't configure this policy, users in the Windows Insider Program are enrolled in Edge Preview via Microsoft Edge Update by default.</string>
+      <string id="Explain_EdgePreviewEnrollmentTypeMicrosoftEdgeBeta">Details for this policy will be available in a future release</string>
       <string id="Explain_MeteredUpdatesPolicyMicrosoftEdgeBeta">Specifies whether Microsoft Edge Update will update on connections marked as metered, such as cellular connections or others where data usage is controlled for the Microsoft Edge browser. 
 
 If you don't enable and configure this policy, updates occur based the 'Download Updates over metered connections' toggle in the About Page of the Microsoft Edge browser. If a user doesn't make a choice, the Windows setting is used. You can find out more about the Windows setting here: https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#allowautowindowsupdatedownloadovermeterednetwork
@@ -503,6 +510,7 @@ This policy is available only on Windows instances that are joined to a Microsof
   - If you disable (0) this policy, users in the Windows Insider Program cannot be enrolled in Edge Preview via Microsoft Edge Update.
 
   - If you don't configure this policy, users in the Windows Insider Program are enrolled in Edge Preview via Microsoft Edge Update by default.</string>
+      <string id="Explain_EdgePreviewEnrollmentTypeMicrosoftEdgeDev">Details for this policy will be available in a future release</string>
       <string id="Explain_MeteredUpdatesPolicyMicrosoftEdgeDev">Specifies whether Microsoft Edge Update will update on connections marked as metered, such as cellular connections or others where data usage is controlled for the Microsoft Edge browser. 
 
 If you don't enable and configure this policy, updates occur based the 'Download Updates over metered connections' toggle in the About Page of the Microsoft Edge browser. If a user doesn't make a choice, the Windows setting is used. You can find out more about the Windows setting here: https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#allowautowindowsupdatedownloadovermeterednetwork
@@ -601,6 +609,7 @@ This policy is available only on Windows instances that are joined to a Microsof
   - If you disable (0) this policy, users in the Windows Insider Program cannot be enrolled in Edge Preview via Microsoft Edge Update.
 
   - If you don't configure this policy, users in the Windows Insider Program are enrolled in Edge Preview via Microsoft Edge Update by default.</string>
+      <string id="Explain_EdgePreviewEnrollmentTypeMicrosoftEdgeCanary">Details for this policy will be available in a future release</string>
       <string id="Explain_MeteredUpdatesPolicyMicrosoftEdgeCanary">Specifies whether Microsoft Edge Update will update on connections marked as metered, such as cellular connections or others where data usage is controlled for the Microsoft Edge browser. 
 
 If you don't enable and configure this policy, updates occur based the 'Download Updates over metered connections' toggle in the About Page of the Microsoft Edge browser. If a user doesn't make a choice, the Windows setting is used. You can find out more about the Windows setting here: https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#allowautowindowsupdatedownloadovermeterednetwork
@@ -701,6 +710,7 @@ This policy is available only on Windows instances that are joined to a Microsof
   - If you disable (0) this policy, users in the Windows Insider Program cannot be enrolled in Edge Preview via Microsoft Edge Update.
 
   - If you don't configure this policy, users in the Windows Insider Program are enrolled in Edge Preview via Microsoft Edge Update by default.</string>
+      <string id="Explain_EdgePreviewEnrollmentTypeMicrosoftEdgeWebView">Details for this policy will be available in a future release</string>
       <string id="Explain_MeteredUpdatesPolicyMicrosoftEdgeWebView">Specifies whether Microsoft Edge Update will update on connections marked as metered, such as cellular connections or others where data usage is controlled for the Microsoft Edge browser. 
 
 If you don't enable and configure this policy, updates occur based the 'Download Updates over metered connections' toggle in the About Page of the Microsoft Edge browser. If a user doesn't make a choice, the Windows setting is used. You can find out more about the Windows setting here: https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update#allowautowindowsupdatedownloadovermeterednetwork
@@ -792,6 +802,10 @@ If Microsoft Edge needs to be reinstalled:
       <presentation id="Pol_CreateDesktopShortcut" />
       <presentation id="Pol_RollbackToTargetVersion" />
       <presentation id="Pol_EdgePreview" />
+      <presentation id="Pol_EdgePreviewEnrollmentType">
+        <dropdownList refId="Part_EdgePreviewEnrollmentType"
+            defaultItem="0">Enrollment type</dropdownList>
+      </presentation>
       <presentation id="Pol_DefaultMeteredUpdates">
         <dropdownList refId="Part_DefaultMeteredUpdatesPolicy"
             defaultItem="0">Default Metered Updates policy</dropdownList>

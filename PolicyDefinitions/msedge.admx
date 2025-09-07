@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 134.0.3124.72-->
+  <!--microsoft_edge version: 140.0.3485.54-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.Edge" prefix="microsoft_edge"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -15,6 +15,12 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V132)" name="SUPPORTED_WIN7_V132"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V133)" name="SUPPORTED_WIN7_V133"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V134)" name="SUPPORTED_WIN7_V134"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V135)" name="SUPPORTED_WIN7_V135"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V136)" name="SUPPORTED_WIN7_V136"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V137)" name="SUPPORTED_WIN7_V137"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V138)" name="SUPPORTED_WIN7_V138"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V139)" name="SUPPORTED_WIN7_V139"/>
+      <definition displayName="$(string.SUPPORTED_WIN7_V140)" name="SUPPORTED_WIN7_V140"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V77)" name="SUPPORTED_WIN7_V77"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V78)" name="SUPPORTED_WIN7_V78"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V79)" name="SUPPORTED_WIN7_V79"/>
@@ -73,18 +79,24 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V116)" name="OBSOLETE_WIN7_V107_V116"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V84_V96)" name="OBSOLETE_WIN7_V84_V96"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V124_V132)" name="OBSOLETE_WIN7_V124_V132"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V92_V137)" name="OBSOLETE_WIN7_V92_V137"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V84)" name="OBSOLETE_WIN7_V77_V84"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V77_V87)" name="OBSOLETE_WIN7_V77_V87"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V78_V83)" name="OBSOLETE_WIN7_V78_V83"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V101_V109)" name="OBSOLETE_WIN7_V101_V109"/>
-      <definition displayName="$(string.OBSOLETE_WIN7_V77_V87)" name="OBSOLETE_WIN7_V77_V87"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V86_V93)" name="OBSOLETE_WIN7_V86_V93"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V90)" name="OBSOLETE_WIN7_V77_V90"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V97_V105)" name="OBSOLETE_WIN7_V97_V105"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V130)" name="OBSOLETE_WIN7_V99_V130"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V101_V127)" name="OBSOLETE_WIN7_V101_V127"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V131_V137)" name="OBSOLETE_WIN7_V131_V137"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V85_V91)" name="OBSOLETE_WIN7_V85_V91"/>
-      <definition displayName="$(string.OBSOLETE_WIN7_V81_V84)" name="OBSOLETE_WIN7_V81_V84"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V81_V136)" name="OBSOLETE_WIN7_V81_V136"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V115_V135)" name="OBSOLETE_WIN7_V115_V135"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V128_V138)" name="OBSOLETE_WIN7_V128_V138"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V126)" name="OBSOLETE_WIN7_V110_V126"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V81_V84)" name="OBSOLETE_WIN7_V81_V84"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V93_V113)" name="OBSOLETE_WIN7_V93_V113"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V98_V103)" name="OBSOLETE_WIN7_V98_V103"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V112)" name="OBSOLETE_WIN7_V107_V112"/>
@@ -97,17 +109,21 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V99_V117)" name="OBSOLETE_WIN7_V99_V117"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V98)" name="OBSOLETE_WIN7_V95_V98"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V86)" name="OBSOLETE_WIN7_V77_V86"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V92_V139)" name="OBSOLETE_WIN7_V92_V139"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V88_V120)" name="OBSOLETE_WIN7_V88_V120"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V118_V130)" name="OBSOLETE_WIN7_V118_V130"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V107_V133)" name="OBSOLETE_WIN7_V107_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V80_V94)" name="OBSOLETE_WIN7_V80_V94"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V107)" name="OBSOLETE_WIN7_V95_V107"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V132_V138)" name="OBSOLETE_WIN7_V132_V138"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V123_V135)" name="OBSOLETE_WIN7_V123_V135"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V86)" name="OBSOLETE_WIN7_V79_V86"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V79_V92)" name="OBSOLETE_WIN7_V79_V92"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V110_V125)" name="OBSOLETE_WIN7_V110_V125"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V131)" name="OBSOLETE_WIN7_V77_V131"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V83_V129)" name="OBSOLETE_WIN7_V83_V129"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V116_V123)" name="OBSOLETE_WIN7_V116_V123"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V124_V136)" name="OBSOLETE_WIN7_V124_V136"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V102_V133)" name="OBSOLETE_WIN7_V102_V133"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V78_V87)" name="OBSOLETE_WIN7_V78_V87"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V127_V132)" name="OBSOLETE_WIN7_V127_V132"/>
@@ -121,6 +137,7 @@
       <definition displayName="$(string.OBSOLETE_WIN7_V113_V127)" name="OBSOLETE_WIN7_V113_V127"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V95_V109)" name="OBSOLETE_WIN7_V95_V109"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V123_V131)" name="OBSOLETE_WIN7_V123_V131"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V99_V134)" name="OBSOLETE_WIN7_V99_V134"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V77_V97)" name="OBSOLETE_WIN7_V77_V97"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V112_V128)" name="OBSOLETE_WIN7_V112_V128"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V102_V105)" name="OBSOLETE_WIN7_V102_V105"/>
@@ -244,6 +261,9 @@
     <category displayName="$(string.PrivateNetworkRequestSettings_group)" name="PrivateNetworkRequestSettings">
       <parentCategory ref="microsoft_edge"/>
     </category>
+    <category displayName="$(string.Profile_group)" name="Profile">
+      <parentCategory ref="microsoft_edge"/>
+    </category>
     <category displayName="$(string.Proxy_group)" name="Proxy">
       <parentCategory ref="microsoft_edge"/>
     </category>
@@ -273,6 +293,9 @@
     </category>
     <category displayName="$(string.Startup_group)" name="Startup_recommended">
       <parentCategory ref="microsoft_edge_recommended"/>
+    </category>
+    <category displayName="$(string.WebRtc_group)" name="WebRtc">
+      <parentCategory ref="microsoft_edge"/>
     </category>
   </categories>
   <policies>
@@ -966,6 +989,16 @@
         <list id="NotificationsBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\NotificationsBlockedForUrls" valuePrefix=""/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.PartitionedBlobUrlUsage)" explainText="$(string.PartitionedBlobUrlUsage_Explain)" key="Software\Policies\Microsoft\Edge" name="PartitionedBlobUrlUsage" presentation="$(presentation.PartitionedBlobUrlUsage)" valueName="PartitionedBlobUrlUsage">
+      <parentCategory ref="ContentSettings"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.PluginsAllowedForUrls)" explainText="$(string.PluginsAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="PluginsAllowedForUrls" presentation="$(presentation.PluginsAllowedForUrls)">
       <parentCategory ref="ContentSettings"/>
       <supportedOn ref="OBSOLETE_WIN7_V77_V87"/>
@@ -1475,6 +1508,13 @@
         <text id="ExtensionSettings" maxLength="1000000" valueName="ExtensionSettings"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.MandatoryExtensionsForInPrivateNavigation)" explainText="$(string.MandatoryExtensionsForInPrivateNavigation_Explain)" key="Software\Policies\Microsoft\Edge" name="MandatoryExtensionsForInPrivateNavigation" presentation="$(presentation.MandatoryExtensionsForInPrivateNavigation)">
+      <parentCategory ref="Extensions"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <elements>
+        <list id="MandatoryExtensionsForInPrivateNavigationDesc" key="Software\Policies\Microsoft\Edge\MandatoryExtensionsForInPrivateNavigation" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled)" explainText="$(string.ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled_recommended" presentation="$(presentation.ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled)" valueName="ControlDefaultStateOfAllowExtensionFromOtherStoresSettingEnabled">
       <parentCategory ref="Extensions_recommended"/>
       <supportedOn ref="SUPPORTED_WIN7_V101"/>
@@ -1625,6 +1665,16 @@
         <text id="EdgeDefaultProfileEnabled" maxLength="1000000" valueName="EdgeDefaultProfileEnabled"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.EdgeOpenExternalLinksWithAppSpecifiedProfile)" explainText="$(string.EdgeOpenExternalLinksWithAppSpecifiedProfile_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeOpenExternalLinksWithAppSpecifiedProfile" presentation="$(presentation.EdgeOpenExternalLinksWithAppSpecifiedProfile)" valueName="EdgeOpenExternalLinksWithAppSpecifiedProfile">
+      <parentCategory ref="Identity"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.GuidedSwitchEnabled)" explainText="$(string.GuidedSwitchEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="GuidedSwitchEnabled" presentation="$(presentation.GuidedSwitchEnabled)" valueName="GuidedSwitchEnabled">
       <parentCategory ref="Identity"/>
       <supportedOn ref="SUPPORTED_WIN7_V103"/>
@@ -1741,6 +1791,16 @@
       <elements>
         <text id="AutomaticProfileSwitchingSiteList" maxLength="1000000" valueName="AutomaticProfileSwitchingSiteList"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.EdgeOpenExternalLinksWithPrimaryWorkProfileEnabled)" explainText="$(string.EdgeOpenExternalLinksWithPrimaryWorkProfileEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="EdgeOpenExternalLinksWithPrimaryWorkProfileEnabled_recommended" presentation="$(presentation.EdgeOpenExternalLinksWithPrimaryWorkProfileEnabled)" valueName="EdgeOpenExternalLinksWithPrimaryWorkProfileEnabled">
+      <parentCategory ref="Identity_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.SignInCtaOnNtpEnabled)" explainText="$(string.SignInCtaOnNtpEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="SignInCtaOnNtpEnabled_recommended" presentation="$(presentation.SignInCtaOnNtpEnabled)" valueName="SignInCtaOnNtpEnabled">
       <parentCategory ref="Identity_recommended"/>
@@ -1937,6 +1997,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.HappyEyeballsV3Enabled)" explainText="$(string.HappyEyeballsV3Enabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HappyEyeballsV3Enabled" presentation="$(presentation.HappyEyeballsV3Enabled)" valueName="HappyEyeballsV3Enabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.IPv6ReachabilityOverrideEnabled)" explainText="$(string.IPv6ReachabilityOverrideEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="IPv6ReachabilityOverrideEnabled" presentation="$(presentation.IPv6ReachabilityOverrideEnabled)" valueName="IPv6ReachabilityOverrideEnabled">
       <parentCategory ref="Network"/>
       <supportedOn ref="SUPPORTED_WIN7_V132"/>
@@ -1947,9 +2017,33 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessAllowedForUrls)" explainText="$(string.LocalNetworkAccessAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessAllowedForUrls" presentation="$(presentation.LocalNetworkAccessAllowedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <list id="LocalNetworkAccessAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessAllowedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessBlockedForUrls)" explainText="$(string.LocalNetworkAccessBlockedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessBlockedForUrls" presentation="$(presentation.LocalNetworkAccessBlockedForUrls)">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <list id="LocalNetworkAccessBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\LocalNetworkAccessBlockedForUrls" valuePrefix=""/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsEnabled)" explainText="$(string.LocalNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="LocalNetworkAccessRestrictionsEnabled" presentation="$(presentation.LocalNetworkAccessRestrictionsEnabled)" valueName="LocalNetworkAccessRestrictionsEnabled">
+      <parentCategory ref="Network"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
       <parentCategory ref="Network"/>
-      <supportedOn ref="SUPPORTED_WIN7_V125"/>
+      <supportedOn ref="OBSOLETE_WIN7_V125_V137"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -1984,6 +2078,16 @@
     <policy class="Both" displayName="$(string.PasswordDeleteOnBrowserCloseEnabled)" explainText="$(string.PasswordDeleteOnBrowserCloseEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PasswordDeleteOnBrowserCloseEnabled" presentation="$(presentation.PasswordDeleteOnBrowserCloseEnabled)" valueName="PasswordDeleteOnBrowserCloseEnabled">
       <parentCategory ref="PasswordManager"/>
       <supportedOn ref="SUPPORTED_WIN7_V117"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.PasswordExportEnabled)" explainText="$(string.PasswordExportEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PasswordExportEnabled" presentation="$(presentation.PasswordExportEnabled)" valueName="PasswordExportEnabled">
+      <parentCategory ref="PasswordManager"/>
+      <supportedOn ref="SUPPORTED_WIN7_V136"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -2637,7 +2741,7 @@
     </policy>
     <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowed)" explainText="$(string.InsecurePrivateNetworkRequestsAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="InsecurePrivateNetworkRequestsAllowed" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowed)" valueName="InsecurePrivateNetworkRequestsAllowed">
       <parentCategory ref="PrivateNetworkRequestSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V92"/>
+      <supportedOn ref="OBSOLETE_WIN7_V92_V137"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -2647,14 +2751,24 @@
     </policy>
     <policy class="Both" displayName="$(string.InsecurePrivateNetworkRequestsAllowedForUrls)" explainText="$(string.InsecurePrivateNetworkRequestsAllowedForUrls_Explain)" key="Software\Policies\Microsoft\Edge" name="InsecurePrivateNetworkRequestsAllowedForUrls" presentation="$(presentation.InsecurePrivateNetworkRequestsAllowedForUrls)">
       <parentCategory ref="PrivateNetworkRequestSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V92"/>
+      <supportedOn ref="OBSOLETE_WIN7_V92_V137"/>
       <elements>
         <list id="InsecurePrivateNetworkRequestsAllowedForUrlsDesc" key="Software\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls" valuePrefix=""/>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.PrivateNetworkAccessRestrictionsEnabled)" explainText="$(string.PrivateNetworkAccessRestrictionsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PrivateNetworkAccessRestrictionsEnabled" presentation="$(presentation.PrivateNetworkAccessRestrictionsEnabled)" valueName="PrivateNetworkAccessRestrictionsEnabled">
       <parentCategory ref="PrivateNetworkRequestSettings"/>
-      <supportedOn ref="SUPPORTED_WIN7_V131"/>
+      <supportedOn ref="OBSOLETE_WIN7_V131_V137"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.ProfileTypeInProfileButtonEnabled)" explainText="$(string.ProfileTypeInProfileButtonEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProfileTypeInProfileButtonEnabled" presentation="$(presentation.ProfileTypeInProfileButtonEnabled)" valueName="ProfileTypeInProfileButtonEnabled">
+      <parentCategory ref="Profile"/>
+      <supportedOn ref="SUPPORTED_WIN7_V136"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -3121,6 +3235,13 @@
         <text id="NewTabPageCompanyLogo" maxLength="1000000" valueName="NewTabPageCompanyLogo"/>
       </elements>
     </policy>
+    <policy class="Both" displayName="$(string.NewTabPageCompanyLogoBackplateColor)" explainText="$(string.NewTabPageCompanyLogoBackplateColor_Explain)" key="Software\Policies\Microsoft\Edge" name="NewTabPageCompanyLogoBackplateColor" presentation="$(presentation.NewTabPageCompanyLogoBackplateColor)">
+      <parentCategory ref="Startup"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
+      <elements>
+        <text id="NewTabPageCompanyLogoBackplateColor" maxLength="1000000" valueName="NewTabPageCompanyLogoBackplateColor"/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.NewTabPageCompanyLogoEnabled)" explainText="$(string.NewTabPageCompanyLogoEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="NewTabPageCompanyLogoEnabled" presentation="$(presentation.NewTabPageCompanyLogoEnabled)" valueName="NewTabPageCompanyLogoEnabled">
       <parentCategory ref="Startup"/>
       <supportedOn ref="SUPPORTED_WIN7_V117"/>
@@ -3362,6 +3483,41 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.WebRtcIPHandlingUrl)" explainText="$(string.WebRtcIPHandlingUrl_Explain)" key="Software\Policies\Microsoft\Edge" name="WebRtcIPHandlingUrl" presentation="$(presentation.WebRtcIPHandlingUrl)">
+      <parentCategory ref="WebRtc"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
+      <elements>
+        <text id="WebRtcIPHandlingUrl" maxLength="1000000" valueName="WebRtcIPHandlingUrl"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.WebRtcLocalhostIpHandling)" explainText="$(string.WebRtcLocalhostIpHandling_Explain)" key="Software\Policies\Microsoft\Edge" name="WebRtcLocalhostIpHandling" presentation="$(presentation.WebRtcLocalhostIpHandling)">
+      <parentCategory ref="WebRtc"/>
+      <supportedOn ref="SUPPORTED_WIN7_V77"/>
+      <elements>
+        <enum id="WebRtcLocalhostIpHandling" valueName="WebRtcLocalhostIpHandling">
+          <item displayName="$(string.WebRtcLocalhostIpHandling_AllowAllInterfaces)">
+            <value>
+              <string>default</string>
+            </value>
+          </item>
+          <item displayName="$(string.WebRtcLocalhostIpHandling_AllowPublicAndPrivateInterfaces)">
+            <value>
+              <string>default_public_and_private_interfaces</string>
+            </value>
+          </item>
+          <item displayName="$(string.WebRtcLocalhostIpHandling_AllowPublicInterfaceOnly)">
+            <value>
+              <string>default_public_interface_only</string>
+            </value>
+          </item>
+          <item displayName="$(string.WebRtcLocalhostIpHandling_DisableNonProxiedUdp)">
+            <value>
+              <string>disable_non_proxied_udp</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.AADWebSiteSSOUsingThisProfileEnabled)" explainText="$(string.AADWebSiteSSOUsingThisProfileEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AADWebSiteSSOUsingThisProfileEnabled" presentation="$(presentation.AADWebSiteSSOUsingThisProfileEnabled)" valueName="AADWebSiteSSOUsingThisProfileEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V92"/>
@@ -3402,6 +3558,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.AdditionalDnsQueryTypesEnabled)" explainText="$(string.AdditionalDnsQueryTypesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AdditionalDnsQueryTypesEnabled" presentation="$(presentation.AdditionalDnsQueryTypesEnabled)" valueName="AdditionalDnsQueryTypesEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.AdditionalSearchBoxEnabled)" explainText="$(string.AdditionalSearchBoxEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AdditionalSearchBoxEnabled" presentation="$(presentation.AdditionalSearchBoxEnabled)" valueName="AdditionalSearchBoxEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V123"/>
@@ -3424,7 +3590,17 @@
     </policy>
     <policy class="Both" displayName="$(string.AddressBarMicrosoftSearchInBingProviderEnabled)" explainText="$(string.AddressBarMicrosoftSearchInBingProviderEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AddressBarMicrosoftSearchInBingProviderEnabled" presentation="$(presentation.AddressBarMicrosoftSearchInBingProviderEnabled)" valueName="AddressBarMicrosoftSearchInBingProviderEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V81"/>
+      <supportedOn ref="OBSOLETE_WIN7_V81_V136"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.AddressBarTrendingSuggestEnabled)" explainText="$(string.AddressBarTrendingSuggestEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="AddressBarTrendingSuggestEnabled" presentation="$(presentation.AddressBarTrendingSuggestEnabled)" valueName="AddressBarTrendingSuggestEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -3861,7 +4037,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AutomaticHttpsDefault)" explainText="$(string.AutomaticHttpsDefault_Explain)" key="Software\Policies\Microsoft\Edge" name="AutomaticHttpsDefault" presentation="$(presentation.AutomaticHttpsDefault)">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V92"/>
+      <supportedOn ref="OBSOLETE_WIN7_V92_V139"/>
       <elements>
         <enum id="AutomaticHttpsDefault" valueName="AutomaticHttpsDefault">
           <item displayName="$(string.AutomaticHttpsDefault_DisableAutomaticHttps)">
@@ -3884,7 +4060,7 @@
     </policy>
     <policy class="Both" displayName="$(string.AutomaticHttpsDefault)" explainText="$(string.AutomaticHttpsDefault_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="AutomaticHttpsDefault_recommended" presentation="$(presentation.AutomaticHttpsDefault)">
       <parentCategory ref="microsoft_edge_recommended"/>
-      <supportedOn ref="SUPPORTED_WIN7_V92"/>
+      <supportedOn ref="OBSOLETE_WIN7_V92_V139"/>
       <elements>
         <enum id="AutomaticHttpsDefault" valueName="AutomaticHttpsDefault">
           <item displayName="$(string.AutomaticHttpsDefault_DisableAutomaticHttps)">
@@ -4104,6 +4280,16 @@
       <elements>
         <text id="BrowsingDataLifetime" maxLength="1000000" valueName="BrowsingDataLifetime"/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.BuiltInAIAPIsEnabled)" explainText="$(string.BuiltInAIAPIsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="BuiltInAIAPIsEnabled" presentation="$(presentation.BuiltInAIAPIsEnabled)" valueName="BuiltInAIAPIsEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.BuiltInDnsClientEnabled)" explainText="$(string.BuiltInDnsClientEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="BuiltInDnsClientEnabled" presentation="$(presentation.BuiltInDnsClientEnabled)" valueName="BuiltInDnsClientEnabled">
       <parentCategory ref="microsoft_edge"/>
@@ -4990,6 +5176,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.EdgeHistoryAISearchEnabled)" explainText="$(string.EdgeHistoryAISearchEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeHistoryAISearchEnabled" presentation="$(presentation.EdgeHistoryAISearchEnabled)" valueName="EdgeHistoryAISearchEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.EdgeOpenInSidebarEnabled)" explainText="$(string.EdgeOpenInSidebarEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EdgeOpenInSidebarEnabled" presentation="$(presentation.EdgeOpenInSidebarEnabled)" valueName="EdgeOpenInSidebarEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V122"/>
@@ -5138,6 +5334,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.EnableUnsafeSwiftShader)" explainText="$(string.EnableUnsafeSwiftShader_Explain)" key="Software\Policies\Microsoft\Edge" name="EnableUnsafeSwiftShader" presentation="$(presentation.EnableUnsafeSwiftShader)" valueName="EnableUnsafeSwiftShader">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.EncryptedClientHelloEnabled)" explainText="$(string.EncryptedClientHelloEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EncryptedClientHelloEnabled" presentation="$(presentation.EncryptedClientHelloEnabled)" valueName="EncryptedClientHelloEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V108"/>
@@ -5232,7 +5438,7 @@
     </policy>
     <policy class="Both" displayName="$(string.EnhanceSecurityModeOptOutUXEnabled)" explainText="$(string.EnhanceSecurityModeOptOutUXEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="EnhanceSecurityModeOptOutUXEnabled" presentation="$(presentation.EnhanceSecurityModeOptOutUXEnabled)" valueName="EnhanceSecurityModeOptOutUXEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V115"/>
+      <supportedOn ref="OBSOLETE_WIN7_V115_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -5597,6 +5803,44 @@
       <elements>
         <list id="HttpAllowlistDesc" key="Software\Policies\Microsoft\Edge\HttpAllowlist" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.HttpsOnlyMode)" explainText="$(string.HttpsOnlyMode_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpsOnlyMode" presentation="$(presentation.HttpsOnlyMode)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <elements>
+        <enum id="HttpsOnlyMode" valueName="HttpsOnlyMode">
+          <item displayName="$(string.HttpsOnlyMode_allowed)">
+            <value>
+              <string>allowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_disallowed)">
+            <value>
+              <string>disallowed</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_enabled)">
+            <value>
+              <string>force_enabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.HttpsOnlyMode_force_balanced_enabled)">
+            <value>
+              <string>force_balanced_enabled</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.HttpsUpgradesEnabled)" explainText="$(string.HttpsUpgradesEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HttpsUpgradesEnabled" presentation="$(presentation.HttpsUpgradesEnabled)" valueName="HttpsUpgradesEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V136"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.HubsSidebarEnabled)" explainText="$(string.HubsSidebarEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="HubsSidebarEnabled" presentation="$(presentation.HubsSidebarEnabled)" valueName="HubsSidebarEnabled">
       <parentCategory ref="microsoft_edge"/>
@@ -6283,7 +6527,7 @@
     </policy>
     <policy class="Both" displayName="$(string.KeyboardFocusableScrollersEnabled)" explainText="$(string.KeyboardFocusableScrollersEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="KeyboardFocusableScrollersEnabled" presentation="$(presentation.KeyboardFocusableScrollersEnabled)" valueName="KeyboardFocusableScrollersEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V128"/>
+      <supportedOn ref="OBSOLETE_WIN7_V128_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6426,6 +6670,26 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.Microsoft365CopilotChatIconEnabled)" explainText="$(string.Microsoft365CopilotChatIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="Microsoft365CopilotChatIconEnabled" presentation="$(presentation.Microsoft365CopilotChatIconEnabled)" valueName="Microsoft365CopilotChatIconEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.Microsoft365CopilotChatIconEnabled)" explainText="$(string.Microsoft365CopilotChatIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="Microsoft365CopilotChatIconEnabled_recommended" presentation="$(presentation.Microsoft365CopilotChatIconEnabled)" valueName="Microsoft365CopilotChatIconEnabled">
+      <parentCategory ref="microsoft_edge_recommended"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.MicrosoftEdgeInsiderPromotionEnabled)" explainText="$(string.MicrosoftEdgeInsiderPromotionEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="MicrosoftEdgeInsiderPromotionEnabled" presentation="$(presentation.MicrosoftEdgeInsiderPromotionEnabled)" valueName="MicrosoftEdgeInsiderPromotionEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V98"/>
@@ -6488,7 +6752,7 @@
     </policy>
     <policy class="Both" displayName="$(string.MutationEventsEnabled)" explainText="$(string.MutationEventsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="MutationEventsEnabled" presentation="$(presentation.MutationEventsEnabled)" valueName="MutationEventsEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V124"/>
+      <supportedOn ref="OBSOLETE_WIN7_V124_V136"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6581,7 +6845,7 @@
     </policy>
     <policy class="Both" displayName="$(string.NewBaseUrlInheritanceBehaviorAllowed)" explainText="$(string.NewBaseUrlInheritanceBehaviorAllowed_Explain)" key="Software\Policies\Microsoft\Edge" name="NewBaseUrlInheritanceBehaviorAllowed" presentation="$(presentation.NewBaseUrlInheritanceBehaviorAllowed)" valueName="NewBaseUrlInheritanceBehaviorAllowed">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6618,6 +6882,34 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.OnBulkDataEntryEnterpriseConnector)" explainText="$(string.OnBulkDataEntryEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnBulkDataEntryEnterpriseConnector" presentation="$(presentation.OnBulkDataEntryEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <text id="OnBulkDataEntryEnterpriseConnector" maxLength="1000000" valueName="OnBulkDataEntryEnterpriseConnector"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.OnFileAttachedEnterpriseConnector)" explainText="$(string.OnFileAttachedEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnFileAttachedEnterpriseConnector" presentation="$(presentation.OnFileAttachedEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <text id="OnFileAttachedEnterpriseConnector" maxLength="1000000" valueName="OnFileAttachedEnterpriseConnector"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.OnPrintEnterpriseConnector)" explainText="$(string.OnPrintEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnPrintEnterpriseConnector" presentation="$(presentation.OnPrintEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <text id="OnPrintEnterpriseConnector" maxLength="1000000" valueName="OnPrintEnterpriseConnector"/>
+      </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.OnSecurityEventEnterpriseConnector)" explainText="$(string.OnSecurityEventEnterpriseConnector_Explain)" key="Software\Policies\Microsoft\Edge" name="OnSecurityEventEnterpriseConnector" presentation="$(presentation.OnSecurityEventEnterpriseConnector)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V139"/>
+      <elements>
+        <text id="OnSecurityEventEnterpriseConnector" maxLength="1000000" valueName="OnSecurityEventEnterpriseConnector"/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.OrganizationLogoOverlayOnAppIconEnabled)" explainText="$(string.OrganizationLogoOverlayOnAppIconEnabled_Explain)" key="Software\Policies\Microsoft\Edge\Recommended" name="OrganizationLogoOverlayOnAppIconEnabled_recommended" presentation="$(presentation.OrganizationLogoOverlayOnAppIconEnabled)" valueName="OrganizationLogoOverlayOnAppIconEnabled">
       <parentCategory ref="microsoft_edge_recommended"/>
@@ -6766,6 +7058,16 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.PrefetchWithServiceWorkerEnabled)" explainText="$(string.PrefetchWithServiceWorkerEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="PrefetchWithServiceWorkerEnabled" presentation="$(presentation.PrefetchWithServiceWorkerEnabled)" valueName="PrefetchWithServiceWorkerEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
     <policy class="Both" displayName="$(string.ProactiveAuthEnabled)" explainText="$(string.ProactiveAuthEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ProactiveAuthEnabled" presentation="$(presentation.ProactiveAuthEnabled)" valueName="ProactiveAuthEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="OBSOLETE_WIN7_V77_V90"/>
@@ -6858,7 +7160,7 @@
     </policy>
     <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -6924,7 +7226,7 @@
     </policy>
     <policy class="Both" displayName="$(string.RelatedMatchesCloudServiceEnabled)" explainText="$(string.RelatedMatchesCloudServiceEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="RelatedMatchesCloudServiceEnabled" presentation="$(presentation.RelatedMatchesCloudServiceEnabled)" valueName="RelatedMatchesCloudServiceEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V99"/>
+      <supportedOn ref="OBSOLETE_WIN7_V99_V134"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7027,6 +7329,16 @@
     <policy class="Both" displayName="$(string.RestorePdfView)" explainText="$(string.RestorePdfView_Explain)" key="Software\Policies\Microsoft\Edge" name="RestorePdfView" presentation="$(presentation.RestorePdfView)" valueName="RestorePdfView">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V113"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.RestrictCoreSharingOnRenderer)" explainText="$(string.RestrictCoreSharingOnRenderer_Explain)" key="Software\Policies\Microsoft\Edge" name="RestrictCoreSharingOnRenderer" presentation="$(presentation.RestrictCoreSharingOnRenderer)" valueName="RestrictCoreSharingOnRenderer">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7264,7 +7576,7 @@
     </policy>
     <policy class="Both" displayName="$(string.SelectParserRelaxationEnabled)" explainText="$(string.SelectParserRelaxationEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="SelectParserRelaxationEnabled" presentation="$(presentation.SelectParserRelaxationEnabled)" valueName="SelectParserRelaxationEnabled">
       <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V132"/>
+      <supportedOn ref="OBSOLETE_WIN7_V132_V138"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -7329,6 +7641,16 @@
       <elements>
         <list id="SerialBlockedForUrlsDesc" key="Software\Policies\Microsoft\Edge\SerialBlockedForUrls" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.ServiceWorkerAutoPreloadEnabled)" explainText="$(string.ServiceWorkerAutoPreloadEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ServiceWorkerAutoPreloadEnabled" presentation="$(presentation.ServiceWorkerAutoPreloadEnabled)" valueName="ServiceWorkerAutoPreloadEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V140"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.ServiceWorkerToControlSrcdocIframeEnabled)" explainText="$(string.ServiceWorkerToControlSrcdocIframeEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="ServiceWorkerToControlSrcdocIframeEnabled" presentation="$(presentation.ServiceWorkerToControlSrcdocIframeEnabled)" valueName="ServiceWorkerToControlSrcdocIframeEnabled">
       <parentCategory ref="microsoft_edge"/>
@@ -7637,6 +7959,16 @@
       <elements>
         <list id="SyncTypesListDisabledDesc" key="Software\Policies\Microsoft\Edge\SyncTypesListDisabled" valuePrefix=""/>
       </elements>
+    </policy>
+    <policy class="Both" displayName="$(string.TLS13EarlyDataEnabled)" explainText="$(string.TLS13EarlyDataEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="TLS13EarlyDataEnabled" presentation="$(presentation.TLS13EarlyDataEnabled)" valueName="TLS13EarlyDataEnabled">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V138"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
     </policy>
     <policy class="Both" displayName="$(string.TLS13HardeningForLocalAnchorsEnabled)" explainText="$(string.TLS13HardeningForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="TLS13HardeningForLocalAnchorsEnabled" presentation="$(presentation.TLS13HardeningForLocalAnchorsEnabled)" valueName="TLS13HardeningForLocalAnchorsEnabled">
       <parentCategory ref="microsoft_edge"/>
@@ -8022,6 +8354,13 @@
         <decimal value="0"/>
       </disabledValue>
     </policy>
+    <policy class="Both" displayName="$(string.WebAuthenticationRemoteDesktopAllowedOrigins)" explainText="$(string.WebAuthenticationRemoteDesktopAllowedOrigins_Explain)" key="Software\Policies\Microsoft\Edge" name="WebAuthenticationRemoteDesktopAllowedOrigins" presentation="$(presentation.WebAuthenticationRemoteDesktopAllowedOrigins)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V137"/>
+      <elements>
+        <list id="WebAuthenticationRemoteDesktopAllowedOriginsDesc" key="Software\Policies\Microsoft\Edge\WebAuthenticationRemoteDesktopAllowedOrigins" valuePrefix=""/>
+      </elements>
+    </policy>
     <policy class="Both" displayName="$(string.WebCaptureEnabled)" explainText="$(string.WebCaptureEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WebCaptureEnabled" presentation="$(presentation.WebCaptureEnabled)" valueName="WebCaptureEnabled">
       <parentCategory ref="microsoft_edge"/>
       <supportedOn ref="SUPPORTED_WIN7_V87"/>
@@ -8041,6 +8380,13 @@
       <disabledValue>
         <decimal value="0"/>
       </disabledValue>
+    </policy>
+    <policy class="Both" displayName="$(string.WebContentFilteringBlockedCategories)" explainText="$(string.WebContentFilteringBlockedCategories_Explain)" key="Software\Policies\Microsoft\Edge" name="WebContentFilteringBlockedCategories" presentation="$(presentation.WebContentFilteringBlockedCategories)">
+      <parentCategory ref="microsoft_edge"/>
+      <supportedOn ref="SUPPORTED_WIN7_V135"/>
+      <elements>
+        <list id="WebContentFilteringBlockedCategoriesDesc" key="Software\Policies\Microsoft\Edge\WebContentFilteringBlockedCategories" valuePrefix=""/>
+      </elements>
     </policy>
     <policy class="Both" displayName="$(string.WebDriverOverridesIncompatiblePolicies)" explainText="$(string.WebDriverOverridesIncompatiblePolicies_Explain)" key="Software\Policies\Microsoft\Edge" name="WebDriverOverridesIncompatiblePolicies" presentation="$(presentation.WebDriverOverridesIncompatiblePolicies)" valueName="WebDriverOverridesIncompatiblePolicies">
       <parentCategory ref="microsoft_edge"/>
@@ -8067,34 +8413,6 @@
       <supportedOn ref="SUPPORTED_WIN7_V80"/>
       <elements>
         <list id="WebRtcLocalIpsAllowedUrlsDesc" key="Software\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls" valuePrefix=""/>
-      </elements>
-    </policy>
-    <policy class="Both" displayName="$(string.WebRtcLocalhostIpHandling)" explainText="$(string.WebRtcLocalhostIpHandling_Explain)" key="Software\Policies\Microsoft\Edge" name="WebRtcLocalhostIpHandling" presentation="$(presentation.WebRtcLocalhostIpHandling)">
-      <parentCategory ref="microsoft_edge"/>
-      <supportedOn ref="SUPPORTED_WIN7_V77"/>
-      <elements>
-        <enum id="WebRtcLocalhostIpHandling" valueName="WebRtcLocalhostIpHandling">
-          <item displayName="$(string.WebRtcLocalhostIpHandling_AllowAllInterfaces)">
-            <value>
-              <string>default</string>
-            </value>
-          </item>
-          <item displayName="$(string.WebRtcLocalhostIpHandling_AllowPublicAndPrivateInterfaces)">
-            <value>
-              <string>default_public_and_private_interfaces</string>
-            </value>
-          </item>
-          <item displayName="$(string.WebRtcLocalhostIpHandling_AllowPublicInterfaceOnly)">
-            <value>
-              <string>default_public_interface_only</string>
-            </value>
-          </item>
-          <item displayName="$(string.WebRtcLocalhostIpHandling_DisableNonProxiedUdp)">
-            <value>
-              <string>disable_non_proxied_udp</string>
-            </value>
-          </item>
-        </enum>
       </elements>
     </policy>
     <policy class="Both" displayName="$(string.WebRtcRespectOsRoutingTableEnabled)" explainText="$(string.WebRtcRespectOsRoutingTableEnabled_Explain)" key="Software\Policies\Microsoft\Edge" name="WebRtcRespectOsRoutingTableEnabled" presentation="$(presentation.WebRtcRespectOsRoutingTableEnabled)" valueName="WebRtcRespectOsRoutingTableEnabled">

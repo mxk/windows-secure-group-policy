@@ -92,6 +92,13 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="ConfigureMSIXAuthenticationAuthorizedDomains" class="Machine" displayName="$(string.ConfigureMSIXAuthenticationAuthorizedDomains)" explainText="$(string.ConfigureMSIXAuthenticationAuthorizedDomainsExplanation)" presentation="$(presentation.ConfigureMSIXAuthenticationAuthorizedDomains)" key="Software\Policies\Microsoft\Windows\Appx">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+      <elements>
+        <text id="ConfigureMSIXAuthenticationAuthorizedDomains" valueName="MSIXAuthenticationAuthorizedDomains" required="true" />
+      </elements>
+    </policy>
     <policy name="DisableBackgroundAutoUpdates" class="Machine" displayName="$(string.DisableBackgroundAutoUpdates)" explainText="$(string.DisableBackgroundAutoUpdatesExplanation)" key="Software\Policies\Microsoft\Windows\Appx" valueName="DisableBackgroundAutoUpdates">
       <parentCategory ref="AppxDeployment" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_21H2" />
@@ -127,6 +134,226 @@
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
       <elements>
         <list id="AllowedNonAdminPackageFamilyNameRulesList" additive="true" />
+      </elements>
+    </policy>
+    <policy name="RemoveDefaultMicrosoftStorePackages" class="Machine" displayName="$(string.RemoveDefaultMicrosoftStorePackages)" explainText="$(string.RemoveDefaultMicrosoftStorePackagesExplanation)" presentation="$(presentation.RemoveDefaultMicrosoftStorePackages)" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages" valueName="Enabled">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_25H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <boolean id="WindowsFeedbackHub" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="MicrosoftOfficeHub" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="Clipchamp" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Clipchamp.Clipchamp_yxz26nhyzhsrt" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="Copilot" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.Copilot_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="BingNews" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.BingNews_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="Photos" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.Windows.Photos_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="MicrosoftSolitaireCollection" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="MicrosoftStickyNotes" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="MSTeams" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\MSTeams_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="Todo" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.Todos_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>  
+        <boolean id="BingWeather" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.BingWeather_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="OutlookForWindows" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.OutlookForWindows_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="Paint" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.Paint_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="QuickAssist" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\MicrosoftCorporationII.QuickAssist_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="ScreenSketch" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.ScreenSketch_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="WindowsCalculator" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.WindowsCalculator_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="WindowsCamera" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.WindowsCamera_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="MediaPlayer" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.MediaPlayer_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="WindowsNotepad" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.WindowsNotepad_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="WindowsSoundRecorder" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="WindowsTerminal" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.WindowsTerminal_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="GamingApp" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.GamingApp_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="XboxGamingOverlay" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.XboxGamingOverlay_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="XboxIdentityProvider" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.XboxIdentityProvider_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="XboxSpeechToTextOverlay" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
+        <boolean id="XboxTCUI" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.Xbox.TCUI_8wekyb3d8bbwe" valueName="RemovePackage">
+          <trueValue>
+            <decimal value="1" />
+          </trueValue>
+          <falseValue>
+            <decimal value="0" />
+          </falseValue>
+        </boolean>
       </elements>
     </policy>
   </policies>

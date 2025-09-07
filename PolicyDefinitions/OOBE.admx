@@ -27,5 +27,21 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowOOBEUpdates"
+            class="Machine"
+            displayName="$(string.AllowOOBEUpdates)"
+            explainText="$(string.AllowOOBEUpdates_Explain)"
+            key="Software\Policies\Microsoft\Windows\OOBE"
+            valueName="AllowOOBEUpdates"
+            >
+      <parentCategory ref="OOBECategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

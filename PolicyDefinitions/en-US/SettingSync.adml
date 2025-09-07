@@ -118,7 +118,7 @@ If you do not set or disable this setting, syncing on metered connections is con
       <string id="DisableAccessibilitySettingSync_Help">
         Prevent the "accessibility" group from syncing to and from this PC. This turns off and disables the "accessibility" group on the "Windows backup" settings page in PC settings.
 
-If you enable this policy setting, the "accessibility", group will not be synced.
+If you enable this policy setting, the "accessibility" group will not be synced.
 
 Use the option "Allow users to turn accessibility syncing on" so that syncing is turned off by default but not disabled.
 
@@ -130,11 +130,20 @@ If you do not set or disable this setting, syncing of the "accessibility" group 
       <string id="DisableLanguageSettingSync_Help">
         Prevent the "language preferences" group from syncing to and from this PC. This turns off and disables the "languages preferences" group on the "Windows backup" settings page in PC settings.
 
-If you enable this policy setting, the "language preferences", group will not be synced.
+If you enable this policy setting, the "language preferences" group will not be synced.
 
 Use the option "Allow users to turn language preferences syncing on" so that syncing is turned off by default but not disabled.
 
 If you do not set or disable this setting, syncing of the "language preferences" group is on by default and configurable by the user.
+      </string>
+
+      <!-- Allow Windows backup-->
+      <string id="EnableWindowsBackup">Enable Windows Backup</string>
+      <string id="EnableWindowsBackup_Help">This policy setting allows administrators to configure and manage windows backup for their organization.
+
+If you enable this policy setting, windows backup will occur periodically.
+
+If you disable or do not configure this policy setting, windows backup will not take place.
       </string>
 
     </stringTable>
@@ -187,7 +196,7 @@ If you do not set or disable this setting, syncing of the "language preferences"
 
       <!-- AccessibilitySync -->
       <presentation id="DisableAccessibilitySettingSyncUserOverride">
-        <checkBox refId="CheckBox_UserOverride">Allow users to turn "acessibility" syncing on.</checkBox>
+        <checkBox refId="CheckBox_UserOverride">Allow users to turn "accessibility" syncing on.</checkBox>
       </presentation>
 
       <!-- LanguageSync -->

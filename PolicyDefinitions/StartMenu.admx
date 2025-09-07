@@ -583,5 +583,28 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+     <policy name="ConfigureStartPins" class="Both" displayName="$(string.ConfigureStartPins)" explainText="$(string.ConfigureStartPins_Help)" presentation="$(presentation.ConfigureStartPins)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="ConfigureStartPins">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+          <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+          <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <text id="ConfigureStartPins_Name" valueName="ConfigureStartPinsJSON" expandable="true"/>
+      </elements>
+    </policy>
+    <policy name="HideCategoryView" class="Both" displayName="$(string.HideCategoryView)" explainText="$(string.HideCategoryView_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="HideCategoryView">
+      <parentCategory ref="windows:StartMenu" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+          <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+          <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

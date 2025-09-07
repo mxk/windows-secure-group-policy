@@ -309,5 +309,21 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy 
+      name="Netlogon_EnhancedDomainNtlmLogs" 
+      class="Machine" 
+      displayName="$(string.Netlogon_EnhancedDomainNtlmLogs)" 
+      explainText="$(string.Netlogon_EnhancedDomainNtlmLogs_Help)" 
+      key="Software\Policies\Microsoft\Netlogon\Parameters" 
+      valueName="EnableEnhancedDomainNtlmLogs">
+      <parentCategory ref="Netlogon" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

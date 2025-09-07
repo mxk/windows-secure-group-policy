@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="NTLM" namespace="Microsoft.Policies.NTLM" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="NTLM" displayName="$(string.NTLM)">
+      <parentCategory ref="windows:System" />
+    </category>
+  </categories>
+  <policies>
+    <policy 
+        name="LogEnhancedNtlmAudits" 
+        class="Machine" 
+        displayName="$(string.EnhancedAuditsId)" 
+        explainText="$(string.EnhancedAuditsId_Explain)" 
+        key="Software\Microsoft\Windows\CurrentVersion\Policies\System\NTLM\Parameters"
+        valueName="LogEnhancedAuditEvents"
+        >
+      <parentCategory ref="NTLM" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

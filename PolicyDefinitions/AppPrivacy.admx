@@ -168,6 +168,32 @@
         <multiText id="LetAppsAccessEmail_ForceDenyTheseApps_List" valueName="LetAppsAccessEmail_ForceDenyTheseApps" />
       </elements>
     </policy>
+    <policy name="LetAppsAccessSystemAIModels" class="Machine" displayName="$(string.LetAppsAccessSystemAIModels_Name)" explainText="$(string.LetAppsAccessSystemAIModels_Explain)" presentation="$(presentation.LetAppsAccessSystemAIModels)" key="Software\Policies\Microsoft\Windows\AppPrivacy">
+      <parentCategory ref="AppPrivacy" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="LetAppsAccessSystemAIModels_Enum" valueName="LetAppsAccessSystemAIModels">
+          <item displayName="$(string.UserInControl)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceAllow)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.ForceDeny)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+        <multiText id="LetAppsAccessSystemAIModels_UserInControlOfTheseApps_List" valueName="LetAppsAccessSystemAIModels_UserInControlOfTheseApps" />
+        <multiText id="LetAppsAccessSystemAIModels_ForceAllowTheseApps_List" valueName="LetAppsAccessSystemAIModels_ForceAllowTheseApps" />
+        <multiText id="LetAppsAccessSystemAIModels_ForceDenyTheseApps_List" valueName="LetAppsAccessSystemAIModels_ForceDenyTheseApps" />
+      </elements>
+    </policy>
     <policy name="LetAppsAccessGraphicsCaptureProgrammatic" class="Machine" displayName="$(string.LetAppsAccessGraphicsCaptureProgrammatic_Name)" explainText="$(string.LetAppsAccessGraphicsCaptureProgrammatic_Explain)" presentation="$(presentation.LetAppsAccessGraphicsCaptureProgrammatic)" key="Software\Policies\Microsoft\Windows\AppPrivacy">
       <parentCategory ref="AppPrivacy" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0" />

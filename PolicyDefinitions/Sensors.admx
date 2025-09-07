@@ -269,22 +269,22 @@
         </enum>
       </elements>
     </policy>
-    <policy name="ForcePrivacyScreen" class="Machine" displayName="$(string.ForcePrivacyScreen_DisplayName)" explainText="$(string.ForcePrivacyScreen_ExplainText)" presentation="$(presentation.ForcePrivacyScreen)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForcePrivacyScreen">
+    <policy name="ForceOnlookerDetection" class="Machine" displayName="$(string.ForceOnlookerDetection_DisplayName)" explainText="$(string.ForceOnlookerDetection_ExplainText)" presentation="$(presentation.ForceOnlookerDetection)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForceOnlookerDetection">
       <parentCategory ref="HumanPresence" />
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
       <elements>
-        <enum id="ForcePrivacyScreenDropdown" valueName="ForcePrivacyScreen" required="true">
-          <item displayName="$(string.ForcePrivacyScreen_0)">
+        <enum id="ForceOnlookerDetectionDropdown" valueName="ForceOnlookerDetection" required="true">
+          <item displayName="$(string.ForceOnlookerDetection_0)">
             <value>
               <decimal value="0" />
             </value>
           </item>
-          <item displayName="$(string.ForcePrivacyScreen_1)">
+          <item displayName="$(string.ForceOnlookerDetection_1)">
             <value>
               <decimal value="1" />
             </value>
           </item>
-          <item displayName="$(string.ForcePrivacyScreen_2)">
+          <item displayName="$(string.ForceOnlookerDetection_2)">
             <value>
               <decimal value="2" />
             </value>
@@ -292,27 +292,22 @@
         </enum>
       </elements>
     </policy>
-    <policy name="ForcePrivacyScreenAction" class="Machine" displayName="$(string.ForcePrivacyScreenAction_DisplayName)" explainText="$(string.ForcePrivacyScreenAction_ExplainText)" presentation="$(presentation.ForcePrivacyScreenAction)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForcePrivacyScreenAction">
+    <policy name="ForceOnlookerDetectionAction" class="Machine" displayName="$(string.ForceOnlookerDetectionAction_DisplayName)" explainText="$(string.ForceOnlookerDetectionAction_ExplainText)" presentation="$(presentation.ForceOnlookerDetectionAction)" key="Software\Policies\Microsoft\HumanPresence" valueName="ForceOnlookerDetectionAction">
       <parentCategory ref="HumanPresence" />
       <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
       <elements>
-        <enum id="ForcePrivacyScreenActionDropdown" valueName="ForcePrivacyScreenAction" required="true">
-          <item displayName="$(string.ForcePrivacyScreenAction_0)">
+        <enum id="ForceOnlookerDetectionActionDropdown" valueName="ForceOnlookerDetectionAction" required="true">
+          <item displayName="$(string.ForceOnlookerDetectionAction_0)">
             <value>
               <decimal value="0" />
             </value>
           </item>
-          <item displayName="$(string.ForcePrivacyScreenAction_1)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.ForcePrivacyScreenAction_2)">
+          <item displayName="$(string.ForceOnlookerDetectionAction_2)">
             <value>
               <decimal value="2" />
             </value>
           </item>
-          <item displayName="$(string.ForcePrivacyScreenAction_3)">
+          <item displayName="$(string.ForceOnlookerDetectionAction_3)">
             <value>
               <decimal value="3" />
             </value>

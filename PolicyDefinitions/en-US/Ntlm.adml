@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>NTLM Settings</displayName>
+  <description>Configuration settings for the NTLM security package.</description>
+  <resources>
+    <stringTable>
+      <string id="NTLM">NTLM</string>
+      <string id="EnhancedAuditsId">NTLM Enhanced Logging</string>
+      <string id="EnhancedAuditsId_Explain">This policy setting allows the NTLM security package to log the new, enhanced auditing logs for both clients and servers.
+
+      These enhanced logs have information about what is using NTLM, why NTLM is being used, and the destination of the NTLM authentication request. They also have information about NTLMv1 usage and other security downgrades.
+
+      If you enabled or do not configure this policy, the new auditing logs will be generated. If you disable the policy, the new logs are not generated.
+      </string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

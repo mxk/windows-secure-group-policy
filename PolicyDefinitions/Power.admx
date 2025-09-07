@@ -674,5 +674,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="EnableEnergySaver" class="Machine" displayName="$(string.EnableEnergySaver)" explainText="$(string.EnableEnergySaverExplain)" key="Software\Policies\Microsoft\Power\EnergySaver" valueName="EnableEnergySaver">
+      <parentCategory ref="EnergySaverSettingsCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

@@ -627,6 +627,15 @@ If you enable this policy, the Start Menu will no longer display the "Recently a
       <string id="HideRecommendedSection_Help">This policy allows you to prevent the Start Menu from displaying a list of recommended applications and files.
 
 If you enable this policy setting, the Start Menu will no longer show the section containing a list of recommended files and apps.</string>
+ <string id="HideCategoryView">Hide Category view in the Start Menu</string>
+ <string id="HideCategoryView_Help">This policy setting allows you to hide the category view in the Start Menu.
+ 
+ If you enable this policy setting, the Start Menu will no longer show the category view as an option and will default to grid view.</string>
+
+ <string id="ConfigureStartPins">Configure Start Pins</string>
+      <string id="ConfigureStartPins_Help">Allows admin to override the default items pinned to Start.
+
+This setting lets you specify the default items pinned to Start.</string>
 
       <string id="HideRecommendedPersonalizedSites">Remove Personalized Website Recommendations from the Recommended section in the Start Menu</string>
       <string id="HideRecommendedPersonalizedSites_Help">This policy setting allows you to hide the personalized websites in the recommended section of the Start Menu. 
@@ -675,6 +684,15 @@ A reboot is required for this policy setting to take effect.</string>
       </presentation>
       <presentation id="ShowOrHideMostUsedApps">
         <dropdownList refId="ShowOrHideMostUsedAppsDropdown" noSort="true" defaultItem="1">Choose one of the following actions</dropdownList>
+      </presentation>
+      <presentation id="ConfigureStartPins">
+        <textBox refId="ConfigureStartPins_Name">
+          <label>Start Pins Layout File</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="HideCategoryView">
+        <checkBox refId="HideCategoryView_CheckBox" defaultChecked="false">Hide category view</checkBox>
       </presentation>
     </presentationTable>
   </resources>

@@ -364,6 +364,17 @@ A reboot is not required for changes to this setting to take effect.
 
 More information is available at https://aka.ms/lowercasehostnamesrvrecord
       </string>
+      <string id="Netlogon_EnhancedDomainNtlmLogs">Log Enhanced Domain-wide NTLM Logs</string>
+      <string id="Netlogon_EnhancedDomainNtlmLogs_Help">This policy setting configures whether the domain controllers to which this setting is applied will log the new, enhanced domain-wide NTLM logs. These logs contain more information about NTLM authentication on a domain-wide level, including NTLMv1 usage.
+
+If enabled, domain controllers will log the new domain-wide NTLM logs.
+
+If disabled, domain controllers will not log the new domain-wide NTLM logs.
+
+If not configured, domain controllers will default to logging the new domain-wide NTLM logs.
+
+More information is available at aka.ms/ntlmlogandblock.
+      </string>
 
     </stringTable>
     <presentationTable>

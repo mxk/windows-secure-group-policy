@@ -19,6 +19,62 @@
         <text id="DisplayTurnOnGdiDPIScalingPrompt" valueName="EnableGdiDPIScaling" required="true" />
       </elements>
     </policy>
+    <policy name="DisplayConfigureMultipleDisplayMode" class="Machine" displayName="$(string.DisplayConfigureMultipleDisplayMode)" explainText="$(string.Display_ConfigureMultipleDisplayModeHelp)" presentation="$(presentation.DisplayConfigureMultipleDisplayMode)" key="Software\Policies\Microsoft\Windows\Display">
+      <parentCategory ref="DisplayCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="DisplayConfigureMultipleDisplayModeSettings" key="System\CurrentControlSet\Control\GraphicsDrivers\Configuration" valueName="DefaultTopologySetting">
+          <item displayName="$(string.DisplayConfigureMultipleDisplayModeDefault)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplayConfigureMultipleDisplayInternalOnly)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplayConfigureMultipleDisplayExternalOnly)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplayConfigureMultipleDisplayModeClone)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplayConfigureMultipleDisplayModeExtend)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="DisplaySetClonePreferredResolutionSource" class="Machine" displayName="$(string.DisplaySetClonePreferredResolutionSource)" explainText="$(string.Display_SetClonePreferredResolutionSourceHelp)" presentation="$(presentation.DisplaySetClonePreferredResolutionSource)" key="System\CurrentControlSet\Control\GraphicsDrivers\Configuration">
+      <parentCategory ref="DisplayCat" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2" />
+      <elements>
+        <enum id="DisplaySetClonePreferredResolutionSourceSettings" key="System\CurrentControlSet\Control\GraphicsDrivers\Configuration" valueName="DefaultCloneResolutionSetting">
+          <item displayName="$(string.DisplaySetClonePreferredResolutionSourceDefault)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplaySetClonePreferredResolutionSourceInternal)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.DisplaySetClonePreferredResolutionSourceExternal)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
     <policy name="DisplayTurnOffGdiDPIScaling" class="Machine" displayName="$(string.DisplayTurnOffGdiDPIScaling)" explainText="$(string.Display_TurnOffGdiDPIScaling_Help)" presentation="$(presentation.DisplayTurnOffGdiDPIScaling)" key="Software\Policies\Microsoft\Windows\Display">
       <parentCategory ref="DisplayCat" />
       <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS2" />

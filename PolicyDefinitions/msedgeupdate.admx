@@ -37,6 +37,8 @@
           displayName="$(string.Sup_EdgeUpdate1_3_179_5)" />
       <definition name="Sup_EdgeUpdate1_3_193_5"
           displayName="$(string.Sup_EdgeUpdate1_3_193_5)" />
+      <definition name="Sup_EdgeUpdate1_3_195_63"
+          displayName="$(string.Sup_EdgeUpdate1_3_195_63)" />
     </definitions>
   </supportedOn>
 
@@ -540,6 +542,36 @@
       <supportedOn ref="Sup_EdgeUpdate1_3_168_21" />
       <enabledValue><decimal value="1" /></enabledValue>
       <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <policy name="Pol_EdgePreviewEnrollmentTypeMicrosoftEdge" class="Machine"
+        displayName="$(string.Pol_EdgePreviewEnrollmentType)"
+        explainText="$(string.Explain_EdgePreviewEnrollmentTypeMicrosoftEdge)"
+        presentation="$(presentation.Pol_EdgePreviewEnrollmentType)"
+        key="Software\Policies\Microsoft\EdgeUpdate"
+        valueName="EdgePreviewEnrollmentType{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}">
+      <parentCategory ref="Cat_MicrosoftEdge" />
+      <supportedOn ref="Sup_EdgeUpdate1_3_195_63" />
+      <elements>
+        <enum id="Part_EdgePreviewEnrollmentType" key="Software\Policies\Microsoft\EdgeUpdate"
+            valueName="EdgePreviewEnrollmentType{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}" required="true">
+          <item displayName="$(string.Name_EdgePreviewEnrollmentTypeRequired)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_EdgePreviewEnrollmentTypeOptIn)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Name_EdgePreviewEnrollmentTypeOptOut)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+      </elements>
     </policy>
 
     <policy name="Pol_UninstallEdgeMicrosoftEdge" class="Machine"

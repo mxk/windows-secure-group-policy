@@ -74,6 +74,13 @@ If you disable or do not configure this policy setting, Group Policy blocks depl
 
         If you disable or do not configure this policy, all users will be able to initiate installation of Windows app packages.
       </string>
+      <string id="ConfigureMSIXAuthenticationAuthorizedDomains">Set authorized domains for HTTPS authentication in MSIX streaming install</string>
+      <string id="ConfigureMSIXAuthenticationAuthorizedDomainsExplanation">This policy setting determines whether an EntraID OAuth token will be included in HTTPS communications to a specified fully qualified domain name for performing an MSIX streaming installation.
+
+If you enable this policy setting, HTTPS communications to the predefined fully qualified domains will incorporate the user's EntraID OAuth token when performing a streaming MSIX install. The value provided is a regular expression (ECMA Script) that will be used to match against the uppercased, fully qualified domain of the URL.
+
+If you disable or do not configure this policy setting, the user's EntraID OAuth token will only be shared with the default configured domains.
+      </string>
       <string id="DisableBackgroundAutoUpdates">Not allow sideloaded apps to auto-update in the background</string>
       <string id="DisableBackgroundAutoUpdatesExplanation">Manages a sideloaded apps' ability to auto-update in the background.
 
@@ -114,10 +121,60 @@ If you disable or do not configure this policy, all Windows app packages will be
 
 Default is 'disabled' (key not present).
       </string>
+      <string id="RemoveDefaultMicrosoftStorePackages">Remove Default Microsoft Store packages from the system.</string>
+      <string id="RemoveDefaultMicrosoftStorePackagesExplanation">Removes Default Microsoft Store packages from the system.
+
+If you enable this policy, the selected Microsoft Store apps in the provided list will be uninstalled from the system. You can make adjustments to the default settings.
+
+Unselected apps in the list will not be removed.
+
+Default is 'disabled' (key not present).
+
+If the policy is disabled or not configured, no Default Microsoft Store packages will be removed from the system.
+
+* This is a headless app (no UI)
+
+** This app is the default handler for a common file type or protocol. Removing this app might result in a degraded user experience. We do not recommend removing this app.
+      </string>
+      <string id="RemoveDefaultMicrosoftStorePackagesDescription">Removes Default Microsoft Store packages from the system.</string>
     </stringTable>
     <presentationTable>
+      <presentation id="ConfigureMSIXAuthenticationAuthorizedDomains">
+        <textBox refId="ConfigureMSIXAuthenticationAuthorizedDomains">
+          <label>Expression</label>
+        </textBox>
+      </presentation>
       <presentation id="AllowedNonAdminPackageFamilyNameRules">
         <listBox refId="AllowedNonAdminPackageFamilyNameRulesList">Allowed package family names for non-admin user install</listBox>
+      </presentation>
+      <presentation id="RemoveDefaultMicrosoftStorePackages">
+        <text>Removes Default Microsoft Store packages from the system.</text>
+        <checkBox refId="WindowsFeedbackHub" defaultChecked="false">Feedback Hub</checkBox>
+        <checkBox refId="MicrosoftOfficeHub" defaultChecked="false">Microsoft 365 Copilot</checkBox>
+        <checkBox refId="Clipchamp" defaultChecked="false">Microsoft Clipchamp</checkBox>
+        <checkBox refId="Copilot" defaultChecked="false">Microsoft Copilot</checkBox>
+        <checkBox refId="BingNews" defaultChecked="true">Microsoft News</checkBox>
+        <checkBox refId="Photos" defaultChecked="false">Microsoft Photos **</checkBox>
+        <checkBox refId="MicrosoftSolitaireCollection" defaultChecked="true">Microsoft Solitaire Collection</checkBox>
+        <checkBox refId="MicrosoftStickyNotes" defaultChecked="false">Microsoft Sticky Notes</checkBox>
+        <checkBox refId="MSTeams" defaultChecked="false">Microsoft Teams</checkBox>
+        <checkBox refId="Todo" defaultChecked="false">Microsoft To Do</checkBox>
+        <checkBox refId="BingWeather" defaultChecked="true">MSN Weather</checkBox>
+        <checkBox refId="OutlookForWindows" defaultChecked="false">Outlook for Windows</checkBox>
+        <checkBox refId="Paint" defaultChecked="false">Paint</checkBox>
+        <checkBox refId="QuickAssist" defaultChecked="false">Quick Assist</checkBox>
+        <checkBox refId="ScreenSketch" defaultChecked="false">Snipping Tool</checkBox>
+        <checkBox refId="WindowsCalculator" defaultChecked="false">Windows Calculator</checkBox>
+        <checkBox refId="WindowsCamera" defaultChecked="false">Windows Camera **</checkBox>
+        <checkBox refId="MediaPlayer" defaultChecked="false">Windows Media Player **</checkBox>
+        <checkBox refId="WindowsNotepad" defaultChecked="false">Windows Notepad **</checkBox>
+        <checkBox refId="WindowsSoundRecorder" defaultChecked="false">Windows Sound Recorder</checkBox>
+        <checkBox refId="WindowsTerminal" defaultChecked="false">Windows Terminal</checkBox>
+        <checkBox refId="GamingApp" defaultChecked="true">Xbox Gaming App</checkBox>
+        <checkBox refId="XboxGamingOverlay" defaultChecked="true">Xbox Gaming Overlay *</checkBox>
+        <checkBox refId="XboxIdentityProvider" defaultChecked="true">Xbox Identity Provider *</checkBox>
+        <checkBox refId="XboxSpeechToTextOverlay" defaultChecked="true">Xbox Speech To Text Overlay *</checkBox>
+        <checkBox refId="XboxTCUI" defaultChecked="true">Xbox TCUI *</checkBox>
       </presentation>
     </presentationTable>
   </resources>

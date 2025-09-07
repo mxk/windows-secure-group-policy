@@ -14,6 +14,19 @@
 If this policy is enabled, the privacy experience will not launch for newly-created user accounts or for accounts that would have been prompted to choose their privacy settings after an upgrade.
 
 If this policy is disabled or not configured, then the privacy experience may launch for newly-created user accounts or for accounts that should be prompted to choose their privacy settings after an upgrade.</string>
+
+      <string id="AllowOOBEUpdates">Allow Updates in OOBE</string>
+      <string id="AllowOOBEUpdates_Explain">This policy allows you to configure whether a new device gets critical updates during the out-of-box experience.
+
+If you disable the policy, new devices will not receive critical updates during the out-of-box experience.
+
+If you enable the policy, new devices will receive the latest approved critical updates during the out-of-box experience.
+
+Notes:
+This policy does not control the zero-day patch (ZDP) updates page in OOBE.
+
+If you have paused quality updates through Windows quality update deferrals and pause policies, no quality updates will be delivered during the out-of-box experience.
+      </string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

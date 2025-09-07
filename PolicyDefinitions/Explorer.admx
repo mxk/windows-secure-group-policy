@@ -84,5 +84,15 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableAdvancedSettingsSourceIntegration" class="Machine" displayName="$(string.DisableAdvancedSettingsSourceIntegration)" explainText="$(string.DisableAdvancedSettingsSourceIntegration_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableAdvancedSettingsSourceIntegration">
+      <parentCategory ref="windows:WindowsExplorer" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

@@ -296,6 +296,8 @@ If you do not configure this policy setting, users control this setting.</string
 If you enable this policy setting, Power Throttling will be turned off.
 
 If you disable or do not configure this policy setting, users control this setting.</string>
+      <string id="EnableEnergySaver">Enable Energy Saver to Always Be On</string>
+      <string id="EnableEnergySaverExplain">This policy will extend battery life and reduce energy consumption by enabling Energy Saver to always be on. </string>
     </stringTable>
     <presentationTable>
       <presentation id="ACHibernateTimeOut_1">

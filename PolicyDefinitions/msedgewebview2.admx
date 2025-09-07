@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
-  <!--microsoft_edge version: 134.0.3124.72-->
+  <!--microsoft_edge version: 140.0.3485.54-->
   <policyNamespaces>
     <target namespace="Microsoft.Policies.WebView2" prefix="microsoft_edge_webview2"/>
     <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
@@ -15,6 +15,8 @@
       <definition displayName="$(string.SUPPORTED_WIN7_V121)" name="SUPPORTED_WIN7_V121"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V123)" name="SUPPORTED_WIN7_V123"/>
       <definition displayName="$(string.SUPPORTED_WIN7_V125)" name="SUPPORTED_WIN7_V125"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V123_V135)" name="OBSOLETE_WIN7_V123_V135"/>
+      <definition displayName="$(string.OBSOLETE_WIN7_V125_V137)" name="OBSOLETE_WIN7_V125_V137"/>
       <definition displayName="$(string.OBSOLETE_WIN7_V123_V131)" name="OBSOLETE_WIN7_V123_V131"/>
     </definitions>
   </supportedOn>
@@ -79,7 +81,7 @@
     </policy>
     <policy class="Both" displayName="$(string.ZstdContentEncodingEnabled)" explainText="$(string.ZstdContentEncodingEnabled_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="ZstdContentEncodingEnabled" presentation="$(presentation.ZstdContentEncodingEnabled)" valueName="ZstdContentEncodingEnabled">
       <parentCategory ref="Network"/>
-      <supportedOn ref="SUPPORTED_WIN7_V125"/>
+      <supportedOn ref="OBSOLETE_WIN7_V125_V137"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -129,7 +131,7 @@
     </policy>
     <policy class="Both" displayName="$(string.NewBaseUrlInheritanceBehaviorAllowed)" explainText="$(string.NewBaseUrlInheritanceBehaviorAllowed_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="NewBaseUrlInheritanceBehaviorAllowed" presentation="$(presentation.NewBaseUrlInheritanceBehaviorAllowed)" valueName="NewBaseUrlInheritanceBehaviorAllowed">
       <parentCategory ref="microsoft_edge_webview2"/>
-      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>
@@ -146,7 +148,7 @@
     </policy>
     <policy class="Both" displayName="$(string.RSAKeyUsageForLocalAnchorsEnabled)" explainText="$(string.RSAKeyUsageForLocalAnchorsEnabled_Explain)" key="Software\Policies\Microsoft\Edge\WebView2" name="RSAKeyUsageForLocalAnchorsEnabled" presentation="$(presentation.RSAKeyUsageForLocalAnchorsEnabled)" valueName="RSAKeyUsageForLocalAnchorsEnabled">
       <parentCategory ref="microsoft_edge_webview2"/>
-      <supportedOn ref="SUPPORTED_WIN7_V123"/>
+      <supportedOn ref="OBSOLETE_WIN7_V123_V135"/>
       <enabledValue>
         <decimal value="1"/>
       </enabledValue>

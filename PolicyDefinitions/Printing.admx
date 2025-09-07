@@ -1067,6 +1067,23 @@
     </policy>
     <policy
         class="Machine"
+        displayName="$(string.RequireIpps)"
+        explainText="$(string.RequireIpps_Help)"
+        key="Software\Policies\Microsoft\Windows NT\Printers\IPP"
+        name="RequireIppsPolicy"
+        valueName="RequireIpps"
+        >
+      <parentCategory ref="windows:Printers"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_24H2"/>
+      <enabledValue>
+        <decimal value="1"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0"/>
+      </disabledValue>
+    </policy>
+    <policy
+        class="Machine"
         displayName="$(string.IppTlsCertificatePolicy)"
         explainText="$(string.IppTlsCertificatePolicy_Help)"
         key="Software\Policies\Microsoft\Windows NT\Printers\IPP"

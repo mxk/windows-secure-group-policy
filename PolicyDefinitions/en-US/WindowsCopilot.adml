@@ -14,8 +14,129 @@ If you enable this policy setting, users will not be able to use Copilot. The Co
 If you disable or do not configure this policy setting, users will be able to use Copilot when it's available to them.
       </string>
       <string id="WindowsAI">Windows AI</string>
+      <string id="DisableAIDataAnalysis">Turn off saving snapshots for use with Recall
+      </string>
+      <string id="DisableAIDataAnalysis_Help">This policy setting allows you to determine whether snapshots of the screen can be saved for use with Recall. For managed devices, snapshots for Recall are not enabled by default. IT administrators cannot, on their own, enable saving snapshots on behalf of their users. The choice to enable saving snapshots requires individual user opt-in consent.
+
+If the policy is not configured, snapshots won't be saved for use with Recall.
+
+If you enable this policy, snapshots won't be saved for use with Recall. If snapshots were previously saved on the device, they will be deleted when this policy is enabled.
+
+If you set this policy to disabled, end users will have a choice to save snapshots of their screen and use Recall to find things they've seen on their device.
+      </string>
+      <string id="SetMaximumStorageSpaceForRecallSnapshots">Set maximum storage for snapshots used by Recall
+      </string>
+      <string id="SetMaximumStorageSpaceForRecallSnapshots_Help">This policy setting allows you to control the maximum amount of disk space that can be used by Windows to save snapshots for Recall.
+
+You can set the maximum amount of disk space for snapshots to be 10, 25, 50, 75, 100, or 150 GB.
+
+When this setting is not configured, the OS configures the storage allocation for snapshots based on the device storage capacity unless the current user specifies a different value.
+
+25 GB is allocated when the device storage capacity is 256 GB. 75 GB is allocated when the device storage capacity is 512 GB. 150 GB is allocated when the device storage capacity is 1 TB or higher.
+
+If both maximum storage duration and maximum storage space are set for Recall, then snapshots are deleted when the first maximum is reached.
+
+Important: This setting applies to Enterprise and Education client SKUs only.
+      </string>
+      <string id="SetMaximumStorageSpace_Default">Let the OS define the maximum storage amount based on hard drive storage size</string>
+      <string id="SetMaximumStorageSpace_10GB">10GB</string>
+      <string id="SetMaximumStorageSpace_25GB">25GB</string>
+      <string id="SetMaximumStorageSpace_50GB">50GB</string>
+      <string id="SetMaximumStorageSpace_75GB">75GB</string>
+      <string id="SetMaximumStorageSpace_100GB">100GB</string>
+      <string id="SetMaximumStorageSpace_150GB">150GB</string>
+      <string id="SetMaximumStorageDurationForRecallSnapshots">Set maximum duration for storing snapshots used by Recall
+      </string>
+      <string id="SetMaximumStorageDurationForRecallSnapshots_Help">This policy setting allows you to control the maximum amount of time (in days) that Windows saves snapshots for Recall.
+
+When the policy is enabled, you can configure the maximum storage duration to be 30, 60, 90, or 180 days.
+
+When this policy is not configured, the maximum storage duration is 90 days unless the current user specifies a different value.
+
+If both maximum storage duration and maximum storage space are set for Recall, then snapshots are deleted when the first maximum is reached.
+
+Important: This setting applies to Enterprise and Education client SKUs only.
+      </string>
+      <string id="SetMaximumStorageDuration_OSDefined">Let the OS define the maximum amount of time the snapshots will be saved
+      </string>
+      <string id="SetMaximumStorageDuration_30Days">30 days</string>
+      <string id="SetMaximumStorageDuration_60Days">60 days</string>
+      <string id="SetMaximumStorageDuration_90Days">90 days</string>
+      <string id="SetMaximumStorageDuration_180Days">180 days</string>
+      <string id="SetDenyAppListForRecall">Set a list of apps to be filtered from snapshots for Recall
+      </string>
+      <string id="SetDenyAppListForRecall_Help">This policy allows you to define a list of apps that won't be included in snapshots for Recall.
+
+Users will be able to add additional applications to exclude from snapshots using Recall settings.
+
+The list can include Application User Model IDs (AUMID) or name of the executable file.
+
+Use a semicolon-separated list of apps to define the deny app list for Recall.
+
+For example: code.exe;Microsoft.WindowsNotepad_8wekyb3d8bbwe!App;ms-teams.exe
+
+Important: This setting applies to Enterprise and Education client SKUs only. When configuring this policy setting, changes will not take effect until the device restarts.
+      </string>
+      <string id="SetDenyUriListForRecall">Set a list of URIs to be filtered from snapshots for Recall
+      </string>
+      <string id="SetDenyUriListForRecall_Help">This policy setting lets you define a list of URIs that won't be included in snapshots for Recall when a supported browser is used. People within your organization can use Recall settings to add more websites to the list. Define the list using a semicolon to separate URIs.
+
+For example: https://www.Contoso.com;https://www.WoodgroveBank.com;https://www.Adatum.com
+
+Adding https://www.WoodgroveBank.com to the list would also filter https://Account.WoodgroveBank.com and https://www.WoodgroveBank.com/Account.
+
+Important: This setting applies to Enterprise and Education client SKUs only. Changes to this policy take effect after device restart.
+      </string>
       <string id="SetCopilotHardwareKey">Set Copilot Hardware Key</string>
       <string id="SetCopilotHardwareKey_Help">This policy setting determines which app opens when the user presses the Copilot key on their keyboard. If the policy is enabled, the specified app will open when the user presses the Copilot key. Users can change the key assignment in Settings. If the policy is not configured, Copilot will open if it's available in that country or region.
+      </string>
+      <string id="AllowRecallEnablement">Allow Recall to be enabled
+      </string>
+      <string id="AllowRecallEnablement_Help">This policy setting allows you to determine whether the Recall optional component is available for end users to enable on their device. By default, Recall is disabled for managed commercial devices. Recall isn't available on managed devices by default, and individual users can't enable Recall on their own.
+
+If this policy is not configured, end users will have the Recall component in a disabled state.
+
+If this policy is disabled, the Recall component will be in disabled state and the bits for Recall will be removed from the device. If snapshots were previously saved on the device, they will be deleted when this policy is disabled. Removing Recall requires a device restart.
+
+If the policy is enabled, end users will have Recall available on their device. Depending on the state of the DisableAIDataAnalysis policy (Turn off saving snapshots for use with Recall), end users will be able to choose if they want to save snapshots of their screen and use Recall to find things they've seen on their device.
+      </string>
+      <string id="DisableClickToDo">Disable Click to Do</string>
+      <string id="DisableClickToDo_Help">Click to Do lets people take action on content on their screens. When activated, it takes a screenshot of their screen and analyzes it to present actions. Click to Do ends when they exit it, and it can't take screenshots while closed. Screenshot analysis is always performed locally on their device. By default, Click to Do is enabled for users.
+
+This policy setting allows you to determine whether Click to Do is available for users on their device.
+
+When the policy is enabled, the Click to Do component and entry points will not be available to users.
+
+When the policy is disabled, users will have Click to Do available on their device.
+      </string>
+      <string id="Paint">Paint</string>
+      <string id="DisableImageCreator">Disable Image Creator</string>
+      <string id="DisableImageCreator_Help">This policy setting allows you to control whether Image Creator functionality is disabled in the Windows Paint app. If this policy is enabled, Image Creator functionality will not be accessible in the Paint app. If this policy is disabled or not configured, users will be able to access Image Creator functionality.</string>
+      <string id="DisableCocreator">Disable Cocreator</string>
+      <string id="DisableCocreator_Help">This policy setting allows you to control whether Cocreator functionality is disabled in the Windows Paint app. If this policy is enabled, Cocreator functionality will not be accessible in the Paint app. If this policy is disabled or not configured, users will be able to access Cocreator functionality.</string>
+      <string id="DisableGenerativeFill">Disable generative fill</string>
+      <string id="DisableGenerativeFill_Help">This policy setting allows you to control whether generative fill functionality is disabled in the Windows Paint app. If this policy is enabled, generative fill functionality will not be accessible in the Paint app. If this policy is disabled or not configured, users will be able to access generative fill functionality.</string>
+      <string id="AllowRecallExport">Allow export of Recall and snapshot information</string>
+      <string id="AllowRecallExport_Help">This policy allows you to determine whether users can export their own Recall and snapshot information. Exporting allows users to share their Recall and snapshot information with trusted apps or websites. Users can export from Settings &gt; Privacy &amp; security &gt; Recall &amp; snapshots &gt; Advanced settings &gt; Export snapshots &gt; Export past snapshots &gt; Export.
+
+Users can also choose to continuously export their snapshots if they turn on the option to Export snapshots from now on from Settings &gt; Privacy &amp; security &gt; Recall &amp; snapshots &gt; Advanced settings &gt; Export snapshots &gt; Export.
+
+Before starting an export, the user must authenticate with Windows Hello and they are notified that their exported snapshots are encrypted since they might contain sensitive information. The user is also notified that they'll need to provide their Recall export code if they want to allow trusted apps or websites access to exported snapshots. The Recall export code is displayed to users during Recall setup even if this policy is set to disabled or not configured. For managed devices:
+
+When you set this policy to enabled, users will be able to export Recall and snapshot information.
+
+If the policy is set to disabled or not configured, users won't be able to export their Recall and snapshot information.
+
+Important: This setting applies to devices in the European Economic Area (EEA) only. Export of Recall and snapshot information is a user-initiated process and is per user. IT admins or other users can't initiate an export on behalf of another.
+      </string>
+      <string id="DisableSettingsAgent">Disable Settings agentic search experience</string>
+      <string id="DisableSettingsAgent_Help">Settings agentic experience enhances search results within the Settings app by enabling natural language. When activated, it utilizes an AI model to provide intelligent Settings search suggestions.
+        
+        This policy setting allows you to determine whether Settings agentic search experience is available for users on their device.
+        
+        When the policy is enabled, the Settings agentic search experience is disabled, limiting search results to statically indexed searches and semantic searches.
+        
+        When the policy is disabled, users will have Settings agentic search experience available on their device.
       </string>
     </stringTable>
     <presentationTable>
@@ -25,6 +146,22 @@ If you disable or do not configure this policy setting, users will be able to us
           <defaultValue>
           </defaultValue>
         </textBox>
+      </presentation>
+      <presentation id="SetDenyAppListForRecall">
+        <textBox refId="SetDenyAppListForRecall_Name">
+          <label>Enter deny app list:</label>
+        </textBox>
+      </presentation>
+      <presentation id="SetDenyUriListForRecall">
+        <textBox refId="SetDenyUriListForRecall_Name">
+          <label>Enter deny uri list:</label>
+        </textBox>
+      </presentation>
+      <presentation id="SetMaximumStorageSpaceForRecallSnapshots">
+        <dropdownList refId="SetMaximumStorageSpace_Text" noSort="true" defaultItem="0">Select maximum storage space:</dropdownList>
+      </presentation>
+      <presentation id="SetMaximumStorageDurationForRecallSnapshots">
+        <dropdownList refId="SetMaximumStorageDuration_Text" noSort="true" defaultItem="0">Select maximum storage duration:</dropdownList>
       </presentation>
     </presentationTable>
   </resources>

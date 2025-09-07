@@ -254,5 +254,18 @@
         </boolean>
       </elements>
     </policy>
+
+    <policy name="EnableWindowsBackup" class="Machine" displayName="$(string.EnableWindowsBackup)" explainText="$(string.EnableWindowsBackup_Help)" key="Software\Policies\Microsoft\Windows\SettingSync" valueName="EnableWindowsBackup">
+      <parentCategory ref="SettingSync" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
   </policies>
 </policyDefinitions>
+

@@ -2,7 +2,7 @@
 
 A local group policy intended for standalone Windows 11 devices. It aims to improve privacy, security, and performance, in that order.
 
-All settings are maintained in a single `PolicyRules` file that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise edition.
+All settings are maintained in a single [`PolicyRules`](PolicyRules/Win11.PolicyRules) file that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise edition.
 
 The target Feature Update version is **Windows 11 23H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
 
@@ -48,11 +48,11 @@ To update the policy for a new Windows feature release:
 
 Templates contained in the `PolicyDefinitions` directory:
 
-1. Windows 11 Enterprise 24H2 ISO (26100.3194)
+1. Windows 11 Enterprise 24H2 ISO (26100.4946)
 2. [Windows 11 v24H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
-4. [Microsoft Edge (134.0.3124.72)][Edge]
-5. [Mozilla Firefox (6.8)][Firefox]
+4. [Microsoft Edge (140.0.3485.54)][Edge]
+5. [Mozilla Firefox (7.2)][Firefox]
 
 [RTLFB]: https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services
 [Edge]: https://www.microsoft.com/en-us/edge/business/download

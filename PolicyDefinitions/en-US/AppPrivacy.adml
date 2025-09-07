@@ -99,6 +99,22 @@ If you disable or do not configure this policy setting, employees in your organi
 
 If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
       </string>
+      <string id="LetAppsAccessSystemAIModels_Name">Let Windows apps make use of Text and image generation features of Windows</string>
+      <string id="LetAppsAccessSystemAIModels_Explain">
+This policy setting specifies whether Windows apps can use Text and image generation features of Windows.
+
+You can specify either a default setting for all apps or a per-app setting by specifying a Package Family Name. You can get the Package Family Name for an app by using the Get-AppPackage Windows PowerShell cmdlet. A per-app setting overrides the default setting.
+
+If you choose the "User is in control" option, employees in your organization can decide whether Windows apps can use Text and image generation by using Settings &gt; Privacy on the device.
+
+If you choose the "Force Allow" option, Windows apps are allowed to use Text and image generation features of Windows and employees in your organization cannot change it.
+
+If you choose the "Force Deny" option, Windows apps are not allowed to use Text and image generation features of Windows and employees in your organization cannot change it.
+
+If you disable or do not configure this policy setting, employees in your organization can decide whether Windows apps can use Text and image generation features of Windows by using Settings &gt; Privacy on the device.
+
+If an app is open when this Group Policy object is applied on a device, employees must restart the app or device for the policy changes to be applied to the app.
+      </string>
       <string id="LetAppsAccessGraphicsCaptureProgrammatic_Name">Let Windows apps take screenshots of various windows or displays</string>
       <string id="LetAppsAccessGraphicsCaptureProgrammatic_Explain">This policy setting specifies whether Windows apps can take screenshots of various windows or displays.
 
@@ -436,6 +452,15 @@ If an app is open when this Group Policy object is applied on a device, employee
         <multiTextBox refId="LetAppsAccessEmail_ForceAllowTheseApps_List"/>
         <text>Force deny these specific apps (use Package Family Names):</text>
         <multiTextBox refId="LetAppsAccessEmail_ForceDenyTheseApps_List"/>
+      </presentation>
+      <presentation id="LetAppsAccessSystemAIModels">
+        <dropdownList refId="LetAppsAccessSystemAIModels_Enum" noSort="true" defaultItem="0">Default for all apps:</dropdownList>
+        <text>Put user in control of these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessSystemAIModels_UserInControlOfTheseApps_List"/>
+        <text>Force allow these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessSystemAIModels_ForceAllowTheseApps_List"/>
+        <text>Force deny these specific apps (use Package Family Names):</text>
+        <multiTextBox refId="LetAppsAccessSystemAIModels_ForceDenyTheseApps_List"/>
       </presentation>
       <presentation id="LetAppsAccessGraphicsCaptureProgrammatic">
         <dropdownList refId="LetAppsAccessGraphicsCaptureProgrammatic_Enum" noSort="true" defaultItem="0">Default for all apps:</dropdownList>
