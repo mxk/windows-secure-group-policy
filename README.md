@@ -35,20 +35,23 @@ When `LGPO.exe` and `GPO2PolicyRules.exe` export the local policy, they include 
 
 To update the policy for a new Windows feature release:
 
-1. Download and install the new ISO in a Hyper-V VM.
-2. Configure VM enhanced session settings to redirect the host drive that contains this repository.
-3. Run `cmd.exe` as an Administrator in the VM.
-4. Map host drive for easier access: `net use Z: \\tsclient\<drive>\<path-to-repo>`
-5. Update and copy over the templates as described in the next section. Update this file with new version information.
-6. Save an updated `Win11-CleanInstall.PolicyRules` file.
-7. Install the current policy and restart.
-8. Follow the steps above to update the policy, comparing it against the new security baselines.
+1. Download the latest ISO. Check for updates to [LGPO and Policy Analyzer tools][SCT].
+2. Rebuild `PolicyDefinitions` directory as described in the next section and update README.md with new version information.
+3. Install in a new Hyper-V VM.
+4. Configure VM enhanced session settings to redirect the host drive that contains this repository.
+5. Run `cmd.exe` as an Administrator in the VM.
+6. Map host drive for easier access: `net use Z: \\tsclient\<drive>\<path-to-repo>`
+7. Run `Z:\savewin11.cmd` and rename `PolicyRules\Win11-Local.PolicyRules` to `Win11-CleanInstall.PolicyRules`.
+8. Install the current policy via `install.cmd` and restart.
+9. Copy updated `PolicyDefinitions` directory to the VM, skipping all existing files.
+10. Follow the steps above to update the policy, comparing it against the new security baselines.
 
 ## Templates
 
 Templates contained in the `PolicyDefinitions` directory:
 
-1. Windows 11 Enterprise 24H2 ISO (26100.4946)
+1. Windows 11 Enterprise 24H2 Aug 2025 ISO (26100.4946)
+   * SHA256: `7852F0B08B5E4E41CF82614E671611F5EEB1C00DF378C93FF31D6CD4E9854102`
 2. [Windows 11 v24H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
 4. [Microsoft Edge (140.0.3485.54)][Edge]
