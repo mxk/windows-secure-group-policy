@@ -4,7 +4,7 @@ A local group policy intended for standalone Windows 11 devices. It aims to impr
 
 All settings are maintained in a single [`PolicyRules`](PolicyRules/Win11.PolicyRules) file that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise edition.
 
-The target Feature Update version is **Windows 11 23H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
+The target Feature Update version is **Windows 11 24H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
 
 [LGPO]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10#what-is-the-local-group-policy-object-lgpo-tool
 [Baseline]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines
@@ -35,16 +35,23 @@ When `LGPO.exe` and `GPO2PolicyRules.exe` export the local policy, they include 
 
 To update the policy for a new Windows feature release:
 
-1. Download the latest ISO. Check for updates to [LGPO and Policy Analyzer tools][SCT].
-2. Rebuild `PolicyDefinitions` directory as described in the next section and update README.md with new version information.
-3. Install in a new Hyper-V VM.
-4. Configure VM enhanced session settings to redirect the host drive that contains this repository.
-5. Run `cmd.exe` as an Administrator in the VM.
-6. Map host drive for easier access: `net use Z: \\tsclient\<drive>\<path-to-repo>`
-7. Run `Z:\savewin11.cmd` and rename `PolicyRules\Win11-Local.PolicyRules` to `Win11-CleanInstall.PolicyRules`.
-8. Install the current policy via `install.cmd` and restart.
-9. Copy updated `PolicyDefinitions` directory to the VM, skipping all existing files.
-10. Follow the steps above to update the policy, comparing it against the new security baselines.
+1. Download the latest ISO.
+2. Check for updates to [LGPO and Policy Analyzer tools][SCT].
+3. Rebuild `PolicyDefinitions` directory as described in the next section and update README.md with new version information.
+4. Create a new Hyper-V VM and do a clean install.
+5. Configure VM enhanced session settings to redirect the host drive that contains this repository.
+6. Run `cmd.exe` as an Administrator in the VM.
+7. Map host drive for easier access: `net use Z: \\tsclient\<drive>\<path-to-repo>`
+8. Run `Z:\savewin11.cmd` and rename `Z:\PolicyRules\Win11-Local.PolicyRules` to `Z:\PolicyRules\Win11-CleanInstall.PolicyRules`.
+9. Run `Z:\install.cmd` and restart.
+10. Copy updated `Z:\PolicyDefinitions` directory to the VM, skipping all existing files.
+11. Use Policy Analyzer to view differences between the old and new Security Baselines.
+12. Follow the steps above to update the policy via `gpedit.msc`.
+13. Update `Computer Configuration → Windows Components → Windows Update → Manage updates offered from Windows Update → Select the target Feature Update version`.
+14. Use Policy Analyzer to view and resolve any additional differences between `MSFT-Win11-vXXH2.PolicyRules` and `Win11.PolicyRules`.
+    * Do not copy settings directly. Always use `gpedit.msc` to make changes, followed by `savewin11.cmd`, and merge from `Win11-Local.PolicyRules`.
+    * In general, always set a value for any setting in the Security Baseline, even if it's the default. Conflicts are easier to review, whereas if a setting is missing, it's not clear whether it is new or was omitted intentionally. Exceptions are Internet Explorer, LAPS, and Attack Surface Reduction policies, which are not used, and a few other settings that can't be set.
+15. Reapply the updated policy on the VM and make any additional changes as needed. See Security Baseline `Documentation\Windows 11 XXH2 to XXH2 Delta.xlsx` for information about new settings.
 
 ## Templates
 
