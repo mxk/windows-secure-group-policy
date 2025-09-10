@@ -42,7 +42,7 @@ To update the policy for a new Windows feature release:
 5. Configure VM enhanced session settings to redirect the host drive that contains this repository.
 6. Run `cmd.exe` as an Administrator in the VM.
 7. Map host drive for easier access: `net use Z: \\tsclient\<drive>\<path-to-repo>`
-8. Run `Z:\savewin11.cmd` and rename `Z:\PolicyRules\Win11-Local.PolicyRules` to `Z:\PolicyRules\Win11-CleanInstall.PolicyRules`.
+8. Run `Z:\savewin11.cmd` and rename `Z:\PolicyRules\Win11-Local.PolicyRules` to `Z:\PolicyRules\Win11-Clean-vXXH2.PolicyRules`.
 9. Run `Z:\install.cmd` and restart.
 10. Copy updated `Z:\PolicyDefinitions` directory to the VM, skipping all existing files.
 11. Use Policy Analyzer to view differences between the old and new Security Baselines.
