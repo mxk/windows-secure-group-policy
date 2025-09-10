@@ -27,11 +27,11 @@ Download and use the [Policy Analyzer][SCT] to compare `PolicyRules` files. Make
 
 ## Updating policy
 
-When `LGPO.exe` and `GPO2PolicyRules.exe` export the local policy, they include many default settings that shouldn't be overwritten when applying the resulting `PolicyRules` file. There is also a bug in handling `(Default)` registry values. These are annoyances that prevent a clean install/save roundtrip and add noise when comparing against Microsoft's Security Baseline. Default settings were manually removed from `Win11.PolicyRules` by doing a three-way comparison between it, `MSFT-Win11.PolicyRules`, and `Win11-CleanInstall.PolicyRules`. To avoid reverting these edits, any updates to the policy must be merged in manually:
+When `LGPO.exe` and `GPO2PolicyRules.exe` export the local policy, they include many default settings that shouldn't be overwritten when applying the resulting `PolicyRules` file. There is also a bug in handling `(Default)` registry values. These are annoyances that prevent a clean install/save roundtrip and add noise when comparing against Microsoft's Security Baseline. Default settings were manually removed from `Win11.PolicyRules` by doing a three-way comparison between it, `MSFT-Win11-*.PolicyRules`, and `Win11-Clean-*.PolicyRules`. The easiest way to do this is by removing all `ComputerConfig` and `UserConfig` entries, and then comparing all three files with Policy Analyzer. To avoid reverting these edits, any updates to the policy must be merged in manually:
 
 1. Use `gpedit.msc` to modify the local policy.
 2. Run `savewin11.cmd` to create `Win11-Local.PolicyRules` file (not version-controlled).
-3. Diff and copy the relevant settings to `Win11.PolicyRules`.
+3. Diff and copy the relevant settings to `Win11.PolicyRules`. Ignore `SecurityTemplate` changes unless those were actually modified. Be sure to check for new `CSE-Machine` and `CSE-User` entries.
 
 To update the policy for a new Windows feature release:
 
@@ -43,7 +43,7 @@ To update the policy for a new Windows feature release:
 6. Run `cmd.exe` as an Administrator in the VM.
 7. Map host drive for easier access: `net use Z: \\tsclient\<drive>\<path-to-repo>`
 8. Run `Z:\savewin11.cmd` and rename `Z:\PolicyRules\Win11-Local.PolicyRules` to `Z:\PolicyRules\Win11-Clean-vXXH2.PolicyRules`.
-9. Run `Z:\install.cmd` and restart.
+9. Run `Z:\install.cmd`, restart, and remap `Z:`.
 10. Copy updated `Z:\PolicyDefinitions` directory to the VM, skipping all existing files.
 11. Use Policy Analyzer to view differences between the old and new Security Baselines.
 12. Follow the steps above to update the policy via `gpedit.msc`.
