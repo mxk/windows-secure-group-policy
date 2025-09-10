@@ -1,5 +1,6 @@
 /PolicyAnalyzer*/*
 !/PolicyAnalyzer*/GPO2PolicyRules.exe
+!/PolicyAnalyzer*/PolicyRulesFileBuilder.exe
 !/PolicyAnalyzer*/*.pdf
 /PolicyRules/*-Local.PolicyRules
 /Temp/
