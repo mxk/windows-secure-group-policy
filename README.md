@@ -2,7 +2,7 @@
 
 A local group policy intended for standalone Windows 11 devices. It aims to improve privacy, security, and performance, in that order.
 
-All settings are maintained in a single [`PolicyRules`](PolicyRules/Win11.PolicyRules) file that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise edition.
+All settings are maintained in a single [`PolicyRules` file](./PolicyRules/Win11.PolicyRules) that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise and/or Education editions.
 
 The target Feature Update version is **Windows 11 24H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
 
@@ -97,3 +97,18 @@ The following registry entries do not have an associated template and are treate
 
 [WPAD]: https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/disable-http-proxy-auth-features#how-to-disable-wpad
 [WinHTTP]: https://github.com/MicrosoftDocs/windows-itpro-docs/issues/2965#issuecomment-475441420
+
+### Firefox
+
+Firefox is configured using a combination of managed policies and [JSON preferences](./firefox-prefs.json) (copied to the [Preferences] policy setting). See the following links for detailed setting information:
+
+* [Firefox Policy Templates]
+* [How to stop Firefox from making automatic connections][Firefox Connections]
+* [brainfucksec/user.js]
+
+[Preferences] setting does not support the `app.*` prefix, so `false` values for `app.normandy.enabled` and `app.shield.optoutstudies.enabled` are not applied.
+
+[Preferences]: https://mozilla.github.io/policy-templates/#preferences
+[Firefox Policy Templates]: https://mozilla.github.io/policy-templates/
+[Firefox Connections]: https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections
+[brainfucksec/user.js]: https://gist.github.com/brainfucksec/68e79da1c965aeaa4782914afd8f7fa2
