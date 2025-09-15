@@ -29,12 +29,14 @@
   "browser.urlbar.trimURLs": {"Value": false, "Status": "default"},
   "extensions.formautofill.addresses.enabled": {"Value": false, "Status": "default"},
   "extensions.formautofill.creditCards.enabled": {"Value": false, "Status": "default"},
-  "extensions.htmlaboutaddons.recommendations.enabled": {"Value": false, "Status": "default"},
+  "extensions.getAddons.showPane": {"Value": false, "Status": "default"},
+  "extensions.htmlaboutaddons.recommendations.enabled": {"Value": false, "Status": "locked"},
   "general.smoothScroll": {"Value": true, "Status": "default"},
   "privacy.globalprivacycontrol.enabled": {"Value": true, "Status": "locked"},
   "privacy.userContext.enabled": {"Value": true, "Status": "default"},
   "privacy.userContext.ui.enabled": {"Value": true, "Status": "default"},
   "security.OCSP.enabled": {"Value": 0, "Status": "locked", "Type": "number"},
+  "security.ssl.require_safe_negotiation": {"Value": true, "Status": "default"},
   "security.tls.enable_0rtt_data": {"Value": false, "Status": "default"},
   "toolkit.legacyUserProfileCustomizations.stylesheets": {"Value": true, "Status": "default"}
 }

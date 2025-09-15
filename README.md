@@ -105,6 +105,7 @@ Firefox is configured using a combination of managed policies and [JSON preferen
 * [Firefox Policy Templates]
 * [How to stop Firefox from making automatic connections][Firefox Connections]
 * [brainfucksec/user.js]
+* [arkenfox/user.js]
 
 [Preferences] setting does not support the `app.*` prefix, so `false` values for `app.normandy.enabled` and `app.shield.optoutstudies.enabled` are not applied.
 
@@ -112,3 +113,4 @@ Firefox is configured using a combination of managed policies and [JSON preferen
 [Firefox Policy Templates]: https://mozilla.github.io/policy-templates/
 [Firefox Connections]: https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections
 [brainfucksec/user.js]: https://gist.github.com/brainfucksec/68e79da1c965aeaa4782914afd8f7fa2
+[arkenfox/user.js]: https://github.com/arkenfox/user.js
