@@ -34,6 +34,7 @@
   "privacy.globalprivacycontrol.enabled": {"Value": true, "Status": "locked"},
   "privacy.userContext.enabled": {"Value": true, "Status": "default"},
   "privacy.userContext.ui.enabled": {"Value": true, "Status": "default"},
+  "security.OCSP.enabled": {"Value": 0, "Status": "locked", "Type": "number"},
   "security.tls.enable_0rtt_data": {"Value": false, "Status": "default"},
   "toolkit.legacyUserProfileCustomizations.stylesheets": {"Value": true, "Status": "default"}
 }
