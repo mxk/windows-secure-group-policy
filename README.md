@@ -6,6 +6,8 @@ All settings are maintained in a single [`PolicyRules` file](./PolicyRules/Win11
 
 The target Feature Update version is **Windows 11 24H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
 
+Releases are tagged using SemVer 2.0 format where `MAJOR.MINOR` is the target Windows feature update version (e.g. `24H2` is `24.2`) and `PATCH` is the policy revision.
+
 [LGPO]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10#what-is-the-local-group-policy-object-lgpo-tool
 [Baseline]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines
 
