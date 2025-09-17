@@ -54,6 +54,15 @@ Note: This setting does not disable Active Desktop. Users can  still use image f
 By default, a user can change the location of their individual profile folders like Documents, Music etc. by typing a new path in the Locations tab of the folder's Properties dialog box.
 
 If you enable this setting, users are unable to type a new location in the Target box.</string>
+      <string id="EnableThemeFileRemoteResource">Allow theme files from network locations</string>
+      <string id="EnableThemeFileRemoteResource_Help">This policy setting determines whether remote paths can be used for resources inside of a Windows desktop theme (.theme/.themepack) file.
+
+If you enable this policy setting, theme files can reference resources (such as images, sounds, and icons) located on network shares or other remote locations. Users will be able to apply themes that contain remote resources.
+
+If you disable this policy setting, theme files cannot use remote resources. Any theme file that references remote resources will fail to load those resources, and only local resources will be displayed.
+
+If you do not configure this policy setting, the default behavior is to block remote resources in theme files for security reasons.</string>
+
       <string id="ForceActiveDesktopOn">Enable Active Desktop</string>
       <string id="ForceActiveDesktopOn_Help">Enables Active Desktop and prevents users from disabling it.
 

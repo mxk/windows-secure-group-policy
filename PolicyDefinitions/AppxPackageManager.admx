@@ -282,7 +282,7 @@
             <decimal value="0" />
           </falseValue>
         </boolean>
-        <boolean id="MediaPlayer" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.MediaPlayer_8wekyb3d8bbwe" valueName="RemovePackage">
+        <boolean id="MediaPlayer" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.ZuneMusic_8wekyb3d8bbwe" valueName="RemovePackage">
           <trueValue>
             <decimal value="1" />
           </trueValue>
@@ -315,14 +315,6 @@
           </falseValue>
         </boolean>
         <boolean id="GamingApp" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.GamingApp_8wekyb3d8bbwe" valueName="RemovePackage">
-          <trueValue>
-            <decimal value="1" />
-          </trueValue>
-          <falseValue>
-            <decimal value="0" />
-          </falseValue>
-        </boolean>
-        <boolean id="XboxGamingOverlay" key="Software\Policies\Microsoft\Windows\Appx\RemoveDefaultMicrosoftStorePackages\Microsoft.XboxGamingOverlay_8wekyb3d8bbwe" valueName="RemovePackage">
           <trueValue>
             <decimal value="1" />
           </trueValue>

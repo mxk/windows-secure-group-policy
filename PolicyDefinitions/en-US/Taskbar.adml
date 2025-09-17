@@ -203,7 +203,23 @@ This policy setting allows you to show the longer time and date format in the sy
 If this setting is enabled, the time format will include the AM/PM time marker and the date will include the year.​
 
 A reboot is required for this policy setting to take effect.
-        </string>
+      </string>
+      <string id="ConfigureTaskbarSmallButtonBehavior">ConfigureTaskbarSmallButtonBehavior</string>  
+      <string id="ConfigureTaskbarSmallButtonBehavior_DisplayName">Configure Taskbar Small Button Behavior</string>
+      <string id="ConfigureTaskbarSmallButtonBehavior_Help">This policy setting allows you to configure the behavior of small taskbar buttons.
+      
+When set to:
+      - Always: The taskbar always uses small buttons.
+      - When taskbar is full: The taskbar dynamically switches between small buttons and standard button sizes based on available space.
+      - Never: The taskbar never uses small buttons. Only standard sized buttons will be used.
+
+When this policy is enabled, one of the above options must be selected, and users cannot change the "Show smaller taskbar buttons" option in the Settings UI.
+
+When this policy disabled or not configured, no option is applied by Group Policy. Windows defaults to the "When the taskbar is full" behavior, and users can manually change this setting in the Settings UI.
+      </string>
+      <string id="ConfigureTaskbarSmallButtonBehavior_Always">Always</string>
+      <string id="ConfigureTaskbarSmallButtonBehavior_WhenTaskbarIsFull">When taskbar is full</string>
+      <string id="ConfigureTaskbarSmallButtonBehavior_Never">Never</string>
     </stringTable>
     <presentationTable>
       <presentation id="ConfigureTaskbarCalendar">
@@ -214,6 +230,9 @@ A reboot is required for this policy setting to take effect.
           <text> </text>
           <dropdownList refId="ConfigureChatIcon_Action" noSort="true" defaultItem="1">State: </dropdownList>
           <text> </text>
+      </presentation>
+      <presentation id="ConfigureTaskbarSmallButtonBehavior">
+        <dropdownList refId="ConfigureTaskbarSmallButtonBehavior_Dropdown" noSort="true" defaultItem="1">Choose when to show smaller taskbar buttons: </dropdownList>
       </presentation>
     </presentationTable>
   </resources>

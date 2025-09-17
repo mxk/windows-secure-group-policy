@@ -251,6 +251,22 @@
       </elements>
     </policy>
 
+    <policy name="ClfsAuthenticationChecking" class="Machine"
+    displayName="$(string.ClfsAuthenticationChecking)"
+    explainText="$(string.ClfsAuthenticationCheckingExplain)"
+    presentation="$(presentation.ClfsAuthenticationCheckingOptions)"
+    key="System\CurrentControlSet\Policies"
+    valueName="ClfsAuthenticationChecking">
+        <parentCategory ref="Filesystem" />
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0_RS1" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
+    </policy>
+
   </policies>
 </policyDefinitions>
 

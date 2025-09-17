@@ -84,6 +84,17 @@ Server systems default to the Capacity tier.</string>
       <string id="DefaultTierSetting_1">Capacity tier</string>
       <string id="DefaultTierSetting_2">Performance tier</string>
 
+      <string id="ClfsAuthenticationChecking">Enable / disable CLFS logfile authentication</string>
+      <string id="ClfsAuthenticationCheckingExplain">This policy setting configures CLFS logfile authentication, a security feature which aims to harden logfile parsing.
+
+Logfile authentication provides the ability for the CLFS driver to detect malicious modications made to logfiles. If modifications are detected, CLFS will deem the logfile as unsafe for parsing and return an error to the caller. CLFS is able to detect modifications by writing authentication codes to logfiles, which combines file data with a system-unique cryptographic key. 
+
+A side effect of logfile authentication is that CLFS will fail to open logfiles that were created on other systems, as these logfiles contain authentication codes created using a system-unique cryptographic key. To open a logfile that was created on another system, an administrator must first use the "fsutil.exe clfs authenticate" command to correct the authentication codes.
+
+If you enable or do not configure this setting, CLFS will refer to local registry settings on whether logfile authentication should be done or not. By default, CLFS will do logfile authentication. The local registry settings for this feature can be found at "HKLM:\SYSTEM\CurrentControlSet\Services\CLFS\Authentication". 
+
+If you disable his setting, CLFS will no longer perform logfile authentication. Logfiles will be able to be moved and opened across systems without Administrative action. However, CLFS will open and parse all logfiles, including maliciously crafted logfiles that may compromise the system.</string>
+
     </stringTable>
 
     <presentationTable>
@@ -114,6 +125,8 @@ Server systems default to the Capacity tier.</string>
       <presentation id="NtfsDefaultTierOptions">
           <dropdownList refId="NtfsDefaultTier_Levels" noSort="true" defaultItem="1">NTFS default tier options</dropdownList>
       </presentation>
+
+      <presentation id="ClfsAuthenticationCheckingOptions"/>
 
     </presentationTable>
   </resources>

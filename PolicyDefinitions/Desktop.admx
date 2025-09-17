@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--  (c) 2006 Microsoft Corporation  -->
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
   <policyNamespaces>
@@ -188,6 +188,16 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+    <policy name="EnableThemeFileRemoteResource" class="Machine" displayName="$(string.EnableThemeFileRemoteResource)" explainText="$(string.EnableThemeFileRemoteResource_Help)" key="Software\Policies\Microsoft\Windows\Themes" valueName="EnableThemeFileRemoteResource">
+        <parentCategory ref="windows:Desktop" />
+        <supportedOn ref="windows:SUPPORTED_Windows_11_0_22H2" />
+        <enabledValue>
+            <decimal value="1" />
+        </enabledValue>
+        <disabledValue>
+            <decimal value="0" />
+        </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

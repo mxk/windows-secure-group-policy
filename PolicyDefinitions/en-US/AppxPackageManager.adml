@@ -171,7 +171,6 @@ If the policy is disabled or not configured, no Default Microsoft Store packages
         <checkBox refId="WindowsSoundRecorder" defaultChecked="false">Windows Sound Recorder</checkBox>
         <checkBox refId="WindowsTerminal" defaultChecked="false">Windows Terminal</checkBox>
         <checkBox refId="GamingApp" defaultChecked="true">Xbox Gaming App</checkBox>
-        <checkBox refId="XboxGamingOverlay" defaultChecked="true">Xbox Gaming Overlay *</checkBox>
         <checkBox refId="XboxIdentityProvider" defaultChecked="true">Xbox Identity Provider *</checkBox>
         <checkBox refId="XboxSpeechToTextOverlay" defaultChecked="true">Xbox Speech To Text Overlay *</checkBox>
         <checkBox refId="XboxTCUI" defaultChecked="true">Xbox TCUI *</checkBox>

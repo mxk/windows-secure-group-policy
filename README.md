@@ -59,8 +59,8 @@ To update the policy for a new Windows feature release:
 
 Templates contained in the `PolicyDefinitions` directory:
 
-1. Windows 11 Enterprise 24H2 Aug 2025 ISO (26100.4946)
-   * SHA256: `7852F0B08B5E4E41CF82614E671611F5EEB1C00DF378C93FF31D6CD4E9854102`
+1. Windows 11 Enterprise 24H2 Sep 2025 ISO (26100.6584)
+   * SHA256: `78441899DCB2F557FD322B5A1B169A57F7D64771BFD2C5B0FE313DB11EC06BA6`
 2. [Windows 11 v24H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
 4. [Microsoft Edge (140.0.3485.66)][Edge]

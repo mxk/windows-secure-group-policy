@@ -35553,6 +35553,16 @@
         </enum>
       </elements>
     </policy>
+    <policy name="DisableInternetExplorerLaunchViaCOM" class="Both" displayName="$(string.DisableInternetExplorerLaunchViaCOM)" explainText="$(string.IE_ExplainDisableInternetExplorerLaunchViaCOM)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="DisableInternetExplorerLaunchViaCOM">
+      <parentCategory ref="InternetExplorer" />
+      <supportedOn ref="SUPPORTED_IE11WIN10" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="DisableIEAppDeprecationNotification" class="Both" displayName="$(string.DisableIEAppDeprecationNotification)" explainText="$(string.IE_ExplainDisableIEAppDeprecationNotification)" key="Software\Policies\Microsoft\Internet Explorer\Main" valueName="DisableIEAppNotificationPolicy">
       <parentCategory ref="InternetExplorer" />
       <supportedOn ref="SUPPORTED_IE11WIN10" />

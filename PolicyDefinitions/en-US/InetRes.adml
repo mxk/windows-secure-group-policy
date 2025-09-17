@@ -4009,10 +4009,18 @@ For more information, see https://go.microsoft.com/fwlink/?linkid=2220107</strin
 If you enable this policy, it:
 - Prevents Internet Explorer 11 from launching as a standalone browser.
 - Restricts Internet Explorer's usage to Microsoft Edge's native 'Internet Explorer mode'.
-- Redirects all attempts at launching Internet Explorer 11 to Microsoft Edge Stable Channel browser.
+- Redirects attempts at launching Internet Explorer 11 to Microsoft Edge Stable Channel browser.
 - Overrides any other policies that redirect to Internet Explorer 11.
 
+Even with this policy enabled launching Internet Explorer 11 using COM automation will still be allowed. To disable COM automation launches of Internet Explorer 11 use the "Disable Internet Explorer 11 COM Automation" group policy.
+
 If you disable, or don’t configure this policy, all sites are opened using the current active browser settings. Note: Microsoft Edge Stable Channel must be installed for this policy to take effect.</string>
+      <string id="DisableInternetExplorerLaunchViaCOM">Disable Internet Explorer 11 Launch Via COM Automation</string>
+      <string id="IE_ExplainDisableInternetExplorerLaunchViaCOM">This policy lets you restrict launching of Internet Explorer using COM automation.
+
+If you enable this policy, it prevents Internet Explorer 11 from being launched using COM automation.
+
+If you disable, or don’t configure this policy, Internet Explorer 11 COM automation launches are allowed.</string>
       <string id="DisableIEAppDeprecationNotification">Hide Internet Explorer 11 retirement notification</string>
       <string id="IE_ExplainDisableIEAppDeprecationNotification">This policy setting allows you to manage whether the notification bar reminder that Internet Explorer is being retired is displayed. By default, the Notification bar is displayed in Internet Explorer 11.
 
