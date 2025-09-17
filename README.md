@@ -62,7 +62,7 @@ Templates contained in the `PolicyDefinitions` directory:
 2. [Windows 11 v24H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
 4. [Microsoft Edge (140.0.3485.54)][Edge]
-5. [Mozilla Firefox (7.2)][Firefox]
+5. [Mozilla Firefox (7.3)][Firefox]
 
 [RTLFB]: https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services
 [Edge]: https://www.microsoft.com/en-us/edge/business/download
