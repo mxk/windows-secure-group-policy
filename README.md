@@ -2,24 +2,25 @@
 
 A local group policy intended for standalone Windows 11 devices. It aims to improve privacy, security, and performance, in that order.
 
-All settings are maintained in a single [`PolicyRules` file](./PolicyRules/Win11.PolicyRules) that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise and/or Education editions.
+All settings are maintained in a single [`Win11.PolicyRules`] file that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise and/or Education editions.
 
 The target Feature Update version is **Windows 11 24H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
 
 Releases are tagged using SemVer 2.0 format where `MAJOR.MINOR` is the target Windows feature update version (e.g. `24H2` is `24.2`) and `PATCH` is the policy revision.
 
+[`Win11.PolicyRules`]: ./PolicyRules/Win11.PolicyRules
 [LGPO]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10#what-is-the-local-group-policy-object-lgpo-tool
 [Baseline]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines
 
-## Installation
+## Usage
 
-Run `install.cmd` as an Administrator and restart the computer.
+*All scripts must be run as an Administrator.*
 
-## Saving local policy
+Run `install.cmd` and restart the computer to install [`Win11.PolicyRules`] as the local group policy. This does not clear out any existing settings. Run `reset.cmd` first to start with a clean slate.
 
-Run `savelocal.cmd <out-file> <policy-name>` or `savewin11.cmd` (creates `Win11-Local.PolicyRules`) as an Administrator to save the local group policy as a `PolicyRules` file.
+Run `save.cmd <out-file> <policy-name>` or `savewin11.cmd` (creates `Win11-Local.PolicyRules`) to save the local group policy as a `PolicyRules` file. *Warning: This will overwrite the contents of `C:\GPO`.*
 
-*Warning:* This will overwrite the contents of `C:\GPO`.
+Run `reset.cmd` followed by `gpupdate /force` or a restart to clear out the local group policy.
 
 ## Comparing policies
 
