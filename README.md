@@ -98,6 +98,7 @@ The following registry entries do not have an associated template and are treate
 * `ShowSyncProviderNotifications=0` disables sync provider notifications, which are used to show Microsoft ads in File Explorer.
 * `ScoobeSystemSettingEnabled=0` disables "Let's finish setting up your device" notification (Settings > System > Notifications > Additional settings > Suggest ways to get the most out of Windows and finish setting up this device).
 * `IsResumeAllowed=0` disables cross device resume.
+* `Start_IrisRecommendations=0` disables "Show recommendations for tips, shortcuts, new apps, and more" Start setting.
 
 [WPAD]: https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/disable-http-proxy-auth-features#how-to-disable-wpad
 [WinHTTP]: https://github.com/MicrosoftDocs/windows-itpro-docs/issues/2965#issuecomment-475441420
