@@ -105,14 +105,16 @@ The following registry entries do not have an associated template and are treate
 
 ### Firefox
 
-Firefox is configured using a combination of managed policies and [JSON preferences](./firefox-prefs.json) (copied to the [Preferences] policy setting). See the following links for detailed setting information:
+Firefox is configured using a combination of managed policies and [JSON preferences](./firefox-prefs.json) (copied to the [Preferences (JSON on one line)][Preferences] policy setting in minified format). See the following links for detailed setting information:
 
 * [Firefox Policy Templates]
 * [How to stop Firefox from making automatic connections][Firefox Connections]
 * [brainfucksec/user.js]
 * [arkenfox/user.js]
 
-[Preferences] setting does not support the `app.*` prefix, so `false` values for `app.normandy.enabled` and `app.shield.optoutstudies.enabled` are not applied.
+Preferences setting does not support the `app.*` prefix, so `false` values for `app.normandy.enabled` and `app.shield.optoutstudies.enabled` are not applied.
+
+The one line minified `REG_SZ` format must be used because LGPO.exe does not properly apply the saved multi-line value with `\0` separators.
 
 [Preferences]: https://mozilla.github.io/policy-templates/#preferences
 [Firefox Policy Templates]: https://mozilla.github.io/policy-templates/
