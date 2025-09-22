@@ -87,6 +87,9 @@ To extract `PolicyDefinitions` from a Windows ISO:
 * Microsoft Account sign-in is disabled. Do not disable "Microsoft Account Sign-in Assistant" service (aka "wlidsvc") as suggested by the Restricted Traffic Baseline. Doing so results in error 0x80070426 when running Windows Update.
 * Disabling active Network Connectivity Status Indicator (NCSI) tests breaks Windows Update (0x800704cf), DISM (0x800f0906 or 0x800f081f), and probably other things. Passive-only configuration doesn't fix this, so it's best to leave both passive and active tests enabled. Windows Update error only happens once if Windows was installed without any network connectivity. After a single successful update, disabling NCSI doesn't seem to cause further problems, but DISM will still run into errors. Guess how many days it took to figure this out.
 * "Turn off all Windows spotlight features" policy must be applied within 15 minutes after Windows is installed (was true for Windows 10, no longer the case for Windows 11?).
+* `LGPO.exe` has a [known bug] with importing `REG_MULTI_SZ` values literally rather than converting `\0` escape sequences into a separator, so these values cannot be added to [`Win11.PolicyRules`] file.
+
+[known bug]: https://techcommunity.microsoft.com/discussions/security-baselines/reg-multi-sz-are-not-imported-properly/2306822
 
 ### Settings without a template
 
@@ -112,9 +115,7 @@ Firefox is configured using a combination of managed policies and [JSON preferen
 * [brainfucksec/user.js]
 * [arkenfox/user.js]
 
-Preferences setting does not support the `app.*` prefix, so `false` values for `app.normandy.enabled` and `app.shield.optoutstudies.enabled` are not applied.
-
-The one line minified `REG_SZ` format must be used because LGPO.exe does not properly apply the saved multi-line value with `\0` separators.
+Preferences setting does not support the `app.*` prefix, so `false` values for `app.normandy.enabled` and `app.shield.optoutstudies.enabled` are not applied. Also, the one line minified `REG_SZ` format must be used because `LGPO.exe` has a bug in handling `\0` separators in `REG_MULTI_SZ` values.
 
 [Preferences]: https://mozilla.github.io/policy-templates/#preferences
 [Firefox Policy Templates]: https://mozilla.github.io/policy-templates/
