@@ -122,3 +122,30 @@ Preferences setting does not support the `app.*` prefix, so `false` values for `
 [Firefox Connections]: https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections
 [brainfucksec/user.js]: https://gist.github.com/brainfucksec/68e79da1c965aeaa4782914afd8f7fa2
 [arkenfox/user.js]: https://github.com/arkenfox/user.js
+
+### Client-Side Extensions (CSEs)
+
+`LGPO.exe` writes `CSE-Machine` and `CSE-User` entries to `C:\Windows\System32\GroupPolicy\GPT.INI`. The format of the resulting `gPCMachineExtensionNames` and `gPCUserExtensionNames` values is `[{CSE1}{Tool1}{Tool2}...][{CSE2}...]...`. It's not clear whether tool extension GUIDs are important for correct policy enforcement (if you know, please message me). `LGPO.exe` only adds an undocumented `DF3DC19F-F72C-4030-940E-4C2A65A6B612` tool GUID for all entries when applying a PolicyRules file. The following table lists tool GUIDs that are normally set when the policy is configured via `gpedit.msc`:
+
+| CSE                                      | Tool GUID                                | Added By                                         |
+|------------------------------------------|------------------------------------------|--------------------------------------------------|
+| `{35378EAC-683F-11D2-A89A-00C04FBBCFA2}` | `{B05566AC-FE9C-4368-BE01-7A4CBB6CBA11}` | Windows Defender Firewall with Advanced Security |
+| All registry computer CSEs               | `{D02B1F72-3407-48AE-BA88-E8213C6761F1}` | Computer Administrative Templates                |
+| All registry user CSEs                   | `{D02B1F73-3407-48AE-BA88-E8213C6761F1}` | User Administrative Templates                    |
+| `{F3CCC681-B74C-4060-9F26-CD84525DCA2A}` | `{0F3F3735-573D-9804-99E4-AB2A69BA5FD4}` | Advanced Audit Policy Configuration              |
+
+See [\[MS-GPSO\].pdf] for additional CSE and Tool Extension GUIDs.
+
+To refresh CSE configuration, removing any extensions that are no longer needed by the current policy:
+
+1. Delete `C:\Windows\System32\GroupPolicy\GPT.INI` file.
+2. Open `gpedit.msc` and filter Computer Administrative Templates to show only Configured settings (set Managed and Commented to "Any" and clear all checkboxes).
+3. Open "All Settings" container and double-click on the first setting.
+4. For each setting, toggle Enabled/Disabled via Alt-E/Alt-D shortcuts, which will force `gpedit.msc` to re-apply it, and then go to the next setting via Alt-N.
+   * You may occasionally see "The process cannot access the file because it is being used by another process. (Exception from HRESULT: 0x80070020)" error. Just repeat the operation for the current setting and keep going.
+   * "Join Microsoft MAPS" and "Limit optional diagnostic data for Desktop Analytics" show up as Disabled, but must actually be set to Enabled and then configured via the drop-down control.
+5. Repeat for all User settings.
+6. Expand Windows Settings → Security Settings and toggle one setting under Security Options, Windows Defender Firewall with Advanced Security, and Advanced Audit Policy Configuration.
+7. Extract the resulting CSEs from `GPT.INI`.
+
+[\[MS-GPSO\].pdf]: https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/[MS-GPSO].pdf
