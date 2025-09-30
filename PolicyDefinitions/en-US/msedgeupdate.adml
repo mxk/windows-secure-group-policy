@@ -47,7 +47,6 @@ If you don't configure this policy, on an unmanaged device the behavior is same 
   If you don't configure this policy for a channel, the 'Create Desktop Shortcut upon install default' policy configuration determines shortcut creation when Microsoft Edge is installed.</string>
       <string id="Sup_EdgeUpdate1_3_119_43">Microsoft Edge Update 1.3.119.43 and later</string>
       <string id="Pol_AllowSideBySideExperience">Allow Microsoft Edge Side by Side browser experience</string>
-      <string id="Name_EdgePreviewEnrollmentTypeOptIn">Opt-in</string>
       <string id="Explain_AutoUpdateCheckPeriod">Minimum number of minutes between automatic update checks.
 
 Set this policy to the value 0 to disable all periodic network traffic by Microsoft Edge Update. This is not recommended, as it prevents Microsoft Edge Update itself from receiving stability and security updates.
@@ -137,7 +136,6 @@ If you disable (2) this policy, the installation of Microsoft Edge is blocked. T
 This policy doesn't prevent Microsoft Edge Update from running or prevent users from installing Microsoft Edge software using other methods.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.</string>
-      <string id="Name_EdgePreviewEnrollmentTypeOptOut">Opt-out</string>
       <string id="Sup_EdgeUpdate1_3_155_1">Microsoft Edge Update 1.3.155.1 and later</string>
       <string id="TargetChannel_Stable_DropDown">Stable</string>
       <string id="Cat_Google">Microsoft</string>
@@ -171,6 +169,7 @@ This policy is available only on Windows instances that are joined to a Microsof
 
   If you don't configure this policy, the WebView2 Runtime will be installed through Microsoft Edge Update.</string>
       <string id="Explain_GoogleUpdate">Policies to control the installation and updating of Microsoft Edge using Microsoft Edge Update.</string>
+      <string id="Name_EdgePreviewEnrollmentTypeAllowOptOut">Allow Opt-out</string>
       <string id="Explain_DefaultRemoveDesktopShortcut">Lets you specify the default behavior for all channels for creating a desktop shortcut when Microsoft Edge is installed.
 
   If you set this policy to "Force delete system-level Desktop Shortcuts" (1), any existing system-level Microsoft Edge desktop shortcuts will be deleted when the browser updates or the machine reboots.
@@ -320,7 +319,9 @@ If this policy is set to 'Enabled and delete user data' (Setting '2'), Microsoft
 
 If this policy is set to 'Disabled' (Setting '3'), all users in the EEA are prevented from uninstalling Microsoft Edge where this policy is deployed.
 
-If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge. 
+If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge.
+
+This policy is available only on Home, Pro, Pro Education, Pro for Workstations, Enterprise, Education, and Enterprise multi-session editions of Windows 10 22H2 and Windows 11 23H2 and later versions.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.
 
@@ -423,7 +424,9 @@ If this policy is set to 'Enabled and delete user data' (Setting '2'), Microsoft
 
 If this policy is set to 'Disabled' (Setting '3'), all users in the EEA are prevented from uninstalling Microsoft Edge where this policy is deployed.
 
-If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge. 
+If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge.
+
+This policy is available only on Home, Pro, Pro Education, Pro for Workstations, Enterprise, Education, and Enterprise multi-session editions of Windows 10 22H2 and Windows 11 23H2 and later versions.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.
 
@@ -526,7 +529,9 @@ If this policy is set to 'Enabled and delete user data' (Setting '2'), Microsoft
 
 If this policy is set to 'Disabled' (Setting '3'), all users in the EEA are prevented from uninstalling Microsoft Edge where this policy is deployed.
 
-If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge. 
+If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge.
+
+This policy is available only on Home, Pro, Pro Education, Pro for Workstations, Enterprise, Education, and Enterprise multi-session editions of Windows 10 22H2 and Windows 11 23H2 and later versions.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.
 
@@ -625,7 +630,9 @@ If this policy is set to 'Enabled and delete user data' (Setting '2'), Microsoft
 
 If this policy is set to 'Disabled' (Setting '3'), all users in the EEA are prevented from uninstalling Microsoft Edge where this policy is deployed.
 
-If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge. 
+If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge.
+
+This policy is available only on Home, Pro, Pro Education, Pro for Workstations, Enterprise, Education, and Enterprise multi-session editions of Windows 10 22H2 and Windows 11 23H2 and later versions.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.
 
@@ -726,7 +733,9 @@ If this policy is set to 'Enabled and delete user data' (Setting '2'), Microsoft
 
 If this policy is set to 'Disabled' (Setting '3'), all users in the EEA are prevented from uninstalling Microsoft Edge where this policy is deployed.
 
-If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge. 
+If the policy is 'Not configured' (default setting), a user's Windows region setting determines whether they can uninstall Microsoft Edge on a domain-joined device. Only users in EEA countries will be able to uninstall Microsoft Edge if they choose to do so. Users outside of this area will not be able to uninstall Microsoft Edge.
+
+This policy is available only on Home, Pro, Pro Education, Pro for Workstations, Enterprise, Education, and Enterprise multi-session editions of Windows 10 22H2 and Windows 11 23H2 and later versions.
 
 This policy is available only on Windows instances that are joined to a Microsoft® Active Directory® domain.
 

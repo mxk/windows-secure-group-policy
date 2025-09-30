@@ -60,11 +60,11 @@ To update the policy for a new Windows feature release:
 
 Templates contained in the `PolicyDefinitions` directory:
 
-1. Windows 11 Enterprise 24H2 Sep 2025 ISO (26100.6584)
-   * SHA256: `78441899DCB2F557FD322B5A1B169A57F7D64771BFD2C5B0FE313DB11EC06BA6`
-2. [Windows 11 v24H2 Security Baseline][SCT]
+1. Windows 11 Enterprise 25H2 ISO (26200.6584)
+   * SHA256: `2B65DF49334B64E9341DC404E9C527BF1B2A9A105E95314A347FD29AC9900581`
+2. [Windows 11 v25H2 Security Baseline][SCT]
 3. [Windows Restricted Traffic Limited Functionality Baseline - Windows 11 23H2][RTLFB]
-4. [Microsoft Edge (140.0.3485.66)][Edge]
+4. [Microsoft Edge (140.0.3485.94)][Edge]
 5. [Mozilla Firefox (7.3)][Firefox]
 
 [RTLFB]: https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services

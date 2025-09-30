@@ -560,14 +560,9 @@
               <decimal value="0" />
             </value>
           </item>
-          <item displayName="$(string.Name_EdgePreviewEnrollmentTypeOptIn)">
+          <item displayName="$(string.Name_EdgePreviewEnrollmentTypeAllowOptOut)">
             <value>
               <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.Name_EdgePreviewEnrollmentTypeOptOut)">
-            <value>
-              <decimal value="2" />
             </value>
           </item>
         </enum>
