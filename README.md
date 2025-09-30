@@ -4,7 +4,7 @@ A local group policy intended for standalone Windows 11 devices. It aims to impr
 
 All settings are maintained in a single [`Win11.PolicyRules`] file that is applied with [LGPO]. Security features that send data to Microsoft, such as SmartScreen, are disabled, deviating from [Microsoft's Security Baseline][Baseline]. Some settings are only effective on the Enterprise and/or Education editions.
 
-The target Feature Update version is **Windows 11 24H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
+The target Feature Update version is **Windows 11 25H2**. This prevents automatic updates to the next release before the policy is updated with new settings.
 
 Releases are tagged using SemVer 2.0 format where `MAJOR.MINOR` is the target Windows feature update version (e.g. `24H2` is `24.2`) and `PATCH` is the policy revision.
 
@@ -50,7 +50,7 @@ To update the policy for a new Windows feature release:
 10. Copy updated `Z:\PolicyDefinitions` directory to the VM, skipping all existing files.
 11. Use Policy Analyzer to view differences between the old and new Security Baselines.
 12. Follow the steps above to update the policy via `gpedit.msc`.
-13. Update `Computer Configuration → Windows Components → Windows Update → Manage updates offered from Windows Update → Select the target Feature Update version`.
+13. Update `Computer Configuration → Windows Components → Windows Update → Manage updates offered from Windows Update → Select the target Feature Update version` and README.md.
 14. Use Policy Analyzer to view and resolve any additional differences between `MSFT-Win11-vXXH2.PolicyRules` and `Win11.PolicyRules`.
     * Do not copy settings directly. Always use `gpedit.msc` to make changes, followed by `savewin11.cmd`, and merge from `Win11-Local.PolicyRules`.
     * In general, always set a value for any setting in the Security Baseline, even if it's the default. Conflicts are easier to review, whereas if a setting is missing, it's not clear whether it is new or was omitted intentionally. Exceptions are Internet Explorer, LAPS, and Attack Surface Reduction policies, which are not used, and a few other settings that can't be set.
